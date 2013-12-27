@@ -1,0 +1,17 @@
+Current Website: www.inno-vite.com
+
+Staging Site: www.inno-vite.org
+
+FTP:
+ainaz.pair.com
+user: innovite_ryan
+pass: yBihV6T7
+Directory: /innovitehealth/
+
+New Dbase:
+$hostname_inno = "db149d.pair.com";
+$database_inno = "innovite_IVHEALTH";
+$username_inno = "innovite_3";
+$password_inno = "6bWcwe48";
+
+myphpadmin: https://my-db.pair.com/phpMyAdmin/

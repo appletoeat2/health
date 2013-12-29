@@ -5,7 +5,6 @@
 .win{ height:auto ;  overflow: hidden;}
 </style>
 <section class="container home-content">
-    
     <section class="row column">
         <div>
         	<label for="address">Address: </label><input type="text" id="address" name="address" value="" />

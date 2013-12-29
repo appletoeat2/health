@@ -5,7 +5,6 @@
 .win{ height:auto ;  overflow: hidden;}
 </style>
 <section class="container home-content">
-	<?php $this->load->view("template/slider") ; ?>
     
     <section class="row column">
         <div>

@@ -4,21 +4,22 @@
 .text{ font-size:12px;}
 .win{ height:auto ;  overflow: hidden;}
 </style>
-<section class="container home-content">
-    <section class="row column">
-        <div>
-        	<label for="address">Address: </label><input type="text" id="address" name="address" value="" />
+<section class="container page-content" >
+    <hr class="vertical-space2">
+    
+    <section class="sixteen columns">
+    <h2>Find a Innovite Health Retailer Near You</h2>
+        <div class="one_fourth">
+        	<label class="vertical-space2" for="address">Address: </label><input type="text" id="address" name="address" value="" />
 		</div>
-        
-    	<div>
-            <label for="city_name_dropdown">City: </label>
+        <div class="one_fourth">
+            <label class="vertical-space2" for="city_name_dropdown">City: </label>
             <select id="city_name_dropdown"  name="city_name_dropdown">
                 <?php $this->load->view("stores/cities") ; ?>
             </select>
         </div>
-        
-        <div>
-            <label for="radius">Radius: </label>
+        <div class="one_fourth">
+            <label class="vertical-space2" for="radius">Radius: </label>
             <select id="radius" name="radis">
                 <option value="1">1 KM</option>
                 <option value="5">5 KM</option>
@@ -31,21 +32,19 @@
             </select>
 		</div>
         
-        <div>    
+        <div class="one_fourth column-last">   
     		<input type="button" id="submit_button" value="Search Locations" />
     	</div>
         
 	</section>
-    
-        <div id="googleMap" style="height:380px; width:100%;"></div>
+    <section class="sixteen columns">
+            <div id="googleMap" style="height:380px; width:100%;"></div>
 		<br />
         <br />
     	<table id="location_details_table" class="table table-hover">
         	<tbody>
         	</tbody>
     	</table>
-        
-        
-        
+    </section>
     <hr class="vertical-space2">
 </section>

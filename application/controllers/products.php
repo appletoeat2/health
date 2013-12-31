@@ -12,7 +12,7 @@ class Products extends CI_Controller
 		$data["categories"] = $this->model1->get_one(array("cat_id" => $category_id), "categories") ;
 		$data["products"] = $this->model1->get_all_cond_orderby(array("cat_id" => $category_id), "products", "sort_order", "ASC") ;
 		
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/index", $category_id)));
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/index", "wrap", $category_id)));
 	}
 	
 	public function product_details($category_id, $product_id)
@@ -22,7 +22,7 @@ class Products extends CI_Controller
 		$data["brochure"] = $this->model2->get_brochures($product_id) ;
 		$data["related_products"] = $this->model1->get_all_cond_orderby(array("cat_id" => $category_id), "products", "sort_order", "ASC") ;
 		
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/product_details", $category_id)));
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/product_details", "boxed-wrap", $category_id)));
 	}
 	
 	public function product_brochures($brochure_name)
@@ -33,13 +33,13 @@ class Products extends CI_Controller
 	
 	public function bone_and_joint_health_information($category_id)
 	{
-		$this->load->view('template/body', array_merge($this->load_data("products/joint_and_bone_health_information", $category_id)));
+		$this->load->view('template/body', $this->load_data("products/joint_and_bone_health_information", "boxed-wrap", $category_id));
 	}
 		
-	private function load_data($view, $category_id)
+	private function load_data($view, $main_class, $category_id)
 	{
 		$data = array() ;
-		
+		$data["main_class"] = $main_class ;
 		$data["title"] = "Muscular Skeletal Therapies - Bone, Joint, Muscle, Skin, and Connective Tissue Health" ;
 		$data["category_id"] = $category_id ;
 		$data["view"] = $view ;

@@ -1,0 +1,9 @@
+.social a { height: 32px; width: 32px; float: left; margin-right: 8px; background: url(../images/icon_sprites.png) no-repeat; display: block; position: relative; }
+.social .facebook { background-position: left top; }
+.social .twitter { background-position: -40px top; }
+.social .google { background-position: -80px top; }
+.social .dribbble { background-position: -120px top; }
+.social .forrst { background-position: -160px top; }
+.social .envato { background-position: -200px top; }
+.social .rss { background-position: -240px top; }
+.social .website { background-position: -280px top;}

@@ -16,7 +16,8 @@ class Stores extends CI_Controller
 	{
 		$data = array() ;
 		
-		$data["title"] = "Muscular Skeletal Therapies - Store Location Navigations" ;
+		$data["main_class"] = "wrap" ;
+		$data["title"] = "Innovite Health Products - Find a Retail Location" ;
 		$data["view"] = $view ;
 		
 		return $data ;

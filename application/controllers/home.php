@@ -15,7 +15,7 @@ class Home extends CI_Controller
 	private function load_view($view)
 	{
 		$data = array() ;
-		
+		$data["main_class"] = "wrap" ;
 		$data["title"] = "InnoviteHealth - Your Trusted Companion for Leading Natural Health Products" ;
 		$data["view"] = $view ;
 		

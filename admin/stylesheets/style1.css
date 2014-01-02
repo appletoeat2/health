@@ -22,7 +22,7 @@ img { border: 0; }
 	position : relative;
 	background : url(../images/main-left.png) repeat-y left top #FFFFFF;
 	margin : 0 auto;
-	width : 980px;
+	width : 100%;
 	height : auto !important;
 	height : 100%;
 	min-height : 100%;
@@ -299,7 +299,6 @@ img { border: 0; }
 	display : block;
 	background : url(../images/icon-submenu.gif) no-repeat 10px 10px;
 	border-top : 1px solid #e6e6e6;
-	font : 12px/1.0em Arial;
 }
 
 #wrapper #container #left .box.submenu ul li:first-child{
@@ -320,7 +319,8 @@ img { border: 0; }
 
 #wrapper #container #left .box.submenu ul li.current a, #wrapper #container #left .box.submenu ul li.current a:link, #wrapper #container #left .box.submenu ul li.current a:active, #wrapper #container #left .box.submenu ul li.current a:visited{
 	background : url(../images/icon-submenu-on.gif) no-repeat 10px 10px;
-	color : #000000;
+	color:#F70004;
+	font-weight:600;
 	text-decoration : none;
 }
 
@@ -603,9 +603,9 @@ img { border: 0; }
 	position : relative;
 	background : url(../images/box-title.gif) repeat-x left top;
 	padding : 8px 10px 0 ;
-	font : 13px/1.0em 'MuseoSans500', Arial;
+	font : 13px/1.0em 'MuseoSans500', Helvetica;
 	color : #000000;
-	text-transform : uppercase;
+	font-weight:600;
 	height : 21px;
 }
 

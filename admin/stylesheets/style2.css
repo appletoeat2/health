@@ -22,7 +22,7 @@ img { border: 0; }
 	position : relative;
 	background : url(../images/main-left.png) repeat-y left top #FFFFFF;
 	margin : 0 auto;
-	width : 980px;
+	width : 100%;
 	height : auto !important;
 	height : 100%;
 	min-height : 100%;
@@ -610,10 +610,10 @@ img { border: 0; }
 	position : relative;
 	background : url(../images/box-title.gif) repeat-x left top;
 	padding : 8px 10px 0 ;
-	font : 13px/1.0em 'MuseoSans500', Arial;
+	font : 13px/1.0em 'MuseoSans500', Helvetica;
 	color : #000000;
-	text-transform : uppercase;
 	height : 21px;
+	font-weight:600;
 }
 
 #wrapper.login .box .title .hide,

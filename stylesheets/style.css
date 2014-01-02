@@ -883,6 +883,7 @@ input.btn404 { float:left; margin:1px; padding:8px 12px 9px; }
 	-webkit-border-radius: 0px 0px 6px 6px;
 	-moz-border-radius: 0px 0px 6px 6px;
 	border-radius: 0px 0px 6px 6px;
+	height: 40px;
 	}
 
 .easyPieChart { position: relative; text-align: center; }

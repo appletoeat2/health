@@ -74,18 +74,9 @@
 			<h1 id="logo"><a href="<?php echo base_url() ; ?>"></a></h1>
 			<div id="labels">
 				<ul>
-					<li><a href="<?php echo base_url() ; ?>" class="user"><span class="bar">Welcome John Do</span></a></li>
-					<li><a href="<?php echo base_url() ; ?>" class="settings"></a></li>
-					<li class="subnav">
-						<a href="<?php echo base_url() ; ?>" class="messages"></a>
-						<ul>
-							<li><a href="<?php echo base_url() ; ?>">New message</a></li>
-							<li><a href="<?php echo base_url() ; ?>">Inbox</a></li>
-							<li><a href="<?php echo base_url() ; ?>">Outbox</a></li>
-							<li><a href="<?php echo base_url() ; ?>">Trash</a></li>
-						</ul>
-					</li>
-					<li><a href="<?php echo base_url() ; ?>" class="logout"></a></li>
+					<li><a href="javascript:void(0);" class="user"><span class="bar">Welcome <?php echo $this->session->userdata('name') ; ?></span></a></li>
+					<li><a href="<?php echo base_url()."users/edit_user/".$this->session->userdata('id') ; ?>" class="settings"></a></li>
+					<li><a href="<?php echo base_url()."home/loggout" ; ?>" class="logout"></a></li>
 				</ul>
 			</div>
 			

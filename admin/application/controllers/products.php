@@ -5,37 +5,158 @@ class Products extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct() ;
-	}
-	
-	public function index()
-	{
-		$data["products"] = $this->model1->get_all("products") ;
-		$this->load->view("template/body", array_merge($data, $this->load_view("products/products_index")));
-	}
-	
-	public function insert_product()
-	{
-		$data["product_groups"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
-		$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
-		$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
 		
-		$this->load->view("template/body", array_merge($data, $this->load_view("products/insert_product"))) ;
+		if($this->session->userdata('logged_in') != TRUE)
+			redirect(base_url()."home") ;
+	}
+	
+	public function index($group_id = 0, $message = 0)
+	{
+		$data["product_groups"] = $this->model1->get_all("product_groups") ;
+		$data["group_id"] = $group_id ;
+		$data["search"] = 0 ;
+		if($group_id == 0) {
+			foreach($data["product_groups"] as $rec):
+				$data["group_id"] = $rec->id ;
+				break ;
+			endforeach ;
+		}
+		
+		$data["products"] = $this->model1->get_all_cond(array("group_id" => $data["group_id"]), "products") ;
+		$this->load->view("template/body", array_merge($data, $this->load_view("products/products_index", true, $message)));
+	}
+	
+	public function search_products()
+	{
+		if($_POST)
+		{
+			$data["product_groups"] = $this->model1->get_all("product_groups") ;
+			$data["group_id"] = 0 ;
+			$data["search"] = 1 ;
+			
+			$data["products"] = $this->model2->search_products($this->input->post("search_string")) ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("products/products_index", true)));
+			
+		}
+		else
+		{
+			redirect(base_url()."products") ;
+		}
 	}
 	
 	public function product_detail($product_id = 0)
 	{
-		if($product_id)
-		{
+		if($product_id){
+			
 			$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
 			$data["group_rec"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
 			$data["categories_recs"] = $this->model2->get_categories($product_id) ;
 			$data["food_sensitivities_recs"] = $this->model2->get_food_sensitivities($product_id) ;
 			$data["skus_recs"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
+			
+			$data["product_groups"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+			$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
+			$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+			
 			$this->load->view("template/body", array_merge($data, $this->load_view("products/product_details"))) ;
+			
+		} else {
+			redirect(base_url()."products/index") ;
 		}
-		else
+	}
+	
+	public function insert_product($group_id = 0)
+	{
+		$data["product_groups"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
+		$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+		$data["group_id"] = $group_id ;
+		$this->load->view("template/body", array_merge($data, $this->load_view("products/insert_product"))) ;
+	}
+	
+	public function add_product()
+	{
+		if($_POST)
 		{
-			redirect(base_url()."products") ;
+			// Validation Code in the last of this file
+			$attributes = array("product_code" => addslashes($this->input->post("product_code")), 
+						   	    "group_id" => addslashes($this->input->post("group_id")),
+				  				"product_name" => addslashes($this->input->post("product_name")),
+				  				"health_claim" => addslashes($this->input->post("health_claim")),
+				  				"short_description" => addslashes($this->input->post("short_description")),
+				  				"description" => addslashes($this->input->post("description")),
+							    "formula" => addslashes($this->input->post("formula")),
+							  	"product_name_french" => addslashes($this->input->post("product_name_french")),
+							  	"health_claim_french" => addslashes($this->input->post("health_claim_french")),
+							  	"short_description_french" => addslashes($this->input->post("short_description_french")),
+							  	"description_french" => addslashes($this->input->post("description_french")),
+							  	"formula_french" => addslashes($this->input->post("formula_french")),
+							  	"sort_order" => addslashes($this->input->post("sort_order")),
+							  	"isnew" => addslashes($this->input->post("isnew")),
+							  	"filter" => addslashes($this->input->post("filter")),
+							  	"npn" => addslashes($this->input->post("npn")),
+							  	"status" =>  addslashes($this->input->post("status"))) ;	
+			
+			$product_id = $this->model1->insert_rec($attributes, "products") ;
+			
+			$product_categories = $this->input->post("product_categories") ;
+			$food_sensitivities = $this->input->post("food_sensitivities") ;
+			$row_counter = $this->input->post("counter_rows") ;
+			
+			$sku_codes = $this->input->post("sku_code") ;
+			$sizes = $this->input->post("size") ;
+			$sizes_french = $this->input->post("size_french") ;
+			$prices = $this->input->post("price") ;
+			$wholesale_prices = $this->input->post("wholesale_price") ;
+			$weights = $this->input->post("weight") ;
+			$upc = $this->input->post("upc") ;
+			
+			if(!empty($product_categories)) {
+				foreach($product_categories as $rec):
+					$attributes = array("product_id" => $product_id, "category_id" => $rec) ;
+					$this->model1->insert_rec($attributes, "products_categories_relation") ;
+				endforeach ;
+			}
+			if(!empty($food_sensitivities)) {
+				foreach($food_sensitivities as $rec):
+					$attributes = array("product_id" => $product_id, "food_sensitivity_id" => $rec) ;
+					$this->model1->insert_rec($attributes, "products_food_sensitivites_relation") ;
+				endforeach ;
+			}
+			
+			if($row_counter > 0) {
+				for($x = 0 ; $x < $row_counter ; $x++) {
+					$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ; 
+					$this->model1->insert_rec($attributes, "skus") ;
+				}
+			}
+			
+			redirect(base_url()."products/index/".$this->input->post("group_id")."/1") ;
+			
+		} else {
+			redirect(base_url()."products/index") ;
+		}
+	}
+	
+	
+	public function edit_product($product_id = 0)
+	{
+		if($product_id){
+			
+			$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
+			$data["group_rec"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
+			$data["categories_recs"] = $this->model2->get_categories($product_id) ;
+			$data["food_sensitivities_recs"] = $this->model2->get_food_sensitivities($product_id) ;
+			$data["skus_recs"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
+			
+			$data["product_groups"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+			$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
+			$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+			
+			$this->load->view("template/body", array_merge($data, $this->load_view("products/edit_product"))) ;
+			
+		} else {
+			redirect(base_url()."products/index") ;
 		}
 	}
 	
@@ -104,104 +225,39 @@ class Products extends CI_Controller
 				}
 			}
 			
-			redirect(base_url()."products/index") ;
+			redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
 		}
 		else
 			redirect(base_url()."products") ; 
 	}
 	
-	public function edit_product($product_id = 0)
-	{
-		if($product_id){
-			
-			$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
-			$data["group_rec"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
-			$data["categories_recs"] = $this->model2->get_categories($product_id) ;
-			$data["food_sensitivities_recs"] = $this->model2->get_food_sensitivities($product_id) ;
-			$data["skus_recs"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
-			
-			$data["product_groups"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
-			$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
-			$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
-			
-			$this->load->view("template/body", array_merge($data, $this->load_view("products/edit_product"))) ;
-			
-		} else {
-			redirect(base_url()."products/index") ;
-		}
-	}
 	
-	public function add_product()
+	public function remove_product($product_id = 0)
 	{
-		if($_POST)
+		if($product_id)
 		{
-			// Validation Code in the last of this file
-			$attributes = array("product_code" => addslashes($this->input->post("product_code")), 
-						   	    "group_id" => addslashes($this->input->post("group_id")),
-				  				"product_name" => addslashes($this->input->post("product_name")),
-				  				"health_claim" => addslashes($this->input->post("health_claim")),
-				  				"short_description" => addslashes($this->input->post("short_description")),
-				  				"description" => addslashes($this->input->post("description")),
-							    "formula" => addslashes($this->input->post("formula")),
-							  	"product_name_french" => addslashes($this->input->post("product_name_french")),
-							  	"health_claim_french" => addslashes($this->input->post("health_claim_french")),
-							  	"short_description_french" => addslashes($this->input->post("short_description_french")),
-							  	"description_french" => addslashes($this->input->post("description_french")),
-							  	"formula_french" => addslashes($this->input->post("formula_french")),
-							  	"sort_order" => addslashes($this->input->post("sort_order")),
-							  	"isnew" => addslashes($this->input->post("isnew")),
-							  	"filter" => addslashes($this->input->post("filter")),
-							  	"npn" => addslashes($this->input->post("npn")),
-							  	"status" =>  addslashes($this->input->post("status"))) ;	
-			
-			$product_id = $this->model1->insert_rec($attributes, "products") ;
-			
-			$product_categories = $this->input->post("product_categories") ;
-			$food_sensitivities = $this->input->post("food_sensitivities") ;
-			$row_counter = $this->input->post("counter_rows") ;
-			
-			$sku_codes = $this->input->post("sku_code") ;
-			$sizes = $this->input->post("size") ;
-			$sizes_french = $this->input->post("size_french") ;
-			$prices = $this->input->post("price") ;
-			$wholesale_prices = $this->input->post("wholesale_price") ;
-			$weights = $this->input->post("weight") ;
-			$upc = $this->input->post("upc") ;
-			
-			if(!empty($product_categories)) {
-				foreach($product_categories as $rec):
-					$attributes = array("product_id" => $product_id, "category_id" => $rec) ;
-					$this->model1->insert_rec($attributes, "products_categories_relation") ;
-				endforeach ;
-			}
-			if(!empty($food_sensitivities)) {
-				foreach($food_sensitivities as $rec):
-					$attributes = array("product_id" => $product_id, "food_sensitivity_id" => $rec) ;
-					$this->model1->insert_rec($attributes, "products_food_sensitivites_relation") ;
-				endforeach ;
-			}
-			
-			if($row_counter > 0) {
-				for($x = 0 ; $x < $row_counter ; $x++) {
-					$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ; 
-					$this->model1->insert_rec($attributes, "skus") ;
-				}
-			}
-			
-			redirect(base_url()."products/index") ;
-			
-		} else {
+			$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
+			$this->model1->delete_rec(array("product_id" => $product_id), "product_brochure_relation") ;
+			$this->model1->delete_rec(array("product_id" => $product_id), "products_food_sensitivites_relation") ;
+			$this->model1->delete_rec(array("product_id" => $product_id), "products_categories_relation") ;
+			$this->model1->delete_rec(array("id" => $product_id), "products") ;	
+			redirect(base_url()."products/index/0/3") ;
+		}
+		else
+		{
 			redirect(base_url()."products/index") ;
 		}
 	}
 	
-	private function load_view($view)
+	private function load_view($view, $side_menu = false, $message = 0)
 	{
 		$data = array() ;
 		
 		$data["title"] = "InnoviteHealth - Admin: Products" ;
 		$data["current_page"] = "products" ;
-		$data["side_menu"] = false ;
+		$data["side_menu"] = $side_menu ;
+		$data["side_menu_type"] = "products" ;		
+		$data["message"] = $message ;
 		$data["view"] = $view ;
 		
 		return $data ;

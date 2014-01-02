@@ -10,14 +10,14 @@ class Model1 extends CI_Model
     }
 	
 	/****** Insert Record *******/
-	public function insert_rec($params,$tablename)
+	public function insert_rec($params, $tablename)
 	{	
 		$this->db->insert($tablename, $params); 
 		return mysql_insert_id();
 	}
 	
 	/****** Update Record *******/
-	public function update_rec($params,$cond,$tablename)
+	public function update_rec($params, $cond, $tablename)
 	{
 		$fields = '' ;
 		foreach($params as $key=>$value)

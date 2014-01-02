@@ -5,6 +5,8 @@ class Dashboard extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct() ;
+		if($this->session->userdata('logged_in') != TRUE)
+			redirect(base_url()."home") ;
 	}
 	
 	public function index()
@@ -54,6 +56,7 @@ class Dashboard extends CI_Controller
 		$data["title"] = "InnoviteHealth - Admin: Dashboard" ;
 		$data["current_page"] = "dashboard" ;
 		$data["side_menu"] = true ;
+		$data["side_menu_type"] = "" ;
 		$data["view"] = $view ;
 		
 		return $data ;

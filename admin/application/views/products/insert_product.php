@@ -3,7 +3,96 @@
 	<div class="section">
 		<div class="half">
 			<div class="box">
-				<div class="title">Basic Product Details (English)<span class="hide"></span></div>
+				<div class="title">Basic Information<span class="hide"></span></div>
+				<div class="content">
+					<div class="row">
+						<label>Product Code</label>
+						<div class="right"><input type="text" id="product_code" name="product_code" value="" /></div>
+					</div>
+                    <div class="row">
+                        <label>NPN #</label>
+                        <div class="right"><input type="text" id="npn" name="npn" value="" /></div>
+                    </div>
+                    <div class="row">
+                        <label>Sort Order</label>
+                        <div class="right"><input type="text" id="sort_order" name="sort_order" value="" /></div>
+                    </div>
+                    <div class="row">
+						<label>Product Group</label>
+						<div class="right">
+							<select id="group_id" name="group_id" class="big">
+								<?php if($product_groups) { foreach($product_groups as $rec): ?>
+                            		<option value="<?php echo $rec->id ; ?>" <?php if($group_id == $rec->id) echo 'selected="selected"' ; ?>><?php echo stripslashes($rec->group_name) ; ?></option>
+                            	<?php endforeach ; } ?>
+							</select>
+						</div>
+					</div>
+                    <div class="row">
+                        <label>Is New?</label>
+                        <div class="right">
+                            <input type="radio" name="isnew" id="isnew-1" value="Yes" checked="checked" /> 
+                            <label for="isnew-1">Yes</label>
+                            <input type="radio" name="isnew" id="isnew-2" value="No" /> 
+                            <label for="isnew-2">No</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label>Status</label>
+                        <div class="right">
+                            <input type="radio" name="status" id="status-1" value="Active" checked="checked" /> 
+                            <label for="status-1">Active</label>  
+                            <input type="radio" name="status" value="Disable" id="status-2" /> 
+                            <label for="status-2">Disable</label>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+        <div class="half">
+			<div class="box">
+				<div class="title">Categories & Food Sensitivities<span class="hide"></span></div>
+				<div class="content">
+					<div class="row">
+                		<label>Product Category</label>
+                    	
+                    		<?php
+								if($product_categories) {
+									$i = 1 ;
+									foreach($product_categories as $rec):
+										echo '<div class="right">' ;
+										echo '<input type="checkbox" id="product_category-'.$i.'" name="product_categories[]" value="'.stripslashes($rec->id).'"/>' ; 
+										echo '<label for="product_category-'.$i.'">'.stripslashes($rec->category_name).'</label>' ;
+										echo '</div>' ;
+										$i++ ;
+									endforeach ;
+								}
+							?>            
+                   		
+                	</div>
+                    <div class="row">
+                		<label>Food Sensitivities</label>
+                    	<?php
+							if($food_sensitivities) {
+								$i = 1 ;
+								foreach($food_sensitivities as $rec):
+									echo '<div class="right">' ;
+									echo '<input type="checkbox" id="food_sensitivities-'.$i.'" name="food_sensitivities[]" value="'.stripslashes($rec->id).'"/>' ; 
+									echo '<label for="food_sensitivities-'.$i.'">'.stripslashes($rec->name).'</label>' ;
+									echo '</div>' ;
+									$i++ ;
+								endforeach ;
+							}
+						?>
+                	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="section">
+		<div class="half">
+			<div class="box">
+				<div class="title">English Information<span class="hide"></span></div>
 				<div class="content">
 					<div class="row">
 						<label>Product Name</label>
@@ -15,22 +104,22 @@
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><input type="text" id="short_description" name="short_description" value="" /></div>
+						<div class="right"><textarea id="short_description" name="short_description" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea></div>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description" name="description" rows="" cols="" style="height:70px;"></textarea></div>
+						<div class="right"><textarea id="description" name="description" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea></div>
 					</div>
                     <div class="row">
 						<label>Formula</label>
-						<div class="right"><textarea id="formula" name="formula" rows="" cols="" style="height:70px;"></textarea></div>
+						<div class="right"><textarea id="formula" name="formula" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea></div>
 					</div>
 				</div>
 			</div>
 		</div>
         <div class="half">
 			<div class="box">
-				<div class="title">Basic Product Details (French)<span class="hide"></span></div>
+				<div class="title">French Information<span class="hide"></span></div>
 				<div class="content">
 					<div class="row">
 						<label>Product Name</label>
@@ -42,15 +131,15 @@
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><input type="text" id="short_description_french" name="short_description_french" value="" /></div>
+						<div class="right"><textarea id="short_description_french" name="short_description_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea></div>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description_french" name="description_french" rows="" cols="" style="height:70px;"></textarea></div>
+						<div class="right"><textarea id="description_french" name="description_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea></div>
 					</div>
                     <div class="row">
 						<label>Formula</label>
-						<div class="right"><textarea id="formula_french" name="formula_french" rows="" cols="" style="height:70px;"></textarea></div>
+						<div class="right"><textarea id="formula_french" name="formula_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea></div>
 					</div>
 				</div>
 			</div>
@@ -59,75 +148,7 @@
     
     <div class="section">
 		<div class="box">
-			<div class="title">Other Product Details<span class="hide"></span></div>
-			<div class="content">
-            	<div class="row">
-					<label>Product Code</label>
-					<div class="right"><input type="text" id="product_code" name="product_code" value="" /></div>
-				</div>
-                <div class="row">
-					<label>NPN</label>
-					<div class="right"><input type="text" id="npn" name="npn" value="" /></div>
-				</div>
-                <div class="row">
-					<label>Sort Order</label>
-					<div class="right"><input type="text" id="sort_order" name="sort_order" value="" /></div>
-				</div>
-                <div class="row">
-					<label>Product Group</label>
-					<div class="right">
-						<select id="group_id" name="group_id" class="big">
-							<?php if($product_groups) { foreach($product_groups as $rec): ?>
-                            	<option value="<?php echo $rec->id ; ?>"><?php echo stripslashes($rec->group_name) ; ?></option>
-                            <?php endforeach ; } ?>
-						</select>
-					</div>
-				</div>
-                <div class="row">
-					<label>Product Category</label>
-					<div class="right">
-						<select id="product_category" name="product_categories[]" multiple="multiple" size="5" class="multiple">
-							<?php if($product_categories) { foreach($product_categories as $rec): ?>
-                            	<option value="<?php echo $rec->id ; ?>"><?php echo stripslashes($rec->category_name) ; ?></option>
-                            <?php endforeach ; } ?>
-						</select>
-					</div>
-				</div>
-                <div class="row">
-					<label>Food Sensitivities</label>
-					<div class="right">
-						<select id="food_sensitivities" name="food_sensitivities[]" multiple="multiple" size="5" class="multiple">
-							<?php if($food_sensitivities) { foreach($food_sensitivities as $rec): ?>
-                            	<option value="<?php echo $rec->id ; ?>"><?php echo stripslashes($rec->name) ; ?></option>
-                            <?php endforeach ; } ?>
-						</select>
-					</div>
-				</div>
-                <div class="row">
-					<label>Is New?</label>
-					<div class="right">
-						<input type="radio" name="isnew" id="isnew-1" value="Yes" checked="checked" /> 
-						<label for="isnew-1">Yes</label>
-                        <input type="radio" name="isnew" id="isnew-2" value="No" /> 
-						<label for="isnew-2">No</label>
-					</div>
-				</div>
-                <div class="row">
-					<label>Status</label>
-					<div class="right">
-						<input type="radio" name="status" id="status-1" value="Active" checked="checked" /> 
-						<label for="status-1">Active</label>  
-                        <input type="radio" name="status" value="Deactive" id="status-2" /> 
-						<label for="status-2">Deactive</label>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    
-    <div class="section">
-		<div class="box">
-			<div class="title">Skus Detail<span class="hide"></span></div>
+			<div class="title">Sizes and Detials<span class="hide"></span></div>
 			<div class="content">
 				<table id="skus_table" cellspacing="0" cellpadding="0" border="0"> 
 					<thead> 

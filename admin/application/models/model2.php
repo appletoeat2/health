@@ -65,5 +65,21 @@ class Model2 extends CI_Model
 		else 
 			 return 0 ;
 	}
+	
+	public function search_products($search_string)
+	{ 
+		$q = "SELECT * FROM `products` WHERE `product_code` LIKE '%".$search_string."%' OR `product_name` LIKE '%".$search_string."%'" ;
+		//echo $q ; exit ;
+		$query = $this->db->query($q) ;
+		
+		if ($query->num_rows() > 0)
+		{
+			foreach ($query->result() as $row)
+				$data[] =  $row ;
+			return $data ;
+		}
+		else 
+			 return 0 ;
+	}
 }
 ?>

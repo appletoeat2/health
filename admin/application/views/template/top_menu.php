@@ -2,6 +2,9 @@
 	<ul>
     	<li <?php if($current_page == "dashboard") echo 'class="current"' ; ?>><a href="<?php echo base_url()."dashboard/index" ; ?>">Dashboard</a></li> 
 		<li <?php if($current_page == "products") echo 'class="current"' ; ?>><a href="<?php echo base_url()."products/index" ; ?>">Products</a></li>
+        <?php if($this->session->userdata('role') == 'Admin') { ?>
+        	<li <?php if($current_page == "users") echo 'class="current"' ; ?>><a href="<?php echo base_url()."users/index" ; ?>">Users</a></li>
+        <?php } ?>
         <li><a href="#">Other Pages</a>
 			<ul> 
 				<li <?php if($current_page == "ui_elements") echo 'class="current"' ; ?>><a href="<?php echo base_url()."dashboard/uielements" ; ?>">UI Elements</a></li>

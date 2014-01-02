@@ -1,5 +1,3 @@
-var base_url = "http://localhost/health/" ;
-//var base_url = "http://localhost/www.inno-vite.org/health/" ;
 var map ;
 var infoWindow = new google.maps.InfoWindow() ;
 var markersArray = [] ;
@@ -46,6 +44,7 @@ function get_user_location()
 
 function get_nearby_locations(location_data)
 {
+	var base_url = $("#base_url").val() ;
 	$.ajax({
     	type: "POST", 
         url:  base_url+"stores/get_places", 

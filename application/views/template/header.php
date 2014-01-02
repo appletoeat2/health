@@ -59,4 +59,5 @@
      		<input type="text" class="search-text-box2">
     	</form>
 	</div>
+    <input type="hidden" id="base_url" value="<?php echo base_url() ; ?>" />
 </header>

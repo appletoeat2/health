@@ -78,7 +78,7 @@ class Model1 extends CI_Model
 		}
 		
 		$q = "SELECT * FROM `".$tablename."` WHERE ".$conditions."" ;
-		//echo $q ; // exit ;
+		//echo $q ; exit ;
 		$query = $this->db->query($q);
 		
 		if ($query->num_rows() > 0)

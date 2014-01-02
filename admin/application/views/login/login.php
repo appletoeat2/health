@@ -57,21 +57,19 @@
 <script type="text/javascript" src="<?php echo base_url()."javascript/controls/wysiwyg.table.js" ; ?>"></script>
 <script type="text/javascript" src="<?php echo base_url()."javascript/plugins/wysiwyg.rmFormat.js" ; ?>"></script>
 <script type="text/javascript" src="<?php echo base_url()."javascript/costum.js" ; ?>"></script>
-
 </head>
-
 <body>
-	
-    <div id="wrapper" class="login">
-    	<div class="box">
-        	<div class="title">Please login
-			<span class="hide"></span>
-		</div>
+<div id="wrapper" class="login">
+	<div class="box">
+    	<div class="title">LOGIN<span class="hide"></span></div>
 		<div class="content">
-			
-            <div class="message inner blue">
-				<span><b>Information</b>: Click the submit button to proceed.</span>
-			</div>
+			<?php if($error) { if($error == 1) {  ?>
+            	<div class="message inner red"><span><b>Error</b>: Invalid Username/Password.</span></div>
+            <?php } elseif($error == 2) { ?>
+            	<div class="message inner green"><span>New Password is sent to your email address.</span></div>
+            <?php } elseif($error == 2) { ?>
+            	<div class="message inner red"><span><b>Error</b>: Failed to send email.</span></div>
+			<?php } } ?>
             
             <form method="post" action="<?php echo base_url()."home/login" ; ?>">
 				<div class="row">
@@ -84,15 +82,19 @@
 				</div>
 				<div class="row">
 					<div class="right">
-						<button type="submit"><span>Submit</span></button>
-					</div>
+					<button type="submit"><span>Submit</span></button>&nbsp;&nbsp;
+                    <a href="#" id="forget_password">Forget Password</a>
 				</div>
 			</form>
 		</div>
 	</div>
-	
 </div>
-
 </body>
-
-</html> 
+</html>
+<script type="text/javascript">
+$(function(){
+	$("#forget_password").click(function(){
+		window.location.href = "<?php echo base_url()."home/forget_password/" ; ?>" ;
+	}) ;
+}) ;
+</script>

@@ -23,11 +23,114 @@ function id_exists2($id, $recs)
 ?>
 <div id="right">
 <form id="product_form" name="product_form" action="<?php echo base_url()."products/update_product" ; ?>" method="post">
-<input type="text" id="product_id" name="product_id" value="<?php echo $product_detail->id ; ?>" />
+<input type="hidden" id="product_id" name="product_id" value="<?php echo $product_detail->id ; ?>" />
+	<br />
+    <div class="section">
+		<div class="half">
+			<div class="box">
+				<div class="title">Basic Information<span class="hide"></span></div>
+				<div class="content">
+					<div class="row">
+						<label>Product Code</label>
+						<div class="right"><input type="text" id="product_code" name="product_code" value="<?php echo stripslashes($product_detail->product_code) ; ?>" /></div>
+					</div>
+                    
+                    <div class="row">
+                        <label>NPN #</label>
+                        <div class="right"><input type="text" id="npn" name="npn" value="<?php echo stripslashes($product_detail->npn) ; ?>" /></div>
+                    </div>
+                    
+                    <div class="row">
+                        <label>Sort Order</label>
+                        <div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo stripslashes($product_detail->sort_order) ; ?>" /></div>
+                    </div>
+                    
+                    <div class="row">
+						<label>Product Group</label>
+						<div class="right">
+							<select id="group_id" name="group_id" class="big">
+								<?php if($product_groups) { foreach($product_groups as $rec): ?>
+                            		<option value="<?php echo $rec->id ; ?>" <?php if($rec->id == $group_rec->id) echo 'selected="selected"' ; ?>><?php echo stripslashes($rec->group_name) ; ?></option>
+                            	<?php endforeach ; } ?>
+							</select>
+						</div>
+					</div>
+                    
+                   	<div class="row">
+						<label>Is New?</label>
+						<div class="right">
+							<input type="radio" name="isnew" id="isnew-1" value="Yes" <?php if($product_detail->isnew == "Yes") echo 'checked="checked"' ;?>/> 
+							<label for="isnew-1">Yes</label>
+                        	<input type="radio" name="isnew" id="isnew-2" value="No" <?php if($product_detail->isnew == "No") echo 'checked="checked"' ; ?>/>
+							<label for="isnew-2">No</label>
+						</div>
+					</div>
+                    
+                	<div class="row">
+					<label>Status</label>
+                        <div class="right">
+                            <input type="radio" name="status" id="status-1" value="Active" <?php if($product_detail->status == "Active") echo 'checked="checked"' ; ?> /> 
+                            <label for="status-1">Active</label>  
+                            <input type="radio" name="status" value="Disable" id="status-2" <?php if($product_detail->status == "Disable") echo 'checked="checked"' ; ?> /> 
+                            <label for="status-2">Disable</label>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="half">
+			<div class="box">
+				<div class="title">Categories & Food Sensitivities<span class="hide"></span></div>
+				<div class="content">
+					<div class="row">
+                		<label>Product Category</label>
+                    	<?php
+							if($product_categories)
+							{
+								$i = 1 ;
+								foreach($product_categories as $rec):
+									echo '<div class="right">' ;
+									$chkbox = '<input type="checkbox" id="product_category-'.$i.'" name="product_categories[]" value="'.stripslashes($rec->id).'"' ; 
+									if(id_exists1($rec->id, $categories_recs)) $chkbox = $chkbox.' checked="checked" />' ;
+									else  $chkbox = $chkbox.' />' ;
+										
+									echo $chkbox ;
+									echo '<label for="product_category-'.$i.'">'.stripslashes($rec->category_name).'</label>' ;
+									echo '</div>' ;
+									$i++ ;
+								endforeach ;
+							}
+						?>            
+                   	</div>
+                   	<div class="row">
+                		<label>Food Sensitivities</label>
+                    	<?php
+							if($food_sensitivities)
+							{
+								$i = 1 ;
+								foreach($food_sensitivities as $rec):
+									echo '<div class="right">' ;
+									$chkbox = '<input type="checkbox" id="food_sensitivities-'.$i.'" name="food_sensitivities[]" value="'.stripslashes($rec->id).'"' ;
+									if(id_exists1($rec->id, $food_sensitivities_recs)) $chkbox = $chkbox.' checked="checked" />' ;
+									else  $chkbox = $chkbox.' />' ;
+									
+									echo $chkbox ;
+									echo '<label for="food_sensitivities-'.$i.'">'.stripslashes($rec->name).'</label>' ;
+									echo '</div>' ;
+									$i++ ;
+								endforeach ;
+							}
+						?>            
+                   	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
 	<div class="section">
 		<div class="half">
 			<div class="box">
-				<div class="title">Basic Product Details (English)<span class="hide"></span></div>
+				<div class="title">English Information<span class="hide"></span></div>
 				<div class="content">
                 	<div class="row">
 						<label>Product Name</label>
@@ -39,22 +142,22 @@ function id_exists2($id, $recs)
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><input type="text" id="short_description" name="short_description" value="<?php echo stripslashes($product_detail->short_description) ; ?>" /></div>
+						<div class="right"><textarea id="short_description" name="short_description" rows="" cols="" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->short_description) ; ?></textarea></div>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description" name="description" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->description) ; ?></textarea></div>
+						<div class="right"><textarea id="description" name="description" rows="" cols="" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->description) ; ?></textarea></div>
 					</div>
                     <div class="row">
 						<label>Formula</label>
-						<div class="right"><textarea id="formula" name="formula" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->formula) ; ?></textarea></div>
+						<div class="right"><textarea id="formula" name="formula" rows="" cols="" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->formula) ; ?></textarea></div>
 					</div>
 				</div>
 			</div>
 		</div>
         <div class="half">
 			<div class="box">
-				<div class="title">Basic Product Details (French)<span class="hide"></span></div>
+				<div class="title">French Information<span class="hide"></span></div>
 				<div class="content">
 					<div class="row">
 						<label>Product Name</label>
@@ -66,15 +169,15 @@ function id_exists2($id, $recs)
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><input type="text" id="short_description_french" name="short_description_french" value="<?php echo stripslashes($product_detail->short_description_french) ; ?>" /></div>
+                        <div class="right"><textarea id="short_description_french" name="short_description_french" class="wysiwyg" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->short_description_french) ; ?></textarea></div>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description_french" name="description_french" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->description_french) ; ?></textarea></div>
+						<div class="right"><textarea id="description_french" name="description_french" class="wysiwyg" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->description_french) ; ?></textarea></div>
 					</div>
                     <div class="row">
 						<label>Formula</label>
-						<div class="right"><textarea id="formula_french" name="formula_french" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->formula_french) ; ?></textarea></div>
+						<div class="right"><textarea id="formula_french" name="formula_french" class="wysiwyg" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->formula_french) ; ?></textarea></div>
 					</div>
 				</div>
 			</div>
@@ -83,81 +186,7 @@ function id_exists2($id, $recs)
     
     <div class="section">
 		<div class="box">
-			<div class="title">Other Product Details<span class="hide"></span></div>
-			<div class="content">
-            	<div class="row">
-					<label>Product Code</label>
-					<div class="right"><input type="text" id="product_code" name="product_code" value="<?php echo stripslashes($product_detail->product_code) ; ?>" /></div>
-				</div>
-                <div class="row">
-					<label>NPN</label>
-					<div class="right"><input type="text" id="npn" name="npn" value="<?php echo stripslashes($product_detail->npn) ; ?>" /></div>
-				</div>
-                <div class="row">
-					<label>Sort Order</label>
-					<div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo stripslashes($product_detail->sort_order) ; ?>" /></div>
-				</div>
-                <div class="row">
-					<label>Product Group</label>
-					<div class="right">
-						<select id="group_id" name="group_id" class="big">
-                        	<?php if($product_groups) { foreach($product_groups as $rec): ?>
-                            	<option value="<?php echo $rec->id ; ?>" <?php if($rec->id == $group_rec->id) echo 'selected="selected"' ; ?>>
-									<?php echo stripslashes($rec->group_name) ; ?>
-                                </option>
-                            <?php endforeach ; } ?>
-						</select>
-					</div>
-				</div>
-                <div class="row">
-					<label>Product Category</label>
-					<div class="right">
-						<select id="product_category" name="product_categories[]" multiple="multiple" size="5" class="multiple">
-							<?php if($product_categories) { foreach($product_categories as $rec): ?>
-                            	<option value="<?php echo $rec->id ; ?>" <?php if(id_exists1($rec->id, $categories_recs)) echo 'selected="selected"' ; ?>>
-									<?php echo stripslashes($rec->category_name) ; ?>
-                                </option>
-                            <?php endforeach ; } ?>
-						</select>
-					</div>
-				</div>
-                <div class="row">
-					<label>Food Sensitivities</label>
-					<div class="right">
-						<select id="food_sensitivities" name="food_sensitivities[]" multiple="multiple" size="5" class="multiple">
-							<?php if($food_sensitivities) { foreach($food_sensitivities as $rec): ?>
-                            	<option value="<?php echo $rec->id ; ?>" <?php if(id_exists2($rec->id, $food_sensitivities_recs)) echo 'selected="selected"' ; ?>>
-									<?php echo stripslashes($rec->name) ; ?>
-                                </option>
-                            <?php endforeach ; } ?>
-						</select>
-					</div>
-				</div>
-                <div class="row">
-					<label>Is New?</label>
-					<div class="right">
-						<input type="radio" name="isnew" id="isnew-1" value="Yes" <?php if($product_detail->isnew == "Yes") echo 'checked="checked"' ; ?> /> 
-						<label for="isnew-1">Yes</label>
-                        <input type="radio" name="isnew" id="isnew-2" value="No" <?php if($product_detail->isnew == "No") echo 'checked="checked"' ; ?>  /> 
-						<label for="isnew-2">No</label>
-					</div>
-				</div>
-                <div class="row">
-					<label>Status</label>
-					<div class="right">
-						<input type="radio" name="status" id="status-1" value="Active" <?php if($product_detail->status == "Active") echo 'checked="checked"' ; ?> /> 
-						<label for="status-1">Active</label>  
-                        <input type="radio" name="status" value="Deactive" id="status-2" <?php if($product_detail->status == "Disable") echo 'checked="checked"' ; ?> /> 
-						<label for="status-2">Deactive</label>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    
-    <div class="section">
-		<div class="box">
-			<div class="title">Skus Detail<span class="hide"></span></div>
+			<div class="title">Sizes and Detials<span class="hide"></span></div>
 			<div class="content">
 				<table id="skus_table" cellspacing="0" cellpadding="0" border="0"> 
 					<thead> 
@@ -172,9 +201,9 @@ function id_exists2($id, $recs)
                             <th>Remove</th>
 						</tr>
 					</thead>
+                    <tbody>
                     <?php if($skus_recs) { $i = 1 ; ?>
-					<tbody>
-                    	<?php foreach($skus_recs as $rec): ?>
+						<?php foreach($skus_recs as $rec): ?>
 						<tr id="row_<?php echo $i ; ?>">
 							<td><input type="text" id="sku_code<?php echo $i ; ?>" name="sku_code[]" value="<?php echo stripslashes($rec->sku_code) ; ?>" class="intable"/></td>
                             <td><input type="text" id="size<?php echo $i ; ?>" name="size[]" value="<?php echo stripslashes($rec->size) ; ?>" class="intable"/></td>
@@ -186,9 +215,12 @@ function id_exists2($id, $recs)
                             <td><a class="remove_link" href="javascript:void(0);" row_id="<?php echo $i ; ?>">Remove</a></td>
                         </tr>
                         <?php $i++ ; endforeach ; ?>
-                   	</tbody>
                     <?php } ?>
-				</table>
+					    <tr>
+							<td colspan="8"><a id="add_sku_row" href="javascript:void(0);">Add New Sku</a></td>
+						</tr>
+                	</tbody>
+                </table>
                 <input type="hidden" id="current_rows" name="current_rows" value="<?php echo $i-- ; ?>" />
                 <input type="hidden" id="counter_rows" name="counter_rows" value="<?php echo $i-- ; ?>" />
         	</div>

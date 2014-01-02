@@ -7,12 +7,23 @@ class Products extends CI_Controller
 		parent::__construct() ;
 	}
 	
-	public function index($category_id)
+	public function index($arg = 0)
 	{
-		$data["categories"] = $this->model1->get_one(array("cat_id" => $category_id), "categories") ;
-		$data["products"] = $this->model1->get_all_cond_orderby(array("cat_id" => $category_id), "products", "sort_order", "ASC") ;
+		$data["products"] = $this->model2->get_all_products() ;
 		
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/index", "wrap", $category_id)));
+		$data["product_group_recs"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["product_category_recs"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
+		$data["food_sensitivity_recs"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+		
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/index", "wrap", 0)));
+	}
+	
+	public function group_product($category_id)
+	{
+		$data["categories"] = $this->model1->get_one(array("id" => $category_id), "product_groups") ;
+		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $category_id), "products", "sort_order", "ASC") ;
+		
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $category_id)));
 	}
 	
 	public function product_details($category_id, $product_id)

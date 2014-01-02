@@ -58,5 +58,6 @@
 <script src="<?php echo base_url() ; ?>javascript/bootstrap-alert.js"></script>
 <script src="<?php echo base_url() ; ?>javascript/bootstrap-dropdown.js"></script>
 <script src="<?php echo base_url() ; ?>javascript/bootstrap-tab.js"></script>
+<script src="<?php echo base_url() ; ?>javascript/products_filter.js"></script>
 </body>
 </html>

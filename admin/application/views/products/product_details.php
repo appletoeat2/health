@@ -140,15 +140,15 @@ function id_exists2($id, $recs)
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><textarea id="short_description" name="short_description" disabled="disabled" rows="" cols="" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->short_description) ; ?></textarea></div>
+						<br /><br /><textarea id="short_description" name="short_description" disabled="disabled" rows="" cols="" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->short_description) ; ?></textarea>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description" name="description" rows="" cols="" disabled="disabled" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->description) ; ?></textarea></div>
+						<br /><br /><textarea id="description" name="description" rows="" cols="" disabled="disabled" class="wysiwyg" style="height:70px;"><?php echo stripslashes($product_detail->description) ; ?></textarea>
 					</div>
                     <div class="row">
 						<label>Formula</label>
-						<div class="right"><textarea id="formula" name="formula" rows="" cols="" class="wysiwyg" disabled="disabled" style="height:70px;"><?php echo stripslashes($product_detail->formula) ; ?></textarea></div>
+						<br /><br /><textarea id="formula" name="formula" rows="" cols="" class="wysiwyg" disabled="disabled" style="height:70px;"><?php echo stripslashes($product_detail->formula) ; ?></textarea>
 					</div>
 				</div>
 			</div>
@@ -167,15 +167,15 @@ function id_exists2($id, $recs)
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-                        <div class="right"><textarea id="short_description_french" name="short_description_french" disabled="disabled" class="wysiwyg" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->short_description_french) ; ?></textarea></div>
+                        <br /><br /><textarea id="short_description_french" name="short_description_french" disabled="disabled" class="wysiwyg" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->short_description_french) ; ?></textarea>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description_french" name="description_french" class="wysiwyg" disabled="disabled" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->description_french) ; ?></textarea></div>
+						<br /><br /><textarea id="description_french" name="description_french" class="wysiwyg" disabled="disabled" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->description_french) ; ?></textarea>
 					</div>
                     <div class="row">
 						<label>Formula</label>
-						<div class="right"><textarea id="formula_french" name="formula_french" class="wysiwyg" disabled="disabled" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->formula_french) ; ?></textarea></div>
+						<br /><br /><textarea id="formula_french" name="formula_french" class="wysiwyg" disabled="disabled" rows="" cols="" style="height:70px;"><?php echo stripslashes($product_detail->formula_french) ; ?></textarea>
 					</div>
 				</div>
 			</div>

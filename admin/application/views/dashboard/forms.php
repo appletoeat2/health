@@ -259,7 +259,7 @@
 			<div class="title">WYSIWYG<span class="hide"></span></div>
 			<div class="content nopadding">
 				<form action="">
-					<textarea rows="" cols="" class="wysiwyg" style="height : 100px;"></textarea>
+					<textarea rows="100" cols="" class="wysiwyg" style="height : 100px;"></textarea>
 				</form>
 			</div>
 		</div>

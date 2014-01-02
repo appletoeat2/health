@@ -104,15 +104,15 @@
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><textarea id="short_description" name="short_description" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea></div>
+						<br /><br /><textarea id="short_description" name="short_description" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description" name="description" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea></div>
+						<br /><br /><textarea id="description" name="description" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea>
 					</div>
                     <div class="row">
-						<label>Formula</label>
-						<div class="right"><textarea id="formula" name="formula" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea></div>
+						<label>Formula <a href="javascript:void(0);" class="modalopen">Help!</a></label>
+						<br /><br /><textarea id="formula" name="formula" rows="" cols="" class="wysiwyg" style="height:70px;"></textarea>
 					</div>
 				</div>
 			</div>
@@ -131,15 +131,15 @@
 					</div>
 					<div class="row">
 						<label>Short Description</label>
-						<div class="right"><textarea id="short_description_french" name="short_description_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea></div>
+						<br /><br /><textarea id="short_description_french" name="short_description_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea>
 					</div>
                     <div class="row">
 						<label>Description</label>
-						<div class="right"><textarea id="description_french" name="description_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea></div>
+						<br /><br /><textarea id="description_french" name="description_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea>
 					</div>
                     <div class="row">
-						<label>Formula</label>
-						<div class="right"><textarea id="formula_french" name="formula_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea></div>
+						<label>Formula <a href="javascript:void(0);" class="modalopen">Help!</a></label>
+						<br /><br /><textarea id="formula_french" name="formula_french" class="wysiwyg" rows="" cols="" style="height:70px;"></textarea>
 					</div>
 				</div>
 			</div>
@@ -199,6 +199,10 @@
 		</div>
 	</div>
 </form>    
+</div>
+<div class="modal" title="Instructions">
+    <p>To insert a tables use the following syntax.</p>
+    <p>[table]<br />item|5ml<br />item|5ml<br />[endtable]</p>
 </div>
 <script type="text/javascript">
 $(function(){

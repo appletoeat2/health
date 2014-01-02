@@ -11,8 +11,8 @@
 				if($rec->group_id != $group_id)
 				{
 					$group_id = $rec->group_id ;
-					if($loop == 1) echo '<div id="group_'.$rec->group_id.'" class="group_div"><h2>'.$loop.'. '.$rec->group_name.'</h2><hr class="vertical-space3">' ;
-					else echo '<hr class="vertical-space3"></div><div id="group_'.$rec->group_id.'" class="group_div"><h2>'.$loop.'. '.$rec->group_name.'</h2><hr class="vertical-space3">' ;
+					if($loop == 1) echo '<div id="group_'.$rec->group_id.'" class="group_div"><h2>'.$rec->group_name.'</h2><hr class="vertical-space3">' ;
+					else echo '<hr class="vertical-space3"></div><div id="group_'.$rec->group_id.'" class="group_div"><h2>'.$rec->group_name.'</h2><hr class="vertical-space3">' ;
 				}
 		?>
     		<div id="product<?php echo $rec->product_id ; ?>" class="product_item" food_sensitivities="<?php echo $rec->food_sensitivities_id ; ?>" categories="<?php echo $rec->categories_id ; ?>">

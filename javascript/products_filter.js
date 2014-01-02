@@ -14,16 +14,18 @@ $(function(){
 			var _id = "#"+"group_"+($(this).attr("id")) ;
 			$("#main_product_group").attr("checked", false) ;
 			$(".group_div").css("display", "none") ;
+			
 			$(".product_group").each(function(){
 				if($(this).attr("checked"))
-					$(_id).css("display", "block") ;
+					var _id1 = "#"+"group_"+($(this).attr("id")) ;
+					$(_id1).css("display", "block") ;
 			}) ;
+			display_group() ;
+			
 		} else {
 			var _id = "#"+"group_"+($(this).attr("id")) ;
         	$(_id).css("display", "none") ;
         }
-		
-		display_group() ;
 	});
 	
 	

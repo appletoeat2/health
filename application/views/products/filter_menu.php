@@ -5,9 +5,9 @@
             	<?php
 				if($product_group_recs) 
 				{
-					echo '<li><input type="checkbox" id="main_product_group" name="" class="" checked="checked" /><a href="javascript:void(0);">View All</a></li>' ;
+			echo '<li><input type="checkbox" id="main_product_group" name="" class="" checked="checked" /><a href="javascript:void(0);">View All</a></li>' ;
 					foreach($product_group_recs as $rec):
-						echo '<li><input type="checkbox" id="'.$rec->id.'" name="" class="product_group" checked="checked" /><a href="javascript:void(0);">'.$rec->group_name.'</a></li>' ;
+						echo '<li><input type="checkbox" id="'.$rec->id.'" name="" class="product_group" /><a href="javascript:void(0);">'.$rec->group_name.'</a></li>' ;
 					endforeach ;
 				}
 				?>
@@ -21,9 +21,9 @@
             	<?php
 				if($product_category_recs) 
 				{
-					echo '<li><input type="checkbox" id="main_categories" name="" class="" checked="checked" /><a href="javascript:void(0);">View All</a></li>' ;
+		//echo '<li><input type="checkbox" id="main_categories" name="" class="" checked="checked" /><a href="javascript:void(0);">View All</a></li>' ;
 					foreach($product_category_recs as $rec):
-						echo '<li><input type="checkbox" id="'.$rec->id.'" name="" class="product_category" checked="checked" /><a href="javascript:void(0);">'.$rec->category_name.'</a></li>' ;
+						echo '<li><input type="checkbox" id="'.$rec->id.'" name="" class="product_category" /><a href="javascript:void(0);">'.$rec->category_name.'</a></li>' ;
 					endforeach ;
 				}
 				?>
@@ -37,9 +37,9 @@
                 <?php
 				if($food_sensitivity_recs) 
 				{
-					echo '<li><input type="checkbox" id="main_food_sensitivites" name="" class="" checked="checked" /><a href="javascript:void(0);">View All</a></li>' ;
+		//echo '<li><input type="checkbox" id="main_food_sensitivites" name="" class="" checked="checked" /><a href="javascript:void(0);">View All</a></li>' ;
 					foreach($food_sensitivity_recs as $rec):
-						echo '<li><input type="checkbox" id="'.$rec->id.'" name="" class="food_sensitivity" checked="checked" /><a href="javascript:void(0);">'.$rec->name.'</a></li>' ;
+						echo '<li><input type="checkbox" id="'.$rec->id.'" name="" class="food_sensitivity" /><a href="javascript:void(0);">'.$rec->name.'</a></li>' ;
 					endforeach ;
 				}
 				?>

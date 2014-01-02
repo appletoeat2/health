@@ -1,5 +1,6 @@
 <div id="right">
 	<div class="section">
+    <?php show_message($message) ; ?>
     	<div class="box">
             <div class="title">Products<span class="hide"></span></div>
             <div class="content">
@@ -20,12 +21,12 @@
                     <?php foreach($products as $rec): ?>
 						<tr>
 							<td><?php echo stripslashes($rec->product_name) ; ?></td>
-							<td><?php echo stripslashes($rec->product_code) ; ?></td>
+							<td><a href="<?php echo base_url()."products/product_detail/".$rec->id ; ?>"><?php echo stripslashes($rec->product_code) ; ?></a></td>
 							<td><?php echo stripslashes($rec->health_claim) ; ?></td>
 							<td><?php echo stripslashes($rec->isnew) ; ?></td>
 							<td><?php echo stripslashes($rec->status) ; ?></td>
 							<td><?php echo stripslashes($rec->sort_order) ; ?></td>
-							<td><a href="<?php echo base_url()."products/product_detail/".$rec->id ; ?>">View</a> - <a href="<?php echo base_url()."products/edit_product/".$rec->id ; ?>">Edit</a></td>
+							<td><a href="<?php echo base_url()."products/edit_product/".$rec->id ; ?>">Edit</a> - <a href="<?php echo base_url()."products/remove_product/".$rec->id ; ?>" onclick="return confirm('Are you sure to remove this record?');">Remove</a></td>
 						</tr>
                     <?php endforeach ; ?>
 					</tbody>
@@ -42,10 +43,20 @@
 		</div>
 	</div>
 </div>
+</div>
 <script type="text/javascript">
 $(function(){
 	$("#add_new_product").click(function(){
-		window.location.href = "<?php echo base_url()."products/insert_product" ; ?>" ;
+		window.location.href = "<?php echo base_url()."products/insert_product/".$group_id ; ?>" ;
 	}) ;
 }) ;
 </script>
+
+<?php
+function show_message($message)
+{
+	if($message == 1) echo '<div class="message green"><span><b>Succes</b>: Product record added successfully.</span></div>' ;
+	elseif($message == 2) echo '<div class="message green"><span><b>Succes</b>: Product record updated successfully.</span></div>' ;
+	elseif($message == 3) echo '<div class="message green"><span><b>Succes</b>: Product record removed successfully.</span></div>' ;
+}
+?>

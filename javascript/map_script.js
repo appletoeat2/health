@@ -19,9 +19,10 @@ function build_tr(retailor_name, address1, city, provience, postal_code, telepho
 	var t_add = address1 + " " + city + " " + provience + " " + postal_code ;
 	var rec = '' ;
 	rec = rec + '<tr>' ;
-	rec = rec + '<td style="width:25%; text-align:top;"><h6>'+ retailor_name +'</h6></td>' ; 
-	rec = rec + '<td class="text" style="width:35%;">'+ address1 +'<br /><br />'+ city +', '+ provience + ', ' + postal_code +'. Ph:'+telephone+'</td>' ;
-	rec = rec + '<td class="text" style="width:25%;"><a href="https://maps.google.ca/maps?saddr=&daddr=' + t_add+ '" target="_blank">Directions</a>' ;
+	rec = rec + '<td style="width:20%; text-align:top;"><h6>'+ retailor_name +'</h6></td>' ;
+	rec = rec + '<td style="width:20%; text-align:top;">Ph: '+telephone+'</td>' ;
+	rec = rec + '<td class="text" style="width:25%;">'+ address1 +'<br /><br />'+ city +', '+ provience + ', ' + postal_code +'</td>' ;
+	rec = rec + '<td class="text" style="width:20%;"><a href="https://maps.google.ca/maps?saddr=&daddr=' + t_add+ '" target="_blank">Directions</a>' ;
 	if(website != "") rec = rec + ' | <a href="'+ website +'" target="_blank">Website</a></td>' ; 
 	rec = rec + '<td class="text" style="width:15%;">'
 	
@@ -138,10 +139,11 @@ $(function(){
 					radius: radius * 1000 
 				} ;
 				
-				var cityCircle = new google.maps.Circle(StoreLocations) ;
-				_Circle = cityCircle ;
+				var searchCircle = new google.maps.Circle(StoreLocations) ;
+				_Circle = searchCircle ;
 				flag1 = 1 ;
-				map.fitBounds(cityCircle.getBounds()) ;
+				
+				map.fitBounds(searchCircle.getBounds()) ;
 				
       		} else {
         		alert("Geocode was not successful for the following reason: " + status);
@@ -181,7 +183,17 @@ function initialize()
 			var response = "" ;
     		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng()} ;
 			var map_markers = get_nearby_locations(location_data) ;
+			
+			//show_bounds(temp_bounds_1) ;
+			//show_bounds(map.getBounds()) ;
 		}
 	}) ;
 	/**/	
+}
+
+function show_bounds(bounds)
+{
+	var NE = bounds.getNorthEast();
+	var SW = bounds.getSouthWest();
+	alert("latitude1: " + NE.lat() + " logitude1: " + NE.lng() + " latitude2: " + SW.lat() + " logitude2: " + SW.lng()) ;
 }

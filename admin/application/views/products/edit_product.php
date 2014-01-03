@@ -22,7 +22,7 @@ function id_exists2($id, $recs)
 }
 ?>
 <div id="right">
-<form id="product_form" name="product_form" action="<?php echo base_url()."products/update_product" ; ?>" method="post">
+<form id="product_form" name="product_form" action="<?php echo base_url()."products/update_product" ; ?>" method="post" enctype="multipart/form-data">
 <input type="hidden" id="product_id" name="product_id" value="<?php echo $product_detail->id ; ?>" />
 	<br />
     <div class="section">
@@ -122,6 +122,18 @@ function id_exists2($id, $recs)
 							}
 						?>            
                    	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    <div class="section">
+		<div class="box">
+			<div class="title">Checkboxes, radiobuttons and file upload<span class="hide"></span></div>
+			<div class="content">
+				<div class="row">
+					<label>File upload</label>
+					<div class="right"><input type="file" /></div>
 				</div>
 			</div>
 		</div>

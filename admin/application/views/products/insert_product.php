@@ -1,5 +1,5 @@
 <div id="right">
-<form id="product_form" name="product_form" action="<?php echo base_url()."products/add_product" ; ?>" method="post">
+<form id="product_form" name="product_form" action="<?php echo base_url()."products/add_product" ; ?>" method="post" enctype="multipart/form-data">
 	<div class="section">
 		<div class="half">
 			<div class="box">
@@ -89,6 +89,19 @@
 		</div>
 	</div>
     
+    <div class="section">
+		<div class="box">
+			<div class="title">Product Image<span class="hide"></span></div>
+			<div class="content">
+				<div class="row">
+                    <label>File upload</label>
+					<div class="right">
+                    	<input type="file" id="product_file" name="product_file" />
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
     <div class="section">
 		<div class="half">
 			<div class="box">

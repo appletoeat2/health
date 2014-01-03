@@ -9,7 +9,8 @@ class Stores extends CI_Controller
 	
 	public function index()
 	{
-		$this->load->view('template/body', $this->load_data("stores/index"));
+		$data["cities"] = $this->model1->get_all_cond(array("country" => "CA"), "cities") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("stores/index"))) ;
 	}
 	
 	private function load_data($view)

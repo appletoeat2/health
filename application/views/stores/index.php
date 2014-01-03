@@ -8,27 +8,26 @@
     <hr class="vertical-space2">
     
     <section class="sixteen columns">
-    <h2>Find a Innovite Health Retailer Near You</h2>
+    <h2>Retailer Locator</h2>
         <div class="one_fourth">
         	<label class="vertical-space2" for="address">Address: </label><input type="text" id="address" name="address" value="" />
 		</div>
         <div class="one_fourth">
             <label class="vertical-space2" for="city_name_dropdown">City: </label>
             <select id="city_name_dropdown"  name="city_name_dropdown">
-                <?php $this->load->view("stores/cities") ; ?>
+            	<option value="">--Search By City--</option>
+                <?php if($cities) { foreach($cities as $rec): ?>
+					<option value="<?php echo $rec->city.", ".$rec->state ?>"><?php echo $rec->city.", ".$rec->state ?></option>
+				<?php endforeach ; }?>
             </select>
         </div>
         <div class="one_fourth">
             <label class="vertical-space2" for="radius">Radius: </label>
             <select id="radius" name="radis">
                 <option value="1">1 KM</option>
-                <option value="5">5 KM</option>
+                <option value="5" selected="selected">5 KM</option>
                 <option value="10">10 KM</option>
                 <option value="25">25 KM</option>
-                <option selected value="50">50 KM</option>
-                <option value="100">100 KM</option>
-                <option value="200">200 KM</option>
-                <option value="500">500 KM</option>
             </select>
 		</div>
         
@@ -37,14 +36,15 @@
     	</div>
         
 	</section>
-    <section class="sixteen columns">
-            <div id="googleMap" style="height:380px; width:100%;"></div>
+    
+    <div id="googleMap" style="height:380px; width:100%;"></div>
 		<br />
         <br />
-    	<table id="location_details_table" class="table table-hover">
-        	<tbody>
-        	</tbody>
-    	</table>
+    <section class="sixteen columns">
+    <table id="location_details_table" class="table table-hover">
+    	<tbody>
+        </tbody>
+    </table>
     </section>
     <hr class="vertical-space2">
 </section>

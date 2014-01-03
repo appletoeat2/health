@@ -9,19 +9,20 @@
     
     <section class="sixteen columns">
     <h2>Retailer Locator</h2>
-        <div class="one_fourth">
+        <div class="one_third">
         	<label class="vertical-space2" for="address">Address: </label><input type="text" id="address" name="address" value="" />
 		</div>
+        <!--
         <div class="one_fourth">
             <label class="vertical-space2" for="city_name_dropdown">City: </label>
             <select id="city_name_dropdown"  name="city_name_dropdown">
             	<option value="">--Search By City--</option>
-                <?php if($cities) { foreach($cities as $rec): ?>
-					<option value="<?php echo $rec->city.", ".$rec->state ?>"><?php echo $rec->city.", ".$rec->state ?></option>
-				<?php endforeach ; }?>
+                <?php // if($cities) { foreach($cities as $rec): ?>
+					<option value="<?php // echo $rec->city.", ".$rec->state ?>"><?php // echo $rec->city.", ".$rec->state ?></option>
+				<?php // endforeach ; }?>
             </select>
-        </div>
-        <div class="one_fourth">
+        </div>-->
+        <div class="one_third">
             <label class="vertical-space2" for="radius">Radius: </label>
             <select id="radius" name="radis">
                 <option value="1">1 KM</option>
@@ -31,7 +32,7 @@
             </select>
 		</div>
         
-        <div class="one_fourth column-last">   
+        <div class="one_third column-last">   
     		<input type="button" id="submit_button" value="Search Locations" />
     	</div>
         

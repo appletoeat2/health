@@ -56,7 +56,7 @@ class Stores extends CI_Controller
 									"province" => $row->province,
 									"postal_code" => $row->postal_code,
 									"website" => $row->website,
-									"telephone" => $row->telephone,
+									"telephone" => format_number($row->telephone),
 									"ecommerce" => $row->ecommerce,
 									"facebook" => $row->facebook,
 									"twitter" => $row->twitter,

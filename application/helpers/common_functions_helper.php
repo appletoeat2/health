@@ -40,6 +40,15 @@ if ( ! function_exists('send_email_message'))
 	}
 } /**/
 
+if(!function_exists('format_number'))
+{
+	function format_number($phone)
+	{
+		$numbers_only = preg_replace("/[^\d]/", "", $phone);
+		return preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "($1) $2-$3", $numbers_only);
+	}
+}
+
 if ( ! function_exists('date_difference'))
 {
 	function date_difference($date1, $date2)

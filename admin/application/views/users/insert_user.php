@@ -14,23 +14,23 @@
            	<?php } ?>
             	<div class="row"> 
 					<label>Name</label>
-					<div class="right"><input type="text" id="name" name="name" value="<?php echo set_value('name') ; ?>" /></div>
+					<div class="right"><input type="text" id="name" name="name" value="<?php echo set_value("name") ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Email Address</label>
-					<div class="right"><input type="text" id="email_address" name="email_address" value="<?php echo set_value('email_address') ; ?>" /></div>
+					<div class="right"><input type="text" id="email_address" name="email_address" value="<?php echo set_value("email_address") ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Username</label>
-					<div class="right"><input type="text" id="username" name="username" value="<?php echo set_value('username') ; ?>" /></div>
+					<div class="right"><input type="text" id="username" name="username" value="<?php echo set_value("username") ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Password</label>
-					<div class="right"><input type="password" id="password" name="password" value="<?php echo set_value('password') ; ?>" /></div>
+					<div class="right"><input type="password" id="password" name="password" value="<?php echo set_value("password") ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Confirm Password</label>
-					<div class="right"><input type="password" id="confirm_password" name="confirm_password" value="<?php echo set_value('confirm_password') ; ?>" /></div>
+					<div class="right"><input type="password" id="confirm_password" name="confirm_password" value="<?php echo set_value("confirm_password") ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Role</label>

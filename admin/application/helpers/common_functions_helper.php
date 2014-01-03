@@ -51,106 +51,40 @@ if ( ! function_exists('get_random_string'))
 		return random_string('alnum', $length) ;
 	}
 }
-
-if ( ! function_exists('get_root_path'))
+if ( ! function_exists('form_validation_function'))
 {
-	function get_root_path($directory)
+	function form_validation_function($form_elements)
 	{
 		$CI =& get_instance() ;
-		$CI->load->model('model1') ;
+		$CI->load->library("form_validation") ;
 		
-		$cond1["id"] = 1 ;
-		$rec = $CI->model1->get_one($cond1, "root_paths") ;
-		$root_path = $rec->path ;
+		$CI->form_validation->set_error_delimiters("<li>", "</li>") ;
 		
-		if($_SERVER['HTTP_HOST'] == 'localhost')
-		{
-			$uploaddir = $_SERVER["DOCUMENT_ROOT"]."te".$root_path.$directory."/" ;
-		}
+		foreach($form_elements as $rec => $val):
+			$res = explode("&", $val);
+			$CI->form_validation->set_rules($rec, $res[0], $res[1]) ;
+		endforeach ;
+		if ($CI->form_validation->run() == FALSE)
+			return FALSE ;
 		else
+			return TRUE ;
+	}
+}
+
+if ( ! function_exists('post_data'))
+{
+	function post_data($data) 
+	{
+		$CI =& get_instance() ;
+		$CI->load->library("input") ;
+		
+		$post_data = array() ;
+  		if($data)
 		{
-			$uploaddir = $_SERVER["DOCUMENT_ROOT"].$root_path.$directory."/" ;
-		}
-		
-		return $uploaddir ;
-    }
-}
-
-if ( ! function_exists('get_image_path'))
-{
-	function get_image_path($directory)
-	{
-		$CI =& get_instance() ;
-		$CI->load->model('model1') ;
-		
-		$cond1["id"] = 1 ;
-		$rec = $CI->model1->get_one($cond1, "root_paths") ;
-		$root_path = $rec->path ;
-		
-		$uploaddir = base_url().$root_path.$directory."/" ;
-		return $uploaddir ;
-    }
-}
-
-if ( ! function_exists('get_date_diff'))
-{
-	function get_date_diff($date1, $date2)
-	{
-		$CI =& get_instance() ;
-		$CI->load->model('model1') ;
-		
-		$date_diff = $CI->model2->get_date_diff($date1, $date2) ;
-	if($date_diff){
-	
-	return intval($date_diff->DiffDate) ;
-	} else return 0 ;
-   }
-}
-
-if ( ! function_exists('get_due_amount'))
-{
-	function get_due_amount($order_id, $customer_id)
-	{
-		$CI =& get_instance() ;
-		$CI->load->model('model1') ;
-		
-		$cond1["id"] = $order_id ;
-		$order = $CI->model1->get_one($cond1, "orders") ;
-		
-		$net = floatval($order->invoice_amount) ;
-		
-		$cond2["order_id"] = $order_id ;
-		$cond2["customer_id"] = $customer_id ;
-		$order_recs = $CI->model1->get_all_cond($cond2, "transactions") ;
-		
-		if($order_recs){
-			foreach($order_recs as $rec):
-				if($rec->transaction_type == "Credit_Note")
-					$net = $net - floatval($rec->transaction_amount) ;
-				elseif($rec->transaction_type == "Payment")
-					$net = $net - floatval($rec->transaction_amount) ;
-				elseif($rec->transaction_type == "Add_Back")
-					$net = $net + floatval($rec->transaction_amount) ;
+			foreach($data as $attri => $value):
+				$post_data[$attri] = addslashes($CI->input->post($value)) ;
 			endforeach ;
 		}
-		
-		return $net ;
-    }
-}
-
-if ( ! function_exists('get_decimal_number_format'))
-{
-	function get_decimal_number_format($number)
-	{
-		return number_format($number, 2, '.', '');
-    }
-}
-
-if ( ! function_exists('create_email_address'))
-{
-	function create_email_address($email1, $email2)
-	{
-		if($email2 != "") return $email1.", ".$email2 ;
-    	else return $email1 ;
+		return $post_data ;
 	}
 }

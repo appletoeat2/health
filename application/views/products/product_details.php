@@ -107,12 +107,12 @@
 	<div class="one_third column-last"> 
     	<div class="portfolio">
       		<script src="<?php echo base_url() ; ?>javascript/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-        	<a href="<?php echo base_url()."images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">
-            	<img src="<?php echo base_url()."images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" border="0"/>
+        	<a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">
+            	<img src="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" border="0"/>
             </a>
           	<section id="side-nav" class="five columns">
             	<ul>
-              		<li><a href="<?php echo base_url()."images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">Click Here for a Larger View</a></li>
+              		<li><a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">Click Here for a Larger View</a></li>
               		<?php if($brochure) ?>
                 	<li><a href="<?php echo base_url()."products/product_brochures/".$brochure->en_file ; ?>" target="_blank">Download The Brochure</a></li>
             	</ul>
@@ -128,7 +128,7 @@
 	<h4 class="subtitle">Related Products</h4>
     <ul id="our-clients" class="our-clients tooltips top">
 		<?php if($related_products) foreach($related_products as $rec): ?>
-        	<li><a href="<?php echo base_url()."products/product_details/".$rec->cat_id."/".$rec->prod_id ; ?>" rel="help" title="<?php echo $rec->health_claim_en ; ?>"><img src="<?php echo base_url()."images/prod_images/small/".$rec->prod_id.".jpg" ; ?>"></a></li>
+        	<li><a href="<?php echo base_url()."products/product_details/".$rec->cat_id."/".$rec->prod_id ; ?>" rel="help" title="<?php echo $rec->health_claim_en ; ?>"><img src="<?php echo base_url()."admin/images/prod_images/small/".$rec->prod_id.".jpg" ; ?>"></a></li>
 		<?php endforeach ; ?>
 	</ul>
 </div><!-- Our-Clients-end --> 

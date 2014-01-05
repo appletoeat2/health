@@ -17,7 +17,7 @@
 		?>
     		<div id="product<?php echo $rec->product_id ; ?>" class="product_item" food_sensitivities="<?php echo $rec->food_sensitivities_id ; ?>" categories="<?php echo $rec->categories_id ; ?>">
 				<div class="img-item center" style="text-align:center">
-                	<img src="<?php echo base_url()."images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" alt="">
+                	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" alt="">
                 </div>
     			<div class="product_title"><p style="text-align:center"><?php echo $rec->product_name ; ?></p></div>
 			</div>

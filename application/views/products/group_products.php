@@ -30,7 +30,7 @@
           		<figure class="portfolio-item three columns entry <?php echo $rec->filter ; ?> -item">
                 	<div class="img-item centre" style="text-align: center">
                 		<a href="<?php echo base_url()."products/product_details/".$categories->cat_id."/".$rec->prod_id ; ?>">
-                        	<img src="<?php echo base_url()."images/prod_images/small/".strtolower($rec->prod_id).".jpg" ; ?>" border="1" />
+                        	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->prod_id).".jpg" ; ?>" border="1" />
                     	</a>
              		</div>
             	

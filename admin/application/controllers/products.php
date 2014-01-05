@@ -335,54 +335,54 @@ class Products extends CI_Controller
 					
 					$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
 				
-				$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french")) ;
-				
-				$product_id = $this->input->post("product_id") ;
-				$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
-				
-				$product_categories = $this->input->post("product_categories") ;
-				$food_sensitivities = $this->input->post("food_sensitivities") ;
-				
-				$this->model1->delete_rec(array("product_id" => $product_id), "products_categories_relation") ;
-				$this->model1->delete_rec(array("product_id" => $product_id), "products_food_sensitivites_relation") ;
-				
-				if(!empty($product_categories))
-				{
-					foreach($product_categories as $rec):
-						$attributes = array("product_id" => $product_id, "category_id" => $rec) ;
-						$this->model1->insert_rec($attributes, "products_categories_relation") ;
-					endforeach ;
-				}
-				
-				if(!empty($food_sensitivities))
-				{
-					foreach($food_sensitivities as $rec):
-						$attributes = array("product_id" => $product_id, "food_sensitivity_id" => $rec) ;
-						$this->model1->insert_rec($attributes, "products_food_sensitivites_relation") ;
-					endforeach ;
-				}
-				
-				$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
-				
-				$row_counter = $this->input->post("counter_rows") ;
-				$sku_codes = $this->input->post("sku_code") ;
-				$sizes = $this->input->post("size") ;
-				$sizes_french = $this->input->post("size_french") ;
-				$prices = $this->input->post("price") ;
-				$wholesale_prices = $this->input->post("wholesale_price") ;
-				$weights = $this->input->post("weight") ;
-				$upc = $this->input->post("upc") ;
-				
-				if($row_counter > 0)
-				{
-					for($x = 0 ; $x < $row_counter ; $x++)
+					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french")) ;
+					
+					$product_id = $this->input->post("product_id") ;
+					$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
+					
+					$product_categories = $this->input->post("product_categories") ;
+					$food_sensitivities = $this->input->post("food_sensitivities") ;
+					
+					$this->model1->delete_rec(array("product_id" => $product_id), "products_categories_relation") ;
+					$this->model1->delete_rec(array("product_id" => $product_id), "products_food_sensitivites_relation") ;
+					
+					if(!empty($product_categories))
 					{
-						$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ;
-						$this->model1->insert_rec($attributes, "skus") ;
+						foreach($product_categories as $rec):
+							$attributes = array("product_id" => $product_id, "category_id" => $rec) ;
+							$this->model1->insert_rec($attributes, "products_categories_relation") ;
+						endforeach ;
 					}
-				}	
-				
-				redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
+					
+					if(!empty($food_sensitivities))
+					{
+						foreach($food_sensitivities as $rec):
+							$attributes = array("product_id" => $product_id, "food_sensitivity_id" => $rec) ;
+							$this->model1->insert_rec($attributes, "products_food_sensitivites_relation") ;
+						endforeach ;
+					}
+					
+					$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
+					
+					$row_counter = $this->input->post("counter_rows") ;
+					$sku_codes = $this->input->post("sku_code") ;
+					$sizes = $this->input->post("size") ;
+					$sizes_french = $this->input->post("size_french") ;
+					$prices = $this->input->post("price") ;
+					$wholesale_prices = $this->input->post("wholesale_price") ;
+					$weights = $this->input->post("weight") ;
+					$upc = $this->input->post("upc") ;
+					
+					if($row_counter > 0)
+					{
+						for($x = 0 ; $x < $row_counter ; $x++)
+						{
+							$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ;
+							$this->model1->insert_rec($attributes, "skus") ;
+						}
+					}	
+					
+					redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
 						
 				}
 			}

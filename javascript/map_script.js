@@ -2,7 +2,7 @@ var map ;
 var infoWindow = new google.maps.InfoWindow() ;
 var markersArray = [] ;
 var _Circle, flag1 = 0 ;
-var central_location, KMs = 0, flag2 = 0 ;
+var central_location, KMs = 0, flag2 = 1 ;
 var start_flag = 0 ;
 
 function clearOverlays()
@@ -55,8 +55,8 @@ function get_nearby_locations(location_data)
         {
 			console.log(response) ;
 			place_merkers(response) ;
-			flag2 = 0 ;
-			KMs = 0 ;
+			//flag2 = 1 ;
+			//KMs = 0 ;
 		}
     }) ;
 }
@@ -87,7 +87,7 @@ function place_merkers(response)
 		$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus)) ;
 			
 			}
-		} else {
+		} /* else {
 			
 			var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
 			
@@ -100,7 +100,7 @@ function place_merkers(response)
 			
 		$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus)) ;
 		
-		}
+		} /**/
 	}
 }
 
@@ -172,7 +172,6 @@ function initialize()
 	var mapOptions = {zoom: 4, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP} ;
 	
 	map = new google.maps.Map(document.getElementById('googleMap'), mapOptions) ;
-	
 	google.maps.event.addListener(map,'idle',function(){
 		if(start_flag)
 		{

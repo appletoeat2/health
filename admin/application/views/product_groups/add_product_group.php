@@ -2,7 +2,7 @@
 + Options
 Full texts 	id 	group_name 	description 	group_name_french 	description_french 	sort_order 
 <div id="right">
-<form id="product_category_form" name="product_category_form" action="<?php echo base_url()."product_groups/insert_product_group" ; ?>" method="post">
+<form id="product_group_form" name="product_group_form" action="<?php echo base_url()."product_groups/insert_product_group" ; ?>" method="post">
     <div class="section">
 		<div class="box">
 			<div class="title">Add Product Category Details<span class="hide"></span></div>
@@ -14,14 +14,21 @@ Full texts 	id 	group_name 	description 	group_name_french 	description_french 	
                     <br />
                 </div>
            	<?php } ?>
-             	 	 
             	<div class="row"> 
-					<label>Category Name</label>
-					<div class="right"><input type="text" id="category_name" name="category_name" value="<?php echo set_value("category_name") ; ?>" /></div>
+					<label>Group Name</label>
+					<div class="right"><input type="text" id="group_name" name="group_name" value="<?php echo set_value("group_name") ; ?>" /></div>
 				</div>
                 <div class="row">
-					<label>Category Tag</label>
-					<div class="right"><input type="text" id="category_tag" name="category_tag" value="<?php echo set_value("category_tag") ; ?>" /></div>
+					<label>Group Description</label>
+					<div class="right"><input type="text" id="description" name="description" value="<?php echo set_value("description") ; ?>" /></div>
+				</div>
+                <div class="row"> 
+					<label>Group Name (French)</label>
+					<div class="right"><input type="text" id="group_name_french" name="group_name_french" value="<?php echo set_value("group_name_french") ; ?>" /></div>
+				</div>
+                <div class="row">
+					<label>Group Description (French)</label>
+					<div class="right"><input type="text" id="description_french" name="description_french" value="<?php echo set_value("description_french") ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Sort Order</label>

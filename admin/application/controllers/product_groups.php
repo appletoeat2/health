@@ -11,14 +11,14 @@ class Product_groups extends CI_Controller
 	
 	public function index($message = 0)
 	{
-		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "DESC") ;
-		$this->load->view('template/body', array_merge($data, $this->load_view("product_group/index", $message)));
+		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/index", $message)));
 	}
 	
 	public function add_product_category()
 	{
 		$data["errors"] = false ;
-		$this->load->view('template/body', array_merge($data, $this->load_view("product_group/add_product_group")));
+		$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/add_product_group")));
 	}
 	
 	public function insert_product_categories()

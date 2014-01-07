@@ -13,9 +13,8 @@
 							<th width="15%">Action</th>
 						</tr>
 					</thead>
-				<?php if($product_groups) { ?>	
-                    <tbody>
-             	 	 	 
+					<?php if($product_groups) { ?>	
+                    <tbody>	 	 
                     <?php foreach($product_groups as $rec): ?>
 						<tr>
 							<td><?php echo stripslashes($rec->sort_order) ; ?></td>
@@ -49,14 +48,10 @@ $(function(){
 function show_message($message)
 {
 	if($message == 1)
-		echo '<div class="message green"><span><b>Succes:</b>: Administrator record added successfully.</span></div>' ;
+		echo '<div class="message green"><span><b>Succes:</b>: Product Group record added successfully.</span></div>' ;
 	elseif($message == 2)
-		echo '<div class="message green"><span><b>Succes:</b>: Administrator record updated successfully.</span></div>' ;
+		echo '<div class="message green"><span><b>Succes:</b>: Product Group record updated successfully.</span></div>' ;
 	elseif($message == 3)
-		echo '<div class="message green"><span><b>Succes:</b>: Administrator record removed successfully.</span></div>' ;
-	elseif($message == 4)
-		echo '<div class="message red"><span><b>Warning:</b>: You cannot delete your own record.</span></div>' ;
-	elseif($message == 5)
-		echo '<div class="message red"><span><b>Warning:</b>: Failed to send email.</span></div>' ;
+		echo '<div class="message green"><span><b>Succes:</b>: Product Group record removed successfully.</span></div>' ;
 }
 ?>

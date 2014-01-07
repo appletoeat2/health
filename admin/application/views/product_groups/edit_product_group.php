@@ -14,10 +14,10 @@ Full texts 	id 	group_name 	description 	group_name_french 	description_french 	
                     <br />
                 </div>
            	<?php } ?>
-             	<input type="hidden" id="category_id" name="category_id" value="<?php echo $category_rec->id ; ?>" />
+             	<input type="hidden" id="group_id" name="group_id" value="<?php echo $category_rec->id ; ?>" />
             	<div class="row"> 
 					<label>Category Name</label>
-					<div class="right"><input type="text" id="category_name" name="category_name" value="<?php echo set_value("category_name", $category_rec->category_name) ; ?>" /></div>
+					<div class="right"><input type="text" id="group_name" name="group_name" value="<?php echo set_value("group_name", $category_rec->group_name) ; ?>" /></div>
 				</div>
                 <div class="row">
 					<label>Category Tag</label>

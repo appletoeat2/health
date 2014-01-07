@@ -10,11 +10,11 @@
     
     <div class="box submenu">
 		<div class="content">
-			<?php if($product_groups) { ?>
+			<?php if($side_product_groups) { ?>
             <ul>
             	<?php
 					$i = 1 ;
-					foreach($product_groups as $rec):
+					foreach($side_product_groups as $rec):
 						if($rec->id == $group_id)
 							echo '<li class="current">' ;
 						else

@@ -26,9 +26,9 @@
             <label class="vertical-space2" for="radius">Radius: </label>
             <select id="radius" name="radis">
                 <option value="1">1 KM</option>
-                <option value="5" selected="selected">5 KM</option>
+                <option value="5">5 KM</option>
                 <option value="10">10 KM</option>
-                <option value="25">25 KM</option>
+                <option value="25" selected="selected">25 KM</option>
             </select>
 		</div>
         

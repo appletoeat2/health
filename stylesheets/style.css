@@ -6,7 +6,7 @@
 @import url('./base.css'); /* Import base stylesheet */
 @import url('./skeleton.css'); /* Import skeleton Stylesheet */
 @import url('./prettyPhoto.css'); /* Import prettyPhoto Stylesheet */
-@import url('../layerslider/css/layerslider.css'); /* Import LayerSlider Stylesheet */
+@import url('../javascript/layerslider/css/layerslider.css'); /* Import LayerSlider Stylesheet */
 @import url('./slide1.css'); /* Import LayerSlider Stylesheet */
 @import url('./flexslider.css'); /* Import Flex Slider Stylesheet */
 @import url('./blox.css'); /* Import Full width Sections + Parallax Stylesheet */

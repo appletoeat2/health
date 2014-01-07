@@ -2,26 +2,26 @@
 	<div class="section">
     	<?php show_message($message) ; ?>
        	<div class="box">
-            <div class="title">Products Detail<span class="hide"></span></div>
+            <div class="title">Food Sensitivites<span class="hide"></span></div>
             <div class="content">
             	<table cellspacing="0" cellpadding="0" border="0" class="all"> 
 					<thead> 
 						<tr>
 							<th width="10%">Sort Order</th>
-							<th width="40%">Category Name</th>
-							<th width="35%">Category Tag</th>
+							<th width="40%">Food Sensitivity Name</th>
+							<th width="35%">Food Sensitivity Tag</th>
 							<th width="15%">Action</th>
 						</tr>
 					</thead>
-				<?php if($product_categories) { ?>	
+				<?php if($food_sensitivities) { ?>	
                     <tbody>
              	 	 	 
-                    <?php foreach($product_categories as $rec): ?>
+                    <?php foreach($food_sensitivities as $rec): ?>
 						<tr>
 							<td><?php echo stripslashes($rec->sort_order) ; ?></td>
-							<td><?php echo stripslashes($rec->category_name) ; ?></td>
-							<td><?php echo stripslashes($rec->category_tag) ; ?></td>
-							<td><a href="<?php echo base_url()."product_categories/edit_product_category/".$rec->id ; ?>">Edit</a> - <a href="<?php echo base_url()."product_categories/remove_product_category/".$rec->id ; ?>" onclick="return confirm('Are you sure to remove this record?');">Remove</a></td>
+							<td><?php echo stripslashes($rec->name) ; ?></td>
+							<td><?php echo stripslashes($rec->tag) ; ?></td>
+							<td><a href="<?php echo base_url()."food_sensitivities/edit_food_sensitivity/".$rec->id ; ?>">Edit</a> - <a href="<?php echo base_url()."food_sensitivities/remove_food_sensitivity/".$rec->id ; ?>" onclick="return confirm('Are you sure to remove this record?');">Remove</a></td>
 						</tr>
                     <?php endforeach ; ?>
 					</tbody>
@@ -31,7 +31,7 @@
             
             <div class="content">
            		<div class="right">
-                	<button id="add_new_product" type="button"><span>Click Here to Add Product Category</span></button>
+                	<button id="add_new_product" type="button"><span>Click Here to Add Food Sensitivity</span></button>
             	</div>
             </div>
             
@@ -41,7 +41,7 @@
 <script type="text/javascript">
 $(function(){
 	$("#add_new_product").click(function(){
-		window.location.href = "<?php echo base_url()."product_categories/add_product_category" ; ?>" ;
+		window.location.href = "<?php echo base_url()."food_sensitivities/add_food_sensitivities" ; ?>" ;
 	}) ;
 }) ;
 </script>
@@ -49,14 +49,10 @@ $(function(){
 function show_message($message)
 {
 	if($message == 1)
-		echo '<div class="message green"><span><b>Succes:</b>: Administrator record added successfully.</span></div>' ;
+		echo '<div class="message green"><span><b>Succes:</b>: Food Sensitivity record added successfully.</span></div>' ;
 	elseif($message == 2)
-		echo '<div class="message green"><span><b>Succes:</b>: Administrator record updated successfully.</span></div>' ;
+		echo '<div class="message green"><span><b>Succes:</b>: Food Sensitivity record updated successfully.</span></div>' ;
 	elseif($message == 3)
-		echo '<div class="message green"><span><b>Succes:</b>: Administrator record removed successfully.</span></div>' ;
-	elseif($message == 4)
-		echo '<div class="message red"><span><b>Warning:</b>: You cannot delete your own record.</span></div>' ;
-	elseif($message == 5)
-		echo '<div class="message red"><span><b>Warning:</b>: Failed to send email.</span></div>' ;
+		echo '<div class="message green"><span><b>Succes:</b>: Food Sensitivity record removed successfully.</span></div>' ;
 }
 ?>

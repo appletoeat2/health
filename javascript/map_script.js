@@ -7,7 +7,7 @@ var start_flag = 0 ;
 
 function clearOverlays()
 {
-	if (markersArray)
+	if(markersArray)
 		for(i in markersArray)
 	  		markersArray[i].setMap(null) ;
 	
@@ -64,6 +64,10 @@ function get_nearby_locations(location_data)
 function place_merkers(response)
 {
 	$("#location_details_table tbody").html("") ;
+
+	var infowindow = null;
+	infowindow = new google.maps.InfoWindow({content: info_content_string}) ;
+		
 	for (var i in response)
 	{
 		var output = "" ;
@@ -76,13 +80,14 @@ function place_merkers(response)
 			if(distance <= KMs)
 			{
 				var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
-			
-			markersArray[i] = new google.maps.Marker({position: marker_position, map: map}) ;
-			marker = markersArray[i] ;
-			google.maps.event.addListener(marker, 'click', (function(marker, i){ return function() {
-            	infoWindow.setContent(info_content_string) ;
-				infoWindow.open(map, marker) ;
-            }})(marker, i)) ;
+				
+				markersArray[i] = new google.maps.Marker({position: marker_position, map: map}) ;
+				marker = markersArray[i] ;
+				google.maps.event.addListener(marker, 'click', (function(marker, i){ return function() {
+            		infoWindow.setContent(info_content_string) ;
+					infoWindow.open(map, marker) ;
+            	}})(marker, i)) ;
+				/**/
 			
 		$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus)) ;
 			

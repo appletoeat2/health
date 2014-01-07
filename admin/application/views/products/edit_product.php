@@ -132,16 +132,27 @@ function is_equal($group1_id, $rec_id)
 		<div class="box">
 			<div class="title">Checkboxes, radiobuttons and file upload<span class="hide"></span></div>
 			<div class="content">
+            	<div class="row">
+                    <div class="right">
+                    	<div class="gallery">
+                        	<div class="thumb">
+                            	<a href="<?php echo base_url()."images/prod_images/large/".$product_detail->product_code.".jpg" ; ?>" class="pirobox" rel="single" title=""><img src="<?php echo base_url()."images/prod_images/small/".$product_detail->product_code.".jpg" ; ?>" alt="Photo" /></a>
+                            </div>
+                    	</div>
+                	</div>
+                </div>
 				<div class="row">
 					<label>File upload</label>
-					<div class="right"><input type="file" id="product_file" name="product_file" /></div>
+					<div class="right">
+                    	<input type="file" id="product_file" name="product_file" />
+                    </div>
 				</div>
                 <div class="row">
 					<label>Upload New File</label>
                     <div class="right">
                     	<input type="checkbox" name="upload_new_file" id="upload_new_file-1" value="Yes" /> 
                     	<label for="upload_new_file-1">Yes</label>
-                   	</div>
+                    </div>
 				</div>
 			</div>
 		</div>

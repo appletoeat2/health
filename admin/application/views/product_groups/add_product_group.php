@@ -1,6 +1,3 @@
-
-+ Options
-Full texts 	id 	group_name 	description 	group_name_french 	description_french 	sort_order 
 <div id="right">
 <form id="product_group_form" name="product_group_form" action="<?php echo base_url()."product_groups/insert_product_group" ; ?>" method="post">
     <div class="section">

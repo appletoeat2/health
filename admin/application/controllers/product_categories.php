@@ -58,7 +58,7 @@ class Product_categories extends CI_Controller
 		{
 			$data["errors"] = validation_errors('<li>', '</li>') ;
 			$data["category_rec"] = $this->model1->get_one(array("id" => $this->input->post("id")), "product_categories") ;
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/add_product_category"))) ;
+			$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/edit_product_category"))) ;
 		} else {
 			$attributes = post_data(array("category_name" => "category_name", "category_tag" => "category_tag", "sort_order" => "sort_order")) ;
 			$cond = post_data(array("id" => "category_id")) ;
@@ -87,8 +87,10 @@ class Product_categories extends CI_Controller
 		
 		$data["title"] = "InnoviteHealth - Product Categories" ;
 		$data["current_page"] = "products" ;
+		$data["group_id"] = -1 ;
 		$data["side_menu"] = true ;
-		$data["side_menu_type"] = "" ;
+		$data["side_menu_type"] = "products" ;
+		$data["side_product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["message"] = $message ;
 		$data["view"] = $view ;
 		

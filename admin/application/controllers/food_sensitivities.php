@@ -11,73 +11,73 @@ class Food_sensitivities extends CI_Controller
 	
 	public function index($message = 0)
 	{
-		$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "DESC") ;
-		$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/index", $message)));
+		$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+		$this->load->view('template/body', array_merge($data, $this->load_view("food_sensitivities/index", $message)));
 	}
 	
-	public function add_product_category()
+	public function add_food_sensitivities()
 	{
 		$data["errors"] = false ;
-		$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/add_product_category")));
+		$this->load->view('template/body', array_merge($data, $this->load_view("food_sensitivities/add_food_sensitivity")));
 	}
 	
-	public function insert_product_categories()
+	public function insert_food_sensitivity()
 	{
-		$validation_parameters = array("category_name" => "Category Name&required", "category_tag" => "Category Tag&required", "sort_order" => "Sort Order&required") ;
+		$validation_parameters = array("name" => "Food Sensitivity Name&required", "tag" => "Food Sensitivity Tag&required", "sort_order" => "Sort Order&required") ;
 		
 		if(form_validation_function($validation_parameters) == FALSE)
 		{
 			$data["errors"] = validation_errors('<li>', '</li>');
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/add_product_category"))) ;
+			$this->load->view('template/body', array_merge($data, $this->load_view("food_sensitivities/add_food_sensitivity"))) ;
 		} else {
-			$attributes = post_data(array("category_name" => "category_name", "category_tag" => "category_tag", "sort_order" => "sort_order")) ;
-			$user_id = $this->model1->insert_rec($attributes, "product_categories") ;
-			redirect(base_url()."product_categories/index/1") ;
+			$attributes = post_data(array("name" => "name", "tag" => "tag", "sort_order" => "sort_order")) ;
+			$user_id = $this->model1->insert_rec($attributes, "food_sensitivities") ;
+			redirect(base_url()."food_sensitivities/index/1") ;
 		}	
 	}
 	
-	public function edit_product_category($category_id)
+	public function edit_food_sensitivity($food_sensitivities_id)
 	{
-		if($category_id)
+		if($food_sensitivities_id)
 		{
 			$data["errors"] = false ;
-			$data["category_rec"] = $this->model1->get_one(array("id" => $category_id), "product_categories") ;
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/edit_product_category")));
+			$data["food_sensitivities_rec"] = $this->model1->get_one(array("id" => $food_sensitivities_id), "food_sensitivities") ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("food_sensitivities/edit_food_sensitivity")));
 		}
 		else
 		{
-			redirect(base_url()."product_categories") ;
+			redirect(base_url()."food_sensitivities") ;
 		}
 	}
 	
-	public function update_product_categories()
+	public function update_food_sensitivity($food_sensitivity_id)
 	{
-		$validation_parameters = array("category_name" => "Category Name&required", "category_tag" => "Category Tag&required", "sort_order" => "Sort Order&required") ;
+		$validation_parameters = array("name" => "Food Sensitivity Name&required", "tag" => "Food Sensitivity Tag&required", "sort_order" => "Sort Order&required") ;
 		
 		if(form_validation_function($validation_parameters) == FALSE)
 		{
 			$data["errors"] = validation_errors('<li>', '</li>') ;
-			$data["category_rec"] = $this->model1->get_one(array("id" => $this->input->post("id")), "product_categories") ;
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_categories/add_product_category"))) ;
+			$data["food_sensitivities_rec"] = $this->model1->get_one(array("id" => $food_sensitivities_id), "food_sensitivities") ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("food_sensitivities/edit_food_sensitivity")));
 		} else {
-			$attributes = post_data(array("category_name" => "category_name", "category_tag" => "category_tag", "sort_order" => "sort_order")) ;
-			$cond = post_data(array("id" => "category_id")) ;
-			$user_id = $this->model1->update_rec($attributes, $cond, "product_categories") ;
-			redirect(base_url()."product_categories/index/2") ;
+			$attributes = post_data(array("name" => "name", "tag" => "tag", "sort_order" => "sort_order")) ;
+			$cond = post_data(array("id" => "food_sensitivity_id")) ;
+			$user_id = $this->model1->update_rec($attributes, $cond, "food_sensitivities") ;
+			redirect(base_url()."food_sensitivities/index/2") ;
 		}
 	}
-	
-	public function remove_product_category($category_id)
+	 
+	public function remove_food_sensitivity($food_sensitivity_id)
 	{
-		if($category_id)
+		if($food_sensitivity_id)
 		{
-			$this->model1->delete_rec(array("category_id" => $category_id), "products_categories_relation") ;
-			$this->model1->delete_rec(array("id" => $category_id), "product_categories") ;
-			redirect(base_url()."product_categories/index/3") ;
+			$this->model1->delete_rec(array("food_sensitivity_id" => $food_sensitivity_id), "products_food_sensitivites_relation") ;
+			$this->model1->delete_rec(array("id" => $food_sensitivity_id), "food_sensitivities") ;
+			redirect(base_url()."food_sensitivities/index/3") ;
 		}
 		else
 		{
-			redirect(base_url()."product_categories") ;
+			redirect(base_url()."food_sensitivities") ;
 		}	
 	}
 	
@@ -85,10 +85,12 @@ class Food_sensitivities extends CI_Controller
 	{
 		$data = array() ;
 		
-		$data["title"] = "InnoviteHealth - Product Categories" ;
+		$data["title"] = "InnoviteHealth - Food Sensitivities" ;
 		$data["current_page"] = "products" ;
 		$data["side_menu"] = true ;
-		$data["side_menu_type"] = "" ;
+		$data["side_menu_type"] = "products" ;
+		$data["group_id"] = -1 ;
+		$data["side_product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["message"] = $message ;
 		$data["view"] = $view ;
 		

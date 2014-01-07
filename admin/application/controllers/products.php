@@ -56,7 +56,8 @@ class Products extends CI_Controller
 			$data["product_groups"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 			$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
 			$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
-			
+			$data["row_counter"] = 0 ;
+			$data["errors"] = false ;
 			$this->load->view("template/body", array_merge($data, $this->load_view("products/product_details"))) ;
 			
 		} else {
@@ -184,7 +185,6 @@ class Products extends CI_Controller
 		else
 			redirect(base_url()."products/index") ;
 	}
-	
 	
 	public function edit_product($product_id = 0)
 	{
@@ -421,6 +421,7 @@ class Products extends CI_Controller
 		$data["side_menu"] = $side_menu ;
 		$data["side_menu_type"] = "products" ;		
 		$data["message"] = $message ;
+		$data["side_product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["view"] = $view ;
 		
 		return $data ;

@@ -16,7 +16,7 @@ class Stores extends CI_Controller
 	private function load_data($view)
 	{
 		$data = array() ;
-		
+		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["main_class"] = "wrap" ;
 		$data["title"] = "Innovite Health Products - Find a Retail Location" ;
 		$data["view"] = $view ;

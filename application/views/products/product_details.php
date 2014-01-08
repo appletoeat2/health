@@ -9,10 +9,10 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
-          		<h2><?php echo $product_detail->name ; ?></h2>
-          		<h4><?php echo $product_detail->health_claim_en ; ?></h4>
+          		<h2><?php echo $product_detail->product_name ; ?></h2>
+          		<h4><?php echo $product_detail->health_claim ; ?></h4>
           		<p><?php echo $product_detail->npn ; ?></p>
-          		<p><?php $bodytag = str_replace(chr(13), "<br>", $product_detail->short_description_en) ; echo $bodytag ; ?></p>
+          		<p><?php $bodytag = str_replace(chr(13), "<br>", $product_detail->short_description) ; echo $bodytag ; ?></p>
   				
                 <span class='st_facebook_large' displayText='Facebook'></span>
                 <span class='st_twitter_large' displayText='Tweet'></span>
@@ -42,11 +42,11 @@
 				{ 
 					$bodydescript = str_replace(chr(13), "<br>", $product_detail->description);
 					echo "<div id='Description' class='tab-pane active'><p>", $bodydescript,"</p></div>"; 
-					echo "<div id='Formula' class='tab-pane'>", $product_detail->formula_en, "</div>"; 
+					echo "<div id='Formula' class='tab-pane'>", $product_detail->formula, "</div>"; 
 				} 
 				else 
 				{ 
-					echo "<div id='Formula' class='tab-pane active'>", $product_detail->formula_en, "</div>"; 
+					echo "<div id='Formula' class='tab-pane active'>", $product_detail->formula, "</div>"; 
 				} 
          		?>
             	<div id="Sizes" class="tab-pane">
@@ -62,7 +62,7 @@
                 		<tbody>
                   		<?php if($skus_detail) { foreach($skus_detail as $rec): ?>
                     		<tr>
-                      			<td><?php echo $rec->en_size ; ?></td>
+                      			<td><?php echo $rec->size ; ?></td>
                       			<td><?php echo $rec->sku_code ; ?></td>
                       			<td>35627345</td>
                     		</tr>
@@ -107,14 +107,14 @@
 	<div class="one_third column-last"> 
     	<div class="portfolio">
       		<script src="<?php echo base_url() ; ?>javascript/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-        	<a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">
-            	<img src="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" border="0"/>
+        	<a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">
+            	<img src="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" border="0"/>
             </a>
           	<section id="side-nav" class="five columns">
             	<ul>
-              		<li><a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->prod_id).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">Click Here for a Larger View</a></li>
+              		<li><a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">Click Here for a Larger View</a></li>
               		<?php if($brochure) ?>
-                	<li><a href="<?php echo base_url()."products/product_brochures/".$brochure->en_file ; ?>" target="_blank">Download The Brochure</a></li>
+                	<li><a href="<?php echo base_url()."products/product_brochures/".$brochure->brochure_file_name ; ?>" target="_blank">Download The Brochure</a></li>
             	</ul>
 			</section>
 		</div>
@@ -128,7 +128,7 @@
 	<h4 class="subtitle">Related Products</h4>
     <ul id="our-clients" class="our-clients tooltips top">
 		<?php if($related_products) foreach($related_products as $rec): ?>
-        	<li><a href="<?php echo base_url()."products/product_details/".$rec->cat_id."/".$rec->prod_id ; ?>" rel="help" title="<?php echo $rec->health_claim_en ; ?>"><img src="<?php echo base_url()."admin/images/prod_images/small/".$rec->prod_id.".jpg" ; ?>"></a></li>
+        	<li><a href="<?php echo base_url()."products/product_details/".$rec->group_id."/".$rec->id ; ?>" rel="help" title="<?php echo $rec->health_claim ; ?>"><img src="<?php echo base_url()."admin/images/prod_images/small/".$rec->product_code.".jpg" ; ?>"></a></li>
 		<?php endforeach ; ?>
 	</ul>
 </div><!-- Our-Clients-end --> 

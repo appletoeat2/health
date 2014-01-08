@@ -2,8 +2,8 @@
 	<h4 class="subtitle">Skeletal Health</h4>
    	<div class="listbox1">
     	<ul>
-        	<li><a href="<?php echo base_url()."products/index/".$category_id ; ?>">Supplements</a></li>
-            <li><a href="<?php echo base_url()."products/bone_and_joint_health_information/".$category_id ; ?>">Bone &amp; Joint Health</a></li>
+        	<li><a href="<?php echo base_url()."products/index/".$group_id ; ?>">Supplements</a></li>
+            <li><a href="<?php echo base_url()."products/bone_and_joint_health_information/".$group_id ; ?>">Bone &amp; Joint Health</a></li>
             <li><a href="<?php echo base_url() ; ?>">Books &amp; Resources</a></li>
             <li><a href="<?php echo base_url() ; ?>">Where to buy</a></li>
     	</ul>

@@ -65,7 +65,7 @@ $(function(){
 	}) ;
 	$(".food_sensitivity").change(function(){
 		run_filter() ;
-	}) ;
+	}) ;	
 }) ;
 
 

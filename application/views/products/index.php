@@ -15,7 +15,7 @@
 					else echo '<hr class="vertical-space3"></div><div id="group_'.$rec->group_id.'" class="group_div"><h2>'.$rec->group_name.'</h2><hr class="vertical-space3">' ;
 				}
 		?>
-    		<div id="product<?php echo $rec->product_id ; ?>" class="product_item" food_sensitivities="<?php echo $rec->food_sensitivities_id ; ?>" categories="<?php echo $rec->categories_id ; ?>">
+    		<div id="product<?php echo $rec->product_id ; ?>" class="product_item" food_sensitivities="<?php echo $rec->food_sensitivities_id ; ?>" categories="<?php echo $rec->categories_id ; ?>" product_id="<?php echo $rec->product_id ; ?>" title="<?php echo $rec->health_claim ; ?>">
 				<div class="img-item center" style="text-align:center">
                 	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" alt="">
                 </div>
@@ -31,3 +31,11 @@
     </section>
 	<hr class="vertical-space2">
 </section>
+<script type="text/javascript">
+$(function(){
+	$(".product_item").click(function(){
+		var product_id = $(this).attr("product_id") ;
+		window.location.href = "<?php echo base_url()."products/product_details/0/" ; ?>" + product_id ;
+	}) ;
+}) ;
+</script>

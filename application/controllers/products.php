@@ -18,20 +18,19 @@ class Products extends CI_Controller
 		$this->load->view('template/body', array_merge($data, $this->load_data("products/index", "wrap", 0)));
 	}
 	
-	public function group_product($category_id)
+	public function group_product($group_id)
 	{
-		$data["categories"] = $this->model1->get_one(array("id" => $category_id), "product_groups") ;
-		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $category_id), "products", "sort_order", "ASC") ;
-		
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $category_id)));
+		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id), "products", "sort_order", "ASC") ;
+		$data["groups"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $group_id)));
 	}
 	
-	public function product_details($category_id, $product_id)
+	public function product_details($category_id = 0, $product_id = 0)
 	{
-		$data["product_detail"] = $this->model1->get_one(array("prod_id" => $product_id), "products") ;
-		$data["skus_detail"] = $this->model1->get_all_cond_orderby(array("prod_id" => $product_id), "skus", "sort", "ASC") ;
+		$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
+		$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
 		$data["brochure"] = $this->model2->get_brochures($product_id) ;
-		$data["related_products"] = $this->model1->get_all_cond_orderby(array("cat_id" => $category_id), "products", "sort_order", "ASC") ;
+		$data["related_products"] = $this->model1->get_all_cond_orderby(array("group_id" => $data["product_detail"]->group_id), "products", "sort_order", "ASC") ;
 		
 		$this->load->view('template/body', array_merge($data, $this->load_data("products/product_details", "boxed-wrap", $category_id)));
 	}
@@ -47,12 +46,13 @@ class Products extends CI_Controller
 		$this->load->view('template/body', $this->load_data("products/joint_and_bone_health_information", "boxed-wrap", $category_id));
 	}
 		
-	private function load_data($view, $main_class, $category_id)
+	private function load_data($view, $main_class, $group_id)
 	{
 		$data = array() ;
 		$data["main_class"] = $main_class ;
 		$data["title"] = "Muscular Skeletal Therapies - Bone, Joint, Muscle, Skin, and Connective Tissue Health" ;
-		$data["category_id"] = $category_id ;
+		$data["group_id"] = $group_id ;
+		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["view"] = $view ;
 		
 		return $data ;

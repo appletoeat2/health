@@ -10,7 +10,7 @@
       		<h3>Stay Active with Healthy Bones & Joints</h3>
       		<p>
 				<?php
-                    $bodytag = str_replace( chr(13), "<br>", $categories->description); 
+                    $bodytag = str_replace( chr(13), "<br>", $groups->description); 
                     echo $bodytag
                 ?>
       		</p>
@@ -29,13 +29,13 @@
 			<?php foreach($products as $rec): ?>
           		<figure class="portfolio-item three columns entry <?php echo $rec->filter ; ?> -item">
                 	<div class="img-item centre" style="text-align: center">
-                		<a href="<?php echo base_url()."products/product_details/".$categories->cat_id."/".$rec->prod_id ; ?>">
-                        	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->prod_id).".jpg" ; ?>" border="1" />
+                		<a href="<?php echo base_url()."products/product_details/".$groups->id."/".$rec->id ; ?>">
+                        	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" border="1" />
                     	</a>
              		</div>
             	
                 	<div style="text-align: center">
-              			<p><a href="product-detail.php?prod_id=<?php echo $rec->prod_id ; ?>&amp;cat_id=<?php echo $categories->cat_id ; ?>"><?php echo $rec->name ; ?></a></p>
+              			<p><a href="product-detail.php?prod_id=<?php echo $rec->id ; ?>&amp;cat_id=<?php echo $groups->id ; ?>"><?php echo $rec->product_name ; ?></a></p>
             		</div>
           		</figure>
           	<?php endforeach ; } ?>

@@ -101,6 +101,7 @@ class Product_groups extends CI_Controller
 		$data["side_product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["group_id"] = -1 ;
 		$data["message"] = $message ;
+		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["view"] = $view ;
 		
 		return $data ;

@@ -1,9 +1,77 @@
 var map ;
-var infoWindow = new google.maps.InfoWindow() ;
+google.maps.event.addDomListener(window, 'load', initialize) ;
 var markersArray = [] ;
 var _Circle, flag1 = 0 ;
-var central_location, KMs = 0, flag2 = 1 ;
+var central_location, KMs = 0 ;
 var start_flag = 0 ;
+var bounds = new google.maps.LatLngBounds(); 
+
+function initialize()
+{
+	var myLatlng =  new google.maps.LatLng(56.130366, -106.346771) ;	
+	var mapOptions = {zoom: 4, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP} ;
+	
+	map = new google.maps.Map(document.getElementById('googleMap'), mapOptions) ;
+	
+	google.maps.event.addListener(map, 'idle', function(){
+		if(start_flag) {
+			clearOverlays() ;
+			var bounds = map.getBounds() ;
+			var NE = bounds.getNorthEast();
+			var SW = bounds.getSouthWest();
+			var response = "" ;
+    		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng()} ;
+			var map_markers = get_nearby_locations(location_data) ;
+		}
+	});
+}
+/**/
+
+function get_nearby_locations(location_data)
+{
+	var base_url = $("#base_url").val() ;
+	$.ajax({
+    	type: "POST", 
+        url:  base_url+"stores/get_places", 
+        data: location_data,
+        dataType: "json",
+		success: function(response)
+        {
+			console.log(response) ;
+			place_merkers(response) ;
+		}
+    }) ;
+}
+
+function place_merkers(response)
+{
+	$("#location_details_table tbody").html("") ;
+ 	
+	var infoWindow = new google.maps.InfoWindow(), marker, i;
+	
+	for (var i in response)
+	{
+		var marker_position = new google.maps.LatLng(response[i].latitude, response[i].longitude) ;
+		var distance = google.maps.geometry.spherical.computeDistanceBetween(central_location, marker_position) ;
+		
+		if(distance <= KMs)
+		{
+			var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
+        	
+			var marker = new google.maps.Marker({position: marker_position, map: map});
+			
+      		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        		return function() {
+          			infowindow.setContent(info_content_strings);
+          			infowindow.open(map, marker);
+        		}
+      		})(marker, i));
+			markersArray.push(marker);
+			
+			$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus));
+		}
+	}
+}
 
 function clearOverlays()
 {
@@ -13,6 +81,7 @@ function clearOverlays()
 	
 	markersArray = [] ;
 }
+
 
 function build_tr(retailor_name, address1, city, provience, postal_code, telephone, website, facebook, twitter, linkedin, googleplus)
 {
@@ -38,80 +107,6 @@ function build_tr(retailor_name, address1, city, provience, postal_code, telepho
 	return rec ;
 }
 
-
-function get_user_location()
-{
-}
-
-function get_nearby_locations(location_data)
-{
-	var base_url = $("#base_url").val() ;
-	$.ajax({
-    	type: "POST", 
-        url:  base_url+"stores/get_places", 
-        data: location_data,
-        dataType: "json",
-		success: function(response)
-        {
-			console.log(response) ;
-			place_merkers(response) ;
-			//flag2 = 1 ;
-			//KMs = 0 ;
-		}
-    }) ;
-}
-
-function place_merkers(response)
-{
-	$("#location_details_table tbody").html("") ;
-
-	var infowindow = null;
-	infowindow = new google.maps.InfoWindow({content: info_content_string}) ;
-		
-	for (var i in response)
-	{
-		var output = "" ;
-		var marker_position = new google.maps.LatLng(response[i].latitude, response[i].longitude) ;
-		
-		if(flag2)
-		{
-			var distance = google.maps.geometry.spherical.computeDistanceBetween(central_location, marker_position) ;
-			
-			if(distance <= KMs)
-			{
-				var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
-				
-				markersArray[i] = new google.maps.Marker({position: marker_position, map: map}) ;
-				marker = markersArray[i] ;
-				google.maps.event.addListener(marker, 'click', (function(marker, i){ return function() {
-            		infoWindow.setContent(info_content_string) ;
-					infoWindow.open(map, marker) ;
-            	}})(marker, i)) ;
-				/**/
-			
-		$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus)) ;
-			
-			}
-		} /* else {
-			
-			var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
-			
-			markersArray[i] = new google.maps.Marker({position: marker_position, map: map}) ;
-			marker = markersArray[i] ;
-			google.maps.event.addListener(marker, 'click', (function(marker, i){ return function() {
-            	infoWindow.setContent(info_content_string) ;
-				infoWindow.open(map, marker) ;
-            }})(marker, i)) ;
-			
-		$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus)) ;
-		
-		} /**/
-	}
-}
-
-
-google.maps.event.addDomListener(window, 'load', initialize) ;
-
 $(function(){
 	
 	$("#city_name_dropdown").on("change", function(){
@@ -123,13 +118,12 @@ $(function(){
 		var radius = $("#radius :selected").val() ;
 		if(address == "") { alert("You have not entered any address.") ; return false ; }
 		start_flag = 1 ;
-		//alert("radius: "+radius) ;
 		var geocoder = new google.maps.Geocoder();
 		if(flag1) _Circle.setMap(null) ;
     	geocoder.geocode({'address': address}, function(results, status){
      		if(status == google.maps.GeocoderStatus.OK) {
         		map.setCenter(results[0].geometry.location) ;
-				central_location = results[0].geometry.location ; flag2 = 1 ; KMs = radius * 1000 ;
+				central_location = results[0].geometry.location ; KMs = radius * 1000 ;
 				map.setZoom(4) ;	
 				var StoreLocations = {
 					strokeOpacity: 0.8,
@@ -156,48 +150,3 @@ $(function(){
 		});
 	});
 });
-
-function initialize()
-{	
-	/*
-	var myLatlng ;
-	$.ajax({
-    	type: "POST", 
-        url:  "user_location.php", 
-        data: "location=yes",
-        dataType: "json",
-		success: function(response)
-        {
-			myLatlng =  new google.maps.LatLng(parseFloat(response.latitude), parseFloat(response.longitude)) ;
-		}
-    }) ;
-	/**/
-	
-	var myLatlng =  new google.maps.LatLng(56.130366, -106.346771) ;	
-	var mapOptions = {zoom: 4, center: myLatlng, mapTypeId: google.maps.MapTypeId.ROADMAP} ;
-	
-	map = new google.maps.Map(document.getElementById('googleMap'), mapOptions) ;
-	google.maps.event.addListener(map,'idle',function(){
-		if(start_flag)
-		{
-			clearOverlays() ;
-			var bounds = map.getBounds() ;
-			var NE = bounds.getNorthEast();
-			var SW = bounds.getSouthWest();
-			var response = "" ;
-    		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng()} ;
-			var map_markers = get_nearby_locations(location_data) ;
-			
-			//show_bounds(temp_bounds_1) ;
-			//show_bounds(map.getBounds()) ;
-		}
-	}) ;
-	/**/	
-}
-
-function show_bounds(bounds)
-{
-	var NE = bounds.getNorthEast();
-	var SW = bounds.getSouthWest();
-	alert("latitude1: " + NE.lat() + " logitude1: " + NE.lng() + " latitude2: " + SW.lat() + " logitude2: " + SW.lng()) ;
-}

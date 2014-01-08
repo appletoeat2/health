@@ -1,6 +1,7 @@
 var map ;
 google.maps.event.addDomListener(window, 'load', initialize) ;
 var markersArray = [] ;
+var infowindowArray = [] ;
 var _Circle, flag1 = 0 ;
 var central_location, KMs = 0 ;
 var start_flag = 0 ;
@@ -47,7 +48,7 @@ function place_merkers(response)
 {
 	$("#location_details_table tbody").html("") ;
  	
-	var infoWindow = new google.maps.InfoWindow(), marker, i;
+	var infowindow1 = new google.maps.InfoWindow ;
 	
 	for (var i in response)
 	{
@@ -58,19 +59,23 @@ function place_merkers(response)
 		{
 			var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
         	
-			var marker = new google.maps.Marker({position: marker_position, map: map});
+			markersArray[i] = new google.maps.Marker({position: marker_position, map: map, html:info_content_string }) ;
+			var marker = markersArray[i] ;
 			
-      		google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        		return function() {
-          			infowindow.setContent(info_content_strings);
-          			infowindow.open(map, marker);
-        		}
-      		})(marker, i));
-			markersArray.push(marker);
-			
+			infowindowArray[i] = infowindow1 ;
+			bindInfoW(marker, info_content_string, infowindow1);
+
 			$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus));
 		}
 	}
+}
+
+function bindInfoW(marker, contentString, infowindow)
+{ 
+	google.maps.event.addListener(marker, 'click', function() {
+    	infowindow.setContent(contentString);
+        infowindow.open(map, marker) ;
+	});
 }
 
 function clearOverlays()
@@ -87,6 +92,7 @@ function build_tr(retailor_name, address1, city, provience, postal_code, telepho
 {
 	var t_add = address1 + " " + city + " " + provience + " " + postal_code ;
 	var rec = '' ;
+	var base_url = $("#base_url").val() ;
 	rec = rec + '<tr>' ;
 	rec = rec + '<td style="width:20%; text-align:top;"><h6>'+ retailor_name +'</h6></td>' ;
 	rec = rec + '<td style="width:20%; text-align:top;">Ph: '+telephone+'</td>' ;

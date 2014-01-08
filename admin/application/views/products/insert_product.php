@@ -133,7 +133,7 @@ function is_equal($group1_id, $rec_id)
 						<div class="right" style="z-index:-9999 !important;"><textarea id="description" name="description"><?php echo set_value("description") ; ?></textarea></div>
 					</div>
                     <div class="row">
-						<label>Formula <a href="javascript:void(0);" class="modalopen">Help!</a></label>
+						<label>Formula</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="formula" name="formula"><?php echo set_value("formula") ; ?></textarea></div>
 					</div>
 				</div>
@@ -160,7 +160,7 @@ function is_equal($group1_id, $rec_id)
 						<div class="right" style="z-index:-9999 !important;"><textarea id="description_french" name="description_french"><?php echo set_value("description_french"); ?></textarea></div>
 					</div>
                     <div class="row">
-						<label>Formula <a href="javascript:void(0);" class="modalopen">Help!</a></label>
+						<label>Formula</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="formula_french" name="formula_french"><?php echo set_value("formula_french"); ?></textarea></div>
 					</div>
 				</div>

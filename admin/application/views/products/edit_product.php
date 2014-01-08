@@ -130,12 +130,12 @@ function is_equal($group1_id, $rec_id)
     
     <div class="section">
 		<div class="box">
-			<div class="title">Checkboxes, radiobuttons and file upload<span class="hide"></span></div>
+			<div class="title">Product Image<span class="hide"></span></div>
 			<div class="content">
             	<div class="row">
                     <div class="right">
                     	<div class="gallery">
-                        	<div class="thumb">
+                        	<div>
                             	<a href="<?php echo base_url()."images/prod_images/large/".$product_detail->product_code.".jpg" ; ?>" class="pirobox" rel="single" title=""><img src="<?php echo base_url()."images/prod_images/small/".$product_detail->product_code.".jpg" ; ?>" alt="Photo" /></a>
                             </div>
                     	</div>
@@ -161,7 +161,7 @@ function is_equal($group1_id, $rec_id)
 	<div class="section">
 		<div class="half">
 			<div class="box">
-				<div class="title">English Information<span class="hide"></span></div>
+				<div class="title">English Information.<span class="hide"></span></div>
 				<div class="content">
                 	<div class="row">
 						<label>Product Name</label>
@@ -171,17 +171,17 @@ function is_equal($group1_id, $rec_id)
 						<label>Health Claim</label>
 						<div class="right"><input type="text" id="health_claim" name="health_claim" value="<?php echo set_value("health_claim", stripslashes($product_detail->health_claim)) ; ?>" /></div>
 					</div>
-					<div class="row">
-						<label>Short Description</label>
-                        <div class="row"><textarea id="short_description" name="short_description"><?php echo set_value("short_description", stripslashes($product_detail->short_description)) ; ?></textarea></div>
+					<div class="row"><br>
+						<label>Short Description</label><br>
+                        <div class="clear"><textarea id="short_description" name="short_description"><?php echo set_value("short_description", stripslashes($product_detail->short_description)) ; ?></textarea></div>
 					</div>
-                    <div class="row">
-						<label>Description</label>
-						<div class="row"><textarea id="description" name="description"><?php echo set_value("description", stripslashes($product_detail->description)) ; ?></textarea></div>
+                    <div class="row"><br>
+						<label>Description</label><br>
+						<div class="clear"><textarea id="description" name="description"><?php echo set_value("description", stripslashes($product_detail->description)) ; ?></textarea></div>
 					</div>
-                    <div class="row">
-						<label>Formula <a href="javascript:void(0);" class="modalopen">Help!</a></label>
-						<div class="row"><textarea id="formula" name="formula"><?php echo set_value("formula", stripslashes($product_detail->formula)) ; ?></textarea></div>
+                    <div class="row"><br>
+						<label>Formula</label><br>
+						<div class="clear"><textarea id="formula" name="formula"><?php echo set_value("formula", stripslashes($product_detail->formula)) ; ?></textarea></div>
 					</div>
 				</div>
 			</div>
@@ -198,26 +198,25 @@ function is_equal($group1_id, $rec_id)
 						<label>Health Claim</label>
 						<div class="right"><input type="text" id="health_claim_french" name="health_claim_french" value="<?php echo set_value("health_claim_french", stripslashes($product_detail->health_claim_french)) ; ?>" /></div>
 					</div>
-					<div class="row">
-						<label>Short Description</label>
-                       	<div class="row"><textarea id="short_description_french" name="short_description_french"><?php echo set_value("short_description_french", stripslashes($product_detail->short_description_french)) ; ?></textarea></div>
+					<div class="row"><br>
+						<label>Short Description</label><br>
+                       	<div class="clear"><textarea id="short_description_french" name="short_description_french"><?php echo set_value("short_description_french", stripslashes($product_detail->short_description_french)) ; ?></textarea></div>
 					</div>
-                    <div class="row">
-						<label>Description</label>
-						<div class="row"><textarea id="description_french" name="description_french"><?php echo set_value("description_french", stripslashes($product_detail->description_french)) ; ?></textarea></div>
+                    <div class="row"><br>
+						<label>Description</label><br>
+						<div class="clear"><textarea id="description_french" name="description_french"><?php echo set_value("description_french", stripslashes($product_detail->description_french)) ; ?></textarea></div>
 					</div>
-                    <div class="row">
-						<label>Formula <a href="javascript:void(0);" class="modalopen">Help!</a></label>
-						<br /><br /><textarea id="formula_french" name="formula_french"><?php echo set_value("formula_french", stripslashes($product_detail->formula_french)) ; ?></textarea></div>
+                    <div class="row"><br>
+						<label>Formula</label><br>
+						<textarea id="formula_french" name="formula_french"><?php echo set_value("formula_french", stripslashes($product_detail->formula_french)) ; ?></textarea></div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
     
     <div class="section">
 		<div class="box">
-			<div class="title">Sizes and Detials<span class="hide"></span></div>
+			<div class="title">Available Product Sizes</div>
 			<div class="content">
 				<table id="skus_table" cellspacing="0" cellpadding="0" border="0"> 
 					<thead> 
@@ -290,7 +289,6 @@ function is_equal($group1_id, $rec_id)
             </div>
 		</div>
 	</div>
-</div>
 </form>
 
 <div class="modal" title="Instructions">

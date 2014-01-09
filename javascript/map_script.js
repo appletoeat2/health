@@ -132,7 +132,7 @@ $(function(){
         		map.setCenter(results[0].geometry.location) ;
 				central_location = results[0].geometry.location ; KMs = radius * 1000 ;
 				
-	var different_marker = new google.maps.Marker({position: results[0].geometry.location, map: map, icon:'http://maps.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png',  animation: google.maps.Animation.BOUNCE}) ;
+	var different_marker = new google.maps.Marker({position: results[0].geometry.location, map: map, icon:'http://maps.google.com/mapfiles/marker_green.png',  animation: google.maps.Animation.BOUNCE}) ;
 	 
 				map.setZoom(4) ;	
 				var StoreLocations = {

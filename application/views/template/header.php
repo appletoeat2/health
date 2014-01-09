@@ -33,8 +33,12 @@
 
 <body>
 <!-- Primary Page Layout -->
-<div id="wrap" class="colorskin-4">
-	
+<?php if($view == "home/index") { ?>
+	<div id="wrap" class="colorskin-4">
+<?php } else { ?>
+	<div id="boxed-wrap" class="colorskin-4">
+<?php } ?>
+
 <div class="top-bar">
 	<div class="container">
 		<div class="top-links"><a href="<?php echo base_url("") ; ?>">Francais</a> | <a href="<?php echo base_url("") ; ?>">Retailer Login</a></div>

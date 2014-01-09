@@ -5,7 +5,8 @@ var infowindowArray = [] ;
 var _Circle, flag1 = 0 ;
 var central_location, KMs = 0 ;
 var start_flag = 0 ;
-var bounds = new google.maps.LatLngBounds(); 
+var bounds = new google.maps.LatLngBounds() ; 
+
 
 function initialize()
 {
@@ -59,7 +60,7 @@ function place_merkers(response)
 		{
 			var info_content_string = '<div class="win"><h6>' + response[i].retailer_name + "</h6>" + response[i].address1 + " <br /> " + response[i].city + ", " + response[i].province + ", " +response[i].postal_code + " <br /> Phone: " + response[i].telephone + '</div>' ;
         	
-			markersArray[i] = new google.maps.Marker({position: marker_position, map: map, html:info_content_string }) ;
+			markersArray[i] = new google.maps.Marker({position: marker_position, map: map}) ;
 			var marker = markersArray[i] ;
 			
 			infowindowArray[i] = infowindow1 ;
@@ -130,15 +131,18 @@ $(function(){
      		if(status == google.maps.GeocoderStatus.OK) {
         		map.setCenter(results[0].geometry.location) ;
 				central_location = results[0].geometry.location ; KMs = radius * 1000 ;
+				
+	var different_marker = new google.maps.Marker({position: results[0].geometry.location, map: map, icon:'http://maps.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png',  animation: google.maps.Animation.BOUNCE}) ;
+	 
 				map.setZoom(4) ;	
 				var StoreLocations = {
 					strokeOpacity: 0.8,
 					strokeWeight: 2,
 					fillOpacity: 0.35,
 					strokeColor: '#FF0000',
-					fillColor: '#FF0000',
+					//fillColor: '#FF0000',
 					//strokeColor: 'TRANSPARENT',
-					//fillColor: 'TRANSPARENT',
+					fillColor: 'TRANSPARENT',
 					map: map,
 					center: results[0].geometry.location,
 					radius: radius * 1000 

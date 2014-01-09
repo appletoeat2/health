@@ -80,7 +80,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("product_code" => "Product Code&required", "npn" => "NPN&required", "sort_order" => "Sort Order&required", "group_id" => "Product Group&required", "product_categories[]" => "Product Categories&required","food_sensitivities[]" => "Food Sensitivities&required", "isnew" => "Is New&required", "status" => "Status&required", "product_name" => "Product Name (English)&required", "formula" => "Formula (English)&required", "health_claim" => "Health Claim (English)&required", "short_description" => "Short Description (English)&required", "description" => "Description (English)&required", "product_name_french" => "Product Name (French)&required", "formula_french" => "Formula (French)&required", "health_claim_french" => "Health Claim (French)&required", "short_description_french" => "Short Description (French)&required", "description_french" => "Description (French)&required") ;
+			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]") ;
 		
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -212,7 +212,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("product_code" => "Product Code&required", "npn" => "NPN&required", "sort_order" => "Sort Order&required", "group_id" => "Product Group&required", "product_categories[]" => "Product Categories&required","food_sensitivities[]" => "Food Sensitivities&required", "isnew" => "Is New&required", "status" => "Status&required", "product_name" => "Product Name (English)&required", "formula" => "Formula (English)&required", "health_claim" => "Health Claim (English)&required", "short_description" => "Short Description (English)&required", "description" => "Description (English)&required", "product_name_french" => "Product Name (French)&required", "formula_french" => "Formula (French)&required", "health_claim_french" => "Health Claim (French)&required", "short_description_french" => "Short Description (French)&required", "description_french" => "Description (French)&required") ;
+			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]") ;
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
 				$data["errors"] = validation_errors('<li>', '</li>');
@@ -478,4 +478,11 @@ class Products extends CI_Controller
 		$this->image_lib->clear() ;
 	}
 }
+/*
+
+, "npn" => "NPN&required", "sort_order" => "Sort Order&required", "group_id" => "Product Group&required", "product_categories[]" => "Product Categories&required","food_sensitivities[]" => "Food Sensitivities&required", "isnew" => "Is New&required", "status" => "Status&required", "product_name" => "Product Name (English)&required", "formula" => "Formula (English)&required", "health_claim" => "Health Claim (English)&required", "short_description" => "Short Description (English)&required", "description" => "Description (English)&required", "product_name_french" => "Product Name (French)&required", "formula_french" => "Formula (French)&required", "health_claim_french" => "Health Claim (French)&required", "short_description_french" => "Short Description (French)&required", "description_french" => "Description (French)&required"
+
+, "npn" => "NPN&required", "sort_order" => "Sort Order&required", "group_id" => "Product Group&required", "product_categories[]" => "Product Categories&required","food_sensitivities[]" => "Food Sensitivities&required", "isnew" => "Is New&required", "status" => "Status&required", "product_name" => "Product Name (English)&required", "formula" => "Formula (English)&required", "health_claim" => "Health Claim (English)&required", "short_description" => "Short Description (English)&required", "description" => "Description (English)&required", "product_name_french" => "Product Name (French)&required", "formula_french" => "Formula (French)&required", "health_claim_french" => "Health Claim (French)&required", "short_description_french" => "Short Description (French)&required", "description_french" => "Description (French)&required"
+
+/**/
 	

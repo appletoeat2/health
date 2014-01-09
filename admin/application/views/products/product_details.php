@@ -29,7 +29,6 @@ function is_equal($group1_id, $rec_id)
 }
 ?>
 <div id="right">
-<form id="product_form" name="product_form" action="<?php echo base_url()."products/update_product/".$product_detail->id ; ?>" method="post" enctype="multipart/form-data">
 	<br />
     <div class="section">
     		<?php if($errors) { ?><div class="message red"><br /><ul><?php echo $errors ; ?></ul><br /></div><?php } ?>
@@ -264,7 +263,6 @@ function is_equal($group1_id, $rec_id)
 				<div class="row">
 					<label></label>
 					<div class="right">
-                        <button type="submit"><span>Update</span></button>
                         <button type="button" id="cancel"><span>Cancel</span></button>
 					</div>
 				</div>
@@ -272,9 +270,15 @@ function is_equal($group1_id, $rec_id)
 		</div>
 	</div>
 </div>
-</form>
 
 <div class="modal" title="Instructions">
     <p>To insert a tables use the following syntax.</p>
     <p>[table]<br />item|5ml<br />item|5ml<br />[endtable]</p>
 </div>
+<script type="text/javascript">
+$(function(){
+	$("#cancel").live('click',function(){
+		window.location.href = "<?php echo base_url()."products/index/" ; ?>" ;
+	}) ;
+}) ;
+</script>

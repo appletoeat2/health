@@ -80,7 +80,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]") ;
+			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]", "npn" => "NPN&", "sort_order" => "Sort Order&numeric", "group_id" => "Product Group&", "product_categories[]" => "Product Categories&","food_sensitivities[]" => "Food Sensitivities&", "isnew" => "Is New&", "status" => "Status&", "product_name" => "Product Name (English)&", "formula" => "Formula (English)&", "health_claim" => "Health Claim (English)&", "short_description" => "Short Description (English)&", "description" => "Description (English)&", "product_name_french" => "Product Name (French)&", "formula_french" => "Formula (French)&", "health_claim_french" => "Health Claim (French)&", "short_description_french" => "Short Description (French)&", "description_french" => "Description (French)&") ;
 		
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -108,7 +108,9 @@ class Products extends CI_Controller
 				if($response["status"] == 1)
 				{
 					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french")) ;
-						
+					
+					$attributes["product_code"] = strtolower($attributes["product_code"]) ;
+					
 					$product_id = $this->model1->insert_rec($attributes, "products") ;
 						
 					$this->rename_files($response["file_name"], $attributes["product_code"].".jpg") ;
@@ -212,7 +214,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]") ;
+			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash", "npn" => "NPN&", "sort_order" => "Sort Order&numeric", "group_id" => "Product Group&", "product_categories[]" => "Product Categories&","food_sensitivities[]" => "Food Sensitivities&", "isnew" => "Is New&", "status" => "Status&", "product_name" => "Product Name (English)&", "formula" => "Formula (English)&", "health_claim" => "Health Claim (English)&", "short_description" => "Short Description (English)&", "description" => "Description (English)&", "product_name_french" => "Product Name (French)&", "formula_french" => "Formula (French)&", "health_claim_french" => "Health Claim (French)&", "short_description_french" => "Short Description (French)&", "description_french" => "Description (French)&") ;
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
 				$data["errors"] = validation_errors('<li>', '</li>');
@@ -257,7 +259,7 @@ class Products extends CI_Controller
 						$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
 				
 				$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french")) ;
-				
+				$attributes["product_code"] = strtolower($attributes["product_code"]) ;
 				$product_id = $this->input->post("product_id") ;
 				$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
 				
@@ -332,11 +334,9 @@ class Products extends CI_Controller
 						$this->load->view("template/body", array_merge($data, $this->load_view("products/edit_product"))) ;	
 					}
 				} else {
-					
 					$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
-				
 					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french")) ;
-					
+					$attributes["product_code"] = strtolower($attributes["product_code"]) ;
 					$product_id = $this->input->post("product_id") ;
 					$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
 					
@@ -382,8 +382,7 @@ class Products extends CI_Controller
 						}
 					}	
 					
-					redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
-						
+					redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;		
 				}
 			}
 		}
@@ -477,12 +476,4 @@ class Products extends CI_Controller
 		$this->image_lib->resize() ;
 		$this->image_lib->clear() ;
 	}
-}
-/*
-
-, "npn" => "NPN&required", "sort_order" => "Sort Order&required", "group_id" => "Product Group&required", "product_categories[]" => "Product Categories&required","food_sensitivities[]" => "Food Sensitivities&required", "isnew" => "Is New&required", "status" => "Status&required", "product_name" => "Product Name (English)&required", "formula" => "Formula (English)&required", "health_claim" => "Health Claim (English)&required", "short_description" => "Short Description (English)&required", "description" => "Description (English)&required", "product_name_french" => "Product Name (French)&required", "formula_french" => "Formula (French)&required", "health_claim_french" => "Health Claim (French)&required", "short_description_french" => "Short Description (French)&required", "description_french" => "Description (French)&required"
-
-, "npn" => "NPN&required", "sort_order" => "Sort Order&required", "group_id" => "Product Group&required", "product_categories[]" => "Product Categories&required","food_sensitivities[]" => "Food Sensitivities&required", "isnew" => "Is New&required", "status" => "Status&required", "product_name" => "Product Name (English)&required", "formula" => "Formula (English)&required", "health_claim" => "Health Claim (English)&required", "short_description" => "Short Description (English)&required", "description" => "Description (English)&required", "product_name_french" => "Product Name (French)&required", "formula_french" => "Formula (French)&required", "health_claim_french" => "Health Claim (French)&required", "short_description_french" => "Short Description (French)&required", "description_french" => "Description (French)&required"
-
-/**/
-	
+}	

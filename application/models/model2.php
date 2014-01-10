@@ -46,7 +46,7 @@ class Model2 extends CI_Model
 		
 		$q = "SELECT
 					products.id AS product_id, products.product_name, products.product_code, products.health_claim,
-					product_groups.id AS group_id, product_groups.group_name, 
+					product_groups.id AS group_id, product_groups.group_name, product_groups.short_description, 
 					PRODUCTS_CATEGORIES_TABLE.categories_id,
 					FOOD_SENSITIVITIES_TABLE.food_sensitivities_id
 			  FROM

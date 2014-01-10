@@ -86,3 +86,17 @@ if ( ! function_exists('post_data'))
 		return $post_data ;
 	}
 }
+
+if ( ! function_exists('get_product_group'))
+{
+	function get_product_group($group_id)
+	{
+		$CI =& get_instance() ;
+		$CI->load->model('model1') ;
+		
+		$cond1["id"] = $group_id ;
+		$group_rec = $CI->model1->get_one($cond1, "product_groups") ;
+		
+		return $group_rec ;
+    }
+}

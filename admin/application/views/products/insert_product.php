@@ -136,6 +136,10 @@ function is_equal($group1_id, $rec_id)
 						<label>Formula</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="formula" name="formula"><?php echo set_value("formula") ; ?></textarea></div>
 					</div>
+                    <div class="row">
+						<label>Dosage</label>
+						<div class="right" style="z-index:-9999 !important;"><textarea id="dosage" name="dosage"><?php echo set_value("dosage") ; ?></textarea></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -162,6 +166,10 @@ function is_equal($group1_id, $rec_id)
                     <div class="row">
 						<label>Formula</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="formula_french" name="formula_french"><?php echo set_value("formula_french"); ?></textarea></div>
+					</div>
+                    <div class="row">
+						<label>Dosage</label>
+						<div class="right" style="z-index:-9999 !important;"><textarea id="dosage_french" name="dosage_french"><?php echo set_value("dosage_french"); ?></textarea></div>
 					</div>
 				</div>
 			</div>

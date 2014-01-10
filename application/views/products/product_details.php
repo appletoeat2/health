@@ -73,20 +73,7 @@
             
             <div id="Dosage" class="tab-pane">
             	
-                <h2>Directions</h2>
-             	<p>Lorem ipsum dolor sit amet, omittam indoctum an mei, ad latine molestie contentiones mel. Duo te omnis utamur signiferumque, ut unum voluptua ius. Ut illud propriae usu, quo an nisl dicam aliquando. Tamquam delicata sententiae ei ius, no utinam evertitur his.</p>
-				
-                <h2>Warnings</h2>
-             	<p>Lorem ipsum dolor sit amet, omittam indoctum an mei, ad latine molestie contentiones mel. Duo te omnis utamur signiferumque, ut unum voluptua ius. Ut illud propriae usu, quo an nisl dicam aliquando. Tamquam delicata sententiae ei ius, no utinam evertitur his.</p>
-            	
-                <h2>Cautions</h2>
-             	<p>Lorem ipsum dolor sit amet, omittam indoctum an mei, ad latine molestie contentiones mel. Duo te omnis utamur signiferumque, ut unum voluptua ius. Ut illud propriae usu, quo an nisl dicam aliquando. Tamquam delicata sententiae ei ius, no utinam evertitur his.</p>
-             	
-                <h2>Known Adverse Reactions</h2>
-             	<p>Lorem ipsum dolor sit amet, omittam indoctum an mei, ad latine molestie contentiones mel. Duo te omnis utamur signiferumque, ut unum voluptua ius. Ut illud propriae usu, quo an nisl dicam aliquando. Tamquam delicata sententiae ei ius, no utinam evertitur his.</p>
-             	
-                <h2>Allergy Info</h2>
-             	<p>Lorem ipsum dolor sit amet, omittam indoctum an mei, ad latine molestie contentiones mel. Duo te omnis utamur signiferumque, ut unum voluptua ius. Ut illud propriae usu, quo an nisl dicam aliquando. Tamquam delicata sententiae ei ius, no utinam evertitur his.</p>
+                <?php echo $product_detail->dosage ;?>
 			
             </div>
 		

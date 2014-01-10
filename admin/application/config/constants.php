@@ -39,5 +39,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 define("LARGE_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/prod_images/large/") ;
 define("MEDIUM_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/prod_images/medium/") ;
 define("SMALL_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/prod_images/small/") ;
+define("BANNER_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/banner_images/") ;
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

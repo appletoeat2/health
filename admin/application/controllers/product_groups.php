@@ -63,7 +63,7 @@ class Product_groups extends CI_Controller
 	
 	public function update_product_group($group_id)
 	{
-		$validation_parameters = array("group_name" => "Group Name&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&required", "group_name_french" => "Group Name (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&required", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
+		$validation_parameters = array("group_name" => "Group Name&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&", "group_name_french" => "Group Name (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
 		
 		if(form_validation_function($validation_parameters) == FALSE)
 		{

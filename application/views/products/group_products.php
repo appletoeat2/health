@@ -7,8 +7,15 @@
 <section class="container page-content">
 	<hr class="vertical-space2">
     	<section class="eleven columns">
+<<<<<<< HEAD
       			<?php
                     $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description); 
+=======
+      		<h3>Stay Active with Healthy Bones & Joints</h3>
+      		<p>
+				<?php
+                    $bodytag = str_replace( chr(13), "<br>", $groups->short_description); 
+>>>>>>> 20f07182e1132e086e51ecf80e5d22d683e27ca2
                     echo $bodytag
                 ?>
             <nav class="primary clearfix">

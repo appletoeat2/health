@@ -250,63 +250,62 @@ class Products extends CI_Controller
 				if($new_file == "Yes")
 				{
 					$response = $this->upload_product_file(get_random_string()) ;
-					
 					if($response["status"] == 1)
-					{ 
-						unlink(LARGE_IMAGE_DIR.($product_rec->product_code).".jpg") ;
-						unlink(MEDIUM_IMAGE_DIR.($product_rec->product_code).".jpg") ;
-						unlink(SMALL_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+					{
+						if(file_exists(LARGE_IMAGE_DIR.($product_rec->product_code).".jpg")) unlink(LARGE_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+						if(file_exists(MEDIUM_IMAGE_DIR.($product_rec->product_code).".jpg")) unlink(MEDIUM_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+						if(file_exists(SMALL_IMAGE_DIR.($product_rec->product_code).".jpg")) unlink(SMALL_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+						
 						$current_name = $response["file_name"] ;
 						$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
+						
+						$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
+						
+						$attributes["product_code"] = strtolower($attributes["product_code"]) ;
+						$product_id = $this->input->post("product_id") ;
+						$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
 				
-				$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
-				$attributes["product_code"] = strtolower($attributes["product_code"]) ;
-				$product_id = $this->input->post("product_id") ;
-				$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
+						$product_categories = $this->input->post("product_categories") ;
+						$food_sensitivities = $this->input->post("food_sensitivities") ;
 				
-				$product_categories = $this->input->post("product_categories") ;
-				$food_sensitivities = $this->input->post("food_sensitivities") ;
+						$this->model1->delete_rec(array("product_id" => $product_id), "products_categories_relation") ;
+						$this->model1->delete_rec(array("product_id" => $product_id), "products_food_sensitivites_relation") ;
 				
-				$this->model1->delete_rec(array("product_id" => $product_id), "products_categories_relation") ;
-				$this->model1->delete_rec(array("product_id" => $product_id), "products_food_sensitivites_relation") ;
+						if(!empty($product_categories))
+						{
+							foreach($product_categories as $rec):
+								$attributes = array("product_id" => $product_id, "category_id" => $rec) ;
+								$this->model1->insert_rec($attributes, "products_categories_relation") ;
+							endforeach ;
+						}
 				
-				if(!empty($product_categories))
-				{
-					foreach($product_categories as $rec):
-						$attributes = array("product_id" => $product_id, "category_id" => $rec) ;
-						$this->model1->insert_rec($attributes, "products_categories_relation") ;
-					endforeach ;
-				}
+						if(!empty($food_sensitivities))
+						{
+							foreach($food_sensitivities as $rec):
+								$attributes = array("product_id" => $product_id, "food_sensitivity_id" => $rec) ;
+								$this->model1->insert_rec($attributes, "products_food_sensitivites_relation") ;
+							endforeach ;
+						}
 				
-				if(!empty($food_sensitivities))
-				{
-					foreach($food_sensitivities as $rec):
-						$attributes = array("product_id" => $product_id, "food_sensitivity_id" => $rec) ;
-						$this->model1->insert_rec($attributes, "products_food_sensitivites_relation") ;
-					endforeach ;
-				}
+						$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
 				
-				$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
+						$row_counter = $this->input->post("counter_rows") ;
+						$sku_codes = $this->input->post("sku_code") ;
+						$sizes = $this->input->post("size") ;
+						$sizes_french = $this->input->post("size_french") ;
+						$prices = $this->input->post("price") ;
+						$wholesale_prices = $this->input->post("wholesale_price") ;
+						$weights = $this->input->post("weight") ;
+						$upc = $this->input->post("upc") ;
 				
-				$row_counter = $this->input->post("counter_rows") ;
-				$sku_codes = $this->input->post("sku_code") ;
-				$sizes = $this->input->post("size") ;
-				$sizes_french = $this->input->post("size_french") ;
-				$prices = $this->input->post("price") ;
-				$wholesale_prices = $this->input->post("wholesale_price") ;
-				$weights = $this->input->post("weight") ;
-				$upc = $this->input->post("upc") ;
+						if($row_counter > 0) {
+							for($x = 0 ; $x < $row_counter ; $x++) {
+								$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ;
+								$this->model1->insert_rec($attributes, "skus") ;
+							}
+						}	
 				
-				if($row_counter > 0)
-				{
-					for($x = 0 ; $x < $row_counter ; $x++)
-					{
-						$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ;
-						$this->model1->insert_rec($attributes, "skus") ;
-					}
-				}	
-				
-				redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
+						redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
 					}
 					else
 					{
@@ -334,8 +333,11 @@ class Products extends CI_Controller
 							
 						$this->load->view("template/body", array_merge($data, $this->load_view("products/edit_product"))) ;	
 					}
-				} else {
+				}
+				else
+				{
 					$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
+					
 					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
 					
 					$attributes["product_code"] = strtolower($attributes["product_code"]) ;
@@ -388,8 +390,7 @@ class Products extends CI_Controller
 				}
 			}
 		}
-		else
-			redirect(base_url()."products") ; 
+		else redirect(base_url()."products") ; 
 	}
 	
 	public function remove_product($product_id = 0)
@@ -397,9 +398,9 @@ class Products extends CI_Controller
 		if($product_id)
 		{
 			$product_rec = $this->model1->get_one(array("id" => $product_id), "products") ;
-			unlink(LARGE_IMAGE_DIR.($product_rec->product_code).".jpg") ;
-			unlink(MEDIUM_IMAGE_DIR.($product_rec->product_code).".jpg") ;
-			unlink(SMALL_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+			if(file_exists(LARGE_IMAGE_DIR.($product_rec->product_code).".jpg")) unlink(LARGE_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+			if(file_exists(MEDIUM_IMAGE_DIR.($product_rec->product_code).".jpg")) unlink(MEDIUM_IMAGE_DIR.($product_rec->product_code).".jpg") ;
+			if(file_exists(SMALL_IMAGE_DIR.($product_rec->product_code).".jpg")) unlink(SMALL_IMAGE_DIR.($product_rec->product_code).".jpg") ;
 			$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
 			$this->model1->delete_rec(array("product_id" => $product_id), "product_brochure_relation") ;
 			$this->model1->delete_rec(array("product_id" => $product_id), "products_food_sensitivites_relation") ;
@@ -430,9 +431,12 @@ class Products extends CI_Controller
 	
 	private function rename_files($current_name, $new_name)
 	{
-		rename((LARGE_IMAGE_DIR.$current_name), (LARGE_IMAGE_DIR.$new_name)) ;
-		rename((MEDIUM_IMAGE_DIR.$current_name), (MEDIUM_IMAGE_DIR.$new_name)) ;
-		rename((SMALL_IMAGE_DIR.$current_name), (SMALL_IMAGE_DIR.$new_name)) ;
+		if(file_exists(LARGE_IMAGE_DIR.$current_name))
+			rename((LARGE_IMAGE_DIR.$current_name), (LARGE_IMAGE_DIR.$new_name)) ;
+		if(file_exists(MEDIUM_IMAGE_DIR.$current_name))
+			rename((MEDIUM_IMAGE_DIR.$current_name), (MEDIUM_IMAGE_DIR.$new_name)) ;
+		if(file_exists(SMALL_IMAGE_DIR.$current_name))
+			rename((SMALL_IMAGE_DIR.$current_name), (SMALL_IMAGE_DIR.$new_name)) ;
 	}
 	
 	private function upload_product_file($file_name)

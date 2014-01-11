@@ -7,14 +7,10 @@
 <section class="container page-content">
 	<hr class="vertical-space2">
     	<section class="eleven columns">
-      		<h3>Stay Active with Healthy Bones & Joints</h3>
-      		<p>
-				<?php
-                    $bodytag = str_replace( chr(13), "<br>", $groups->description); 
+      			<?php
+                    $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description); 
                     echo $bodytag
                 ?>
-      		</p>
-      		
             <nav class="primary clearfix">
 				<ul>
           			<li><a href="<?php echo base_url() ; ?>" class="selected" data-filter="*">All Products</a></li>

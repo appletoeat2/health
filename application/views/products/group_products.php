@@ -10,7 +10,7 @@
       		<h3>Stay Active with Healthy Bones & Joints</h3>
       		<p>
 				<?php
-                    $bodytag = str_replace( chr(13), "<br>", $groups->description); 
+                    $bodytag = str_replace( chr(13), "<br>", $groups->short_description); 
                     echo $bodytag
                 ?>
       		</p>

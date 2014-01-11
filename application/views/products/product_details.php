@@ -100,8 +100,11 @@
           	<section id="side-nav" class="five columns">
             	<ul>
               		<li><a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">Click Here for a Larger View</a></li>
-              		<?php if($brochure) ?>
+              		<!--
+<?php if($brochure) ?>
                 	<li><a href="<?php echo base_url()."products/product_brochures/".$brochure->brochure_file_name ; ?>" target="_blank">Download The Brochure</a></li>
+-->
+                	
             	</ul>
 			</section>
 		</div>

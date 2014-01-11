@@ -43,12 +43,6 @@
 	height: 30px;
 	padding: 35px 0px;
 }
-.bone {
-	background-image: url(/global-images/bone-banner.png);
-	background-color: #01619e;
-	background-repeat: no-repeat;
-	background-position: center;
-}
 #headline h3, #headline2 h3 { color:#ffffff; font-size:14px; position:relative; text-transform:uppercase; font-weight:900; letter-spacing: 0.2em; margin-left: 15px;}
 #headline h3 small, #headline2 small { font-size:56%; color:rgba(255,255,255,0.8); font-weight:400; margin-left:10px; letter-spacing:-0.07em; text-transform:capitalize;}
 #headline h3 small { color:#808080; font-weight:300; }

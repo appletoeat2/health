@@ -23,7 +23,7 @@ class Product_groups extends CI_Controller
 	
 	public function insert_product_group()
 	{
-		$validation_parameters = array("group_name" => "Group Name&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&required", "group_name_french" => "Group Name (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&required", "sort_order" => "Sort Order&required") ;
+		$validation_parameters = array("group_name" => "Group Name&required", "group_title" => "Group Title&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&", "group_name_french" => "Group Name (French)&required", "group_title_french" => "Group Title (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&", "meta" => "Meta&required", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
 		
 		if(form_validation_function($validation_parameters) == FALSE)
 		{
@@ -34,7 +34,7 @@ class Product_groups extends CI_Controller
 			$response = $this->upload_product_file(get_random_string()) ;
 			
 			if($response["status"] == 1) {
-				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order")) ;
+				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
 				$attributes["banner_file"] = ($response["file_name"]) ;
 				$user_id = $this->model1->insert_rec($attributes, "product_groups") ;
 				redirect(base_url()."product_groups/index/1") ;
@@ -63,7 +63,7 @@ class Product_groups extends CI_Controller
 	
 	public function update_product_group($group_id)
 	{
-		$validation_parameters = array("group_name" => "Group Name&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&", "group_name_french" => "Group Name (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
+		$validation_parameters = array("group_name" => "Group Name&required", "group_title" => "Group Title&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&", "group_name_french" => "Group Name (French)&required", "group_title_french" => "Group Title (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&", "meta" => "Meta&required", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
 		
 		if(form_validation_function($validation_parameters) == FALSE)
 		{
@@ -78,7 +78,7 @@ class Product_groups extends CI_Controller
 				
 				if($response["status"] == 1) {
 					$group_rec = $this->model1->get_one(post_data(array("id" => "group_id")), "product_groups") ;
-					$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order")) ;
+					$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
 					$attributes["banner_file"] = ($response["file_name"]) ;
 					$cond = post_data(array("id" => "group_id")) ;
 					$user_id = $this->model1->update_rec($attributes, $cond, "product_groups") ;
@@ -96,7 +96,7 @@ class Product_groups extends CI_Controller
 			}
 			else
 			{
-				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order")) ;
+				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
 				$cond = post_data(array("id" => "group_id")) ;
 				$user_id = $this->model1->update_rec($attributes, $cond, "product_groups") ;
 				redirect(base_url()."product_groups/index/2") ;
@@ -107,7 +107,7 @@ class Product_groups extends CI_Controller
 	private function upload_product_file($file_name)
 	{
 		$config["upload_path"] = "./images/banner_images/" ;
-		$config["allowed_types"] = "jpg" ;
+		$config["allowed_types"] = "jpg|png" ;
 		$config["file_name"] = $file_name ;
 		
 		$this->upload->initialize($config) ;

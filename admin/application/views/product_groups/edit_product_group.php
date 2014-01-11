@@ -12,6 +12,10 @@
 					<label>Group Name</label>
 					<div class="right"><input type="text" id="group_name" name="group_name" value="<?php echo set_value("group_name", stripslashes($group_rec->group_name)) ; ?>" /></div>
 				</div>
+                <div class="row"> 
+					<label>Group Title</label>
+					<div class="right"><input type="text" id="group_title" name="group_title" value="<?php echo set_value("group_title", stripslashes($group_rec->group_title)) ; ?>" /></div>
+				</div>
                 <div class="row">
 					<label>Short Description</label>
 					<div class="right" style="z-index:-9999 !important;"><textarea id="short_description" name="short_description"><?php echo set_value("short_description", stripslashes($group_rec->short_description)) ; ?></textarea></div>
@@ -31,6 +35,10 @@
 						<label>Group Name (French)</label>
 						<div class="right"><input type="text" id="group_name_french" name="group_name_french" value="<?php echo set_value("group_name_french", stripslashes($group_rec->group_name_french)) ; ?>" /></div>
 					</div>
+                <div class="row"> 
+					<label>Group Title</label>
+					<div class="right"><input type="text" id="group_title_french" name="group_title_french" value="<?php echo set_value("group_title_french", stripslashes($group_rec->group_title_french)) ; ?>" /></div>
+				</div>
                 <div class="row">
 						<label>Short Description (French)</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="short_description_french" name="short_description_french"><?php echo set_value("short_description", stripslashes($group_rec->short_description)) ; ?></textarea></div>
@@ -69,6 +77,10 @@
 		<div class="title">Sort Order<span class="hide"></span></div>
 		<div class="content">
         	<div class="row">
+				<label>Meta</label>
+				<div class="right"><input type="text" id="meta" name="meta" value="<?php echo set_value("meta", $group_rec->meta) ; ?>" /></div>
+			</div>
+            <div class="row">
 				<label>Sort Order</label>
 				<div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo set_value("sort_order", $group_rec->sort_order) ; ?>" /></div>
 			</div>

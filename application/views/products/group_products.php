@@ -1,33 +1,15 @@
-<section id="headline" class="bone">
+<?php echo $groups->meta ; ?>
+<section id="headline" style="background-image: url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color: #01619e; background-repeat: no-repeat; background-position: center">
 	<div class="container">
-    	<h3><a href="index.php">Muscular Skeletal Therapies</a></h3>
+    	<h3><a href="#"><?php echo $groups->group_name ; ?></a></h3>
 	</div>
 </section>
 
 <section class="container page-content">
 	<hr class="vertical-space2">
     	<section class="eleven columns">
-<<<<<<< HEAD
-      			<?php
-                    $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description); 
-=======
-      		<h3>Stay Active with Healthy Bones & Joints</h3>
-      		<p>
-				<?php
-                    $bodytag = str_replace( chr(13), "<br>", $groups->short_description); 
->>>>>>> 20f07182e1132e086e51ecf80e5d22d683e27ca2
-                    echo $bodytag
-                ?>
-            <nav class="primary clearfix">
-				<ul>
-          			<li><a href="<?php echo base_url() ; ?>" class="selected" data-filter="*">All Products</a></li>
-          			<li><a href="<?php echo base_url() ; ?>" class="" data-filter=".calmag">Cal Mag Complexes</a></li>
-          			<li><a href="<?php echo base_url() ; ?>" class="" data-filter=".jointhealth">Bone & Joint</a></li>
-          			<li><a href="<?php echo base_url() ; ?>" class="" data-filter=".vitamink2">With Vitamin K2</a></li>
-        		</ul>
-      		</nav>
-			
-            <div class="portfolio">
+		<?php $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description);  echo $bodytag ; ?>
+        	<div class="portfolio">
         	<?php if($products) { ?>
 			<?php foreach($products as $rec): ?>
           		<figure class="portfolio-item three columns entry <?php echo $rec->filter ; ?> -item">

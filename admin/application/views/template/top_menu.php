@@ -3,9 +3,9 @@
     	<li <?php if($current_page == "dashboard") echo 'class="current"' ; ?>><a href="<?php echo base_url()."dashboard" ; ?>">Dashboard</a></li> 
 		<li <?php if($current_page == "products") echo 'class="current"' ; ?>><a href="<?php echo base_url()."products" ; ?>">Products</a>
         	<ul> 
-				<li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_categories" ; ?>">Product Categories</a></li>
 				<li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_groups" ; ?>">Product Groups</a></li>
-				<li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."food_sensitivities" ; ?>">Food Sensitivities</a></li>
+                <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_categories" ; ?>">Product Categories</a></li>
+                <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."food_sensitivities" ; ?>">Food Sensitivities</a></li>
 			</ul>
         </li>
         <?php if($this->session->userdata('role') == 'Admin') { ?>

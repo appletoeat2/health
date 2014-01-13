@@ -1,7 +1,7 @@
 <section class="container home-content">
 	<?php $this->load->view("template/slider") ; ?>
 	
-    <section class="row column">
+    <section class="">
         <div class="one_fifth">
         	<a href="<?php echo base_url() ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/sp_heart.jpg" /></a>
             <?php $group_rec = get_product_group(1) ; ?>
@@ -38,8 +38,9 @@
     	<div class="pad-r10">
     		<img src="<?php echo base_url() ; ?>images/global-images/product-group.jpg" alt="" width="202" height="152" class="alignright">
             <h6>Product Selector</h6>
-    		<p>Aliquam enim enim, pharetra in sodales at, interdum sit amet dui. Nullam vulputate euismod urna non pharetra. Phasellus blandit mattis ipsum, ac laoreet lorem lacinia et. Cras et ligula libero. </p>
-    		<a href="<?php echo base_url() ; ?>" class="magicmore">Haretra in sodales atsen interdum</a>
+    		<p>Innovite Health is a best-in-class nutritional supplement brand. Based in the latest research and technical innovations, all products are certified for proven quality, purity and label claims.  Better quality equals better results. See what Innovite Health product fits your life
+</p>
+    		<a href="<?php echo base_url() ; ?>" class="magicmore">Ignite your life. Find products here.</a>
 		</div>
 	</article>
 

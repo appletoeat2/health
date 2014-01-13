@@ -1,4 +1,4 @@
-<?php echo $groups->meta ; ?>
+
 <section id="headline" style="background-image: url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color: #01619e; background-repeat: no-repeat; background-position: center">
 	<div class="container">
     	<h3><a href="#"><?php echo $groups->group_name ; ?></a></h3>
@@ -20,7 +20,7 @@
              		</div>
             	
                 	<div style="text-align: center">
-              			<p><a href="product-detail.php?prod_id=<?php echo $rec->id ; ?>&amp;cat_id=<?php echo $groups->id ; ?>"><?php echo $rec->product_name ; ?></a></p>
+              			<p><a href="<?php echo base_url()."products/product_details/".$groups->id."/".$rec->id ; ?>"><?php echo $rec->product_name ; ?></a></p>
             		</div>
           		</figure>
           	<?php endforeach ; } ?>

@@ -10,7 +10,7 @@
 	</div><!-- end-listbox1 --> 
   	<br class="clear">
   	<h4 class="subtitle">Product questions?</h4>
-  	<p>Contact us at (905) 761-5121 or email us using the form below</p>
+  	<p>Contact us at 1-800-387-9111 or email us using the form below</p>
   	<div id="form">
         <form action="<?php echo base_url() ; ?>" method="get">
             <br>

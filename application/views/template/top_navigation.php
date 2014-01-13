@@ -14,13 +14,7 @@
                         		<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
 							<?php endforeach ; ?>
 						<?php } ?> 
-                      	<li class="submenu"><a href="<?php echo base_url()."products/index/7" ; ?>">Digestive Restoration</a>
-                        	<ul>
-                            	<li><a href="<?php echo base_url() ; ?>">General cleanse and detox</a></li>
-                            	<li><a href="<?php echo base_url() ; ?>">Probiotics</a></li>
-                                <li><a href="<?php echo base_url() ; ?>">Candida detox: Yeast Buster</a></li>
-                            </ul>
-                        </li>
+                    
                         <li><a href="<?php echo base_url()."products/index/7" ; ?>">New products</a></li>
                         <li><a href="<?php echo base_url()."products/index/7" ; ?>">Current promotions</a></li>
                         <li><a href="<?php echo base_url() ; ?>">Staff picks</a></li>

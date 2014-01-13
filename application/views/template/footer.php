@@ -2,7 +2,7 @@
 	<section class="container footer-in">
     	<div class="four columns">
         	<h4 class="subtitle">Contact Us</h4>
-      		<p>97 Saramia Crescent<br> Concord, ON, L4K 4P7<br> Tel: (905) 761-5121<br> Fax: (905) 761-1453</p>
+      		<p>97 Saramia Crescent<br> Concord, ON, L4K 4P7<br> Tel: 1-800-387-9111<br> Fax: 1-888-279-3373</p>
 		</div><!-- end-contact-info /end -->
 		<div class="four columns">
         	<h4 class="subtitle">Our latest tweets</h4>
@@ -35,8 +35,7 @@
     	<div class="container">
      		<div class="tweleve columns">
       			<div class="">
-                	InnoviteHealth - Your Trusted Companion for Leading Natural Health Products <br>
-      				<p><small>The information found on this web site should not be construed as medical claims. For proper use of these products, consult a health care professional.<br>© 2014. All Rights Reserved.</small></p>
+      				<p><small>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br><a href="#">Privacy Policy</a> | <a href="#">Terms and conditions</a> </small></p>
       			</div>
 	  		</div><!-- footer-navigation /end -->
 	  		<div class="eight columns"></div>

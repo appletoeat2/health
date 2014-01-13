@@ -12,11 +12,11 @@
       		<h4 class="subtitle">Products</h4>
       		<div class="listbox1">
         		<ul>
-          			<li><a href="<?php echo base_url("") ; ?>">Cardio Health</a></li>
-          			<li><a href="<?php echo base_url("") ; ?>">Cognitive Health</a></li>
-        			<li><a href="<?php echo base_url("") ; ?>">Skeletal Health</a></li>
-          			<li><a href="<?php echo base_url("") ; ?>">Digestive Health</a></li>
-          			<li><a href="<?php echo base_url("") ; ?>">General Wellness</a></li>
+                	<?php if($product_groups) { ?>
+                    	<?php foreach($product_groups as $rec): ?>
+                        	<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
+						<?php endforeach ; ?>
+					<?php } ?>
         		</ul>
       		</div>
     	</div><!-- flickr /end -->

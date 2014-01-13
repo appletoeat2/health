@@ -20,7 +20,7 @@ class Products extends CI_Controller
 	
 	public function group_product($group_id)
 	{
-		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id), "products", "sort_order", "ASC") ;
+		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id, "status" => "Active"), "products", "sort_order", "ASC") ;
 		$data["groups"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $group_id, $data["groups"]->group_title)));
 	}

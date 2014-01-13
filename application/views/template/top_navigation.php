@@ -13,7 +13,7 @@
                         	<?php foreach($product_groups as $rec): ?>
                         		<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
 							<?php endforeach ; ?>
-						<?php } ?> 
+						<?php } ?>
                       	<li class="submenu"><a href="<?php echo base_url()."products/index/7" ; ?>">Digestive Restoration</a>
                         	<ul>
                             	<li><a href="<?php echo base_url() ; ?>">General cleanse and detox</a></li>

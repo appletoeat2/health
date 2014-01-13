@@ -12,24 +12,14 @@ class Home extends CI_Controller
 		$this->load->view('template/body', $this->load_view("home/index"));
 	}
 	
-	public function merge()
+	public function terms_and_conditions()
 	{
-		/*
-		$c_brs = $this->model1->get_all("brochures") ;
-		foreach($c_brs as $rec1):
-			$brocher_id = $this->model1->insert_rec(array("brochure_file_name" => $rec1->en_file, "brochure_file_name_french" => $rec1->fr_file, "status" => 'Active'), "brochures_1") ;
-			$product_ids = explode(", ", $rec1->product_codes) ;
-			if($product_ids[0] == "") {}
-			else
-			{
-				foreach($product_ids as $rec2):
-					$product_rec = $this->model1->get_one(array("product_code" => $rec2), "products") ;
-					if($product_rec)
-						$rec_id = $this->model1->insert_rec(array("product_id" => $product_rec->id, "brochure_id" => $brocher_id), "product_brochure_relation") ;	
-				endforeach ;
-			}
-		endforeach ;
-		/**/
+		$this->load->view('template/body', $this->load_view("home/terms_and_conditions"));
+	}
+	
+	public function privacy_policy()
+	{
+		$this->load->view('template/body', $this->load_view("home/privacy_policy"));
 	}
 	
 	private function load_view($view)

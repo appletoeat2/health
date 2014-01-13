@@ -52,7 +52,7 @@
 #sticker { background: #fff; z-index:90000;   width:100%; height:auto; position:relative; -webkit-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.17); -moz-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.17); box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.17); }
 #sticker #header { border:0 none; border-bottom:3px solid #f3f3f3\9;}
 header.sticky { margin: 0; position: fixed; top: 0; z-index: 100; }
-
+.bone{background-color:#01619e; background-repeat:no-repeat; background-position:center;}
 
 	
 /* HEADER  */ 

@@ -35,7 +35,7 @@
     	<div class="container">
      		<div class="tweleve columns">
       			<div class="">
-      				<p><small>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br><a href="#">Privacy Policy</a> | <a href="#">Terms and conditions</a> </small></p>
+      				<p><small>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br><a href="<?php echo base_url()."home/privacy_policy" ; ?>">Privacy Policy</a> | <a href="<?php echo base_url()."home/terms_and_conditions" ; ?>">Terms and conditions</a> </small></p>
       			</div>
 	  		</div><!-- footer-navigation /end -->
 	  		<div class="eight columns"></div>

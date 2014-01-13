@@ -40,9 +40,9 @@ class Model2 extends CI_Model
 	
 	public function get_all_products()
 	{
-		$q1 = "(SELECT products.id as product_categories_id, GROUP_CONCAT(DISTINCT product_categories.id ORDER BY product_categories.sort_order) AS categories_id FROM products LEFT OUTER JOIN products_categories_relation ON products.id = products_categories_relation.product_id LEFT OUTER JOIN product_categories ON products_categories_relation.category_id = product_categories.id WHERE `products.status` = 'Active' GROUP BY product_categories_id) AS PRODUCTS_CATEGORIES_TABLE" ;
+		$q1 = "(SELECT products.id as product_categories_id, GROUP_CONCAT(DISTINCT product_categories.id ORDER BY product_categories.sort_order) AS categories_id FROM products LEFT OUTER JOIN products_categories_relation ON products.id = products_categories_relation.product_id LEFT OUTER JOIN product_categories ON products_categories_relation.category_id = product_categories.id WHERE 1 GROUP BY product_categories_id) AS PRODUCTS_CATEGORIES_TABLE" ;
 		
-		$q2 = "(SELECT products.id as product_food_sensitivites_id, GROUP_CONCAT(DISTINCT food_sensitivities.id ORDER BY food_sensitivities.sort_order) AS food_sensitivities_id FROM products LEFT OUTER JOIN products_food_sensitivites_relation ON products.id = products_food_sensitivites_relation.product_id LEFT OUTER JOIN food_sensitivities ON products_food_sensitivites_relation.food_sensitivity_id = food_sensitivities.id WHERE `products.status` = 'Active' GROUP BY product_food_sensitivites_id) AS FOOD_SENSITIVITIES_TABLE" ;
+		$q2 = "(SELECT products.id as product_food_sensitivites_id, GROUP_CONCAT(DISTINCT food_sensitivities.id ORDER BY food_sensitivities.sort_order) AS food_sensitivities_id FROM products LEFT OUTER JOIN products_food_sensitivites_relation ON products.id = products_food_sensitivites_relation.product_id LEFT OUTER JOIN food_sensitivities ON products_food_sensitivites_relation.food_sensitivity_id = food_sensitivities.id WHERE 1 GROUP BY product_food_sensitivites_id) AS FOOD_SENSITIVITIES_TABLE" ;
 		
 		$q = "SELECT
 					products.id AS product_id, products.product_name, products.product_code, products.health_claim,
@@ -54,7 +54,7 @@ class Model2 extends CI_Model
 					INNER JOIN ".$q1." ON products.id = PRODUCTS_CATEGORIES_TABLE.product_categories_id
 					INNER JOIN ".$q2." ON products.id = FOOD_SENSITIVITIES_TABLE.product_food_sensitivites_id
 					
-			  WHERE `products.status` = 'Active' 
+			  WHERE products.status = 'Active' 
 			  ORDER BY product_groups.sort_order, products.sort_order ASC" ;
 		//echo $q ; exit ;
 		$query = $this->db->query($q) ;

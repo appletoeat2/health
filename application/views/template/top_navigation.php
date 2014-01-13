@@ -14,6 +14,7 @@
                         		<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
 							<?php endforeach ; ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 						<?php } ?>
                       	<li class="submenu"><a href="<?php echo base_url()."products/index/7" ; ?>">Digestive Restoration</a>
                         	<ul>
@@ -22,6 +23,10 @@
                                 <li><a href="<?php echo base_url() ; ?>">Candida detox: Yeast Buster</a></li>
                             </ul>
                         </li>
+=======
+						<?php } ?> 
+                    
+>>>>>>> 5ba01f0cdddde015e319fcafafdd3543fc32d7ac
 =======
 						<?php } ?> 
                     

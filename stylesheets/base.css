@@ -78,7 +78,13 @@
 	h3 strong, h4 strong, h5 strong, h6 strong { font-weight:500; }
 	h3 strong { letter-spacing: -0.02em; }
 
-	p { color:#666e74; margin: 0; font-family: Helvetica, Arial; letter-spacing: 0.25px; }
+	p { 
+	color:#666e74; 
+	margin: 0; 
+	font-family: Helvetica, Arial; 
+	letter-spacing: 0.25px; 
+	margin-bottom: 1em;
+	}
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #818a92;  }
 	p.magic { font-size: 19px; line-height: 25px; margin: 0; }
@@ -86,8 +92,8 @@
 
 	em { font-style: italic; }
 	strong { font-weight: bold; }
-	p strong { font-size:15px; }
-	small { font-size: 70%; color: #6b6b6b; line-height:1.3; }
+/*	p strong { font-size:15px; }
+*/	small { font-size: 70%; color: #6b6b6b; line-height:1.3; }
 	p small { font-size:11px; color:#8d9499;}
 	
 /* Dropcaps */
@@ -123,7 +129,7 @@
 /* #Links
 ================================================== */
 
-	a, a:visited { color: #0093d0; text-decoration: none; outline: 0; }
+	a, a:visited { color: #E11404; text-decoration: none; outline: 0; }
 		a:hover, a:focus { color: #ff9900; }
 		#headline a, a:visited { color: #ffffff; opacity:0.6; text-decoration: none; outline: 0; }
 		#headline a:hover, a:focus { color:  #ffffff; opacity:1; }
@@ -474,7 +480,7 @@
 		color: #888;
 		margin: 0;
 		width: 610px;
-		max-width: 100%;
+		max-width: 95%;
 		min-height: 21px;
 		display: block;
 		margin-bottom: 20px;

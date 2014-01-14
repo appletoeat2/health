@@ -1,4 +1,3 @@
-<?php echo $groups->meta ; ?>
 <section id="headline" style="background-image: url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color: #01619e; background-repeat: no-repeat; background-position: center">
 	<div class="container">
     	<h3><a href="#"><?php echo $groups->group_name ; ?></a></h3>
@@ -96,7 +95,7 @@
     	<div class="portfolio">
       		<script src="<?php echo base_url() ; ?>javascript/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
         	<a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">
-            	<img src="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" border="0"/>
+            	<img src="<?php echo base_url()."admin/images/prod_images/medium/".strtolower($product_detail->product_code).".jpg" ; ?>" border="0"/>
             </a>
           	<section id="side-nav" class="five columns">
             	<ul>

@@ -5,8 +5,15 @@
       		<p>97 Saramia Crescent<br> Concord, ON, L4K 4P7<br> Tel: 1-800-387-9111<br> Fax: 1-888-279-3373</p>
 		</div><!-- end-contact-info /end -->
 		<div class="four columns">
-        	<h4 class="subtitle">Our latest tweets</h4>
-     		<p>Aliquam enim enim, pharetra<br> in sodales at, inter</p>
+        	<h4 class="subtitle">Stay in the loop</h4>
+     		<p>Keep up to date with the latest news, events and product information.
+Enter email address</p>
+<div id="form">
+        <form action="<?php echo base_url() ; ?>" method="get">
+            <p><input type="text" class=""></p>
+            <button type="button" class="small">subscribe</button>
+        </form>
+	</div>
     	</div><!-- tweets  /end -->
     	<div class="four columns">
       		<h4 class="subtitle">Products</h4>
@@ -35,7 +42,10 @@
     	<div class="container">
      		<div class="tweleve columns">
       			<div class="">
-      				<p><small>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br><a href="<?php echo base_url()."home/privacy_policy" ; ?>">Privacy Policy</a> | <a href="<?php echo base_url()."home/terms_and_conditions" ; ?>">Terms and conditions</a> </small></p>
+                  
+                    <p><small>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br>
+                    <div class="footernav"><a href="<?php echo base_url()."home/privacy_policy" ; ?>">Privacy Policy</a> | <a href="<?php echo base_url()."home/terms_and_conditions" ; ?>">Terms and conditions</a> </div></small></p>
+                  
       			</div>
 	  		</div><!-- footer-navigation /end -->
 	  		<div class="eight columns"></div>

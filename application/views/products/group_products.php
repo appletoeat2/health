@@ -9,22 +9,22 @@
 	<hr class="vertical-space2">
     	<section class="eleven columns">
 		<?php $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description);  echo $bodytag ; ?>
-        	<div class="portfolio">
+        	
         	<?php if($products) { ?>
 			<?php foreach($products as $rec): ?>
-          		<figure class="portfolio-item three columns entry <?php echo $rec->filter ; ?> -item">
-                	<div class="img-item centre" style="text-align: center">
+          		<div class="product_item">
+                	<div class="img-item center" style="text-align:center">
                 		<a href="<?php echo base_url()."products/product_details/".$groups->id."/".$rec->id ; ?>">
                         	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" border="1" />
                     	</a>
              		</div>
             	
-                	<div style="text-align: center">
+                	<div class="product_title" style="text-align:center">
               			<p><a href="<?php echo base_url()."products/product_details/".$groups->id."/".$rec->id ; ?>"><?php echo $rec->product_name ; ?></a></p>
             		</div>
-          		</figure>
+          		</div>
           	<?php endforeach ; } ?>
-      		</div><!-- end-portfolio -->
+      		<!-- end-portfolio -->
       		
             <hr class="vertical-space2">
       		<script src="<?php echo base_url() ; ?>javascript/isotope/isotope.js"></script> 

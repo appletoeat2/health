@@ -7,15 +7,10 @@
 <section class="container page-content">
 	<hr class="vertical-space2">
     <section class="sixteen columns">
-		<div class="shop-wrap">
-        	<figure class="shop-item two_third">
-          		<h2>Product Name</h2>
-          		<h4>Health Claim</h4>
-          		<p>NPN</p>
-          		<p>Short Description</p>
+        	<section class="two_third">
+          		<a href="/health/pdfs/JournalIssue 1 2014.pdf"><img src="/health/images/page_images/journal.jpg"  alt=""/></a>
   				<hr class="vertical-space2">
-			</figure>
-		</div>
+			</section>
         <?php $this->load->view("resources/side_links") ; ?>
 	</section><!-- end-main-content --> 
 

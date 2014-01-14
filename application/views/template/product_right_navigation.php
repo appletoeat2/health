@@ -1,5 +1,5 @@
 <aside class="four columns offset-by-one sidebar">
-	<h4 class="subtitle">Skeletal Health</h4>
+	<!-- <h4 class="subtitle">Skeletal Health</h4>
    	<div class="listbox1">
     	<ul>
         	<li><a href="<?php echo base_url()."products/index/".$group_id ; ?>">Supplements</a></li>
@@ -7,7 +7,7 @@
             <li><a href="<?php echo base_url() ; ?>">Books &amp; Resources</a></li>
             <li><a href="<?php echo base_url() ; ?>">Where to buy</a></li>
     	</ul>
-	</div><!-- end-listbox1 --> 
+	</div>end-listbox1 --> 
   	<br class="clear">
   	<h4 class="subtitle">Product questions?</h4>
   	<p>Contact us at 1-800-387-9111 or email us using the form below</p>
@@ -19,7 +19,7 @@
             <button type="button" class="small red">send</button>
         </form>
 	</div>
-    <h4 class="subtitle">Did you know?</h4>
+    <!--<h4 class="subtitle">Did you know?</h4>
   	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor<a href="<?php echo base_url() ; ?>"> exercitation</a> ut labore et dolore magna aliqua. Ut enim ad</p>
-</aside>
+</aside>end-sidebar-->
 <!-- end-sidebar-->

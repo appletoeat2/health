@@ -43,12 +43,12 @@
 	<div class="container">
 		<div class="top-links"><a href="<?php echo base_url("") ; ?>">Francais</a> | <a href="<?php echo base_url("") ; ?>">Retailer Login</a></div>
 		<div class="socailfollow">
-        	<a href="<?php echo base_url("http://facebook.com/InnoviteHealth") ; ?>" class="facebook"><i class="icomoon-facebook"></i></a>
-        	<a href="<?php echo base_url("http://twitter.com/InnoviteCanada") ; ?>" class="twitter"><i class="icomoon-twitter"></i></a>
-            <a href="<?php echo base_url("http://www.youtube.com/user/innovitecanada") ; ?>" class="youtube"><i class="icomoon-youtube"></i></a>
+        	<a href="http://facebook.com/InnoviteHealth" target="_blank" class="facebook"><i class="icomoon-facebook"></i></a>
+        	<a href="http://twitter.com/InnoviteCanada" target="_blank" class="twitter"><i class="icomoon-twitter"></i></a>
+            <a href="http://www.youtube.com/user/innovitecanada" target="_blank" class="youtube"><i class="icomoon-youtube"></i></a>
             <a href="<?php echo base_url("") ; ?>" class="instagram"><i class="icomoon-instagram"></i></a>
             <a href="<?php echo base_url("") ; ?>" class="pinterest"><i class="icomoon-pinterest"></i></a>
-            <a href="<?php echo base_url("https://plus.google.com/101210095383195582761") ; ?>" class="google"><i class="icomoon-google"></i></a>
+            <a href="https://plus.google.com/101210095383195582761" target="_blank" class="google"><i class="icomoon-google"></i></a>
         </div>
 	</div>
 </div>

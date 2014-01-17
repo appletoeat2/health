@@ -263,7 +263,7 @@ class Products extends CI_Controller
 						
 						$attributes["product_code"] = strtolower($attributes["product_code"]) ;
 						$product_id = $this->input->post("product_id") ;
-						$success = $this->model1-> update_rec($attributes, array("id" => $product_id), "products") ;
+						$success = $this->model1->update_rec($attributes, array("id" => $product_id), "products") ;
 				
 						$product_categories = $this->input->post("product_categories") ;
 						$food_sensitivities = $this->input->post("food_sensitivities") ;

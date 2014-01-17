@@ -125,7 +125,7 @@ $(function(){
 		var radius = $("#radius :selected").val() ;
 		if(address == "") { alert("You have not entered any address.") ; return false ; }
 		start_flag = 1 ;
-		var geocoder = new google.maps.Geocoder();
+		var geocoder = new google.maps.Geocoder() ;
 		if(flag1) _Circle.setMap(null) ;
     	geocoder.geocode({'address': address}, function(results, status){
      		if(status == google.maps.GeocoderStatus.OK) {

@@ -8,7 +8,10 @@
                 <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."food_sensitivities" ; ?>">Food Sensitivities</a></li>
 			</ul>
         </li>
-        <?php if($this->session->userdata('role') == 'Admin') { ?>
+        <li <?php if($current_page == "stores") echo 'class="current"' ; ?>><a href="<?php echo base_url()."stores" ; ?>">Stores</a></li> 
+		<li <?php if($current_page == "reviews") echo 'class="current"' ; ?>><a href="<?php echo base_url()."reviews" ; ?>">Reviews</a></li> 
+		
+		<?php if($this->session->userdata('role') == 'Admin') { ?>
         	<li <?php if($current_page == "users") echo 'class="current"' ; ?>><a href="<?php echo base_url()."users/index" ; ?>">Users</a></li>
         <?php } ?>
         <li><a href="#">Other Pages</a>

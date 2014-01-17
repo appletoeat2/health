@@ -88,3 +88,12 @@ if ( ! function_exists('post_data'))
 		return $post_data ;
 	}
 }
+
+if(!function_exists('format_number'))
+{
+	function format_number($phone)
+	{
+		$numbers_only = preg_replace("/[^\d]/", "", $phone);
+		return preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "($1) $2-$3", $numbers_only);
+	}
+}

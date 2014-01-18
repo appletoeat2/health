@@ -81,5 +81,36 @@ class Model2 extends CI_Model
 		else 
 			 return 0 ;
 	}
+	
+	public function get_reviews()
+	{
+		$q = "SELECT reviews.id, reviews.product_id, reviews.stars, reviews.reviewer_name, reviews.reviewer_email, reviews.reviewer_comment, reviews.comment_timestamp, reviews.approved, reviews.status, products.product_code, products.product_name FROM reviews INNER JOIN products ON reviews.product_id = products.id WHERE 1 ORDER BY reviews.comment_timestamp DESC" ;
+		//echo $q ; exit ;
+		$query = $this->db->query($q) ;
+		
+		if ($query->num_rows() > 0)
+		{
+			foreach ($query->result() as $row)
+				$data[] =  $row ;
+			return $data ;
+		}
+		else 
+			 return 0 ;
+	}
+	
+	public function get_review($review_id)
+	{
+		$q = "SELECT reviews.id, reviews.product_id, reviews.stars, reviews.reviewer_name, reviews.reviewer_email, reviews.reviewer_comment, reviews.comment_timestamp, reviews.approved, reviews.status, products.product_code, products.product_name FROM reviews INNER JOIN products ON reviews.product_id = products.id WHERE reviews.id = ".$review_id." ORDER BY reviews.comment_timestamp DESC" ;
+		//echo $q ; exit ;
+		$query = $this->db->query($q);
+		
+		if ($query->num_rows() > 0)
+		{		
+			$query = $query->result() ;
+			return array_pop($query) ;
+		}
+		else 
+			 return 0 ;
+	}
 }
 ?>

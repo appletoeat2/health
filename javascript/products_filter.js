@@ -50,6 +50,15 @@ function run_filter()
 		if(display_flag) $(this).css("display","block") ;
 		else $(this).css("display","none") ;
 	}) ;
+	
+	var msg_flag = true ;
+	$(".group_div").each(function(){
+		if($(this).css("display") == "block") msg_flag = false ;
+	}) ;
+	if(msg_flag == true) $("#msg_div").css("display", "block") ;
+	else  $("#msg_div").css("display", "none") ;
+	
+	
 	/**/
 }
 $(function(){

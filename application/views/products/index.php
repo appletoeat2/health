@@ -2,7 +2,8 @@
 	<hr class="vertical-space2">
     <?php $this->load->view("products/filter_menu") ; ?>
     <section class="eleven columns">
-    <?php
+    <div id="msg_div" style="display:none;"><h6>No Products meet the filter criteria, deselect filter items to expand the scope</h6></div>
+	<?php
 		$group_id = 0 ;
 		$loop = 1 ;
 		if($products)

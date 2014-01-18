@@ -109,13 +109,7 @@ function is_equal($group1_id, $rec_id)
 								$i = 1 ;
 								foreach($food_sensitivities as $rec):
 									echo '<div class="right">' ;
-									
 									echo '<input type="checkbox" id="food_sensitivities-'.$i.'" name="food_sensitivities[]" value="'.stripslashes($rec->id).'" '.set_checkbox('food_sensitivities[]', stripslashes($rec->id), id_exists1($rec->id, $food_sensitivities_recs)).' />' ;
-						
-						//$chkbox = '<input type="checkbox" id="food_sensitivities-'.$i.'" name="food_sensitivities[]" value="'.stripslashes($rec->id).'"' ;
-						//if(id_exists1($rec->id, $food_sensitivities_recs)) $chkbox = $chkbox.' checked="checked" />' ;
-						//else  $chkbox = $chkbox.' />' ;
-						//echo $chkbox ;
 									echo '<label for="food_sensitivities-'.$i.'">'.stripslashes($rec->name).'</label>' ;
 									echo '</div>' ;
 									$i++ ;

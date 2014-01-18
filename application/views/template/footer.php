@@ -6,14 +6,11 @@
 		</div><!-- end-contact-info /end -->
 		<div class="four columns">
         	<h4 class="subtitle">Stay in the loop</h4>
-     		<p>Keep up to date with the latest news, events and product information.
-Enter email address</p>
-<div id="form">
-        <form action="<?php echo base_url() ; ?>" method="get">
-            <p><input type="text" class=""></p>
-            <button type="button" class="small">subscribe</button>
-        </form>
-	</div>
+     		<p>Keep up to date with the latest news, events and product information. Enter email address</p>
+			<div id="form">
+				<p><input type="text" id="email_address" name="email_address" class="" /></p>
+    			<button type="button" id="subscription_email_address" class="small">subscribe</button>
+    		</div>
     	</div><!-- tweets  /end -->
     	<div class="four columns">
       		<h4 class="subtitle">Products</h4>
@@ -68,5 +65,36 @@ Enter email address</p>
 <script src="<?php echo base_url() ; ?>javascript/bootstrap-dropdown.js"></script>
 <script src="<?php echo base_url() ; ?>javascript/bootstrap-tab.js"></script>
 <script src="<?php echo base_url() ; ?>javascript/products_filter.js"></script>
+
+<script type="text/javascript">
+$("#subscription_email_address").click(function(){
+	var email_address = $("#email_address").val() ;
+	var flag = false ;
+	
+	if(email_address == "") { alert("Email address is required.") ; flag = true ;}
+	
+	if(flag) return true ;
+	else
+	{
+		var base_url = $("#base_url").val() ;
+		var data1 = "email_address="+email_address ;
+		$.ajax({
+			type: "POST",
+			url:  base_url+"home/subscription_email_address", 
+			data: data1,
+			success: function(response)
+			{
+				if(response == "success")
+				{
+					alert("Email address submitted successfully.") ;
+					$("#email_address").val("") ;
+				}
+				else alert("Failed to submit email address.") ;
+			}
+		}) ;	
+	}
+}) ;
+</script>
+
 </body>
 </html>

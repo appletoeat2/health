@@ -30,6 +30,7 @@ class Products extends CI_Controller
 		$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
 		$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
 		$data["brochure"] = $this->model2->get_brochures($product_id) ;
+		$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id), "reviews") ;
 		$data["groups"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
 		$data["related_products"] = $this->model1->get_all_cond_orderby(array("group_id" => $data["product_detail"]->group_id), "products", "sort_order", "ASC") ;
 		
@@ -46,7 +47,48 @@ class Products extends CI_Controller
 	{
 		$this->load->view('template/body', $this->load_data("products/joint_and_bone_health_information", "boxed-wrap", $category_id));
 	}
-		
+	
+	public function insert_comment()
+	{
+		if($_POST)
+		{
+			$attributes = post_data(array("product_id" => "product_id", "reviewer_name" => "name", "reviewer_email" => "email", "reviewer_comment" => "comment", "stars" => "stars")) ;
+			$attributes["approved"] = "No" ;
+			$attributes["status"] = "Active" ;
+			$review_id = $this->model1->insert_rec($attributes, "reviews") ;
+			$attributes["product_details"] = $this->model1->get_one(array("id" => $attributes["product_id"]), "products") ;
+			$message = $this->load->view("products/product_review_email", $attributes, TRUE) ;
+			$setting_details = $this->model1->get_one(array("id" => 1), "settings") ;
+			
+			if($review_id && send_email_message("Innovite Health", $setting_details->products_review_email, false, false, "Product Review Submitted", $message, false)) echo "success" ;
+			else echo "fail" ;
+			exit ;
+		}
+		else
+		{
+			redirect(base_url()."products") ;
+		}
+	}
+	 // google_analytics
+	public function send_product_query()
+	{
+		if($_POST)
+		{
+			$attributes = post_data(array("email_address" => "email_address", "question" => "question")) ;
+			$message = $this->load->view("products/product_query_email", $attributes, TRUE) ;
+			$setting_details = $this->model1->get_one(array("id" => 1), "settings") ;
+			if(send_email_message("Innovite Health", $setting_details->products_query_email, false, false, "Product Query", $message, false))
+				echo "success" ;
+			else
+				echo "fail" ;
+			exit ;
+		}
+		else
+		{
+			redirect(base_url()."products") ;
+		}
+	}
+	
 	private function load_data($view, $main_class, $group_id, $title = "")
 	{
 		$data = array() ;
@@ -54,6 +96,7 @@ class Products extends CI_Controller
 		$data["title"] = $title ;
 		$data["group_id"] = $group_id ;
 		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["google_code"] = $this->model1->get_one(array("id" => 1), "settings") ;
 		$data["view"] = $view ;
 		
 		return $data ;

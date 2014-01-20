@@ -87,6 +87,7 @@
                     	<div style=""><?php echo $rec->reviewer_comment ; ?></div>
                         <div><?php echo $rec->stars." stars" ; ?></div>
                         <div><?php echo $rec->reviewer_name ; ?></div>
+                        <br />
 					<?php endforeach ; ?>
                     <br />
 				<?php } else { ?>

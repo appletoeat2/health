@@ -40,7 +40,7 @@ class Stores extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("customer_code" => "Customer Code&required", "retailer_name" => "Retailer Name&required", "email1" => "Email1&required", "email2" => "Email2&required", "address1" => "Address1&required", "address2" => "Address2&required", "city" => "City&required", "province" => "Province&required", "postal_code" => "Postal Code&required", "telephone" => "Telephone&required", "website" => "Website&required", "ecommerce" => "Ecommerce Link&required", "facebook" => "Facebook Link&required", "twitter" => "Twitter Link&required", "googleplus" => "GooglePlus Link&required", "linkedin" => "Linkedin Link&required", "latitude" => "Latitude&required", "longitude" => "Longitude&required", "map_request_status" => "Map Request Status&required", "status" => "Status&required") ;
+			$validation_parameters = array("customer_code" => "Customer Code&required", "retailer_name" => "Retailer Name&required", "email1" => "Email1&", "email2" => "Email2&", "address1" => "Address1&required", "address2" => "Address2&required", "city" => "City&required", "province" => "Province&required", "postal_code" => "Postal Code&required", "telephone" => "Telephone&required", "website" => "Website&", "ecommerce" => "Ecommerce Link&", "facebook" => "Facebook Link&", "twitter" => "Twitter Link&", "googleplus" => "GooglePlus Link&required", "linkedin" => "Linkedin Link&required", "latitude" => "Latitude&required", "longitude" => "Longitude&required", "map_request_status" => "Map Request Status&required", "status" => "Status&required") ;
 	
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -79,7 +79,7 @@ class Stores extends CI_Controller
 	{
 		if($_POST)
 		{ 
-			$validation_parameters = array("customer_code" => "Customer Code&required", "retailer_name" => "Retailer Name&required", "email1" => "Email1&required", "email2" => "Email2&required", "address1" => "Address1&required", "address2" => "Address2&required", "city" => "City&required", "province" => "Province&required", "postal_code" => "Postal Code&required", "telephone" => "Telephone&required", "website" => "Website&required", "ecommerce" => "Ecommerce Link&required", "facebook" => "Facebook Link&required", "twitter" => "Twitter Link&required", "googleplus" => "GooglePlus Link&required", "linkedin" => "Linkedin Link&required", "latitude" => "Latitude&required", "longitude" => "Longitude&required", "map_request_status" => "Map Request Status&required", "status" => "Status&required") ;
+			$validation_parameters = array("customer_code" => "Customer Code&required", "retailer_name" => "Retailer Name&required", "email1" => "Email1&", "email2" => "Email2&", "address1" => "Address1&required", "address2" => "Address2&required", "city" => "City&required", "province" => "Province&required", "postal_code" => "Postal Code&required", "telephone" => "Telephone&required", "website" => "Website&", "ecommerce" => "Ecommerce Link&", "facebook" => "Facebook Link&", "twitter" => "Twitter Link&", "googleplus" => "GooglePlus Link&required", "linkedin" => "Linkedin Link&required", "latitude" => "Latitude&required", "longitude" => "Longitude&required", "map_request_status" => "Map Request Status&required", "status" => "Status&required") ;
 	
 			if(form_validation_function($validation_parameters) == FALSE)
 			{

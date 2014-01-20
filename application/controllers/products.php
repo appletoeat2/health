@@ -30,7 +30,7 @@ class Products extends CI_Controller
 		$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
 		$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
 		$data["brochure"] = $this->model2->get_brochures($product_id) ;
-		$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id), "reviews") ;
+		$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id, "approved" => "Yes"), "reviews") ;
 		$data["groups"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
 		$data["related_products"] = $this->model1->get_all_cond_orderby(array("group_id" => $data["product_detail"]->group_id), "products", "sort_order", "ASC") ;
 		

@@ -9,10 +9,9 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
-          		<h2>Product Name</h2>
-          		<h4>Health Claim</h4>
-          		<p>NPN</p>
-          		<p>Short Description</p>
+          		<h2>Current Coupons &amp; Promotions</h2>
+          		<h4><a href="/health/pdfs/coupon_en.pdf"><img src="/health/images/page_images/coupon_en.jpg" alt=""/></a></h4>
+          		<p>Click on the about coupon to download a printable pdf.</p>
   				<hr class="vertical-space2">
 			</figure>
 		</div>

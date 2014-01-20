@@ -45,11 +45,7 @@
 
 	<article class="eight columns alpha omega">
 		<div class="brdr-l1 pad-l40">
-        	<img src="<?php echo base_url() ; ?>images/global-images/logo.jpg" class="alignright" alt="">
-            <h6>Why Innovite Health</h6>
-			<p>Aliquam enim enim, pharetra in sodales at, interdum sit amet dui. Nullam vulputate euismod urna non pharetra. Phasellus blandit mattis ipsum, ac laoreet lorem lacinia et. Cras et ligula.</p>
-            <a href="<?php echo base_url() ; ?>" class="magicmore">Haretra in sodales atsen interdum</a>
-		</div>
+       	<img src="/health/images/page_images/twitter.jpg" alt=""></div>
 	</article>
     <hr class="vertical-space2">
 </section>

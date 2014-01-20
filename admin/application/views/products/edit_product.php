@@ -177,9 +177,9 @@ function is_equal($group1_id, $rec_id)
 						<label>Formula</label><br>
 						<div class="clear"><textarea id="formula" name="formula"><?php echo set_value("formula", stripslashes($product_detail->formula)) ; ?></textarea></div>
 					</div>
-                    <div class="row">
+                    <div class="row"><br>
 						<label>Dosage</label><br>
-						<div class="right"><textarea id="dosage" name="dosage"><?php echo set_value("dosage", stripslashes($product_detail->dosage)); ?></textarea></div>
+						<div class="clear"><textarea id="dosage" name="dosage"><?php echo set_value("dosage", stripslashes($product_detail->dosage)); ?></textarea></div>
 					</div>
 				</div>
 			</div>
@@ -206,11 +206,11 @@ function is_equal($group1_id, $rec_id)
 					</div>
                     <div class="row"><br>
 						<label>Formula</label><br>
-						<div class="row"><textarea id="formula_french" name="formula_french"><?php echo set_value("formula_french", stripslashes($product_detail->formula_french)) ; ?></textarea></div>
+						<div class="clear"><textarea id="formula_french" name="formula_french"><?php echo set_value("formula_french", stripslashes($product_detail->formula_french)) ; ?></textarea></div>
 					</div>
-                    <div class="row">
+                    <div class="row"><br>
 						<label>Dosage</label><br>
-						<div class="right"><textarea id="dosage_french" name="dosage_french"><?php echo set_value("dosage_french", stripslashes($product_detail->dosage_french)); ?></textarea></div>
+						<div class="clear"><textarea id="dosage_french" name="dosage_french"><?php echo set_value("dosage_french", stripslashes($product_detail->dosage_french)); ?></textarea></div>
 					</div>
 				</div>
 			</div>

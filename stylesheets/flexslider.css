@@ -40,7 +40,10 @@ html[xmlns] .slides {display: block; position:relative;}
 /* FlexSlider Default Theme
 *********************************/
 .flexslider { background: #fff; margin: 0; padding: 0; z-index: 1;  position: relative;  zoom: 1;}
-.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.flex-viewport {
+    max-height: 2000px;
+    transition: all 1s ease 0s;
+}
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
 

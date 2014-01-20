@@ -427,7 +427,7 @@ ul.our-clients img { max-width:100%;}
 .sidebar { padding-bottom:40px; }
 .sidebar.leftside { background-position: 245px; padding-right:60px; }
 .sidebar h4.subtitle { border:0 none; }
-.sidebar p, .sidebar li { font-size:13px;}
+.sidebar p, .sidebar li { }
 .sidebar input[type="text"].search-side { width:97%; max-width:100%; }
 input[type="text"].search-side, input[type="text"].header-saerch { background:#fdfdfd url(../images/find-ico1.png) no-repeat right;}
 input[type="text"].header-saerch  { float:right; margin:10px 0 0 0; border-radius:2px; padding:5px 28px 5px 8px; width:120px; min-height:18px; -webkit-transition: width 0.22s ease; -moz-transition: width 0.22s ease; -o-transition: width 0.22s ease; transition: width 0.22s ease;}
@@ -616,6 +616,16 @@ a.show-all { width: 86px; height: 20px; background:#efefef; padding:0; margin: 7
 a.show-all:hover { background:#cde985; border-color:#bfdf6c; color:#333; }
 a.show-all:active { background:#ffe483; border-color:#f7d96c; color:#b29839; }
 
+.productinfo ul, .tab-content ul {
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:12px;
+	list-style:outside
+	}
+.productinfo ul li, .tab-content ul li {
+	line-height:.6em;
+	}
+
 
 /* PRICING-TABLE */
 
@@ -672,7 +682,7 @@ a.show-all:active { background:#ffe483; border-color:#f7d96c; color:#b29839; }
 
 /* PORTFOLIO */
 
-.portfolio h4, .recent-works-items h4, .shop-item h4, .side-list h5 { font-weight:400; margin:10px 0 7px; font-size:18px;}
+.portfolio h4, .recent-works-items h4, .shop-item h4, .side-list h5 { font-weight:400; margin:0px 0 7px; font-size:18px;}
 .portfolio h4 a, .recent-works-items h4 a, .shop-item h4 a, .side-list h5 a { color:#494949; }
 .portfolio h4 a:hover, .recent-works-items h4 a:hover, .shop-item h4 a:hover, .side-list h5 a:hover { text-decoration:underline;}
 .container .portfolio p, .container .recent-works-items p {
@@ -787,7 +797,11 @@ nav.primary ul li a:active, nav.primary ul li a.selected { border-bottom-color:#
 
 /*	jCarousel */
 
-.jcarousel-container {	max-width: 100%; padding:0; display:block; position:relative; }	
+.jcarousel-container {	max-width: 100%; 
+padding:0; 
+display:block; 
+position:relative; 
+border-top: 1px solid #E5E5E5;}	
 .jcarousel-clip { position:relative; overflow: hidden; width: 100%;	}
 ul.jcarousel-list { overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; }
 ul.jcarousel-list li { float:left; list-style:none;}

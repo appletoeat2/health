@@ -9,9 +9,10 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
+            <div class="productinfo">
           		<h2><?php echo $product_detail->product_name ; ?></h2>
           		<h4><?php echo $product_detail->health_claim ; ?></h4>
-          		<p><?php echo $product_detail->npn ; ?></p>
+          		<p>NPN# <?php echo $product_detail->npn ; ?></p>
           		<p><?php $bodytag = str_replace(chr(13), "<br>", $product_detail->short_description) ; echo $bodytag ; ?></p>
   				<input type="hidden" id="product_id" name="product_id" value="<?php echo $product_detail->id ; ?>" />
                 <span class='st_facebook_large' displayText='Facebook'></span>
@@ -19,6 +20,7 @@
                 <span class='st_googleplus_large' displayText='Google +'></span>
                 <span class='st_pinterest_large' displayText='Pinterest'></span>
                 <span class='st_email_large' displayText='Email'></span>
+                </div>
           		<hr class="vertical-space2">
           		<ul class="nav nav-tabs" id="myTab">
             		<?php
@@ -41,7 +43,7 @@
 				if($product_detail->description != "") 
 				{ 
 					$bodydescript = str_replace(chr(13), "<br>", $product_detail->description);
-					echo "<div id='Description' class='tab-pane active'><p>", $bodydescript,"</p></div>"; 
+					echo "<div id='Description' class='tab-pane active'>", $bodydescript,"</div>"; 
 					echo "<div id='Formula' class='tab-pane'>", $product_detail->formula, "</div>"; 
 				} 
 				else 

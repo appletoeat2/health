@@ -120,6 +120,10 @@ function is_equal($group1_id, $rec_id)
 						<label>Product Name</label>
 						<div class="right"><input type="text" id="product_name" name="product_name" value="<?php echo set_value("product_name") ; ?>" /></div>
 					</div>
+                    <div class="row">
+						<label>Sub Heading</label>
+						<div class="right"><input type="text" id="sub_heading" name="sub_heading" value="<?php echo set_value("sub_heading") ; ?>" /></div>
+					</div>
 					<div class="row">
 						<label>Health Claim</label>
 						<div class="right"><input type="text" id="health_claim" name="health_claim" value="<?php echo set_value("health_claim") ; ?>" /></div>
@@ -150,6 +154,10 @@ function is_equal($group1_id, $rec_id)
 					<div class="row">
 						<label>Product Name</label>
 						<div class="right"><input type="text" id="product_name_french" name="product_name_french" value="<?php echo set_value("product_name_french"); ?>" /></div>
+					</div>
+                    <div class="row">
+						<label>Sub Heading</label>
+						<div class="right"><input type="text" id="sub_heading_french" name="sub_heading_french" value="<?php echo set_value("sub_heading_french") ; ?>" /></div>
 					</div>
 					<div class="row">
 						<label>Health Claim</label>

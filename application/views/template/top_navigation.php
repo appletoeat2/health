@@ -1,7 +1,7 @@
 <nav id="nav-wrap" class="nav-wrap1 twelve columns">
       		<div id="search-form">
-        		<form action="<?php echo base_url("") ; ?>" method="POST">
-          			<input type="text" class="search-text-box" id="search-box">
+        		<form action="<?php echo base_url("")."products/search_products" ; ?>" method="POST">
+          			<input type="text" class="search-text-box" id="search-box" name="search_box" autocomplete="off" />
         		</form>
       		</div>
       		<ul id="nav">

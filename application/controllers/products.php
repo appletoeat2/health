@@ -22,7 +22,7 @@ class Products extends CI_Controller
 	{
 		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id, "status" => "Active"), "products", "sort_order", "ASC") ;
 		$data["groups"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $group_id, $data["groups"]->group_title)));
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $group_id, $data["groups"]->group_title))) ;
 	}
 	
 	public function product_details($category_id = 0, $product_id = 0)
@@ -82,6 +82,20 @@ class Products extends CI_Controller
 			else
 				echo "fail" ;
 			exit ;
+		}
+		else
+		{
+			redirect(base_url()."products") ;
+		}
+	}
+	
+	public function search_products()
+	{
+		if($_POST)
+		{
+			$data["search_string"] = $this->input->post("search_box") ;
+			$data["product_recs"] = $this->model2->search_products($data["search_string"]) ;
+			$this->load->view("template/body", array_merge($data, $this->load_data("products/search_product", "wrap", 1, ""))) ;
 		}
 		else
 		{

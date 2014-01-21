@@ -1,25 +1,25 @@
-<section id="headline" style="background-image:url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color:#01619e; background-repeat:no-repeat; background-position:center;">
+<section id="headline" style="background-image:url(<?php // echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color:#01619e; background-repeat:no-repeat; background-position:center;">
 	<div class="container">
-    	<h3><a href="#"><?php echo $groups->group_name ; ?></a></h3>
+    	<h3>Search Result for <?php echo '"'.$search_string.'"' ; ?></h3>
 	</div>
 </section>
 
 <section class="container page-content">
 	<hr class="vertical-space2">
     	<section class="eleven columns">
-		<?php $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description);  echo $bodytag ; ?>
+		<?php // $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description);  echo $bodytag ; ?>
         	
-        	<?php if($products) { ?>
-			<?php foreach($products as $rec): ?>
+        	<?php if($product_recs) { ?>
+			<?php foreach($product_recs as $rec): ?>
           		<div class="product_item">
                 	<div class="img-item center" style="text-align:center">
-                		<a href="<?php echo base_url()."products/product_details/".$groups->id."/".$rec->id ; ?>">
+                		<a href="<?php echo base_url()."products/product_details/".$rec->group_id."/".$rec->product_id ; ?>">
                         	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" border="1" />
                     	</a>
              		</div>
             	
                 	<div class="product_title" style="text-align:center">
-              			<p><a href="<?php echo base_url()."products/product_details/".$groups->id."/".$rec->id ; ?>"><?php echo $rec->product_name ; ?></a></p>
+              			<p><a href="<?php echo base_url()."products/product_details/".$rec->group_id."/".$rec->product_id ; ?>"><?php echo $rec->product_name ; ?></a></p>
             		</div>
           		</div>
           	<?php endforeach ; } ?>

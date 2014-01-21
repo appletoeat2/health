@@ -11,6 +11,7 @@
         	<figure class="shop-item two_third">
             <div class="productinfo">
           		<h2><?php echo $product_detail->product_name ; ?></h2>
+                <h3><?php echo $product_detail->sub_heading ; ?></h3>
           		<h4><?php echo $product_detail->health_claim ; ?></h4>
           		<p>NPN# <?php echo $product_detail->npn ; ?></p>
           		<p><?php $bodytag = str_replace(chr(13), "<br>", $product_detail->short_description) ; echo $bodytag ; ?></p>

@@ -80,7 +80,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]", "npn" => "NPN&", "sort_order" => "Sort Order&numeric", "group_id" => "Product Group&", "product_categories[]" => "Product Categories&","food_sensitivities[]" => "Food Sensitivities&", "isnew" => "Is New&", "status" => "Status&", "product_name" => "Product Name (English)&", "formula" => "Formula (English)&", "health_claim" => "Health Claim (English)&", "short_description" => "Short Description (English)&", "description" => "Description (English)&", "dosage" => "Dosage (English)&", "product_name_french" => "Product Name (French)&", "formula_french" => "Formula (French)&", "health_claim_french" => "Health Claim (French)&", "short_description_french" => "Short Description (French)&", "description_french" => "Description (French)&", "dosge_french" => "Dosage (French)&") ;
+			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash|is_unique[products.product_code]", "npn" => "NPN&", "sort_order" => "Sort Order&numeric", "group_id" => "Product Group&", "product_categories[]" => "Product Categories&","food_sensitivities[]" => "Food Sensitivities&", "isnew" => "Is New&", "status" => "Status&", "product_name" => "Product Name (English)&", "sub_heading" => "Product Sub Heading (English)&", "formula" => "Formula (English)&", "health_claim" => "Health Claim (English)&", "short_description" => "Short Description (English)&", "description" => "Description (English)&", "dosage" => "Dosage (English)&", "product_name_french" => "Product Name (French)&", "sub_heading_french" => "Product Sub Heading (French)&", "formula_french" => "Formula (French)&", "health_claim_french" => "Health Claim (French)&", "short_description_french" => "Short Description (French)&", "description_french" => "Description (French)&", "dosge_french" => "Dosage (French)&") ;
 		
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -107,7 +107,7 @@ class Products extends CI_Controller
 					
 				if($response["status"] == 1)
 				{
-					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
+					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "sub_heading" => "sub_heading", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "sub_heading_french" => "sub_heading_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
 					
 					$attributes["product_code"] = strtolower($attributes["product_code"]) ;
 					
@@ -163,25 +163,25 @@ class Products extends CI_Controller
 				}
 				else
 				{
-						if($response["status"] == 2) $data["errors"] = $response["errors"] ;
-						elseif($response["status"] == 3) $data["errors"] = '<li>Image should of 600 Width x 800 Height</li>' ;
+					if($response["status"] == 2) $data["errors"] = $response["errors"] ;
+					elseif($response["status"] == 3) $data["errors"] = '<li>Image should of 600 Width x 800 Height</li>' ;
 						
-						$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
-						$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
-						$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
-						$data["group_id"] = $group_id ;
+					$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+					$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
+					$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+					$data["group_id"] = $group_id ;
 						
-						$data["row_counter"] = $this->input->post("counter_rows") ;
-						$data["sku_codes"] = $this->input->post("sku_code") ;
-						$data["sizes"] = $this->input->post("size") ;
-						$data["sizes_french"] = $this->input->post("size_french") ;
-						$data["prices"] = $this->input->post("price") ;
-						$data["wholesale_prices"] = $this->input->post("wholesale_price") ;
-						$data["weights"] = $this->input->post("weight") ;
-						$data["upc"] = $this->input->post("upc") ;
+					$data["row_counter"] = $this->input->post("counter_rows") ;
+					$data["sku_codes"] = $this->input->post("sku_code") ;
+					$data["sizes"] = $this->input->post("size") ;
+					$data["sizes_french"] = $this->input->post("size_french") ;
+					$data["prices"] = $this->input->post("price") ;
+					$data["wholesale_prices"] = $this->input->post("wholesale_price") ;
+					$data["weights"] = $this->input->post("weight") ;
+					$data["upc"] = $this->input->post("upc") ;
 						
-						$this->load->view("template/body", array_merge($data, $this->load_view("products/insert_product"))) ;	
-					}
+					$this->load->view("template/body", array_merge($data, $this->load_view("products/insert_product"))) ;	
+				}
 			}
 		}
 		else
@@ -214,7 +214,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash", "npn" => "NPN&", "sort_order" => "Sort Order&numeric", "group_id" => "Product Group&", "product_categories[]" => "Product Categories&","food_sensitivities[]" => "Food Sensitivities&", "isnew" => "Is New&", "status" => "Status&", "product_name" => "Product Name (English)&", "formula" => "Formula (English)&", "health_claim" => "Health Claim (English)&", "short_description" => "Short Description (English)&", "description" => "Description (English)&", "dosage" => "Dosage (English)&", "product_name_french" => "Product Name (French)&", "formula_french" => "Formula (French)&", "health_claim_french" => "Health Claim (French)&", "short_description_french" => "Short Description (French)&", "description_french" => "Description (French)&", "dosage_french" => "Dosage (French)&") ;
+			$validation_parameters = array("product_code" => "Product Code&required|alpha_dash", "npn" => "NPN&", "sort_order" => "Sort Order&numeric", "group_id" => "Product Group&", "product_categories[]" => "Product Categories&","food_sensitivities[]" => "Food Sensitivities&", "isnew" => "Is New&", "status" => "Status&", "product_name" => "Product Name (English)&", "sub_heading" => "Product Sub Heading (English)&", "formula" => "Formula (English)&", "health_claim" => "Health Claim (English)&", "short_description" => "Short Description (English)&", "description" => "Description (English)&", "dosage" => "Dosage (English)&", "product_name_french" => "Product Name (French)&", "sub_heading_french" => "Product Sub Heading (French)&", "formula_french" => "Formula (French)&", "health_claim_french" => "Health Claim (French)&", "short_description_french" => "Short Description (French)&", "description_french" => "Description (French)&", "dosge_french" => "Dosage (French)&") ;
 			 
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -259,7 +259,7 @@ class Products extends CI_Controller
 						$current_name = $response["file_name"] ;
 						$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
 						
-						$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
+						$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "sub_heading" => "sub_heading", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "sub_heading_french" => "sub_heading_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
 						
 						$attributes["product_code"] = strtolower($attributes["product_code"]) ;
 						$product_id = $this->input->post("product_id") ;
@@ -338,7 +338,7 @@ class Products extends CI_Controller
 				{
 					$this->rename_files($current_name, ($this->input->post("product_code")).".jpg") ;
 					
-					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
+					$attributes = post_data(array("product_code" => "product_code", "group_id" => "group_id", "sort_order" => "sort_order", "isnew" => "isnew", "npn" => "npn", "status" => "status", "product_name" => "product_name", "sub_heading" => "sub_heading", "health_claim" => "health_claim", "short_description" => "short_description", "description" => "description", "formula" => "formula", "dosage" => "dosage", "product_name_french" => "product_name_french", "sub_heading_french" => "sub_heading_french", "health_claim_french" => "health_claim_french", "short_description_french" => "short_description_french", "description_french" => "description_french", "formula_french" => "formula_french", "dosage_french" => "dosage_french")) ;
 					
 					$attributes["product_code"] = strtolower($attributes["product_code"]) ;
 					$product_id = $this->input->post("product_id") ;

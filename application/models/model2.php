@@ -38,6 +38,22 @@ class Model2 extends CI_Model
 			 return 0 ;
 	}
 	
+	public function search_products($search_string)
+	{
+		$q = "SELECT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_name, product_groups.short_description FROM products INNER JOIN product_groups ON products.group_id = product_groups.id WHERE products.product_name LIKE '%".$search_string."%' OR products.sub_heading LIKE '%".$search_string."%' OR products.health_claim LIKE '%".$search_string."%' OR products.short_description LIKE '%".$search_string."%' OR products.description LIKE '%".$search_string."%' OR products.formula LIKE '%".$search_string."%'" ;
+		
+		$query = $this->db->query($q) ;
+		
+		if ($query->num_rows() > 0)
+		{
+			foreach ($query->result() as $row)
+				$data[] =  $row ;
+			return $data ;
+		}
+		else 
+			 return 0 ;
+	} 
+	
 	public function get_all_products()
 	{
 		$q1 = "(SELECT products.id as product_categories_id, GROUP_CONCAT(DISTINCT product_categories.id ORDER BY product_categories.sort_order) AS categories_id FROM products LEFT OUTER JOIN products_categories_relation ON products.id = products_categories_relation.product_id LEFT OUTER JOIN product_categories ON products_categories_relation.category_id = product_categories.id WHERE 1 GROUP BY product_categories_id) AS PRODUCTS_CATEGORIES_TABLE" ;

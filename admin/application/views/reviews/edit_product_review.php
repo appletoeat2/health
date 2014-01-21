@@ -6,10 +6,9 @@ function is_equal($group1_id, $rec_id)
 }
 ?>
 <div id="right">
+<div class="section">
 <form id="product_review_form" name="product_review_form" action="<?php echo base_url()."reviews/update_review" ; ?>" method="post">
 <input type="hidden" id="review_id" name="review_id" value="<?php echo $review_rec->id ; ?>" />
-
-<div class="section">
 	<?php if($errors) { ?><br /><div class="message red"><br /><ul><?php echo $errors ; ?></ul><br /></div><?php } ?>
 	<div class="box">
 		<div class="title">Product Review Details<span class="hide"></span></div>
@@ -26,7 +25,7 @@ function is_equal($group1_id, $rec_id)
             
             <div class="row">
 				<label>Reviewer Comment</label>
-				<div class="right"><textarea id="reviewer_comment" name="reviewer_comment"><?php echo set_value("reviewer_comment",  $review_rec->reviewer_comment) ; ?></textarea></div>
+				<div class="right"><textarea name="reviewer_comment" rows="10" id="reviewer_comment"><?php echo set_value("reviewer_comment",  $review_rec->reviewer_comment) ; ?></textarea></div>
 			</div>
             
             <div class="row">

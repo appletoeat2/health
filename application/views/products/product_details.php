@@ -67,7 +67,7 @@
                     		<tr>
                       			<td><?php echo $rec->size ; ?></td>
                       			<td><?php echo $rec->sku_code ; ?></td>
-                      			<td>35627345</td>
+                      			<td><?php echo $rec->upc ; ?></td>
                     		</tr>
                     	<?php endforeach ; } ?>
                 		</tbody>

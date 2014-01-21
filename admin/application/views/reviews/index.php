@@ -2,7 +2,7 @@
 	<div class="section">
     	<?php show_message($message) ; ?>
        	<div class="box">
-            <div class="title">Review Detail<span class="hide"></span></div>
+            <div class="title">Product Reviews<span class="hide"></span></div>
             <div class="content">
             	<table cellspacing="0" cellpadding="0" border="0" class="all"> 
 					<thead> 

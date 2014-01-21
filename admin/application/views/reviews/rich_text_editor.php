@@ -1,17 +1,15 @@
 <script type="text/javascript" src="<?php echo base_url()."javascript/tiny_mce.js" ; ?>"></script>
 <script type="text/javascript">
 	tinyMCE.init({
-		//mode : "textareas.richtext_textarea",
-        mode : "specific_textareas",
-        editor_selector : "richtext_textarea",
-		theme : "advanced",
+		mode : "textareas",
+        theme : "advanced",
         plugins : "table,inlinepopups",
 		height: 300,
     	width: 400,
 		
 		// Theme options
-        theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,|,table,removeformat,code",
-        theme_advanced_buttons2 : "",
+        theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect",
+		theme_advanced_buttons2 : "table,removeformat,code,|,bullist,numlist,outdent,indent,|,link,image",
         theme_advanced_buttons3 : "",
         theme_advanced_buttons4 : "",
         theme_advanced_toolbar_location : "top",

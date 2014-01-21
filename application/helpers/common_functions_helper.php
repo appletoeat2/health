@@ -16,7 +16,6 @@ if ( ! function_exists('send_email_message'))
 		if($email_rec->smtp_host != "") $config['smtp_host'] = $email_rec->smtp_host ;
 		if($email_rec->smtp_port != "") $config['smtp_port'] = intval($email_rec->smtp_port) ;
 		if($email_rec->smtp_user != "") $config['smtp_user'] = $email_rec->smtp_user ;
-		
 		if($email_rec->smtp_password != "") $config['smtp_pass'] = $email_rec->smtp_password ;
 		if($email_rec->mailtype != "") $config['mailtype'] = $email_rec->mailtype ;
 		

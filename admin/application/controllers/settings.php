@@ -21,7 +21,7 @@ class Settings extends CI_Controller
 	{
 		if($_POST)
 		{ 
-			$validation_parameters = array("products_query_email" => "Email for Product Detail&required", "products_review_email" => "Email for Product Review&required", "google_analytics" => "Google Analytics Code&required") ;
+			$validation_parameters = array("products_query_email" => "Email for Product Detail&required|valid_email", "products_review_email" => "Email for Product Review&required|valid_email", "google_analytics" => "Google Analytics Code&required") ;
 	
 			if(form_validation_function($validation_parameters) == FALSE)
 			{

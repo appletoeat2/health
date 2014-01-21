@@ -65,27 +65,27 @@
 					<div class="title">Store URL<span class="hide"></span></div>
 					<div class="content">
             			<div class="row">
-							<label>Website Url</label>
+							<label>Website URL</label>
 							<div class="right"><input type="text" id="website" name="website" value="<?php echo set_value("website", $store_rec->website) ; ?>" /></div>
                         </div>
                         <div class="row">
-                            <label>Ecommerce Url</label>
+                            <label>Ecommerce URL</label>
                             <div class="right"><input type="text" id="ecommerce" name="ecommerce" value="<?php echo set_value("ecommerce", $store_rec->ecommerce) ; ?>" /></div>
                         </div>
                         <div class="row">
-                            <label>Facebook Url</label>
+                            <label>Facebook URL</label>
                             <div class="right"><input type="text" id="facebook" name="facebook" value="<?php echo set_value("facebook", $store_rec->facebook) ; ?>" /></div>
                         </div>
                         <div class="row">
-                            <label>Twitter Url</label>
+                            <label>Twitter URL</label>
                             <div class="right"><input type="text" id="twitter" name="twitter" value="<?php echo set_value("twitter", $store_rec->twitter) ; ?>" /></div>
                         </div>
                         <div class="row">
-                            <label>GooglePlus Url</label>
+                            <label>GooglePlus URL</label>
                             <div class="right"><input type="text" id="googleplus" name="googleplus" value="<?php echo set_value("googleplus", $store_rec->googleplus) ; ?>" /></div>
                         </div>
                         <div class="row">
-                            <label>Linkedin url</label>
+                            <label>Linkedin URL</label>
                             <div class="right"><input type="text" id="linkedin" name="linkedin" value="<?php echo set_value("linkedin", $store_rec->linkedin) ; ?>" /></div>
                         </div>
                         <div class="row">
@@ -119,7 +119,7 @@
 				<div class="content">
     				<div class="row">
 						<label></label>
-                        <div class="right"><button type="submit" id="add_store"><span>Sumbit</span></button><button type="button" id="cancel"><span>Cancel</span></button>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="google_map_attributes">Get Google Map Latitude/Longitude</a></div>
+                        <div class="right"><button type="submit" id="add_store"><span>Submit</span></button><button type="button" id="cancel"><span>Cancel</span></button>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="google_map_attributes">Get Google Map Latitude/Longitude</a></div>
                 	</div>
 				</div>
         	</div>

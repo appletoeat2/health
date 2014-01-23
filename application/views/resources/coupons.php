@@ -10,7 +10,7 @@
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
           		<h2>Current Coupons &amp; Promotions</h2>
-          		<h4><a href="/health/pdfs/coupon_en.pdf"><img src="/health/images/page_images/coupon_en.jpg" alt=""/></a></h4>
+          		<h4><a href="/health/pdfs/coupon_en.pdf"><img src="<?php echo base_url() ?>/images/page_images/coupon_en.jpg" alt=""/></a></h4>
           		<p>Click on the about coupon to download a printable pdf.</p>
   				<hr class="vertical-space2">
 			</figure>

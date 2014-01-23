@@ -61,8 +61,8 @@
 		font-family: 'Signika Negative', sans-serif; font-weight: 600; }
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 49px; line-height: 51px; margin-bottom: 20px; letter-spacing: -0.06em; }
-	h2 { font-size: 35px; line-height: 40px; margin-bottom: 0px; margin-right: 50px; letter-spacing: -0.04em; }
-	h3 { font-size: 28px; line-height: 34px; margin-bottom: 5px; margin-right: 50px; }
+	h2 { font-size: 35px; line-height: 40px; margin-bottom: 0.25em; margin-right: 50px; letter-spacing: -0.04em; }
+	h3 { font-size: 28px; line-height: 34px; margin-bottom: 1.2em; margin-right: 50px; }
 	h4, #myTabContent h1, #myTabContent h2 { font-size: 21px; line-height: 30px; margin-bottom: 12px; letter-spacing: -0.0em; }
 	h5 { font-size: 17px; line-height: 24px; margin-bottom: 10px; }
 	h6 {
@@ -88,7 +88,7 @@
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #818a92;  }
 	p.magic { font-size: 19px; line-height: 25px; margin: 0; }
-	.container div p, .container article p, .container figure p { margin-bottom:20px; }
+	.container div p, .container article p, .container figure p { margin-bottom:1.5em; }
 
 	em { font-style: italic; }
 	strong { font-weight: bold; }
@@ -1021,6 +1021,7 @@
 	  border:1px solid #e5e5e5;
 	  border-top:0 none;
 	  padding-top:18px;
+	  padding-bottom:18px;
 	  margin-top:-18px;	
 	}
 	

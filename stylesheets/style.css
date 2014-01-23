@@ -623,7 +623,16 @@ a.show-all:active { background:#ffe483; border-color:#f7d96c; color:#b29839; }
 	list-style:outside
 	}
 .productinfo ul li, .tab-content ul li {
-	line-height:.6em;
+	line-height:1.5em !important;
+	margin-bottom:5px !important;
+	}
+	.productinfo a, .tab-content a {
+		text-decoration:underline !important;
+		color: #000000;
+	}
+	.productinfo a:hover, .tab-content a:hover {
+		text-decoration:underline !important;
+		color: #FF0004;
 	}
 
 

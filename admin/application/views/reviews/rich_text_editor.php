@@ -5,7 +5,7 @@
         theme : "advanced",
         plugins : "table,inlinepopups",
 		height: 300,
-    	width: 400,
+    	width: '100%',
 		
 		// Theme options
         theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect",

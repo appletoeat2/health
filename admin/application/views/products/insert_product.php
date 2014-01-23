@@ -25,7 +25,7 @@ function is_equal($group1_id, $rec_id)
                     </div>
                     <div class="row">
                         <label>Sort Order</label>
-                        <div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo set_value("sort_order") ; ?>" /></div>
+                        <div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo set_value("sort_order", $sort_order->sort_order) ; ?>" /></div>
                     </div>
                     <div class="row">
 						<label>Product Group</label>

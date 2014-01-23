@@ -43,7 +43,7 @@
             	<?php 
 				if($product_detail->description != "") 
 				{ 
-					$bodydescript = str_replace(chr(13), "<br>", $product_detail->description);
+					$bodydescript = str_replace(chr(13), "<br>", stripslashes($product_detail->description));
 					echo "<div id='Description' class='tab-pane active'>", $bodydescript,"</div>"; 
 					echo "<div id='Formula' class='tab-pane'>", $product_detail->formula, "</div>"; 
 				} 

@@ -112,5 +112,20 @@ class Model2 extends CI_Model
 		else 
 			 return 0 ;
 	}
+	
+	public function get_max_sort_number()
+	{
+		$q = "SELECT (MAX(sort_order) + 1) AS sort_order FROM products" ;
+		
+		$query = $this->db->query($q);
+		
+		if ($query->num_rows() > 0)
+		{		
+			$query = $query->result() ;
+			return array_pop($query) ;
+		}
+		else 
+			 return 0 ;
+	}
 }
 ?>

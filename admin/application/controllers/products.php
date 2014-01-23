@@ -72,6 +72,7 @@ class Products extends CI_Controller
 		$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
 		$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
 		$data["group_id"] = $group_id ;
+		$data["sort_order"] = $this->model2->get_max_sort_number() ;
 		$data["row_counter"] = 0 ;
 		$this->load->view("template/body", array_merge($data, $this->load_view("products/insert_product"))) ;
 	}
@@ -89,6 +90,7 @@ class Products extends CI_Controller
 				$data["product_categories"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
 				$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
 				$data["group_id"] = $group_id ;
+				$data["sort_order"] = $this->model2->get_max_sort_number() ;
 				
 				$data["row_counter"] = $this->input->post("counter_rows") ;
 				$data["sku_codes"] = $this->input->post("sku_code") ;

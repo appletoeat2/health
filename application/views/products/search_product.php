@@ -8,7 +8,7 @@
 	<hr class="vertical-space2">
     	<section class="eleven columns">
 		<?php // $bodytag = str_replace( chr(13), "<br>", $groups->landing_page_description);  echo $bodytag ; ?>
-        	
+        	<h2>Product Results</h2>
         	<?php if($product_recs) { ?>
 			<?php foreach($product_recs as $rec): ?>
           		<div class="product_item">
@@ -22,7 +22,7 @@
               			<p><a href="<?php echo base_url()."products/product_details/".$rec->group_id."/".$rec->product_id ; ?>"><?php echo $rec->product_name ; ?></a></p>
             		</div>
           		</div>
-          	<?php endforeach ; } ?>
+          	<?php endforeach ; }  else { echo '<h6>No Results found for "'.$search_string.'".</h6>' ;}?>
       		<!-- end-portfolio -->
       		
             <hr class="vertical-space2">

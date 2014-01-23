@@ -21,7 +21,7 @@
                                 <li><a href="<?php echo base_url() ; ?>">Candida detox: Yeast Buster</a></li>
                             </ul>
                         </li>-->
-                        <li><a href="<?php echo base_url()."products/index/7" ; ?>">New products</a></li>
+                        <li><a href="<?php echo base_url()."products/new_products/" ; ?>">New products</a></li>
                         <li><a href="<?php echo base_url()."products/index/7" ; ?>">Current promotions</a></li>
                         <li><a href="<?php echo base_url() ; ?>">Staff picks</a></li>
                     </ul>

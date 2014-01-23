@@ -18,6 +18,16 @@ class Products extends CI_Controller
 		$this->load->view('template/body', array_merge($data, $this->load_data("products/index", "wrap", 0, "Innovite Health - Products")));
 	}
 	
+	public function new_products($msg = 0)
+	{
+		$data["products"] = $this->model2->get_all_new_products() ;
+		$data["product_group_recs"]  = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["product_category_recs"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
+		$data["food_sensitivity_recs"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
+		
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/new_products", "wrap", 0, "Innovite Health - New Products")));
+	}
+	
 	public function group_product($group_id)
 	{
 		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id, "status" => "Active"), "products", "sort_order", "ASC") ;

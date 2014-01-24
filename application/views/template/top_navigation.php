@@ -8,10 +8,10 @@
         	
             	<li><a href="<?php echo base_url()."products" ; ?>">PRODUCTS</a>
                 	<ul>
-                    	<li><a href="<?php echo base_url()."products" ; ?>">Product selector</a></li>
+                    	<li><a href="<?php echo base_url()."products" ; ?>">Show All Products</a></li>
                         <?php if($product_groups) { ?>
                         	<?php foreach($product_groups as $rec): ?>
-                        		<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
+                        		<li><a class="special" href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
 							<?php endforeach ; ?>
 						<?php } ?>
                       	<!--<li class="submenu"><a href="<?php echo base_url()."products/index/7" ; ?>">Digestive Restoration</a>
@@ -21,9 +21,9 @@
                                 <li><a href="<?php echo base_url() ; ?>">Candida detox: Yeast Buster</a></li>
                             </ul>
                         </li>-->
-                        <li><a href="<?php echo base_url()."products/new_products/" ; ?>">New products</a></li>
-                        <li><a href="<?php echo base_url()."products/index/7" ; ?>">Current promotions</a></li>
-                        <li><a href="<?php echo base_url() ; ?>">Staff picks</a></li>
+                        <li><a href="<?php echo base_url()."products/new_products/" ; ?>">New Products</a></li>
+                        <li><a href="<?php echo base_url() ; ?>">Staff Picks</a></li>
+                        <li><a href="<?php echo base_url()."products/index/7" ; ?>">Current Promotions</a></li>
                     </ul>
         		</li>
         		
@@ -42,7 +42,7 @@
             			<li><a href="<?php echo base_url("")."resources/probiotics101" ; ?>">Probiotics 101</a></li>
             			<li><a href="<?php echo base_url("")."resources/candida_questionnaire" ; ?>">Candida questionnaire</a></li>
             			<li><a href="<?php echo base_url("")."resources/healthy_journal" ; ?>">Healthy Journal</a></li>
-            			<li><a href="<?php echo base_url("")."resources/research_and_articles" ; ?>">Research and Articles</a></li>
+            			<!--<li><a href="<?php echo base_url("")."resources/research_and_articles" ; ?>">Research and Articles</a></li>-->
             			<li><a href="<?php echo base_url("")."resources/recipes" ; ?>">Recipes</a></li>
             			<li><a href="<?php echo base_url("")."resources/coupons" ; ?>">Coupons</a></li>
           			</ul>

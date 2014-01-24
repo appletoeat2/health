@@ -17,6 +17,11 @@ class Resources extends CI_Controller
 		$this->load->view('template/body', $this->load_data("resources/heart_to_heart")) ;
 	}
 	
+	public function current_promotions()
+	{
+		$this->load->view('template/body', $this->load_data("resources/current_promotions")) ;
+	}
+	
 	public function brain_power()
 	{
 		$this->load->view('template/body', $this->load_data("resources/brain_power")) ;

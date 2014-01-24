@@ -2,8 +2,8 @@
 	<section class="container footer-in">
     	<div class="four columns">
         	<h4 class="subtitle">Contact Us</h4>
-      		<p>97 Saramia Crescent<br> Concord, ON, L4K 4P7<br> Tel: 1-800-387-9111<br> Fax: 1-888-279-3373</p>
-      		<p><a href="mailto:customerservice@innovitehealth.com">customerservice@innovitehealth.com</a></p>
+      		<p>97 Saramia Crescent<br> Concord, ON, L4K 4P7<br> Tel: 1-800-387-9111<br> Fax: 1-888-279-3373<br>
+      		<a href="mailto:customerservice@innovitehealth.com">customerservice@innovitehealth.com</a></p>
 		</div><!-- end-contact-info /end -->
 		<div class="four columns">
         	<h4 class="subtitle">Stay in the loop</h4>

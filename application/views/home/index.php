@@ -22,8 +22,8 @@
 		<div class="one_fifth">
   			<a href="<?php echo base_url()."products/group_product/2"  ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/sp_digestive.jpg" /></a>
 			<?php $group_rec = get_product_group(2) ; ?>
-			<h6><?php echo $group_rec->group_name ; ?></h6>
-            <p><?php echo $group_rec->short_description ; ?></p>
+			<h6>Detox and Digestive Restoration</h6>
+            <p>Includes support for: <a href="<?php echo base_url()."/products/group_product/3" ; ?>">probiotics</a>, <a href="<?php echo base_url()."/products/group_product/2" ; ?>">candida and general detox</a>.</p>
 		</div>
         <div class="one_fifth column-last">
         	<a href="<?php echo base_url()."products/group_product/5"  ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/sp_general.jpg" /></a>
@@ -38,7 +38,7 @@
             <h6>Product Selector</h6>
     		<p>Innovite Health is a best-in-class nutritional supplement brand. Based in the latest research and technical innovations, all products are certified for proven quality, purity and label claims. See what Innovite Health product fits your life. <a href="<?php echo base_url()."products" ; ?>" class="magicmore">Find products here</a>
 </p>
-	<p>For great savings on great products, check out our<a href="<?php echo base_url()."products" ; ?>" class="magicmore"> coupon section.</a>
+	<p>For great savings on great products, check out our<a href="<?php echo base_url()."/resources/coupons" ; ?>" class="magicmore"> coupon section.</a>
 </p>
     		
 		</div>

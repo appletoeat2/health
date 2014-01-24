@@ -155,7 +155,23 @@ span.row-mn {  background:url(../images/row-m1.png) no-repeat right center; widt
 }
 #nav ul li { float: none; border-bottom:1px solid #f6f6f6; display:block;	margin: 0; padding:0; font-family:"Open Sans",Helvetica,Arial,sans-serif;	}
 #nav ul li:last-child { border:none;}
-#nav ul li a, #nav li.current ul li a, #nav ul li:hover > a { background:#fff; color:#595959; width:auto; display:block; text-align:left; padding: 5px 11px; border-radius:0; font-size:13px; border:0 none; line-height:24px; height:24px; font-weight:normal;  }
+#nav ul li a, #nav li.current ul li a, #nav ul li:hover > a {
+background:#fff; 
+color:#595959; 
+width:auto; 
+display:block; 
+text-align:left; 
+padding: 5px 11px; 
+border-radius:0; 
+font-size:13px; 
+border:0 none; 
+line-height:24px; 
+height:24px; 
+font-weight:normal;  
+}
+#nav ul li a.special {
+background:#E7E7E7;   
+}
 #nav ul li a:hover, #nav li.current ul li a:hover, .nav-wrap2 #nav ul li a:hover, .nav-wrap2.darknavi #nav ul li a:hover, #nav ul li.current a, #nav li.current ul li.current a { background:#f8f8f8; }
 #nav li:hover > ul { display: block; visibility:visible; /* show dropdown on hover */}
 #nav ul li ul {
@@ -626,7 +642,7 @@ a.show-all:active { background:#ffe483; border-color:#f7d96c; color:#b29839; }
 	line-height:1.5em !important;
 	margin-bottom:5px !important;
 	}
-	.productinfo a, .tab-content a {
+	.productinfo a,.productinfo a:visited, .tab-content a, .tab-content a:visited {
 		text-decoration:underline !important;
 		color: #000000;
 	}
@@ -695,15 +711,15 @@ a.show-all:active { background:#ffe483; border-color:#f7d96c; color:#b29839; }
 .portfolio h4 a, .recent-works-items h4 a, .shop-item h4 a, .side-list h5 a { color:#494949; }
 .portfolio h4 a:hover, .recent-works-items h4 a:hover, .shop-item h4 a:hover, .side-list h5 a:hover { text-decoration:underline;}
 .container .portfolio p, .container .recent-works-items p {
-	color: #909090;
+	/*color: #909090;*/
 	margin-bottom: 5px;
 	margin-top: 5px;
 	text-transform: none;
-	font-size: 12px;
-	height: 40px;
-	line-height: 14px;
-	margin-right: 10px;
-	margin-left: 10px;
+	/*font-size: 12px;*/
+	/*height: 40px;*/
+	/*line-height: 14px;*/
+	/*margin-right: 10px;
+	margin-left: 10px;*/
 }
 .portfolio-item h3 { color:#696969;}
 .portfolio-item h5 { margin-top:0px;}

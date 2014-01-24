@@ -118,9 +118,13 @@
 <?php if($brochure) ?>
                 	<li><a href="<?php echo base_url()."products/product_brochures/".$brochure->brochure_file_name ; ?>" target="_blank">Download The Brochure</a></li>
 -->
-                	
             	</ul>
 			</section>
+<!--Waqas show this coupon area if the product has been flagged in the table -->
+<hr>
+  <a class="button red full-width" href="#"><span class="icomoon-tag-8" aria-hidden="true"></span> Save now with an available coupon!</a>
+<hr>
+                <?php $this->load->view("template/product_questions") ; ?>
 		</div>
         <hr class="vertical-space1">
 	</div>

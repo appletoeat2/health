@@ -30,6 +30,15 @@
       		<script src="<?php echo base_url() ; ?>javascript/isotope/isotope-custom.js"></script> 
       		<script src="<?php echo base_url() ; ?>javascript/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script> 
     	</section>
-  		<?php $this->load->view("template/product_right_navigation") ; ?>
+        <aside class="four columns offset-by-one sidebar">
+        
+        <div><!--waqas only show this coupon if a coupon is added and flagged to a specfic product group-->        
+        <h4 class="subtitle">Product savings</h4>
+<hr>
+  <a class="button red full-width" href="#"><span class="icomoon-tag-8" aria-hidden="true"></span> Save now with coupons</a>
+<hr>
+</div>
+  		<?php $this->load->view("template/product_questions") ; ?>
     	<hr class="vertical-space2">
+        </aside>
   </section><!-- end- -->

@@ -62,13 +62,13 @@
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 	h1 { font-size: 49px; line-height: 51px; margin-bottom: 20px; letter-spacing: -0.06em; }
 	h2 { font-size: 35px; line-height: 40px; margin-bottom: 0.25em; margin-right: 50px; letter-spacing: -0.04em; }
-	h3 { font-size: 28px; line-height: 34px; margin-bottom: 1.2em; margin-right: 50px; }
+	h3 { font-size: 28px; line-height: 34px; margin-bottom: .8em; margin-right: 50px; }
 	h4, #myTabContent h1, #myTabContent h2 { font-size: 21px; line-height: 30px; margin-bottom: 12px; letter-spacing: -0.0em; }
 	h5 { font-size: 17px; line-height: 24px; margin-bottom: 10px; }
 	h6 {
     font-size: 14px;
     line-height: 18px;
-    padding-bottom: 5px;
+    padding-bottom: 3px;
 }
 	.subheader { color: #849098; }
 	h3.magic, h4.magic,
@@ -117,7 +117,7 @@
 	blockquote small { font-size:13px; font-style: italic;}
 	blockquote img { max-width:100%; width:auto; display:inline; }
 
-	hr { border: solid #e5e5e5; border-width: 1px 0 0; clear: both; margin: 14px 0 35px; height: 0; width: auto; }
+	hr { border: solid #e5e5e5; border-width: 1px 0 0; clear: both; margin: 14px 0 15px; height: 0; width: auto; }
 	hr.boldbx { border-width: 4px 0 0; border-color:#efefef; }	
 	.container hr { margin-right: 10px; margin-left: 10px;}
 	.container .columns hr, .container .column hr  { margin-right: 0px; margin-left: 0px;}
@@ -218,7 +218,7 @@
 	  text-decoration: none;
 	  text-shadow: 0 -1px rgba(0, 0, 0, .29);
 	  cursor: pointer;
-	  margin-bottom: 21px;
+	 /* margin-bottom: 21px;*/
 	  line-height: 1;
 	  padding: 15px 40px;
 	  background: #8fbe32;

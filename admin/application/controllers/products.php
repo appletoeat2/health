@@ -11,7 +11,7 @@ class Products extends CI_Controller
 	
 	public function index($group_id = 0, $message = 0)
 	{
-		$data["product_groups"] = $this->model1->get_all("product_groups") ;
+		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "DESC") ;
 		$data["group_id"] = $group_id ;
 		$data["search"] = 0 ;
 		if($group_id == 0) {

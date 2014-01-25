@@ -108,7 +108,7 @@
 					<div class="row">
 						<label>Small selectmenu</label>
 						<div class="right">
-							<select class="small">
+							<select class="jqselect small">
 								<option selected="selected" value="">2012</option>
 								<option value="">2011</option>
 								<option value="">2010</option>
@@ -122,7 +122,7 @@
                     <div class="row">
 						<label>Normal selectmenu</label>
 						<div class="right">
-							<select>
+							<select class="jqselect">
 								<option selected="selected" value="">The selected one.</option>
 								<option value="">Option number 1</option>
 								<option value="">Option number 2</option>
@@ -136,7 +136,7 @@
                     <div class="row">
 						<label>Big selectmenu</label>
 						<div class="right">
-							<select class="big">
+							<select class="jqselect big">
 								<option selected="selected" value="">The selected one.</option>
 								<option value="">Option number 1</option>
 								<option value="">Option number 2</option>

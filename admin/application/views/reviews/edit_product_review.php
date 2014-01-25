@@ -31,7 +31,7 @@ function is_equal($group1_id, $rec_id)
             <div class="row">
 				<label>Stars</label>
 				<div class="right">
-					<select id="stars" name="stars" class="big">
+					<select id="stars" name="stars" class="jqselect big">
 						<option value="1" <?php echo set_select('product_id', 1, is_equal($review_rec->stars, 1)) ; ?>>1</option>
                         <option value="2" <?php echo set_select('product_id', 2, is_equal($review_rec->stars, 2)) ; ?>>2</option>
                         <option value="3" <?php echo set_select('product_id', 3, is_equal($review_rec->stars, 3)) ; ?>>3</option>

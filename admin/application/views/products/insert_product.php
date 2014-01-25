@@ -30,7 +30,7 @@ function is_equal($group1_id, $rec_id)
                     <div class="row">
 						<label>Product Group</label>
 						<div class="right">
-							<select id="group_id" name="group_id" class="big">
+							<select id="group_id" name="group_id" class="jqselect big">
 								<?php if($product_groups) { foreach($product_groups as $rec): ?>
                             		<option value="<?php echo $rec->id ; ?>" <?php echo set_select('group_id', $rec->id, is_equal($group_id, $rec->id)); ?>><?php echo stripslashes($rec->group_name) ; ?></option>
                             	<?php endforeach ; } ?>

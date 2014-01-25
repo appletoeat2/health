@@ -277,13 +277,15 @@ $(document).ready(function(){
 	$('input[placeholder], textarea[placeholder]').placeholder();
 	
 	// SELECTBOXES
+	
 	$(function() {
-        $('.dataTables_length input, select').not("select.multiple").selectmenu({
+        $('.dataTables_length input, select.jqselect').not("select.multiple").selectmenu({
             style: 'dropdown',
             transferClasses: true,
             width: null
         });
     });
+	/**/
 	
 	// RADIOBUTTONS & CHECKBOXES
 	$("input[type=radio], input[type=checkbox]").each(function() {
@@ -301,7 +303,7 @@ $(document).ready(function(){
 	
 	// DATEPICKER
 	$(".datepicker").datepicker({
-		dateFormat: 'mm.dd.yy'
+		dateFormat: 'm/d/y'
 	});
 	
 	// WYSIWYG EDITOR

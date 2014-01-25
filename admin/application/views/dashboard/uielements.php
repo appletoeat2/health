@@ -192,7 +192,7 @@
 							<div class="row">
 								<label>Selectbox medium</label>
 								<div class="right">
-									<select>
+									<select class="jqselect">
 										<option selected="selected" value="">Option 01</option>
 										<option value="">Option 02</option>
 										<option value="">Option 03</option>

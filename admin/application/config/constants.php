@@ -41,5 +41,7 @@ define("MEDIUM_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/prod_
 define("SMALL_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/prod_images/small/") ;
 define("BANNER_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/banner_images/") ;
 
+define("COUPON_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/coupons/") ;
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

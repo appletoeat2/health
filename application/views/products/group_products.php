@@ -32,12 +32,12 @@
     	</section>
         <aside class="four columns offset-by-one sidebar">
         
-        <div><!--waqas only show this coupon if a coupon is added and flagged to a specfic product group-->        
-        <h4 class="subtitle">Product savings</h4>
-<hr>
-  <a class="button red full-width" href="#"><span class="icomoon-tag-8" aria-hidden="true"></span> Save now with coupons</a>
-<hr>
-</div>
+        <?php if($group_coupon) { ?>
+        	<div><!--waqas only show this coupon if a coupon is added and flagged to a specfic product group-->        
+        		<h4 class="subtitle">Product savings</h4>
+				<hr><a class="button red full-width" href="<?php echo base_url()."resources/coupons" ; ?>"><span class="icomoon-tag-8" aria-hidden="true"></span> Save now with coupons</a><hr>
+			</div>
+        <?php } ?>
   		<?php $this->load->view("template/product_questions") ; ?>
     	<hr class="vertical-space2">
         </aside>

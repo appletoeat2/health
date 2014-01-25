@@ -59,7 +59,8 @@ class Resources extends CI_Controller
 	
 	public function coupons()
 	{
-		$this->load->view('template/body', $this->load_data("resources/coupons")) ;
+		$data["coupon_recs"] = $this->model2->get_all_product_coupons("ASC") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/coupons"))) ;
 	}
 	
 	private function load_data($view)

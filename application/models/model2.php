@@ -118,7 +118,21 @@ class Model2 extends CI_Model
 		else 
 			 return 0 ;
 	}
+	
+	public function get_all_product_coupons($order)
+	{
+		$q = "SELECT product_coupons.id, product_coupons.expiry_date, product_coupons.sort_order, product_coupons.coupon_message, product_coupons.coupon_image, product_coupons.coupon_pdf, product_coupons.coupon_message_french, product_coupons.coupon_image_french, product_coupons.coupon_pdf_french, product_coupons.status, TIMESTAMPDIFF(DAY, product_coupons.expiry_date, CURDATE()) AS _DAYS_DIFFERENCE_ FROM product_coupons WHERE product_coupons.status = 'Active' ORDER BY product_coupons.sort_order ".$order."" ;
+		
+		$query = $this->db->query($q) ;
+		
+		if ($query->num_rows() > 0)
+		{
+			foreach ($query->result() as $row)
+				$data[] =  $row ;
+			return $data ;
+		}
+		else 
+			 return 0 ;
+	}
 }
-
-
 ?>

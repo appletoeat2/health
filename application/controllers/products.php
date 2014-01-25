@@ -30,21 +30,33 @@ class Products extends CI_Controller
 	
 	public function group_product($group_id)
 	{
-		$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id, "status" => "Active"), "products", "sort_order", "ASC") ;
-		$data["groups"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $group_id, $data["groups"]->group_title))) ;
+		if($group_id)
+		{
+			$data["products"] = $this->model1->get_all_cond_orderby(array("group_id" => $group_id, "status" => "Active"), "products", "sort_order", "ASC") ;
+			$data["group_coupon"] = $this->model1->get_all_cond(array("group_id" => $group_id), "group_coupons_relation") ;
+			$data["groups"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
+			$this->load->view('template/body', array_merge($data, $this->load_data("products/group_products", "wrap", $group_id, $data["groups"]->group_title))) ;
+		} else {
+			redirect(base_url()."products") ;
+		}
 	}
 	
 	public function product_details($category_id = 0, $product_id = 0)
 	{
-		$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
-		$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
-		$data["brochure"] = $this->model2->get_brochures($product_id) ;
-		$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id, "approved" => "Yes"), "reviews") ;
-		$data["groups"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
-		$data["related_products"] = $this->model1->get_all_cond_orderby(array("group_id" => $data["product_detail"]->group_id), "products", "sort_order", "ASC") ;
+		if($product_id)
+		{
+			$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
+			$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
+			$data["brochure"] = $this->model2->get_brochures($product_id) ;
+			$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id, "approved" => "Yes"), "reviews") ;
+			$data["product_coupon"] = $this->model1->get_all_cond(array("product_id" => $product_id), "prouduct_coupons_relation") ;
+			$data["groups"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
+			$data["related_products"] = $this->model1->get_all_cond_orderby(array("group_id" => $data["product_detail"]->group_id), "products", "sort_order", "ASC") ;
+			$this->load->view('template/body', array_merge($data, $this->load_data("products/product_details", "boxed-wrap", $category_id, $data["groups"]->group_title)));
 		
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/product_details", "boxed-wrap", $category_id, $data["groups"]->group_title)));
+		} else {
+			redirect(base_url()."products") ;
+		}
 	}
 	
 	public function product_brochures($brochure_name)

@@ -116,14 +116,15 @@
               		<li><a href="<?php echo base_url()."admin/images/prod_images/large/".strtolower($product_detail->product_code).".jpg" ; ?>" rel="help" title="" class="prettyPhoto zoomlink1">Click Here for a Larger View</a></li>
               		<!--
 <?php if($brochure) ?>
-                	<li><a href="<?php echo base_url()."products/product_brochures/".$brochure->brochure_file_name ; ?>" target="_blank">Download The Brochure</a></li>
+                	<li><a href="<?php // echo base_url()."products/product_brochures/".$brochure->brochure_file_name ; ?>" target="_blank">Download The Brochure</a></li>
 -->
             	</ul>
 			</section>
-<!--Waqas show this coupon area if the product has been flagged in the table -->
-<hr>
-  <a class="button red full-width" href="#"><span class="icomoon-tag-8" aria-hidden="true"></span> Save now with an available coupon!</a>
-<hr>
+	
+	<?php if($product_coupon) { ?>
+		<!--Waqas show this coupon area if the product has been flagged in the table -->
+		<hr><a class="button red full-width" href="<?php echo base_url()."resources/coupons" ; ?>"><span class="icomoon-tag-8" aria-hidden="true"></span> Save now with an available coupon!</a><hr>
+	<?php } ?>
                 <?php $this->load->view("template/product_questions") ; ?>
 		</div>
         <hr class="vertical-space1">

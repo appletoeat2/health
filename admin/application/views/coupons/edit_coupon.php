@@ -167,6 +167,13 @@
 	</div>    
 </div>
 </form>
+<script type="text/javascript">
+$(function(){
+	$("#cancel").live('click',function(){
+		window.location.href = "<?php echo base_url()."coupon/index" ; ?>" ;
+	}) ;
+}) ;
+</script>
 
 <script src="<?php echo base_url()."javascript/chosen.jquery.js" ; ?>" type="text/javascript"></script>
 <script src="<?php echo base_url()."javascript/prism.js" ; ?>" type="text/javascript" charset="utf-8"></script>

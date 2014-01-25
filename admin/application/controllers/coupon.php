@@ -156,8 +156,6 @@ class Coupon extends CI_Controller
 				$attributes["expiry_date"] = date("Y-m-d", strtotime($attributes["expiry_date"])) ; 
 				$success = $this->model1->update_rec($attributes, array("id" => $coupon_id), "product_coupons") ;
 				
-				
-				
 				$this->model1->delete_rec(array("coupon_id" => $coupon_id), "group_coupons_relation") ;
 				$this->model1->delete_rec(array("coupon_id" => $coupon_id), "prouduct_coupons_relation") ;
 				
@@ -283,12 +281,19 @@ class Coupon extends CI_Controller
 		}
 	}
 	
-	public function remove_coupons($store_id = 0)
+	public function remove_coupons($coupon_id = 0)
 	{
-		if($store_id)
+		if($coupon_id)
 		{
-			$this->model1->delete_rec(array("id" => $user_id), "stores") ;
-			redirect(base_url()."stores/index/3") ;
+			$this->model1->delete_rec(array("id" => $coupon_id), "product_coupons") ;
+			$this->model1->delete_rec(array("coupon_id" => $coupon_id), "group_coupons_relation") ;
+			$this->model1->delete_rec(array("coupon_id" => $coupon_id), "prouduct_coupons_relation") ;
+			
+	if(file_exists(COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg")) unlink(COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg") ;
+	if(file_exists(COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg")) unlink(COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg") ;
+	if(file_exists(COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf")) unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf") ;
+	if(file_exists(COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf")) unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf") ;
+			redirect(base_url()."coupon/index/3") ;
 		}
 		else
 		{

@@ -70,9 +70,11 @@ $(function(){
 		run_filter() ;
 	}) ;
 	$(".product_category").change(function(){
+		$("#main_product_group").attr("checked", true) ;
 		run_filter() ;
 	}) ;
 	$(".food_sensitivity").change(function(){
+		$("#main_product_group").attr("checked", true) ;
 		run_filter() ;
 	}) ;	
 }) ;

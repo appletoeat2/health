@@ -25,7 +25,7 @@
                 	<?php } ?>
 				<?php endforeach ; ?>
 			  <?php } else { ?>
-              	<p>No Coupons Available.</p>
+              	<p>There are no coupons available at this time, please check back soon.</p>
               <?php } ?>
               
               <!--<div class="coupon">

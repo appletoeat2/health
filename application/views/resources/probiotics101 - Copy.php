@@ -9,7 +9,7 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
-          		<h2><img src="../../../images/page_images/heart.jpg" width="800" height="438" alt=""/></h2>
+          		<img src="<?php echo base_url() ; ?>/images/page_images/heart.jpg" />
           		<h1>Your heart works hard all day, every day.<br>
           		  It's your <span style="color:#F90105;">#MostDevotedBodyPart.</span><br>
        		    Show it you care.</h1>

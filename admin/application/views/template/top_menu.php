@@ -6,7 +6,7 @@
 				<li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_groups" ; ?>">Product Groups</a></li>
                 <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_categories" ; ?>">Product Categories</a></li>
                 <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."food_sensitivities" ; ?>">Food Sensitivities</a></li>
-                <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_brochures" ; ?>">Brochures</a></li>
+                <li <?php if($current_page == "") echo 'class="current"' ; ?>><a href="<?php echo base_url()."product_brochure" ; ?>">Brochures</a></li>
                 <li <?php if($current_page == "reviews") echo 'class="current"' ; ?>><a href="<?php echo base_url()."reviews" ; ?>">Reviews</a></li>
 			</ul>
         </li>

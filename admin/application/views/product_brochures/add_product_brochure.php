@@ -1,38 +1,20 @@
 <link rel="stylesheet" href="<?php echo base_url()."stylesheets/chosen.css" ; ?>">
-<form id="store_form" name="store_form" action="<?php echo base_url()."coupon/insert_coupon" ; ?>" method="post" enctype="multipart/form-data">
+<form id="store_form" name="store_form" action="<?php echo base_url()."product_brochure/insert_brochure" ; ?>" method="post" enctype="multipart/form-data">
 <div class="section">
 	<div id="right">
-		
         <div class="section">
-            <?php if($errors) {  echo '<div class="message red"><br /><ul>'.$errors.'</ul><br /></div>' ; } ?>
-            <div class="box">
-				<div class="title">Coupon Expiry Date<span class="hide"></span></div>
-				<div class="content">
-                	<div class="row"> 
-                    	<label>Expiry Date</label>
-                        <div class="right"><input type="text" id="expiry_date" name="expiry_date" class="datepicker" value="<?php echo set_value("expiry_date") ; ?>" /></div>
-                 	</div>	
-				</div>
-			</div>
-		</div>
-        
-        
-        <div class="section">
+        	<?php if($errors) {  echo '<div class="message red"><br /><ul>'.$errors.'</ul><br /></div>' ; } ?>
             <div class="half">
 				<div class="box">
-					<div class="title">Coupon Details (English)<span class="hide"></span></div>
+					<div class="title">Brochure Details (English)<span class="hide"></span></div>
 					<div class="content">
-                    	<div class="row"> 
-                        	<label>Coupon Message</label>
-                            <div class="right"><textarea id="coupon_message" name="coupon_message" value="<?php echo set_value("coupon_message") ; ?>"></textarea></div>
-                      	</div>
+                        <div class="row"> 
+                    		<label>Brochure Name</label>
+                        	<div class="right"><input type="text" id="brochure_name" name="brochure_name" value="<?php echo set_value("brochure_name") ; ?>" /></div>
+                 		</div>
                         <div class="row">
-                        	<label>Coupon Image</label>
-                            <div class="right"><input type="file" id="coupon_image" name="coupon_image" /></div>
-                       	</div>
-                        <div class="row">
-                        	<label>Coupon PDF</label>
-                            <div class="right"><input type="file" id="coupon_pdf" name="coupon_pdf" /></div>
+                        	<label>Brochure PDF</label>
+                            <div class="right"><input type="file" id="brochure_pdf_englsih" name="brochure_pdf_englsih" /></div>
                        	</div>
                    	</div>
               	</div>
@@ -40,19 +22,15 @@
             
         	<div class="half">
 				<div class="box">
-					<div class="title">Coupon Details (French)<span class="hide"></span></div>
+					<div class="title">Brochure Details (French)<span class="hide"></span></div>
 					<div class="content">
-            			<div class="row"> 
-                        	<label>Coupon Message</label>
-                            <div class="right"><textarea id="coupon_message_french" name="coupon_message_french" value="<?php echo set_value("coupon_message_french") ; ?>"></textarea></div>
-                      	</div>
+                        <div class="row"> 
+                    		<label>Brochure Name</label>
+                        	<div class="right"><input type="text" id="brochure_name_french" name="brochure_name_french" value="<?php echo set_value("brochure_name_french") ; ?>" /></div>
+                 		</div>
                         <div class="row">
-                        	<label>Coupon Image</label>
-                            <div class="right"><input type="file" id="coupon_image_french" name="coupon_image_french" /></div>
-                       	</div>
-                        <div class="row">
-                        	<label>Coupon PDF</label>
-                            <div class="right"><input type="file" id="coupon_pdf_french" name="coupon_pdf_french" /></div>
+                        	<label>Brochure PDF</label>
+                            <div class="right"><input type="file" id="brochure_pdf_french" name="brochure_pdf_french" /></div>
                        	</div>
 					</div>
 				</div>
@@ -62,26 +40,10 @@
         <div class="section">
 			<div class="box">
 				<div class="content">
-    				<div class="row"> 
-                    	<label>Sort Order</label>
-                        <div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo set_value("sort_order") ; ?>" class="small" /></div>
-                 	</div>	
-                    <div class="row">
-						<label>Product Groups</label>
-                        <div class="right">
-                        	<select id="groups_coupon" name="groups_coupon[]" data-placeholder="Click Here to Add Product Groups" multiple="multiple" class="chosen-select" style="width:100%;">
-                                <?php if($product_groups) { ?>
-                                	<?php foreach($product_groups as $rec): ?>
-                                		<option value="<?php echo $rec->id ; ?>"><?php echo $rec->group_name ; ?></option>
-									<?php endforeach ; ?>
-								<?php } ?>
-                            </select>
-                        </div>
-                	</div>
                     <div class="row">
 						<label>Products</label>
                         <div class="right">
-                        	<select id="products_coupon" name="products_coupon[]" data-placeholder="Click Here to Add Products" multiple="multiple" class="chosen-select" style="width:100%;">
+                        	<select id="product_brochure" name="product_brochure[]" data-placeholder="Click Here to Add Products" multiple="multiple" class="chosen-select" style="width:100%;">
                                 <?php if($products) { ?>
                                 	<?php foreach($products as $rec): ?>
                                 		<option value="<?php echo $rec->id ; ?>"><?php echo $rec->product_name ; ?></option>
@@ -121,7 +83,7 @@
 <script type="text/javascript">
 $(function(){
 	$("#cancel").live('click',function(){
-		window.location.href = "<?php echo base_url()."coupon/index" ; ?>" ;
+		window.location.href = "<?php echo base_url()."product_brochure/index" ; ?>" ;
 	}) ;
 }) ;
 </script>

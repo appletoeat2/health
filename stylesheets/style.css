@@ -624,6 +624,9 @@ ol.commentlist { padding: 0; margin-left:0; background: #fff;  border-top: 1px s
 .listbox1 ul li a { 
 text-decoration:none; color:#6b6b6b;  display:-moz-inline-box; padding:7px 0 7px 4px;font-family: 'Signika Negative', sans-serif; font-weight: 600;  
 }
+.listbox1 ul li div#label {text-decoration:none ; color:#6b6b6b;  display:-moz-inline-box; padding:7px 0 7px 4px;font-family: 'Signika Negative', sans-serif; font-weight: 600; }
+.listbox1 ul li div#label:hover { color:#ff0000; }
+
 .listbox1 ul li.current a { text-decoration:none; color:#ff0505;  display:block; padding:7px 0 7px 4px; }
 .listbox1 ul li a:hover { 
 /*background-color:#f9f9f9; 

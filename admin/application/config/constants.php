@@ -42,6 +42,8 @@ define("SMALL_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/prod_i
 define("BANNER_IMAGE_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/images/banner_images/") ;
 
 define("COUPON_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/coupons/") ;
+define("BROCHURE_ENGLISH_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/product_brochures/english/") ;
+define("BROCHURE_FRENCH_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/product_brochures/french/") ;
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

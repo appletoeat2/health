@@ -6,7 +6,6 @@ function run_filter()
 	} else {
 		$(".group_div").css("display", "none") ;
 	}
-	/**/
 	
 	$(".product_group").each(function(){
 		if($(this).attr("checked")) {
@@ -14,7 +13,6 @@ function run_filter()
 			$(_id).css("display", "block") ;
 		}
 	}) ;
-	/**/
 	
 	$(".product_item").css("display","block") ;
 	
@@ -27,7 +25,6 @@ function run_filter()
 			});
 		}
 	});
-	/**/
 	
 	$(".food_sensitivity").each(function(){
 		var id = $(this).attr("id") ;
@@ -38,7 +35,6 @@ function run_filter()
 			});
 		} 
 	});
-	/**/
 	
 	$(".group_div").each(function(){
 		var display_flag = false ;
@@ -52,21 +48,25 @@ function run_filter()
 	}) ;
 	
 	var msg_flag = true ;
+	
 	$(".group_div").each(function(){
 		if($(this).css("display") == "block") msg_flag = false ;
 	}) ;
+	
 	if(msg_flag == true) $("#msg_div").css("display", "block") ;
 	else  $("#msg_div").css("display", "none") ;
-	
-	
-	/**/
 }
+
 $(function(){
 	$("#main_product_group").change(function(){
+		reset_product_categories() ;
+		reset_food_sensitivities() ;
 		run_filter() ;
 	}) ;
 	$(".product_group").change(function(){
 		$("#main_product_group").attr("checked", false) ;
+		reset_product_categories() ;
+		reset_food_sensitivities() ;
 		run_filter() ;
 	}) ;
 	$(".product_category").change(function(){
@@ -80,11 +80,11 @@ $(function(){
 		run_filter() ;
 	}) ;
 	
-	$("#view_all_product_categories").click(function(){
+	$(".view_all_product_categories").click(function(){
 		reset_product_categories() ;
 		run_filter() ;
 	}) ;
-	$("#view_all_food_sensitivites").click(function(){
+	$(".view_all_food_sensitivites").click(function(){
 		reset_food_sensitivities() ;
 		run_filter() ;
 	}) ;

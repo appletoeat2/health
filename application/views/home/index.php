@@ -38,7 +38,9 @@
             <h6>Product Selector</h6>
     		<p>Innovite Health is a best-in-class nutritional supplement brand. Based in the latest research and technical innovations, all products are certified for proven quality, purity and label claims. See what Innovite Health product fits your life. <a href="<?php echo base_url()."products" ; ?>" class="magicmore">Find products here</a>
 </p>
-	<p>For great savings on great products, check out our<a href="<?php echo base_url()."/resources/coupons" ; ?>" class="magicmore"> coupon section.</a>
+    		<hr>
+          <a href="<?php echo base_url()."/resources/coupons" ; ?>"><img src="<?php echo base_url() ; ?>/images/page_images/home_coupon.jpg"/></a>
+<p>For great savings on great products, check out our<a href="<?php echo base_url()."/resources/coupons" ; ?>" class="magicmore"> coupon section.</a>
 </p>
     		
 		</div>
@@ -46,7 +48,7 @@
 
 	<article class="eight columns alpha omega">
 		<div class="brdr-l1 pad-l40">
-       	<a class="twitter-timeline" height="230" href="https://twitter.com/InnoviteCanada" data-widget-id="425092470272032768">Tweets by @twitterapi</a>
+       	<a class="twitter-timeline" height="280" href="https://twitter.com/InnoviteCanada" data-widget-id="425092470272032768">Tweets by @twitterapi</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
 	</article>

@@ -22,8 +22,8 @@
                             </ul>
                         </li>-->
                         <li><a href="<?php echo base_url()."products/new_products/" ; ?>">New Products</a></li>
-                        <li><a href="<?php echo base_url() ; ?>">Staff Picks</a></li>
-                        <li><a href="<?php echo base_url()."products/index/7" ; ?>">Current Promotions</a></li>
+                        <li><a href="<?php echo base_url("")."about_us/staff_picks" ; ?>">Staff picks</a></li>
+                        <li><a href="<?php echo base_url()."/resources/current_promotions" ; ?>">Current Promotions</a></li>
                     </ul>
         		</li>
         		

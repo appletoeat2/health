@@ -36,8 +36,7 @@
 						}
 			?>
     		<div id="product<?php echo $rec->product_id ; ?>" class="product_item" food_sensitivities="<?php echo $rec->food_sensitivities_id ; ?>" categories="<?php echo $rec->categories_id ; ?>" product_id="<?php echo $rec->product_id ; ?>" title="<?php echo $rec->health_claim ; ?>">
-				<div class="img-item center" style="text-align:center">
-                	<img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" alt="">
+				<div class="img-item center" style="text-align:center"> <a href="<?php echo base_url()."products/product_details/".$rec->group_id."/".$rec->product_id ; ?>"><img src="<?php echo base_url()."admin/images/prod_images/small/".strtolower($rec->product_code).".jpg" ; ?>" alt=""></a>
                 </div>
     			<div class="product_title"><p style="text-align:center"><?php echo $rec->product_name ; ?></p></div>
 			</div>

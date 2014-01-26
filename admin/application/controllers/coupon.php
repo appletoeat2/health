@@ -189,7 +189,7 @@ class Coupon extends CI_Controller
 					else if($file1["status"] == 3) $file_errors = $file_errors.$this->messages(2) ;
 				}
 				
-				if($this->input->post("coupon_pdf_checkbox_english") == "Yes") {
+				if($this->input->post("coupon_image_checkbox_french") == "Yes") {
 					if(file_exists(COUPON_DIR."coupon_images/temp_image_french.jpg")) unlink(COUPON_DIR."coupon_images/temp_image_french.jpg") ;
 					$file2 = $this->upload_image_file("coupon_image_french", "./coupons/coupon_images/", "jpg", "temp_image_french", 850, 380) ;
 								
@@ -197,17 +197,17 @@ class Coupon extends CI_Controller
 						unlink(COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg") ;
 						rename((COUPON_DIR."coupon_images/".$file2["file_name"]), (COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg")) ;
 					} else if($file2["status"] == 2) $file_errors = $file_errors."<li>Coupon Image (English)<ul>".$file2["errors"]."</ul></li>" ;
-					else if($file2["status"] == 3) $file_errors = $file_errors.$this->messages(2) ;
+					else if($file2["status"] == 3) $file_errors = $file_errors.$this->messages(4) ;
 				}
 				
-				if($this->input->post("coupon_image_checkbox_french") == "Yes") {
+				if($this->input->post("coupon_pdf_checkbox_english") == "Yes") {
 					if(file_exists(COUPON_DIR."coupon_pdf/temp_pdf_english.pdf")) unlink(COUPON_DIR."coupon_pdf/temp_pdf_english.pdf") ;
 					$file3 = $this->upload_file("coupon_pdf", "./coupons/coupon_pdfs/", "pdf", "temp_pdf_english") ;
 					
 					if($file3["status"] == 1) {
 						unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf") ;
 						rename((COUPON_DIR."coupon_pdfs/".$file3["file_name"]), (COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf")) ;
-					} else if($file3["status"] == 2)  $file_errors = $file_errors."<li>Coupon PDF (English)<ul>".$file3["errors"]."</ul></li>" ;
+					} else if($file3["status"] == 2)  $file_errors = $file_errors."<li>Coupon Image (French)<ul>".$file3["errors"]."</ul></li>" ;
 				}
 				
 				if($this->input->post("coupon_pdf_checkbox_french") == "Yes") {

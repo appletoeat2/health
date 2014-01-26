@@ -5,170 +5,355 @@ class Product_brochures extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct() ;
+		
 		if($this->session->userdata('logged_in') != TRUE)
 			redirect(base_url()."home") ;
 	}
 	
 	public function index($message = 0)
 	{
-		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
-		$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/index", $message)));
+		$data["coupons"] = $this->model1->get_all("product_coupons") ;
+		$this->load->view("template/body", array_merge($data, $this->load_view("coupons/index", $message)));
 	}
 	
-	public function add_product_group()
+	public function coupon_detail($coupon_id = 0)
 	{
-		$data["errors"] = false ;
-		$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/add_product_group")));
-	}
-	
-	public function insert_product_group()
-	{
-		$validation_parameters = array("group_name" => "Group Name&required", "group_title" => "Group Title&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&", "group_name_french" => "Group Name (French)&required", "group_title_french" => "Group Title (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&", "meta" => "Meta&required", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
-		
-		if(form_validation_function($validation_parameters) == FALSE)
-		{
-			$data["errors"] = validation_errors('<li>', '</li>');
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/add_product_group"))) ;
-		} else {
-			
-			$response = $this->upload_product_file(get_random_string()) ;
-			
-			if($response["status"] == 1) {
-				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
-				$attributes["banner_file"] = ($response["file_name"]) ;
-				$user_id = $this->model1->insert_rec($attributes, "product_groups") ;
-				redirect(base_url()."product_groups/index/1") ;
-			
-			} else {
-				
-				if($response["status"] == 2) $data["errors"] = $response["errors"] ;
-				elseif($response["status"] == 3) $data["errors"] = "<li>File is not according to size. It should be 1000px width x 100px height</li>" ;
-				
-				$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/add_product_group"))) ;
-			}
-		}	
-	}
-	
-	public function edit_product_group($group_id)
-	{
-		if($group_id)
+		if($store_id)
 		{
 			$data["errors"] = false ;
-			$data["group_rec"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/edit_product_group")));
+			$data["coupon_rec"] = $this->model1->get_one(array("id" => $coupon_id), "coupons") ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("coupons/coupon_detail"))) ;
 		}
 		else
-			redirect(base_url()."product_groups") ;
+		{
+			redirect(base_url()."stores") ;
+		}
 	}
 	
-	public function update_product_group($group_id)
+	public function add_coupon()
 	{
-		$validation_parameters = array("group_name" => "Group Name&required", "group_title" => "Group Title&required", "short_description" => "Short Description&required", "landing_page_description" => "Landing Page Description&", "group_name_french" => "Group Name (French)&required", "group_title_french" => "Group Title (French)&required", "short_description_french" => "Short Description (French)&required", "landing_page_description_french" => "Landing Page Description (French)&", "meta" => "Meta&required", "sort_order" => "Sort Order&required", "upload_new_banner" => "Upload New Banner&") ;
-		
-		if(form_validation_function($validation_parameters) == FALSE)
+		$data["errors"] = false ;
+		$data["product_groups"] = $this->model1->get_all("product_groups") ;
+		$data["products"] = $this->model1->get_all("products") ;
+		$this->load->view("template/body", array_merge($data, $this->load_view("coupons/add_coupon"))) ;
+	}
+	
+	public function insert_coupon()
+	{
+		if($_POST)
 		{
-			$data["errors"] = validation_errors('<li>', '</li>') ;
-			$data["group_rec"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
-			$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/edit_product_group"))) ;
-		} else {
+			$session_data = array("error_array" => "") ;
+			$this->session->set_userdata($session_data) ;
 			
-			if(($this->input->post("upload_new_banner")) == "Yes") 
+			$validation_parameters = array("expiry_date" => "Expiry Date&", "coupon_message" => "Coupon Message (English)&", "coupon_message_french" => "Coupon Message (French)&", "sort_order" => "Sort Order&", "status" => "Status&required") ;
+	
+			if(form_validation_function($validation_parameters) == FALSE)
 			{
-				$response = $this->upload_product_file(get_random_string()) ;
-				
-				if($response["status"] == 1) {
-					$group_rec = $this->model1->get_one(post_data(array("id" => "group_id")), "product_groups") ;
-					$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
-					$attributes["banner_file"] = ($response["file_name"]) ;
-					$cond = post_data(array("id" => "group_id")) ;
-					$user_id = $this->model1->update_rec($attributes, $cond, "product_groups") ;
-					unlink(BANNER_IMAGE_DIR.($group_rec->banner_file)) ;
-					redirect(base_url()."product_groups/index/2") ;
-				
-				} else {
-					
-					if($response["status"] == 2) $data["errors"] = $response["errors"] ;
-					elseif($response["status"] == 3) $data["errors"] = "<li>File is not according to size. It should be 1000px width x 100px height.</li>" ;
-					
-					$data["group_rec"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
-					$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/edit_product_group"))) ;
-				}
+				$data["errors"] = validation_errors("<li>", "</li>") ;
+				$data["product_groups"] = $this->model1->get_all("product_groups") ;
+				$data["products"] = $this->model1->get_all("products") ;
+				$this->load->view("template/body", array_merge($data, $this->load_view("coupons/add_coupon"))) ;
 			}
 			else
 			{
-				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
-				$cond = post_data(array("id" => "group_id")) ;
-				$user_id = $this->model1->update_rec($attributes, $cond, "product_groups") ;
-				redirect(base_url()."product_groups/index/2") ;
+				if(file_exists(COUPON_DIR."coupon_images/temp_image_english.jpg")) unlink(COUPON_DIR."coupon_images/temp_image_english.jpg") ;
+				if(file_exists(COUPON_DIR."coupon_images/temp_image_french.jpg")) unlink(COUPON_DIR."coupon_images/temp_image_french.jpg") ;
+				if(file_exists(COUPON_DIR."coupon_pdf/temp_pdf_english.pdf")) unlink(COUPON_DIR."coupon_pdf/temp_pdf_english.pdf") ;
+				if(file_exists(COUPON_DIR."coupon_pdf/temp_pdf_french.pdf")) unlink(COUPON_DIR."coupon_pdf/temp_pdf_french.pdf") ;
+				
+				$file1 = $this->upload_image_file("coupon_image", "./coupons/coupon_images/", "jpg", "temp_image_english", 850, 380) ;
+				$file2 = $this->upload_image_file("coupon_image_french", "./coupons/coupon_images/", "jpg", "temp_image_french", 850, 380) ;
+				$file3 = $this->upload_file("coupon_pdf", "./coupons/coupon_pdfs/", "pdf", "temp_pdf_english") ;
+				$file4 = $this->upload_file("coupon_pdf_french", "./coupons/coupon_pdfs/", "pdf", "temp_pdf_french") ;
+				
+				$attributes = post_data(array("expiry_date" => "expiry_date", "coupon_message" => "coupon_message", "coupon_message_french" => "coupon_message_french", "sort_order" => "sort_order", "status" => "status")) ;
+				$attributes["expiry_date"] = date("Y-m-d", strtotime($attributes["expiry_date"])) ; 
+				$coupon_id = $this->model1->insert_rec($attributes, "product_coupons") ;
+				//$coupon_id = 1 ;
+				//id expire_date sort_order coupon_message coupon_image coupon_pdf coupon_message_french coupon_image_french coupon_pdf_french status
+				
+				$temp = $this->get_file_details($coupon_id, $file1, $file2, $file3, $file4) ;
+				$params = $temp["file_names"] ;
+				$success = $this->model1->update_rec($params, array("id" => $coupon_id), "product_coupons") ;
+				
+				$coupon_group = $this->input->post("groups_coupon") ;
+				$coupon_product = $this->input->post("products_coupon") ;
+				$error_array = $temp["file_errors"] ;
+				
+				if(!empty($coupon_group)){
+					foreach($coupon_group as $rec):
+						$attributes = array("coupon_id" => $coupon_id, "group_id" => $rec) ;
+						$this->model1->insert_rec($attributes, "group_coupons_relation") ;
+					endforeach ;	
+				}
+				if(!empty($coupon_product)){
+					foreach($coupon_product as $rec):
+						$attributes = array("coupon_id" => $coupon_id, "product_id" => $rec) ;
+						$this->model1->insert_rec($attributes, "prouduct_coupons_relation") ;
+					endforeach ;	
+				}
+				
+				$session_data = array('error_array' => $error_array) ;
+				$this->session->set_userdata($session_data) ;
+				
+				redirect(base_url()."coupon/edit_coupon/".$coupon_id) ;
 			}
+		}
+		else
+		{
+			redirect(base_url()."stores") ;
 		}
 	}
 	
-	private function upload_product_file($file_name)
+	public function edit_coupon($coupon_id = 0)
 	{
-		$config["upload_path"] = "./images/banner_images/" ;
-		$config["allowed_types"] = "jpg|png" ;
-		$config["file_name"] = $file_name ;
+		if($coupon_id)
+		{
+			$data["errors"] = 0 ;
+			$data["coupon_rec"] = $this->model1->get_one(array("id" => $coupon_id), "product_coupons") ;
+			
+			$data["product_groups"] = $this->model1->get_all("product_groups") ;
+			$data["products"] = $this->model1->get_all("products") ;
+			
+			$data["group_coupons_recs"] = $this->model1->get_all_cond(array("coupon_id" => $coupon_id), "group_coupons_relation") ;
+			$data["product_coupons_recs"] = $this->model1->get_all_cond(array("coupon_id" => $coupon_id), "prouduct_coupons_relation") ;
+			
+			$this->load->view("template/body", array_merge($data, $this->load_view("coupons/edit_coupon"))) ;
+		}
+		else
+		{
+			redirect(base_url()."coupon") ;
+		}
+	}
+	
+	public function update_coupon()
+	{
+		if($_POST)
+		{
+			$session_data = array("error_array" => "") ;
+			$this->session->set_userdata($session_data) ;
+			
+			$coupon_id = $this->input->post("coupon_id") ;
+			$coupn_rec = $this->model1->get_one(array("id" => $coupon_id), "product_coupons") ;
+			$validation_parameters = array("expiry_date" => "Expiry Date&", "coupon_message" => "Coupon Message (English)&", "coupon_message_french" => "Coupon Message (French)&", "sort_order" => "Sort Order&", "status" => "Status&required") ;
+			
+			if(form_validation_function($validation_parameters) == FALSE)
+			{
+				$data["errors"] = validation_errors("<li>", "</li>") ;
+				$data["coupon_rec"] = $this->model1->get_one(array("id" => $coupon_id), "product_coupons") ;
+			
+				$data["product_groups"] = $this->model1->get_all("product_groups") ;
+				$data["products"] = $this->model1->get_all("products") ;
+				
+				$data["group_coupons_recs"] = $this->model1->get_all_cond(array("coupon_id" => $coupon_id), "group_coupons_relation") ;
+				$data["product_coupons_recs"] = $this->model1->get_all_cond(array("coupon_id" => $coupon_id), "prouduct_coupons_relation") ;
+				
+				$this->load->view("template/body", array_merge($data, $this->load_view("coupons/edit_coupon"))) ;
+			}
+			else
+			{
+				$attributes = post_data(array("expiry_date" => "expiry_date", "coupon_message" => "coupon_message", "coupon_message_french" => "coupon_message_french", "sort_order" => "sort_order", "status" => "status")) ;
+				$attributes["expiry_date"] = date("Y-m-d", strtotime($attributes["expiry_date"])) ; 
+				$success = $this->model1->update_rec($attributes, array("id" => $coupon_id), "product_coupons") ;
+				
+				$this->model1->delete_rec(array("coupon_id" => $coupon_id), "group_coupons_relation") ;
+				$this->model1->delete_rec(array("coupon_id" => $coupon_id), "prouduct_coupons_relation") ;
+				
+				$coupon_group = $this->input->post("groups_coupon") ;
+				$coupon_product = $this->input->post("products_coupon") ;
+				
+				if(!empty($coupon_group)){
+					foreach($coupon_group as $rec):
+						$attributes = array("coupon_id" => $coupon_id, "group_id" => $rec) ;
+						$this->model1->insert_rec($attributes, "group_coupons_relation") ;
+					endforeach ;	
+				}
+				if(!empty($coupon_product)){
+					foreach($coupon_product as $rec):
+						$attributes = array("coupon_id" => $coupon_id, "product_id" => $rec) ;
+						$this->model1->insert_rec($attributes, "prouduct_coupons_relation") ;
+					endforeach ;	
+				}
+				
+				$file1 ; $file2 ; $file3 ; $file4 ;
+				$file_errors = "" ;
+				if($this->input->post("coupon_image_checkbox_english") == "Yes")
+				{
+					if(file_exists(COUPON_DIR."coupon_images/temp_image_english.jpg")) unlink(COUPON_DIR."coupon_images/temp_image_english.jpg") ;	
+					$file1 = $this->upload_image_file("coupon_image", "./coupons/coupon_images/", "jpg", "temp_image_english", 850, 380) ;
+					
+					if($file1["status"] == 1) {
+						unlink(COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg") ;
+						rename((COUPON_DIR."coupon_images/".$file1["file_name"]), (COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg")) ;
+					} else if($file1["status"] == 2) $file_errors = $file_errors."<li>Coupon Image (English)<ul>".$file1["errors"]."</ul></li>" ;
+					else if($file1["status"] == 3) $file_errors = $file_errors.$this->messages(2) ;
+				}
+				
+				if($this->input->post("coupon_image_checkbox_french") == "Yes") {
+					if(file_exists(COUPON_DIR."coupon_images/temp_image_french.jpg")) unlink(COUPON_DIR."coupon_images/temp_image_french.jpg") ;
+					$file2 = $this->upload_image_file("coupon_image_french", "./coupons/coupon_images/", "jpg", "temp_image_french", 850, 380) ;
+								
+					if($file2["status"] == 1) {
+						unlink(COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg") ;
+						rename((COUPON_DIR."coupon_images/".$file2["file_name"]), (COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg")) ;
+					} else if($file2["status"] == 2) $file_errors = $file_errors."<li>Coupon Image (English)<ul>".$file2["errors"]."</ul></li>" ;
+					else if($file2["status"] == 3) $file_errors = $file_errors.$this->messages(4) ;
+				}
+				
+				if($this->input->post("coupon_pdf_checkbox_english") == "Yes") {
+					if(file_exists(COUPON_DIR."coupon_pdf/temp_pdf_english.pdf")) unlink(COUPON_DIR."coupon_pdf/temp_pdf_english.pdf") ;
+					$file3 = $this->upload_file("coupon_pdf", "./coupons/coupon_pdfs/", "pdf", "temp_pdf_english") ;
+					
+					if($file3["status"] == 1) {
+						unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf") ;
+						rename((COUPON_DIR."coupon_pdfs/".$file3["file_name"]), (COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf")) ;
+					} else if($file3["status"] == 2)  $file_errors = $file_errors."<li>Coupon Image (French)<ul>".$file3["errors"]."</ul></li>" ;
+				}
+				
+				if($this->input->post("coupon_pdf_checkbox_french") == "Yes") {
+					if(file_exists(COUPON_DIR."coupon_pdf/temp_pdf_french.pdf")) unlink(COUPON_DIR."coupon_pdf/temp_pdf_french.pdf") ;
+					$file4 = $this->upload_file("coupon_pdf_french", "./coupons/coupon_pdfs/", "pdf", "temp_pdf_french") ;	
+					
+					if($file4["status"] == 1) {
+						unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf") ;
+						rename((COUPON_DIR."coupon_pdfs/".$file4["file_name"]), (COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf")) ;
+					} else if($file4["status"] == 2) $file_errors = $file_errors."<li>Coupon PDF (French)<ul>".$file4["errors"]."</ul></li>" ;
+				}
+				
+				$session_data = array("error_array" => $file_errors) ;
+				$this->session->set_userdata($session_data) ;
+				//id expiry_date sort_order coupon_message coupon_image coupon_pdf coupon_message_french coupon_image_french coupon_pdf_french status
+				redirect(base_url()."coupon/edit_coupon/".$coupon_id) ;
+			}
+		}
+		else
+		{
+			redirect(base_url()."stores") ;
+		}
+	}
+	
+	private function upload_file($file_field_name, $path, $valid_types, $new_file_name)
+	{
+		$config["upload_path"] = $path ;
+		$config["allowed_types"] = $valid_types ;
+		$config["file_name"] = $new_file_name ;
 		
 		$this->upload->initialize($config) ;
 		
-		if($this->upload->do_upload("banner_file")) {
+		if($this->upload->do_upload($file_field_name))
+		{
 			$data = array_merge(array("status" => 1), $this->upload->data()) ;
-			if($data["image_width"] == 1000 && $data["image_height"] == 100)
+			return $data ;
+		}
+		else
+		{
+			$data = array("status" => 2, "errors" => $this->upload->display_errors('<li>', '</li>')) ;
+			return $data ;
+		}
+	}
+	
+	private function upload_image_file($file_field_name, $path, $valid_types, $new_file_name, $max_width, $max_height)
+	{
+		$config["upload_path"] = $path ;
+		$config["allowed_types"] = $valid_types ;
+		$config["file_name"] = $new_file_name ;
+		
+		$this->upload->initialize($config) ;
+		
+		if($this->upload->do_upload($file_field_name))
+		{
+			$data = array_merge(array("status" => 1), $this->upload->data()) ;
+			if($data["image_width"] == $max_width && $data["image_height"] == $max_height)
+			{
 				return $data ;
+			}
 			else
 			{
 				$data["status"] = 3 ;
 				unlink($data["full_path"]) ;
 				return $data ;
 			}
-		} else {
+		}
+		else
+		{
 			$data = array("status" => 2, "errors" => $this->upload->display_errors('<li>', '</li>')) ;
 			return $data ;
 		}
 	}
 	
-	public function remove_product_group($group_id)
+	public function remove_coupons($coupon_id = 0)
 	{
-		if($group_id)
+		if($coupon_id)
 		{
-			$product_recs = $this->model1->get_all_cond(array("group_id" => $group_id), "products") ;
-			if($product_recs){
-				foreach($product_recs as $rec):
-					unlink(LARGE_IMAGE_DIR.($rec->product_code).".jpg") ;
-					unlink(MEDIUM_IMAGE_DIR.($rec->product_code).".jpg") ;
-					unlink(SMALL_IMAGE_DIR.($rec->product_code).".jpg") ;
-					$this->model1->delete_rec(array("product_id" => $rec->id), "skus") ;
-					$this->model1->delete_rec(array("product_id" => $rec->id), "product_brochure_relation") ;
-					$this->model1->delete_rec(array("product_id" => $rec->id), "products_food_sensitivites_relation") ;
-					$this->model1->delete_rec(array("product_id" => $rec->id), "products_categories_relation") ;
-					$this->model1->delete_rec(array("id" => $rec->id), "products") ;
-				endforeach ;
-			}
+			$this->model1->delete_rec(array("id" => $coupon_id), "product_coupons") ;
+			$this->model1->delete_rec(array("coupon_id" => $coupon_id), "group_coupons_relation") ;
+			$this->model1->delete_rec(array("coupon_id" => $coupon_id), "prouduct_coupons_relation") ;
 			
-			$group_rec = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
-			unlink(BANNER_IMAGE_DIR.($group_rec->banner_file)) ;
-			$this->model1->delete_rec(array("id" => $group_id), "product_groups") ;
-			redirect(base_url()."product_groups/index/3") ;
+	if(file_exists(COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg")) unlink(COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg") ;
+	if(file_exists(COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg")) unlink(COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg") ;
+	if(file_exists(COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf")) unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf") ;
+	if(file_exists(COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf")) unlink(COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf") ;
+			redirect(base_url()."coupon/index/3") ;
 		}
 		else
-			redirect(base_url()."product_categories") ;
+		{
+			redirect(base_url()."stores/index") ;
+		}
 	}
 	
 	private function load_view($view, $message = 0)
 	{
 		$data = array() ;
 		
-		$data["title"] = "InnoviteHealth - Product Categories" ;
-		$data["current_page"] = "products" ;
-		$data["side_menu"] = false ;
-		$data["side_menu_type"] = "products" ;
-		$data["side_product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
-		$data["group_id"] = -1 ;
+		$data["title"] = "InnoviteHealth - Admin: Coupons" ;
+		$data["current_page"] = "coupons" ;
 		$data["message"] = $message ;
-		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["side_menu_type"] = "" ;
+		$data["side_menu"] = false ;
 		$data["view"] = $view ;
 		
 		return $data ;
+	}
+	
+	private function messages($index)
+	{
+		$messages = array(1 => "<li>Coupon Image (English) could not be uploaded.</li>",
+		                  2 => "<li>Coupon Image (English) is not of right size. It should be 850px width x 380px height.</li>",
+						  3 => "<li>Coupon Image (French) could not be uploaded.</li>",
+		                  4 => "<li>Coupon Image (French) is not of right size. It should be 850px width x 380px height.</li>",
+						  5 => "<li>Coupon PDF (English) could not be uploaded.</li>",
+		                  6 => "<li>Coupon PDF (French) could not be uploaded.</li>") ;
+		
+		return $messages[$index] ;
+	}	
+	
+	private function get_file_details($coupon_id, $file1, $file2, $file3, $file4)
+	{
+		$file_names = array("coupon_image" => "", "coupon_image_french" => "", "coupon_pdf" => "", "coupon_pdf_french" => "") ;
+		$file_errors = "" ;
+		
+		if($file1["status"] == 1) {
+			$file_names["coupon_image"] = "coupon_image_en_".$coupon_id.".jpg" ;
+			rename((COUPON_DIR."coupon_images/".$file1["file_name"]), (COUPON_DIR."coupon_images/coupon_image_en_".$coupon_id.".jpg")) ;
+		} else if($file1["status"] == 2) $file_errors = $file_errors."<li>Coupon Image (English)<ul>".$file1["errors"]."</ul></li>" ;
+		else if($file1["status"] == 3)  $file_errors = $file_errors.$this->messages(2) ;
+		
+		if($file2["status"] == 1) {
+			$file_names["coupon_image_french"] = "coupon_image_fr_".$coupon_id.".jpg" ;
+			rename((COUPON_DIR."coupon_images/".$file2["file_name"]), (COUPON_DIR."coupon_images/coupon_image_fr_".$coupon_id.".jpg")) ;
+		} else if($file2["status"] == 2)  $file_errors = $file_errors."<li>Coupon Image (French)<ul>".$file2["errors"]."</ul></li>" ;
+		else if($file2["status"] == 3)  $file_errors = $file_errors.$this->messages(4) ;
+		
+		if($file3["status"] == 1) {
+			$file_names["coupon_pdf"] = "coupon_pdf_en_".$coupon_id.".pdf" ;
+			rename((COUPON_DIR."coupon_pdfs/".$file3["file_name"]), (COUPON_DIR."coupon_pdfs/coupon_pdf_en_".$coupon_id.".pdf")) ;
+		} else if($file3["status"] == 2)  $file_errors = $file_errors."<li>Coupon PDF (English)<ul>".$file3["errors"]."</ul></li>" ;
+		
+		if($file4["status"] == 1) {
+			$file_names["coupon_pdf_french"] = "coupon_pdf_fr_".$coupon_id.".pdf" ;
+			rename((COUPON_DIR."coupon_pdfs/".$file4["file_name"]), (COUPON_DIR."coupon_pdfs/coupon_pdf_fr_".$coupon_id.".pdf")) ;
+		} else if($file4["status"] == 2) $file_errors = $file_errors."<li>Coupon PDF (French)<ul>".$file4["errors"]."</ul></li>" ;
+		
+		return array("file_names" => $file_names, "file_errors" => $file_errors) ;
 	}
 }

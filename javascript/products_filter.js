@@ -71,14 +71,38 @@ $(function(){
 	}) ;
 	$(".product_category").change(function(){
 		$("#main_product_group").attr("checked", true) ;
+		reset_food_sensitivities() ;
 		run_filter() ;
 	}) ;
 	$(".food_sensitivity").change(function(){
 		$("#main_product_group").attr("checked", true) ;
+		reset_product_categories() ;
 		run_filter() ;
-	}) ;	
+	}) ;
+	
+	$("#view_all_product_categories").click(function(){
+		reset_product_categories() ;
+		run_filter() ;
+	}) ;
+	$("#view_all_food_sensitivites").click(function(){
+		reset_food_sensitivities() ;
+		run_filter() ;
+	}) ;
 }) ;
 
+function reset_product_categories()
+{
+	$(".product_category").each(function() {
+        $(this).attr("checked", false) ;
+    });
+}
+
+function reset_food_sensitivities()
+{
+	$(".food_sensitivity").each(function(){
+		$(this).attr("checked", false) ;     
+    });
+}
 
 function in_array(string, id)
 {

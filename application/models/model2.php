@@ -134,5 +134,21 @@ class Model2 extends CI_Model
 		else 
 			 return 0 ;
 	}
+	
+	public function get_product_average_review($product_id)
+	{
+		$q = "SELECT AVG(reviews.stars) AS avg_rating FROM `reviews` WHERE reviews.product_id = ".$product_id." AND reviews.approved = 'Yes'" ;
+		//echo $q ; exit ;
+		
+		$query = $this->db->query($q);
+		
+		if ($query->num_rows() > 0)
+		{		
+			$query = $query->result() ;
+			return array_pop($query) ;
+		}
+		else 
+			 return 0 ;
+	}
 }
 ?>

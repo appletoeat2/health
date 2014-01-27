@@ -49,6 +49,7 @@ class Products extends CI_Controller
 			$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
 			$data["brochure"] = $this->model2->get_brochures($product_id) ;
 			$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id, "approved" => "Yes"), "reviews") ;
+			$data["product_avg_review"] = $this->model2->get_product_average_review($product_id) ;
 			$data["product_coupon"] = $this->model1->get_all_cond(array("product_id" => $product_id), "prouduct_coupons_relation") ;
 			$data["groups"] = $this->model1->get_one(array("id" => $data["product_detail"]->group_id), "product_groups") ;
 			$data["related_products"] = $this->model1->get_all_cond_orderby(array("group_id" => $data["product_detail"]->group_id), "products", "sort_order", "ASC") ;

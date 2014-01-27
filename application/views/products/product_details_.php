@@ -1,8 +1,4 @@
-<link href="<?php echo base_url() ; ?>stylesheets/src/rateit.css" rel="stylesheet" type="text/css">
-<link href="<?php echo base_url() ; ?>stylesheets/content/bigstars.css" rel="stylesheet" type="text/css">
-<script src="<?php echo base_url() ; ?>javascript/jquery.rateit.js" type="text/javascript"></script>
-    
-<section id="headline" style="background-image: url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-repeat: no-repeat; background-position: right !important">
+<section id="headline" style="background-image: url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color: #01619e; background-repeat: no-repeat; background-position: center">
 	<div class="container">
     	<h3><a href="#"><?php echo $groups->group_name ; ?></a></h3>
 	</div>
@@ -87,21 +83,12 @@
         	<div id="Reviews" class="tab-pane">
             	<hr class="vertical-space1">
               	<h1>Reviews</h1>
-                <?php if($product_avg_review) { ?>
-                	<h2>Avgerage Ranking</h2>
-                    <div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $product_avg_review->avg_rating ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
-				<?php } ?>
                 <?php if($product_reviews) { ?>
-                	<br />
-                    <?php $comment1 = 1 ; ?>
-                    <h2>Comments</h2>
                 	<?php foreach ($product_reviews as $rec): ?>
-                    	<h4>Comment <?php echo $comment1 ; ?></h4>
-                        <div style=""><?php echo $rec->reviewer_comment ; ?></div>
-                        <div><div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $rec->stars ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="32" data-rateit-starheight="32"></div></div>
+                    	<div style=""><?php echo $rec->reviewer_comment ; ?></div>
+                        <div><?php echo $rec->stars." stars" ; ?></div>
                         <div><?php echo $rec->reviewer_name ; ?></div>
                         <br />
-                        <?php $comment1 = $comment1 + 1 ; ?>
 					<?php endforeach ; ?>
                     <br />
 				<?php } else { ?>
@@ -110,16 +97,9 @@
               	<h5><strong>Be the first to review this Product</strong></h5>
               	<label>Name</label> <input type="text" id="reviewer_name" name="reviewer_name" value="">
               	<label>Email</label> <input type="text" id="reviewer_email" name="reviewer_email" value="">
-                <label>Stars</label>
-                <br /> 
-                <div id="aaaa" class="rateit bigstars tool_tip" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
-                <input type="hidden" id="reviewer_ranking" name="reviewer_ranking" value="0" />
-              	
-                <br />
-                <br />
-                <label>Your Review</label> <textarea id="reviewer_comment" name="reviewer_comment" cols="" rows=""></textarea>
+                <label>Stars</label> <select id="reviewer_ranking" name="reviewer_ranking"><option value="5">5</option><option value="4">4</option><option value="3">3</option><option value="2">2</option><option value="1">1</option></select>
+              	<label>Your Review</label> <textarea id="reviewer_comment" name="reviewer_comment" cols="" rows=""></textarea>
               	<br>
-                
               	<input type="submit" id="submit_comment" name="" class="small" value="Submit Review">
 			</div>
 		</div>
@@ -162,25 +142,12 @@
 	</ul>
 </div><!-- Our-Clients-end --> 
 </section>
-
-<script type="text/javascript">
-	$(function(){
-		$("#aaaa").bind('rated', function(){
-			$("#reviewer_ranking").val($(this).rateit('value'));
-		}) ;
-		$("#aaaa").bind('reset', function(){
-			$("#reviewer_ranking").val(0);
-		});
-		$(".tool_tip").bind('over', function (event,value) { $(this).attr('title', value); });
-	}) ;
-</script>
-
 <script type="text/javascript">
 $("#submit_comment").click(function(){
 	var name = $("#reviewer_name").val() ;
 	var email = $("#reviewer_email").val() ;
 	var comment = $("#reviewer_comment").val() ;
-	var stars = $("#reviewer_ranking").val() ;
+	var stars = $("#reviewer_ranking option:selected").val() ;
 	var product_id = $("#product_id").val() ;
 	var flag = false ;
 	

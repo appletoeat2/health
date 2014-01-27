@@ -1,4 +1,4 @@
-<section id="headline" class="bone">
+<section id="headline" class="resources">
 	<div class="container">
     	<h3><a href="index.php">Resources - Candida Questionnaire</a></h3>
 	</div>
@@ -11,7 +11,7 @@
         	<figure class="shop-item two_third">
           		
                 <div id="left">
-    <form action="results.php" method="post" name="form1" id="form2">
+    <form action="candida_results" method="post" name="form1" id="form2">
       <h2>The Candida Health Test</h2>
       <p>This questionnaire is designed to help you determine the likelihood of your health problems being related to Candidiasis. A positive score does not indicate a definite diagnosis of Candida, however the higher your score is, the stronger the likelihood that Candida is contributing to your health problems. </p>
       <p>Your total score will help  you and your health practitioner determine how likely it is that your health  problems are Candida-related.&nbsp; A positive  score does not translate into a definite case of Candida.&nbsp; However, the higher your score, the stronger  the likelihood that Candida overgrowth is contributing to your health problems: </p>

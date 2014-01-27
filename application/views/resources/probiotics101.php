@@ -1,6 +1,6 @@
-<section id="headline" class="bone">
+<section id="headline" class="resources">
 	<div class="container">
-    	<h3><a href="index.php">Resources </a></h3>
+    	<h3><a href="index.php">Probiotics 101</a></h3>
 	</div>
 </section>
 
@@ -9,8 +9,8 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
-          		<h2>Probiotics 101</h2>
-          		<img class="alignright" src="<?php echo base_url() ?>/images/page_images/group_of_people.jpg" width="300" height="300" alt=""/><h3>What are probiotics?</h3>
+        	  <h2>What are probiotics?</h2>
+              <img class="alignright" src="<?php echo base_url() ?>/images/page_images/group_of_people.jpg"  alt=""/>
           		<p>There are billions of bacteria living in the intestinal tract often referred to as ‘microflora’. Probiotics are live “friendly” bacteria found in the microflora working to keep a healthy intestinal balance, reducing the amount of harmful bacteria while replenishing and maintaining beneficial strains. Maintaining this balance is critical for overall good health.</p>
           		<h3>Who should take probiotics?</h3>
           		<p>Daily probiotic supplementation is considered a necessary component of any healthy diet. It supports health in:</p>

@@ -2,6 +2,7 @@
 	<div class="portfolio">
     	<section id="side-nav" class="five columns">
         	<ul>
+            <h4 class="subtitle">About Us</h4>
             	<li><a href="<?php echo base_url("")."about_us/our_story" ; ?>">Our story</a></li>
                	<li><a href="<?php echo base_url("")."about_us/innovite_in_the_community" ; ?>">Innovite in the community</a></li>
                 <li><a href="<?php echo base_url("")."about_us/news_and_press" ; ?>">News and press</a></li>

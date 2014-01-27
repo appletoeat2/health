@@ -12,6 +12,15 @@
 @import url('./blox.css'); /* Import Full width Sections + Parallax Stylesheet */
 @import url('./icomoon.css'); /* Import Vector Icons Stylesheet */
 
+label #label {
+	    margin-left: 25px;
+    position: relative;
+    top: -14px;
+	}
+	label #label:hover {
+		color:#F60207;
+	}
+
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -52,7 +61,28 @@
 #sticker { background: #fff; z-index:90000;   width:100%; height:auto; position:relative; -webkit-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.17); -moz-box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.17); box-shadow:0 3px 3px 0 rgba(0, 0, 0, 0.17); }
 #sticker #header { border:0 none; border-bottom:3px solid #f3f3f3\9;}
 header.sticky { margin: 0; position: fixed; top: 0; z-index: 100; }
-.bone{background-color:#01619e; background-repeat:no-repeat; background-position:center;}
+.bone {
+	background-color: #01619e;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(/health2/images/banners/mountain.jpg);
+	}
+	
+	.aboutus {
+	background-repeat: no-repeat;
+	background-position: right;
+	background-image: url(../images/banners/mountain.jpg);
+	}
+	.resources {
+	background-repeat: no-repeat;
+	background-position: right;
+	background-image: url(../images/banners/resources.jpg);
+	}
+	.community {
+	background-repeat: no-repeat;
+	background-position: right;
+	background-image: url(../images/banners/community.jpg);
+	}
 
 	
 /* HEADER  */ 
@@ -1161,14 +1191,18 @@ input.btn404 { float:left; margin:1px; padding:8px 12px 9px; }
 	#header h6,  #header h6 i { text-align:center; display:block; }
 	.top-bar { height:auto}
 	.logo img { max-width: 70%;}
-	#headline h3, #headline2 h3 {
+		#headline h3, #headline2 h3 {
     color: #FFFFFF;
     font-size: 18px;
     font-weight: 900;
     letter-spacing: 0.2em;
-    line-height: 18px;
+    line-height: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     position: relative;
     text-transform: uppercase;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
 }
 .bone {
 	background-color: #01619E;

@@ -2,6 +2,7 @@
 	<div class="portfolio">
     	<section id="side-nav" class="five columns">
         	<ul>
+            <h4 class="subtitle">E-Community</h4>
             	<li><a href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">Innovite your Life</a></li>
             	<li><a href="<?php echo base_url("")."ecommunity/innovite_igniters" ; ?>">Innovite Igniters</a></li>
             	<li><a href="<?php echo base_url("")."ecommunity/ask_the_expert_blog" ; ?>">Ask the expert blog</a></li>

@@ -1,4 +1,4 @@
-<section id="headline" class="bone">
+<section id="headline" class="aboutus">
 	<div class="container">
     	<h3><a href="index.php">About Us</a></h3>
 	</div>
@@ -9,6 +9,7 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
+          		<img src="<?php echo base_url() ; ?>images/page_images/team-shot.jpg" >
           		<h2>Our Story</h2>
           		<p>For over 30 years, Innovite Health has been inspiring wellness and developing ways to nourish and repair our bodies. We believe that when the body’s core systems work in synergy, optimal health can be achieved.<br>
                   <br>

@@ -29,7 +29,7 @@ class About_us extends CI_Controller
 	
 	public function innovite_igniters()
 	{
-		$this->load->view('template/body', $this->load_data("about_us/innovite_ignitersinnovite_igniters")) ;
+		$this->load->view('template/body', $this->load_data("about_us/innovite_igniters")) ;
 	}
 	
 	public function staff_picks()

@@ -1,4 +1,4 @@
-<section id="headline" class="bone">
+<section id="headline" class="resources">
 	<div class="container">
     	<h3><a href="index.php">Resources - Coupons</a></h3>
 	</div>

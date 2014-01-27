@@ -4,14 +4,21 @@
 .text{ font-size:12px;}
 .win{ height:auto ;  overflow: hidden;}
 </style>
+<section id="headline" class="aboutus">
+	<div class="container shop-item">
+    	<h3><a href="index.php">Find a Retailer </a></h3>
+	</div>
+</section>
 <section class="container page-content" >
     <hr class="vertical-space2">
-    
     <section class="sixteen columns">
-    <h2>Retailer Locator</h2>
-        <div class="one_third">
-        	<label class="vertical-space2" for="address">Address: </label><input type="text" id="address" name="address" value="" />
-		</div>
+    <div class="shop-item">
+    <h2>Store Locator</h2>
+    <h4>Enter your address below to find stores near you </h4>
+    </div>
+    <div class="one_third">
+   	  <label class="vertical-space2" for="address">Address: </label><input type="text" id="address" name="address" value="" />
+	  </div>
         <!--
         <div class="one_fourth">
             <label class="vertical-space2" for="city_name_dropdown">City: </label>

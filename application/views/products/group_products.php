@@ -1,4 +1,4 @@
-<section id="headline" style="background-image:url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-color:#01619e; background-repeat:no-repeat; background-position:center;">
+<section id="headline" style="background-image:url(<?php echo base_url()."admin/images/banner_images/".$groups->banner_file ; ?>); background-repeat:no-repeat; background-position:right !important;">
 	<div class="container">
     	<h3><a href="#"><?php echo $groups->group_name ; ?></a></h3>
 	</div>

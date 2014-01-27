@@ -37,6 +37,10 @@ html[xmlns] .slides {display: block; position:relative;}
 .no-js .slides > li:first-child {display: block;}
 
 
+.flexslider ul {
+    margin-bottom: -10px !important;
+}
+
 /* FlexSlider Default Theme
 *********************************/
 .flexslider { background: #fff; margin: 0; padding: 0; z-index: 1;  position: relative;  zoom: 1;}

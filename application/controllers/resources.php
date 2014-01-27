@@ -31,6 +31,10 @@ class Resources extends CI_Controller
 	{
 		$this->load->view('template/body', $this->load_data("resources/bone_and_braun")) ;
 	}
+	public function estores()
+	{
+		$this->load->view('template/body', $this->load_data("stores/estores")) ;
+	}
 	
 	public function probiotics101()
 	{
@@ -40,6 +44,11 @@ class Resources extends CI_Controller
 	public function candida_questionnaire()
 	{
 		$this->load->view('template/body', $this->load_data("resources/candida_questionnaire")) ;
+	}
+	
+		public function candida_results()
+	{
+		$this->load->view('template/body', $this->load_data("resources/candida_results")) ;
 	}
 	
 	public function healthy_journal()

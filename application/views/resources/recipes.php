@@ -1,4 +1,4 @@
-<section id="headline" class="bone">
+<section id="headline" class="resources">
 	<div class="container">
     	<h3><a href="index.php">Resources</a></h3>
 	</div>
@@ -9,7 +9,8 @@
     <section class="sixteen columns">
 		
         	<div class="two_third">
-       		  <h2><span class="tx-largebold">Health Diets &amp; Recipes</span></h2>
+       		  <h2>Health Diets &amp; Recipes</h2>
+              <hr>
               <table border="0" cellpadding="0" cellspacing="0">
                 <tbody><tr>
                   <td colspan="2" class="tx-subhead"><h3>Easy Guacamole</h3></td>
@@ -33,7 +34,11 @@
                 </tr>
               </tbody></table>
               <table border="0" cellpadding="0" cellspacing="0">
-                <tbody><tr>
+                <tbody>
+                  <tr>
+                    <td colspan="2" class="tx-subhead"><hr></td>
+                  </tr>
+                  <tr>
                   <td colspan="2" class="tx-subhead"><h3>Rutabaga Casserole</h3></td>
                 </tr>
                 <tr>

@@ -22,15 +22,16 @@
                             </ul>
                         </li>-->
                         <li><a href="<?php echo base_url()."products/new_products/" ; ?>">New Products</a></li>
-                        <li><a href="<?php echo base_url("")."about_us/staff_picks" ; ?>">Staff picks</a></li>
-                        <li><a href="<?php echo base_url()."/resources/current_promotions" ; ?>">Current Promotions</a></li>
+                        <li><a href="<?php echo base_url("")."about_us/staff_picks" ; ?>">Staff Picks</a></li>
+                        <li><a href="<?php echo base_url()."/resources/current_promotions" ; ?>">Latest Campaign</a></li>
+                        <li><a href="<?php echo base_url("")."resources/coupons" ; ?>">Coupons</a></li>
                     </ul>
         		</li>
         		
                 <li><a href="<?php echo base_url()."stores" ; ?>">SHOP</a>
         			<ul>
             			<li><a href="<?php echo base_url()."stores" ; ?>">Store Locator</a></li>
-            			<li><a href="<?php echo base_url("") ; ?>">e-Stores</a></li>
+            			<li><a href="<?php echo base_url("")."resources/estores" ; ?>">e-Stores</a></li>
           			</ul>
           		</li>
            		
@@ -50,10 +51,10 @@
         
         		<li><a  href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">E-COMMUNITY</a>
         			<ul>
-            			<li><a href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">Innovite your Life</a></li>
-            			<li><a href="<?php echo base_url("")."ecommunity/innovite_igniters" ; ?>">Innovite Igniters</a></li>
-            			<li><a href="<?php echo base_url("")."ecommunity/ask_the_expert_blog" ; ?>">Ask the expert blog</a></li>
-            			<li><a href="<?php echo base_url("")."ecommunity/forum" ; ?>">Forum</a></li>
+            			<!--<li><a href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">Innovite your Life</a></li>
+-->            			<li><a href="<?php echo base_url("")."ecommunity/innovite_igniters" ; ?>">Innovite Igniters</a></li>
+            			<li><a href="<?php echo base_url("")."ecommunity/ask_the_expert_blog" ; ?>">Ask our experts</a></li>
+            			<!--<li><a href="<?php echo base_url("")."ecommunity/forum" ; ?>">Forum</a></li>-->
             			<li><a href="<?php echo base_url("")."ecommunity/upcoming_events" ; ?>">Upcoming events</a></li>
           			</ul>
         		</li>

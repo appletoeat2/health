@@ -1,7 +1,9 @@
 <div class="one_third column-last">
 	<div class="portfolio">
     	<section id="side-nav" class="five columns">
+        
         	<ul>
+            <h4 class="subtitle">Resources</h4>
             	<li><a href="<?php echo base_url("")."resources/heart_to_heart" ; ?>">Heart to heart</a></li>
             	<li><a href="<?php echo base_url("")."resources/brain_power" ; ?>">Brain power</a></li>
             	<li><a href="<?php echo base_url("")."resources/bone_and_braun" ; ?>">Bone and braun</a></li>

@@ -40,11 +40,22 @@ class Model2 extends CI_Model
 	
 	public function search_products($search_string)
 	{
-		$q = "SELECT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_name, product_groups.short_description FROM products INNER JOIN product_groups ON products.group_id = product_groups.id WHERE products.product_name LIKE '%".$search_string."%'" ;
-		/*
-		 OR products.sub_heading LIKE '%".$search_string."%' OR products.health_claim LIKE '%".$search_string."%' OR products.short_description LIKE '%".$search_string."%' OR products.description LIKE '%".$search_string."%' OR products.formula LIKE '%".$search_string."%'
-		/**/
+		$q1 = "(SELECT product_categories.category_name, products_categories_relation.product_id FROM product_categories INNER JOIN products_categories_relation ON product_categories.id = products_categories_relation.category_id WHERE 1) Product_Categories1" ;
 		
+		$q2 = "(SELECT food_sensitivities.name AS food_sensitivity_name, products_food_sensitivites_relation.product_id FROM food_sensitivities INNER JOIN products_food_sensitivites_relation ON food_sensitivities.id = products_food_sensitivites_relation.food_sensitivity_id WHERE 1) AS Food_Sensitivities1" ;
+		
+		$q = "SELECT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_name, product_groups.short_description
+			FROM
+				products LEFT OUTER JOIN ".$q1." ON products.id = Product_Categories1.product_id
+				         LEFT OUTER JOIN ".$q2." ON products.id = Food_Sensitivities1.product_id 
+						 INNER JOIN product_groups ON products.group_id = product_groups.id 
+			WHERE 
+				products.status = 'Active' AND
+				(products.product_name LIKE '%".$search_string."%' OR
+				products.product_code LIKE '%".$search_string."%' OR 
+				Product_Categories1.category_name LIKE '%".$search_string."%' OR 
+				Food_Sensitivities1.food_sensitivity_name LIKE '%".$search_string."%')" ;
+	
 		$query = $this->db->query($q) ;
 		
 		if ($query->num_rows() > 0)
@@ -138,7 +149,6 @@ class Model2 extends CI_Model
 	public function get_product_average_review($product_id)
 	{
 		$q = "SELECT AVG(reviews.stars) AS avg_rating FROM `reviews` WHERE reviews.product_id = ".$product_id." AND reviews.approved = 'Yes'" ;
-		//echo $q ; exit ;
 		
 		$query = $this->db->query($q);
 		

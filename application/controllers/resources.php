@@ -43,12 +43,33 @@ class Resources extends CI_Controller
 	
 	public function candida_questionnaire()
 	{
-		$this->load->view('template/body', $this->load_data("resources/candida_questionnaire")) ;
+		$data["error"] = 0 ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/candida_questionnaire"))) ;
 	}
 	
-		public function candida_results()
+	public function candida_results()
 	{
-		$this->load->view('template/body', $this->load_data("resources/candida_results")) ;
+		if($_POST)
+		{
+			$flag = false ;
+			$attributes = array() ;
+			for($i = 1 ; $i < 55 ; $i++)
+			{
+				$attributes["q".$i] = $this->input->post("q".$i) ; 
+				
+				if($attributes["q".$i] == "")
+					$flag = true ; 
+			}
+			
+			if($flag) {
+				$data["error"] = 1 ;
+				$this->load->view('template/body', array_merge($data, $this->load_data("resources/candida_questionnaire"))) ;
+			} else $this->load->view("template/body", array_merge($attributes, $this->load_data("resources/candida_results"))) ;
+		}
+		else
+		{
+			redirect(base_url()."home") ;
+		}
 	}
 	
 	public function healthy_journal()

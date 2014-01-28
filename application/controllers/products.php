@@ -45,7 +45,7 @@ class Products extends CI_Controller
 	{
 		if($product_id)
 		{
-			$data["product_detail"] = $this->model1->get_one(array("id" => $product_id), "products") ;
+			$data["product_detail"] = $this->model1->get_one(array("id" => $product_id, "status" => "Active"), "products") ;
 			$data["skus_detail"] = $this->model1->get_all_cond(array("product_id" => $product_id), "skus") ;
 			$data["brochure"] = $this->model2->get_brochures($product_id) ;
 			$data["product_reviews"] = $this->model1->get_all_cond(array("product_id" => $product_id, "approved" => "Yes"), "reviews") ;

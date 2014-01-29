@@ -1,0 +1,798 @@
+
+        <tr>
+          <td>Abdominal Pain </td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q1" <?php echo set_radio('q1', '0') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q1" <?php echo set_radio('q1', '1') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q1" <?php echo set_radio('q1', '2') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q1" <?php echo set_radio('q1', '3') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q1" <?php echo set_radio('q1', '4') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q1" <?php echo set_radio('q1', '5') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q1" <?php echo set_radio('q1', '6') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q1" <?php echo set_radio('q1', '7') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q1" <?php echo set_radio('q1', '8') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q1" <?php echo set_radio('q1', '9') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q1" <?php echo set_radio('q1', '10') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Anxiety or tearfulness</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q2" <?php echo set_radio('q2', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Bad breath</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q3" <?php echo set_radio('q3', '0') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q3" <?php echo set_radio('q3', '1') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q3" <?php echo set_radio('q3', '2') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q3" <?php echo set_radio('q3', '3') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q3" <?php echo set_radio('q3', '4') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q3" <?php echo set_radio('q3', '5') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q3" <?php echo set_radio('q3', '6') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q3" <?php echo set_radio('q3', '7') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q3" <?php echo set_radio('q3', '8') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q3" <?php echo set_radio('q3', '9') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q3" <?php echo set_radio('q3', '10') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Burning/tearing of  eyes</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q4" <?php echo set_radio('q4', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Chronic sore throat</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q5" <?php echo set_radio('q5', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Confusion</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q6" <?php echo set_radio('q6', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Cough or recurrent  bronchitis</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q7" <?php echo set_radio('q7', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Cravings for alcohol</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q8" <?php echo set_radio('q8', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Cravings for bread</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q9" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Cravings for sweets</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q10" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Diarrhea</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q11" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Difficulty with  decision making</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q12" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>endometriosis or  infertility</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q13" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Fatigue</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q14" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Frequent colds and  flues</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q15" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Frequent indigestion</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q16" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Headaches</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q17" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Heartburn</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q18" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Hives</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q19" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Impotence</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q20" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Inability to  concentrate</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q21" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Insomnia</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q22" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Itchy ears/nose</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q23" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Jitteriness/irritability</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q24" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Loss of balance</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q25" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Low libido</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q26" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Menstrual  irregularities</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q27" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Mood swings</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q28" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Mucus in stools</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q29" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Multiple food  sensitivities</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q30" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Muscle aches</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q31" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Muscle weakness</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q32" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Nasal/sinus congestion</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q33" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Numbness, burning pain  or tightness in chest</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q34" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>PMS</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q35" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Poor coordination</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q36" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Poor memory</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q37" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Poor sense of  direction</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q38" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Post nasal drip</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q39" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Prostatitis</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q40" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Rashes or psoriasis</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q41" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Rectal itching</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q42" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Recurrent ear  infections</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q43" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Sensitivity to foods  leavened with yeast</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q44" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Sensitivity to mould</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q45" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Sensitivity to  perfume, paints chemicals</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q46" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Sensitivity to tobacco  smoke</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q47" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Shaking or irritable</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q48" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Spacey feeling</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q49" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Strong body odour</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q50" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Swollen or painful  joints</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q51" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Thrush in mouth</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q52" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>Vaginal infections</td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q53" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+        <tr>
+          <td>White coating on  tongue </td>
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="0" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="1" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="2" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#C4FFC4" align="center"><input type="radio" class="questions" value="3" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="4" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="5" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFFEBF" align="center"><input type="radio" class="questions" value="6" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="7" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="8" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="9" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+          <td bgcolor="#FFB3B5" align="center"><input type="radio" class="questions" value="10" name="q54" <?php echo set_radio('q', '') ; ?> /></td> 
+        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+array("q1" => "Question 1&", "q2" => "Question 2&", "q3" => "Question 3&", "q4" => "Question 4&", "q5" => "Question 5&",
+										   "q6" => "Question 6&", "q7" => "Question 7&", "q8" => "Question 8&", "q9" => "Question 9&", "q10" => "Question 10&",
+										   
+								"q11" => "Question 11&", "q12" => "Question 12&", "q13" => "Question 13&", "q14" => "Question 14&", "q15" => "Question 15&",
+								"q16" => "Question 16&", "q17" => "Question 17&", "q18" => "Question 18&", "q19" => "Question 19&", "q20" => "Question 20&",
+										   
+								"q21" => "Question 21&", "q22" => "Question 22&", "q23" => "Question 23&", "q24" => "Question 24&", "q25" => "Question 25&",
+								"q26" => "Question 26&", "q27" => "Question 27&", "q28" => "Question 28&", "q29" => "Question 29&", "q30" => "Question 30&",
+								
+								"q31" => "Question 31&", "q32" => "Question 32&", "q33" => "Question 33&", "q34" => "Question 34&", "q35" => "Question 35&",
+								"q36" => "Question 36&", "q37" => "Question 37&", "q38" => "Question 38&", "q39" => "Question 39&", "q40" => "Question 40&",
+								
+								"q41" => "Question 41&", "q42" => "Question 42&", "q43" => "Question 43&", "q44" => "Question 44&", "q45" => "Question 45&",
+								"q46" => "Question 46&", "q47" => "Question 47&", "q48" => "Question 48&", "q49" => "Question 49&", "q50" => "Question 50&",
+								
+								"q51" => "Question 51&", "q52" => "Question 52&", "q53" => "Question 53&", "q54" => "Question 54&") ;
+			

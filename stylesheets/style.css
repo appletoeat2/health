@@ -325,7 +325,14 @@ ul.our-clients img { max-width:100%;}
 .testimonial { margin-bottom:94px; clear:both; min-width:220px; }
 .testimonial-content { padding:12px; position:relative; border:1px solid #f6f6f6; background:#f4f4f4;  border-radius:4px;}
 .container .testimonial-content p { margin:6px;}
-.testimonial-content h4 { padding:10px; line-height:1.7; color:#595959; margin-top:7px; font-family:"Roboto Slab"; }
+.testimonial-content h4 {
+	 padding:10px; 
+	 line-height:1.7; 
+	 color:#595959; 
+	 margin-top:7px; 
+	 font-style: italic;
+	 font-size: 14px !important;
+	  }
 .testimonial-arrow { position:absolute; width:127px; height:14px; background:#fff url(../images/nav-bott1.png) no-repeat; left:50px;bottom:-14px;}
 .testimonial-brand { position:relative; margin:12px 16px 8px 0px;}
 .testimonial-brand img { width:90px; height:90px; border-radius:45px; float:left; margin-bottom: 20px;}
@@ -967,6 +974,12 @@ input.btn404 { float:left; margin:1px; padding:8px 12px 9px; }
 .pie { text-align:center; font-size:49px; position:relative; margin:0 auto 20px; }
 .pie p { font-size:12px; position:absolute; bottom:-40px; width:100%;}
 .container .pie p { margin-bottom:0;}
+
+
+/*Page Links*/
+
+page-content a.link
+{ text-decoration:underline; }
 
 
 /* #Media Queries

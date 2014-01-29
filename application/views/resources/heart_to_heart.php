@@ -1,6 +1,6 @@
 <section id="headline" class="resources">
 	<div class="container">
-    	<h3><a href="index.php">Resources - Heart to Heart</a></h3>
+    	<h3><a href="index.php">Heart to Heart</a></h3>
 	</div>
 </section>
 

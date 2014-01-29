@@ -1,6 +1,6 @@
 <section id="headline" class="community">
 	<div class="container">
-    	<h3><a href="index.php">E-Community - Forum</a></h3>
+    	<h3><a href="index.php">Forum</a></h3>
 	</div>
 </section>
 

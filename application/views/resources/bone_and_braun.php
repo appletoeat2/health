@@ -1,6 +1,6 @@
 <section id="headline" class="resources">
 	<div class="container">
-    	<h3><a href="index.php">Resources - Bone and Braun</a></h3>
+    	<h3><a href="index.php">Bone and Braun</a></h3>
 	</div>
 </section>
 

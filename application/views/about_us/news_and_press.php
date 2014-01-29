@@ -1,6 +1,6 @@
 <section id="headline" class="aboutus">
 	<div class="container">
-    	<h3><a href="index.php">About Us - News and Press</a></h3>
+    	<h3><a href="index.php">News and Press</a></h3>
 	</div>
 </section>
 

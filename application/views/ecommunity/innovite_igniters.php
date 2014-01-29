@@ -1,6 +1,6 @@
 <section id="headline" class="community">
 	<div class="container">
-    	<h3><a href="index.php">E-Community - Innovite Igniters</a></h3>
+    	<h3><a href="index.php">Innovite Igniters</a></h3>
 	</div>
 </section>
 

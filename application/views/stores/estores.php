@@ -10,12 +10,8 @@
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
           		<h2>Shop Online </h2>
-          		<h4>for InnoviteHealth products at these reputable online retailers</h4>
+          		<h4>Innovite Health products are available for purchase online at these natural health retailers.</h4>
        		  <table class="table">
-       		    <tr>
-       		      <td>Name</td>
-       		      <td>URL</td>
-   		        </tr>
        		    <tr>
        		      <td>12 Baskets Nutrition &amp;   Health Co.</td>
        		      <td><a href="www.12baskets.com">www.12baskets.com</a></td>

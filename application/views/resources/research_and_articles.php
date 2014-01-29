@@ -1,6 +1,6 @@
 <section id="headline" class="resources">
 	<div class="container">
-    	<h3><a href="index.php">Resources - Research And Articles</a></h3>
+    	<h3><a href="index.php">Research And Articles</a></h3>
 	</div>
 </section>
 

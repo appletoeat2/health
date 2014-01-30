@@ -44,7 +44,7 @@ class Model2 extends CI_Model
 		
 		$q2 = "(SELECT food_sensitivities.name AS food_sensitivity_name, products_food_sensitivites_relation.product_id FROM food_sensitivities INNER JOIN products_food_sensitivites_relation ON food_sensitivities.id = products_food_sensitivites_relation.food_sensitivity_id WHERE 1) AS Food_Sensitivities1" ;
 		
-		$q = "SELECT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_name, product_groups.short_description
+		$q = "SELECT DISTINCT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_name, product_groups.short_description, Product_Categories1.category_name, Food_Sensitivities1.food_sensitivity_name
 			FROM
 				products LEFT OUTER JOIN ".$q1." ON products.id = Product_Categories1.product_id
 				         LEFT OUTER JOIN ".$q2." ON products.id = Food_Sensitivities1.product_id 
@@ -54,8 +54,10 @@ class Model2 extends CI_Model
 				(products.product_name LIKE '%".$search_string."%' OR
 				products.product_code LIKE '%".$search_string."%' OR 
 				Product_Categories1.category_name LIKE '%".$search_string."%' OR 
-				Food_Sensitivities1.food_sensitivity_name LIKE '%".$search_string."%')" ;
-	
+				Food_Sensitivities1.food_sensitivity_name LIKE '%".$search_string."%')
+			
+			GROUP BY products.id" ;
+		
 		$query = $this->db->query($q) ;
 		
 		if ($query->num_rows() > 0)

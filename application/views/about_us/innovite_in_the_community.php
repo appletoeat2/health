@@ -27,8 +27,7 @@
               <hr>
               <img src="<?php echo base_url() ; ?>/images/page_images/Mito_Canada_logo.jpg" width="50%" />
               <p>Provides support and awareness to Canadians affected by Mitochondrial Disease while also supporting the advancement of research. Mitochondrial Disease is a range of disorders caused by the genetic mutation and eventually failure of mitochondria, the power supply of cells.  This devastating disease knows no boundaries.  Read about the touching story of 3 year old Alexis.</p>
-              <p>Alexis&rsquo;  Story: &ldquo;Mommy, I don't want to leave you and Daddy…&rdquo; (link to PDF attached)<br>
-                (insert image of Alexis from PDF)</p>
+              <p><a href="<?php echo base_url() ; ?>/pdfs/AlexisStory.pdf" target="_blank">Alexis&rsquo;  Story: &ldquo;Mommy, I don't want to leave you and Daddy…&rdquo;</a></p>
               <p>Help Mito Canada through the annual national fundraiser  RUNNING ON EMPY,   which encourages participants to collect pledges to raise funds for the awareness, support and research work of the Mito Canada Foundation.  </p>
               <h4>Learn and share</h4>
               <ul>

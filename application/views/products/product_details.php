@@ -88,18 +88,19 @@
             	<hr class="vertical-space1">
               	<h1>Reviews</h1>
                 <?php if($product_avg_review) { ?>
-                	<h2>Avgerage Ranking</h2>
-                    <div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $product_avg_review->avg_rating ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
+                	<h2>Average Ranking</h2>
+                    <div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $product_avg_review->avg_rating ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="16" data-rateit-starheight="16"></div>
 				<?php } ?>
                 <?php if($product_reviews) { ?>
                 	<br />
                     <?php $comment1 = 1 ; ?>
-                    <h2>Comments</h2>
                 	<?php foreach ($product_reviews as $rec): ?>
-                    	<h4>Comment <?php echo $comment1 ; ?></h4>
+                    <hr>
+                    <div><div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $rec->stars ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="16" data-rateit-starheight="16"></div></div>
+                    <br>
                         <div style=""><?php echo $rec->reviewer_comment ; ?></div>
-                        <div><div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $rec->stars ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="32" data-rateit-starheight="32"></div></div>
-                        <div><?php echo $rec->reviewer_name ; ?></div>
+                        <br>
+                        <div><p><?php echo $rec->reviewer_name ; ?></p></div>
                         <br />
                         <?php $comment1 = $comment1 + 1 ; ?>
 					<?php endforeach ; ?>
@@ -107,12 +108,12 @@
 				<?php } else { ?>
                 	<p>There are no reviews yet, would you like to submit yours?</p>
               	<?php } ?>
-              	<h5><strong>Be the first to review this Product</strong></h5>
+              	<h5><strong>Submit a review for this product</strong></h5>
               	<label>Name</label> <input type="text" id="reviewer_name" name="reviewer_name" value="">
               	<label>Email</label> <input type="text" id="reviewer_email" name="reviewer_email" value="">
                 <label>Stars</label>
                 <br /> 
-                <div id="aaaa" class="rateit bigstars tool_tip" data-rateit-starwidth="32" data-rateit-starheight="32"></div>
+                <div id="aaaa" class="rateit bigstars tool_tip" data-rateit-starwidth="16" data-rateit-starheight="16"></div>
                 <input type="hidden" id="reviewer_ranking" name="reviewer_ranking" value="0" />
               	
                 <br />

@@ -13,7 +13,7 @@
           		<h4>Innovite Health products are available for purchase online at these natural health retailers.</h4>
        		  <table class="table">
        		    <tr>
-       		      <td>12 Baskets Nutrition &amp;   Health Co.</td>
+       		      <td>12 Baskets Nutrition &amp; Health Co.</td>
        		      <td><a href="www.12baskets.com">www.12baskets.com</a></td>
    		        </tr>
        		    <tr>

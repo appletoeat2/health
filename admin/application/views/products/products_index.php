@@ -7,12 +7,12 @@
             	<table cellspacing="0" cellpadding="0" border="0" class="all"> 
 					<thead> 
 						<tr>
-							<th width="8%">Status</th>
+							<th width="8%">Sorting</th>
 							<th width="25%">Product Name</th>
 							<th width="15%">Product Code</th>
 							<th width="25%">Health Claim</th>
 							<th width="8%">Is New</th>
-							<th width="7%">Sort</th>
+							<th width="7%">Status</th>
 							<th width="12%">Action</th>
 						</tr>
 					</thead>
@@ -22,7 +22,7 @@
 						<tr>
 							<td><?php echo stripslashes($rec->sort_order) ; ?></td>
 							<td><?php echo stripslashes($rec->product_name) ; ?></td>
-							<td><a href="<?php echo base_url()."products/product_detail/".$rec->id ; ?>"><?php echo stripslashes($rec->product_code) ; ?></a></td>
+							<td><?php echo stripslashes($rec->product_code) ; ?></td>
 							<td><?php echo stripslashes($rec->health_claim) ; ?></td>
 							<td><?php echo stripslashes($rec->isnew) ; ?></td>
 							<td><?php echo stripslashes($rec->status) ; ?></td>

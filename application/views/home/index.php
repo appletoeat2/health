@@ -23,7 +23,7 @@
   			<a href="<?php echo base_url()."products/group_product/2"  ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/sp_digestive.jpg" /></a>
 			<?php $group_rec = get_product_group(2) ; ?>
 			<h6>Detox and Digestive Restoration</h6>
-            <p>Includes support for: <a href="<?php echo base_url()."/products/group_product/3" ; ?>"><span style="color:#E60105">probiotics</span></a>, <a href="<?php echo base_url()."/products/group_product/2" ; ?>"><span  style="color:#E60105">candida and general detox</span></a>.</p>
+            <p>Includes support for: <a href="<?php echo base_url()."/products/group_product/3" ; ?>">probiotics</a>, <a href="<?php echo base_url()."/products/group_product/2" ; ?>">candida and general detox</a>.</p>
 		</div>
         <div class="one_fifth column-last">
         	<a href="<?php echo base_url()."products/group_product/5"  ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/sp_general.jpg" /></a>

@@ -7,7 +7,7 @@
 		</div><!-- end-contact-info /end -->
 		<div class="four columns">
         	<h4 class="subtitle">Stay in the loop</h4>
-            <!-- BEGIN: Constant Contact Email List Form Button --><div><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=giajnspab&amp;p=oi&amp;m=1116235661574&amp;sit=fwoszjoib&amp;f=460f1464-ee17-484a-940a-238f978be67d" class="button red small">Sign Up Now</a><!-- BEGIN: Email Marketing you can trust --><p></p><div><p>Stay in in the loop on products,<br>events and promotions.</p></div></div>
+            <!-- BEGIN: Constant Contact Email List Form Button --><div><a href="http://visitor.r20.constantcontact.com/d.jsp?llr=giajnspab&amp;p=oi&amp;m=1116235661574&amp;sit=fwoszjoib&amp;f=460f1464-ee17-484a-940a-238f978be67d" target="_blank" class="button red small">Sign Up Now</a><!-- BEGIN: Email Marketing you can trust --><p></p><div><p>Stay in in the loop on products,<br>events and promotions.</p></div></div>
      		<!--<p>Keep up to date with the latest news, events and product information. Enter email address</p>
 			<div id="form">
 				<p><input type="text" id="email_address" name="email_address" class="" /></p>
@@ -41,10 +41,8 @@
     	<div class="container">
      		<div class="tweleve columns">
       			<div class="">
-                  
-                    <p><small>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br>
-                    <div class="footernav"><a href="<?php echo base_url()."home/privacy_policy" ; ?>">Privacy Policy</a> | <a href="<?php echo base_url()."home/terms_and_conditions" ; ?>">Terms and conditions</a> </div></small></p>
-                  
+                    <p>These statements on this website have not been evaluated by Health Canada and should not be construed as medical claims nor intended to diagnose, treat, cure or prevent  any disease. For proper use of these products, consult a health care professional. © Innovite Health 2014. All rights reserved.<br>
+                    <div class="bottom-links"><a href="<?php echo base_url()."home/privacy_policy" ; ?>">Privacy Policy</a> | <a href="<?php echo base_url()."home/terms_and_conditions" ; ?>">Terms and conditions</a> </div></p>
       			</div>
 	  		</div><!-- footer-navigation /end -->
 	  		<div class="eight columns"></div>

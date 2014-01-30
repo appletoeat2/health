@@ -12,7 +12,7 @@
 @import url('./blox.css'); /* Import Full width Sections + Parallax Stylesheet */
 @import url('./icomoon.css'); /* Import Vector Icons Stylesheet */
 
-label #label {
+/*label #label {
 	    margin-left: 25px;
     position: relative;
     top: -14px;
@@ -20,7 +20,7 @@ label #label {
 	label #label:hover {
 		color:#F60207;
 	}
-
+*/
 
 /*-----------------------------------------------------------------------------------*/
 
@@ -167,7 +167,16 @@ span.row-mn {  background:url(../images/row-m1.png) no-repeat right center; widt
 .nav-wrap2.mn4.darknavi #nav li:last-child {  border-right:1px solid #555;}
 .nav-wrap2.mn4 span.row-mn { display:none;}
 
-
+.bottom-links a:link, .bottom-links a:visited 
+{
+	color:#000000;
+	text-decoration:underline;
+	font-weight: 600;
+	}
+	.bottom-links a:hover
+{
+	color:#FC0004;
+	}
 
 /* nav dropdown */
 #nav ul {
@@ -449,7 +458,7 @@ ul.our-clients img { max-width:100%;}
 .footbot img { position:relative; margin:6px 40px 0 0; opacity:0.93;}
 .footer-navi { float:left; font-size:12px; padding:3px 0 0 10px; text-transform:capitalize; }
 .footer-navi ul { margin-left:40px;}
-.footer-navi a { color:#a9b2b4; margin:0 4px;}
+.footer-navi a, .footer-navi a:visited  { color:#a9b2b4; margin:0 4px;}
 .footer-navi a:hover { color:#ccc; text-decoration:underline;}
 
 

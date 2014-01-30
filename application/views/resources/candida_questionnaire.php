@@ -15,8 +15,8 @@
       <h2>The Candida Health Test</h2>
       <p>This questionnaire is designed to help you determine the likelihood of your health problems being related to Candidiasis. A positive score does not indicate a definite diagnosis of Candida, however the higher your score is, the stronger the likelihood that Candida is contributing to your health problems. </p>
       <p>Your total score will help  you and your health practitioner determine how likely it is that your health  problems are Candida-related.&nbsp; A positive  score does not translate into a definite case of Candida.&nbsp; However, the higher your score, the stronger  the likelihood that Candida overgrowth is contributing to your health problems: </p>
- <div class="hoz-line"></div>      <p></p>
-      <h2>Instructions:</h2>
+ <div class="hoz-line"></div>
+ <h2>Instructions:</h2>
       <ul type="disc">
         <li>Score each symptom between 0 and 10, depending on the degree to which it applies to you.</li>
         <li>If the symptom does not apply, score 0.</li>
@@ -40,7 +40,7 @@
 						  "Rashes or psoriasis", "Rectal itching", "Recurrent ear infections", "Sensitivity to foods leavened with yeast", "Sensitivity to mould", 
 						  "Sensitivity to perfume, paints chemicals", "Sensitivity to tobacco smoke", "Shaking or irritable", "Spacey feeling", "Strong body odour", 
 						  "Swollen or painful joints", "Thrush in mouth", "Vaginal infections", "White coating on tongue") ; ?>
-      <input type="button" id="hahaha" name="" value="<?php echo count($headings) ; ?>"  />
+      <!--<input type="button" id="hahaha" name="" value="<?php echo count($headings) ; ?>"  />-->
       <p id="attributes"></p>
       <table id="questions_table1111" width="100%" cellspacing="0" cellpadding="0" class="table">
         <tbody><tr>

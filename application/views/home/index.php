@@ -1,6 +1,6 @@
 <section class="container home-content">
 	<?php $this->load->view("template/slider") ; ?>
-    <section class="">
+    <section class="spotlights">
         <div class="one_fifth">
         	<a href="<?php echo base_url()."products/group_product/1" ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/sp_heart.jpg" /></a>
             <?php $group_rec = get_product_group(1) ; ?>

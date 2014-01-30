@@ -8,7 +8,7 @@
 	<hr class="vertical-space2">
     <section class="sixteen columns">
 <h2><strong>Education is a continuing journey</strong></h2>
-	  <p>Today&rsquo;s  consumer has access to more information about health than at any other  point in human history.  Information from every corner of the global is  available at our fingertips.  But sometimes the informational noise can  be overwhelming. That is why Innovite Health experts Dr. Lee Know and  Dr. Aaron Van Gaver can help cut through the clutter.  Learn from these  experts in natural medicine. As natural health leaders,  practitioners  and educators, they share their clinical experience and access to  cutting edge research.  Join them in the journey to restore, repair and  reclaim health.       		  </p>
+	  <p>Today&rsquo;s  consumer has access to more information about health than at any other  point in human history.  Information from every corner of the global is  available at our fingertips.  But sometimes the informational noise can  be overwhelming. That is why Innovite Health experts Dr. Lee Know, Dr. Mario Chaput and  Dr. Aaron Van Gaver can help cut through the clutter.  Learn from these  experts in natural medicine. As natural health leaders,  practitioners  and educators, they share their clinical experience and access to  cutting edge research.  Join them in the journey to restore, repair and  reclaim health.       		  </p>
 	  <div class="one_third">
         <figure class="our-team"> <img src="<?php echo base_url() ?>images/staff_pics/lee.jpg" alt="" width="156">
           <figcaption><h4>Connect and follow Lee:</h4>

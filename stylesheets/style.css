@@ -177,6 +177,17 @@ span.row-mn {  background:url(../images/row-m1.png) no-repeat right center; widt
 {
 	color:#FC0004;
 	}
+	
+	.spotlights a:link, .spotlights a:visited 
+{
+	color:#FF0004;
+	text-decoration:underline;
+	font-weight: 600;
+	}
+	.spotlights a:hover
+{
+	color:#FF0004;
+	}
 
 /* nav dropdown */
 #nav ul {

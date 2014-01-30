@@ -9,8 +9,7 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
-          	<h2>Live your values</h2>
-	        <h3><strong><em>And grow with us</em></strong></h3>
+          	<h2>Live your values and grow with us</h2>
 	      <p>Innovite Health is powered by a dedicated team who believes in healthy living,  from  work-life balance social responsibility.  We are always on the lookout to add special individuals who are engaged, passionate and driven. Our brand is our people. Real people with real heart.  </p>
           <p>Work in a dynamic atmosphere where growth is inspired through open communication, new ideas and above all else, accountability,  at all customer touch points and in all business facets and levels. We strive to create a sense of pride in both personal contributions and the overall  impact we can make together in natural health.  </p>
             <p><strong>Join and tell us your story</strong><br>

@@ -37,9 +37,9 @@
            		
                 <li><a href="<?php echo base_url("")."resources/index" ; ?>">RESOURCES</a>
           			<ul>
-            			<li><a href="<?php echo base_url("")."resources/heart_to_heart" ; ?>">Heart to heart</a></li>
+            			<!--<li><a href="<?php echo base_url("")."resources/heart_to_heart" ; ?>">Heart to heart</a></li>
             			<li><a href="<?php echo base_url("")."resources/brain_power" ; ?>">Brain power</a></li>
-            			<li><a href="<?php echo base_url("")."resources/bone_and_braun" ; ?>">Bone and braun</a></li>
+            			<li><a href="<?php echo base_url("")."resources/bone_and_braun" ; ?>">Bone and braun</a></li>-->
             			<li><a href="<?php echo base_url("")."resources/probiotics101" ; ?>">Probiotics 101</a></li>
             			<li><a href="<?php echo base_url("")."resources/candida_questionnaire" ; ?>">Candida questionnaire</a></li>
             			<li><a href="<?php echo base_url("")."resources/healthy_journal" ; ?>">Healthy Journal</a></li>
@@ -52,10 +52,10 @@
         		<li><a  href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">E-COMMUNITY</a>
         			<ul>
             			<!--<li><a href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">Innovite your Life</a></li>
--->            			<li><a href="<?php echo base_url("")."ecommunity/innovite_igniters" ; ?>">Innovite Igniters</a></li>
+-->            			<li><a href="<?php echo base_url("")."about_us/innovite_igniters" ; ?>">Innovite Igniters</a></li>
             			<li><a href="<?php echo base_url("")."ecommunity/ask_the_expert_blog" ; ?>">Ask our experts</a></li>
             			<!--<li><a href="<?php echo base_url("")."ecommunity/forum" ; ?>">Forum</a></li>-->
-            			<li><a href="<?php echo base_url("")."ecommunity/upcoming_events" ; ?>">Upcoming events</a></li>
+            			<!--<li><a href="<?php echo base_url("")."ecommunity/upcoming_events" ; ?>">Upcoming events</a></li>-->
           			</ul>
         		</li>
                 

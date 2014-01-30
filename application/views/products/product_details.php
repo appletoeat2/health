@@ -88,8 +88,14 @@
             	<hr class="vertical-space1">
               	<h1>Reviews</h1>
                 <?php if($product_avg_review) { ?>
-                	<h2>Average Ranking</h2>
-                    <div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $product_avg_review->avg_rating ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="16" data-rateit-starheight="16"></div>
+                <table width="100%">
+  <tr>
+    <td width="25%"><h5>Average Ranking</h5></td>
+    <td><div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $product_avg_review->avg_rating ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="16" data-rateit-starheight="16"></div></td>
+  </tr>
+</table>
+                	
+                    
 				<?php } ?>
                 <?php if($product_reviews) { ?>
                 	<br />

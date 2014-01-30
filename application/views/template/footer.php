@@ -32,8 +32,8 @@
             	<a href="<?php echo base_url("") ; ?>" class="facebook"><i class="icomoon-facebook"></i></a>
                 <a href="<?php echo base_url("") ; ?>" class="twitter"><i class="icomoon-twitter"></i></a>
                 <a href="<?php echo base_url("") ; ?>" class="youtube"><i class="icomoon-youtube"></i></a>
-                <a href="<?php echo base_url("") ; ?>" class="instagram"><i class="icomoon-instagram"></i></a>
-                <a href="<?php echo base_url("") ; ?>" class="pinterest"><i class="icomoon-pinterest"></i></a>
+                <!--<a href="<?php echo base_url("") ; ?>" class="instagram"><i class="icomoon-instagram"></i></a>-->
+                <!--<a href="<?php echo base_url("") ; ?>" class="pinterest"><i class="icomoon-pinterest"></i></a>-->
                 <a href="<?php echo base_url("") ; ?>" class="google"><i class="icomoon-google"></i></a>
             </div><!-- flickr /end --> 
 	</section><!-- end-footer-in -->

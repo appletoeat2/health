@@ -26,6 +26,11 @@ function is_equal($group1_id, $rec_id)
 			</div>
             
             <div class="row">
+				<label>Review Title</label>
+				<div class="right"><input type="text" id="review_title" name="review_title" value="<?php echo set_value("review_title") ; ?>" /></div>
+			</div>
+            
+            <div class="row">
 				<label>Reviewer Name</label>
 				<div class="right"><input type="text" id="reviewer_name" name="reviewer_name" value="<?php echo set_value("reviewer_name") ; ?>" /></div>
 			</div>

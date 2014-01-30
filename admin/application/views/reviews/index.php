@@ -8,10 +8,11 @@
 					<thead> 
 						<tr>
 							<th width="10%">Product Id</th>
-							<th width="10%">Stars</th>
-							<th width="15%">Name</th>
-                            <th width="30">Comment</th>
-                            <th width="15%">Date</th>
+							<th width="16%">Title</th>
+							<th width="7%">Stars</th>
+							<th width="10%">Name</th>
+                            <th width="25">Comment</th>
+                            <th width="12%">Date</th>
                             <th width="10%">Approved</th>
 							<th width="10%">Action</th>
 						</tr>
@@ -21,7 +22,8 @@
                     <?php foreach($reviews as $rec): ?>
 						<tr>
 							<td><?php echo stripslashes($rec->product_code) ; ?></td>
-							<td><?php echo stripslashes($rec->stars) ; ?></td>
+							<td><?php echo stripslashes($rec->review_title) ; ?></td>
+                            <td><?php echo stripslashes($rec->stars) ; ?></td>
 							<td><?php echo stripslashes($rec->reviewer_name) ; ?></td>
                             <td><?php echo substr(stripslashes($rec->reviewer_comment), 0, 150) ; ?></td>
                             <td><?php echo date("d-M-Y", strtotime($rec->comment_timestamp)) ; ?></td>

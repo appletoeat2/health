@@ -75,7 +75,7 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$attributes = post_data(array("product_id" => "product_id", "reviewer_name" => "name", "reviewer_email" => "email", "reviewer_comment" => "comment", "stars" => "stars")) ;
+			$attributes = post_data(array("product_id" => "product_id", "reviewer_name" => "name", "reviewer_email" => "email", "review_title" =>"review_title", "reviewer_comment" => "comment", "stars" => "stars")) ;
 			$attributes["approved"] = "No" ;
 			$attributes["status"] = "Active" ;
 			$review_id = $this->model1->insert_rec($attributes, "reviews") ;

@@ -1,7 +1,7 @@
 <?php
-function is_equal($group1_id, $rec_id)
+function is_equal($product_id, $rec_id)
 {
-	if($group1_id == $rec_id) return true ;
+	if($product_id == $rec_id) return true ;
 	else return false ;
 }
 ?>
@@ -13,8 +13,25 @@ function is_equal($group1_id, $rec_id)
 	<div class="box">
 		<div class="title">Product Review Details<span class="hide"></span></div>
 		<div class="content">     
-            <div class="row">
-				<label>Reviewer Name</label>
+        
+        <div class="row">
+			<label>Products</label>
+			<div class="right">
+				<select id="product_id" name="product_id" class="jqselect big">
+					<?php if($products) { foreach($products as $rec): ?>
+                    <option value="<?php echo $rec->id ; ?>" <?php echo set_select('product_id', $rec->id, is_equal($rec->id, $review_rec->product_id)) ; ?>><?php echo stripslashes($rec->product_name) ; ?></option>
+                    <?php endforeach ; } ?>
+				</select>
+			</div>
+		</div>
+        
+        
+        <div class="row">
+			<label>Review Title</label>
+			<div class="right"><input type="text" id="review_title" name="review_title" value="<?php echo set_value("review_title", $review_rec->review_title) ; ?>" /></div>
+		</div>
+       	<div class="row">
+            	<label>Reviewer Name</label>
 				<div class="right"><input type="text" id="reviewer_name" name="reviewer_name" value="<?php echo set_value("reviewer_name", $review_rec->reviewer_name) ; ?>" /></div>
 			</div>
             

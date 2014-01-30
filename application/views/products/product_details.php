@@ -18,7 +18,7 @@
                 <h3><?php if($product_detail->sub_heading != "") echo $product_detail->sub_heading ; ?></h3>
           		<h4><?php echo $product_detail->health_claim ; ?></h4>
           		<p>NPN# <?php echo $product_detail->npn ; ?></p>
-          		<p><?php $bodytag = str_replace(chr(13), "<br>", $product_detail->short_description) ; echo $bodytag ; ?></p>
+          		<p><?php $bodytag = str_replace(chr(13), "<br>", stripslashes($product_detail->short_description)) ; echo $bodytag ; ?></p>
   				<input type="hidden" id="product_id" name="product_id" value="<?php echo $product_detail->id ; ?>" />
                 <span class='st_facebook_large' displayText='Facebook'></span>
                 <span class='st_twitter_large' displayText='Tweet'></span>
@@ -49,11 +49,11 @@
 				{ 
 					$bodydescript = str_replace(chr(13), "<br>", stripslashes($product_detail->description));
 					echo "<div id='Description' class='tab-pane active'>", $bodydescript,"</div>"; 
-					echo "<div id='Formula' class='tab-pane'>", $product_detail->formula, "</div>"; 
+					echo "<div id='Formula' class='tab-pane'>", stripslashes($product_detail->formula), "</div>"; 
 				} 
 				else 
 				{ 
-					echo "<div id='Formula' class='tab-pane active'>", $product_detail->formula, "</div>"; 
+					echo "<div id='Formula' class='tab-pane active'>", stripslashes($product_detail->formula), "</div>"; 
 				} 
          		?>
             	<div id="Sizes" class="tab-pane">
@@ -80,7 +80,7 @@
             
             <div id="Dosage" class="tab-pane">
             	
-                <?php echo $product_detail->dosage ;?>
+                <?php echo stripslashes($product_detail->dosage) ; ?>
 			
             </div>
 		
@@ -104,6 +104,7 @@
                     <hr>
                     <div><div class="rateit bigstars tool_tip" data-rateit-value="<?php echo $rec->stars ; ?>" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-starwidth="16" data-rateit-starheight="16"></div></div>
                     <br>
+                    	<h4 style=""><?php echo $rec->review_title ; ?></h4>
                         <div style=""><?php echo $rec->reviewer_comment ; ?></div>
                         <br>
                         <div><p><?php echo $rec->reviewer_name ; ?></p></div>
@@ -124,6 +125,9 @@
               	
                 <br />
                 <br />
+                
+                <label>Title</label> <input type="text" id="review_title" name="review_title" value="">
+                
                 <label>Your Review</label> <textarea id="reviewer_comment" name="reviewer_comment" cols="" rows=""></textarea>
               	<br>
                 
@@ -186,6 +190,7 @@
 $("#submit_comment").click(function(){
 	var name = $("#reviewer_name").val() ;
 	var email = $("#reviewer_email").val() ;
+	var review_title = $("#review_title").val() ;
 	var comment = $("#reviewer_comment").val() ;
 	var stars = $("#reviewer_ranking").val() ;
 	var product_id = $("#product_id").val() ;
@@ -193,13 +198,14 @@ $("#submit_comment").click(function(){
 	
 	if(name == "") { alert("Name is required.") ; flag = true ;}
 	if(email == "") { alert("Email is required.") ; flag = true ;}
+	if(review_title == "") { alert("Title is required.") ; flag = true ;}
 	if(comment == "") { alert("Comment is required.") ; flag = true ;}
 	
 	if(flag) return true ;
 	else
 	{
 		var base_url = $("#base_url").val() ;
-		var data1 = "product_id="+product_id+"&name="+name+"&email="+email+"&comment="+comment+"&stars="+stars ;
+		var data1 = "product_id="+product_id+"&name="+name+"&email="+email+"&comment="+comment+"&stars="+stars+"&review_title="+review_title ;
 		$.ajax({
 			type: "POST", 
 			url:  base_url+"products/insert_comment", 
@@ -212,7 +218,8 @@ $("#submit_comment").click(function(){
 					$("#reviewer_name").val("") ;
 					$("#reviewer_email").val("") ;
 					$("#reviewer_comment").val("") ;
-					$("#reviewer_ranking").val("5") ;
+					$("#review_title").val("") ;
+					$("#reviewer_ranking").val("0") ;
 				}
 				else alert("Failed to submit review.") ;
 			}

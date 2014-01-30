@@ -84,7 +84,7 @@ class Model2 extends CI_Model
 	
 	public function get_reviews()
 	{
-		$q = "SELECT reviews.id, reviews.product_id, reviews.stars, reviews.reviewer_name, reviews.reviewer_email, reviews.reviewer_comment, reviews.comment_timestamp, reviews.approved, reviews.status, products.product_code, products.product_name FROM reviews INNER JOIN products ON reviews.product_id = products.id WHERE 1 ORDER BY reviews.comment_timestamp DESC" ;
+		$q = "SELECT reviews.id, reviews.product_id, reviews.review_title, reviews.stars, reviews.reviewer_name, reviews.reviewer_email, reviews.reviewer_comment, reviews.comment_timestamp, reviews.approved, reviews.status, products.product_code, products.product_name FROM reviews INNER JOIN products ON reviews.product_id = products.id WHERE 1 ORDER BY reviews.comment_timestamp DESC" ;
 		//echo $q ; exit ;
 		$query = $this->db->query($q) ;
 		

@@ -42,7 +42,7 @@ class Product_groups extends CI_Controller
 			} else {
 				
 				if($response["status"] == 2) $data["errors"] = $response["errors"] ;
-				elseif($response["status"] == 3) $data["errors"] = "<li>File is not according to size. It should be 1000px width x 100px height</li>" ;
+				elseif($response["status"] == 3) $data["errors"] = "<li>File is not according to size. It should be 1282 width x 100px height</li>" ;
 				
 				$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/add_product_group"))) ;
 			}
@@ -88,7 +88,7 @@ class Product_groups extends CI_Controller
 				} else {
 					
 					if($response["status"] == 2) $data["errors"] = $response["errors"] ;
-					elseif($response["status"] == 3) $data["errors"] = "<li>File is not according to size. It should be 1000px width x 100px height.</li>" ;
+					elseif($response["status"] == 3) $data["errors"] = "<li>File is not according to size. It should be 1282px width x 100px height.</li>" ;
 					
 					$data["group_rec"] = $this->model1->get_one(array("id" => $group_id), "product_groups") ;
 					$this->load->view('template/body', array_merge($data, $this->load_view("product_groups/edit_product_group"))) ;
@@ -114,7 +114,7 @@ class Product_groups extends CI_Controller
 		
 		if($this->upload->do_upload("banner_file")) {
 			$data = array_merge(array("status" => 1), $this->upload->data()) ;
-			if($data["image_width"] == 1000 && $data["image_height"] == 100)
+			if($data["image_width"] == 1282 && $data["image_height"] == 100)
 				return $data ;
 			else
 			{

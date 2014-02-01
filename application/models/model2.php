@@ -44,7 +44,7 @@ class Model2 extends CI_Model
 		
 		$q2 = "(SELECT food_sensitivities.name AS food_sensitivity_name, products_food_sensitivites_relation.product_id FROM food_sensitivities INNER JOIN products_food_sensitivites_relation ON food_sensitivities.id = products_food_sensitivites_relation.food_sensitivity_id WHERE 1) AS Food_Sensitivities1" ;
 		
-		$q = "SELECT DISTINCT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_name, product_groups.short_description, Product_Categories1.category_name, Food_Sensitivities1.food_sensitivity_name
+		$q = "SELECT DISTINCT products.id AS product_id, products.product_name, products.product_code, products.health_claim, product_groups.id AS group_id, product_groups.group_title, product_groups.short_description, Product_Categories1.category_name, Food_Sensitivities1.food_sensitivity_name
 			FROM
 				products LEFT OUTER JOIN ".$q1." ON products.id = Product_Categories1.product_id
 				         LEFT OUTER JOIN ".$q2." ON products.id = Food_Sensitivities1.product_id 
@@ -78,7 +78,7 @@ class Model2 extends CI_Model
 		
 		$q = "SELECT
 					products.id AS product_id, products.product_name, products.product_code, products.health_claim,
-					product_groups.id AS group_id, product_groups.group_name, product_groups.short_description, 
+					product_groups.id AS group_id, product_groups.group_title, product_groups.short_description, 
 					PRODUCTS_CATEGORIES_TABLE.categories_id,
 					FOOD_SENSITIVITIES_TABLE.food_sensitivities_id
 			  FROM
@@ -109,7 +109,7 @@ class Model2 extends CI_Model
 		
 		$q = "SELECT
 					products.id AS product_id, products.product_name, products.product_code, products.health_claim,
-					product_groups.id AS group_id, product_groups.group_name, product_groups.short_description, 
+					product_groups.id AS group_id, product_groups.group_title, product_groups.short_description, 
 					PRODUCTS_CATEGORIES_TABLE.categories_id,
 					FOOD_SENSITIVITIES_TABLE.food_sensitivities_id
 			  FROM

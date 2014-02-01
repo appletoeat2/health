@@ -19,7 +19,7 @@
 							echo '<li class="current">' ;
 						else
 							echo '<li>' ;
-						echo '<a href="'.base_url()."products/index/".$rec->id.'">'.$rec->group_name.'</a>' ;
+						echo '<a href="'.base_url()."products/index/".$rec->id.'">'.$rec->group_title.'</a>' ;
 						echo '</li>' ;
 						$i++ ;
 					endforeach ;

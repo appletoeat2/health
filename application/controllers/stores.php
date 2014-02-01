@@ -9,6 +9,7 @@ class Stores extends CI_Controller
 	
 	public function index()
 	{
+		$data["meta_data"] = $this->model3->get_meta_data(array("id" => 1), "settings") ;
 		$data["cities"] = $this->model1->get_all_cond(array("country" => "CA"), "cities") ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("stores/index"))) ;
 	}

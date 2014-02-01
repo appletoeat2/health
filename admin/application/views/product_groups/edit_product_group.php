@@ -8,10 +8,6 @@
 		<div class="box">
 			<div class="title">English<span class="hide"></span></div>
 			<div class="content">
-				<div class="row"> 
-					<label>Group Name</label>
-					<div class="right"><input type="text" id="group_name" name="group_name" value="<?php echo set_value("group_name", stripslashes($group_rec->group_name)) ; ?>" /></div>
-				</div>
                 <div class="row"> 
 					<label>Group Title</label>
 					<div class="right"><input type="text" id="group_title" name="group_title" value="<?php echo set_value("group_title", stripslashes($group_rec->group_title)) ; ?>" /></div>
@@ -24,6 +20,14 @@
 					<label>Group Landing Page Description</label>
 					<div class="right" style="z-index:-9999 !important;"><textarea id="landing_page_description" name="landing_page_description" class="richtext_textarea"><?php echo set_value("landing_page_description", stripslashes($group_rec->landing_page_description)) ; ?></textarea></div>
 				</div>
+                <div class="row"> 
+					<label>SEO Page Title <a href="<?php echo LINK1 ; ?>" target="_blank">Tips</a></label>
+					<div class="right"><input type="text" id="seo_page_title" name="seo_page_title" value="<?php echo set_value("seo_page_title", stripslashes($group_rec->seo_page_title)) ; ?>" /></div><br />
+                </div>
+                <div class="row">
+					<label>SEO Page Description <a href="<?php echo LINK2 ; ?>" target="_blank">Tips</a></label>
+					<div class="right"><input type="text" id="seo_page_description" name="seo_page_description" value="<?php echo set_value("seo_page_description", stripslashes($group_rec->seo_page_description)) ; ?>" /></div><br />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -31,10 +35,6 @@
 		<div class="box">
 			<div class="title">French<span class="hide"></span></div>
 			<div class="content">
-            	<div class="row"> 
-						<label>Group Name (French)</label>
-						<div class="right"><input type="text" id="group_name_french" name="group_name_french" value="<?php echo set_value("group_name_french", stripslashes($group_rec->group_name_french)) ; ?>" /></div>
-					</div>
                 <div class="row"> 
 					<label>Group Title</label>
 					<div class="right"><input type="text" id="group_title_french" name="group_title_french" value="<?php echo set_value("group_title_french", stripslashes($group_rec->group_title_french)) ; ?>" /></div>
@@ -47,6 +47,14 @@
 						<label>Group Landing Page Description (French)</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="landing_page_description_french" name="landing_page_description_french" class="richtext_textarea"><?php echo set_value("landing_page_description_french", stripslashes($group_rec->landing_page_description_french)) ; ?></textarea></div>
 					</div>
+               	<div class="row"> 
+					<label>SEO Page Title (French)  <a href="<?php echo LINK1 ; ?>" target="_blank">Tips</a></label>
+					<div class="right"><input type="text" id="seo_page_title_french" name="seo_page_title_french" value="<?php echo set_value("seo_page_title_french", stripslashes($group_rec->seo_page_title_french)) ; ?>" /></div><br />
+                </div>
+                <div class="row">
+					<label>SEO Page Description (French) <a href="<?php echo LINK2 ; ?>" target="_blank">Tips</a></label>
+					<div class="right"><input type="text" id="seo_page_description_french" name="seo_page_description_french" value="<?php echo set_value("seo_page_description_french", stripslashes($group_rec->seo_page_description_french)) ; ?>" /></div><br />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -76,10 +84,6 @@
 	<div class="box">
 		<div class="title">Sort Order<span class="hide"></span></div>
 		<div class="content">
-        	<div class="row">
-				<label>Meta</label>
-				<div class="right"><input type="text" id="meta" name="meta" value="<?php echo set_value("meta", $group_rec->meta) ; ?>" /></div>
-			</div>
             <div class="row">
 				<label>Sort Order</label>
 				<div class="right"><input type="text" id="sort_order" name="sort_order" value="<?php echo set_value("sort_order", $group_rec->sort_order) ; ?>" /></div>

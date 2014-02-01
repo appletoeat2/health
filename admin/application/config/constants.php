@@ -45,5 +45,8 @@ define("COUPON_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/coupons/") ;
 define("BROCHURE_ENGLISH_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/product_brochures/english/") ;
 define("BROCHURE_FRENCH_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/product_brochures/french/") ;
 
+define("LINK1", "http://searchenginewatch.com/article/2154469/How-to-Write-Title-Tags-For-Search-Engine-Optimization!") ;
+define("LINK2", "http://blog.kissmetrics.com/meta-description-magic/!") ;
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

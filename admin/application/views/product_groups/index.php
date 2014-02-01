@@ -8,8 +8,8 @@
 					<thead> 
 						<tr>
 							<th width="10%">Sort Order</th>
-							<th width="40%">Group Name</th>
-							<th width="35%">Group Name French</th>
+							<th width="40%">Group Title</th>
+							<th width="35%">Group Title French</th>
 							<th width="15%">Action</th>
 						</tr>
 					</thead>
@@ -18,8 +18,8 @@
                     <?php foreach($product_groups as $rec): ?>
 						<tr>
 							<td><?php echo stripslashes($rec->sort_order) ; ?></td>
-							<td><?php echo stripslashes($rec->group_name) ; ?></td>
-							<td><?php echo stripslashes($rec->group_name_french) ; ?></td>
+							<td><?php echo stripslashes($rec->group_title) ; ?></td>
+							<td><?php echo stripslashes($rec->group_title_french) ; ?></td>
 							<td><a href="<?php echo base_url()."product_groups/edit_product_group/".$rec->id ; ?>">Edit</a> - <a href="<?php echo base_url()."product_groups/remove_product_group/".$rec->id ; ?>" onclick="return confirm('Are you sure to remove this record?');">Remove</a></td>
 						</tr>
                     <?php endforeach ; ?>

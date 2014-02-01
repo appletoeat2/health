@@ -9,40 +9,49 @@ class Resources extends CI_Controller
 	
 	public function index()
 	{
-		$this->load->view('template/body', $this->load_data("resources/heart_to_heart")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/heart_to_heart"))) ;
 	}
 	
 	public function heart_to_heart()
 	{
-		$this->load->view('template/body', $this->load_data("resources/heart_to_heart")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/heart_to_heart"))) ;
 	}
 	
 	public function current_promotions()
 	{
-		$this->load->view('template/body', $this->load_data("resources/current_promotions")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/current_promotions"))) ;
 	}
 	
 	public function brain_power()
 	{
-		$this->load->view('template/body', $this->load_data("resources/brain_power")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/brain_power"))) ;
 	}
 	
 	public function bone_and_braun()
 	{
-		$this->load->view('template/body', $this->load_data("resources/bone_and_braun")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/bone_and_braun"))) ;
 	}
+	
 	public function estores()
 	{
-		$this->load->view('template/body', $this->load_data("stores/estores")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("stores/estores"))) ;
 	}
 	
 	public function probiotics101()
 	{
-		$this->load->view('template/body', $this->load_data("resources/probiotics101")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/probiotics101"))) ;
 	}
 	
 	public function candida_questionnaire()
 	{
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 		$data["error"] = 0 ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("resources/candida_questionnaire"))) ;
 	}
@@ -51,6 +60,7 @@ class Resources extends CI_Controller
 	{
 		if($_POST)
 		{
+			$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 			$validation_parameters = $this->make_array() ;
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -76,21 +86,25 @@ class Resources extends CI_Controller
 	
 	public function healthy_journal()
 	{
-		$this->load->view('template/body', $this->load_data("resources/healthy_journal")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/healthy_journal"))) ;
 	}
 	
 	public function research_and_articles()
 	{
-		$this->load->view('template/body', $this->load_data("resources/research_and_articles")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/research_and_articles"))) ;
 	}
 	
 	public function recipes()
 	{
-		$this->load->view('template/body', $this->load_data("resources/recipes")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("resources/recipes"))) ;
 	}
 	
 	public function coupons()
 	{
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 		$data["coupon_recs"] = $this->model2->get_all_product_coupons("ASC") ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("resources/coupons"))) ;
 	}

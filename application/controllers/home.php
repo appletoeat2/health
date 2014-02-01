@@ -9,17 +9,20 @@ class Home extends CI_Controller
 	
 	public function index()
 	{
-		$this->load->view('template/body', $this->load_view("home/index"));
+		$data["meta_data"] = $this->model3->get_meta_data(array("id" => 1), "settings") ;
+		$this->load->view('template/body', array_merge($data, $this->load_view("home/index")));
 	}
 	
 	public function terms_and_conditions()
 	{
-		$this->load->view('template/body', $this->load_view("home/terms_and_conditions"));
+		$data["meta_data"] = $this->model3->get_meta_data(array("id" => 1), "settings") ;
+		$this->load->view('template/body', array_merge($data, $this->load_view("home/terms_and_conditions")));
 	}
 	
 	public function privacy_policy()
 	{
-		$this->load->view('template/body', $this->load_view("home/privacy_policy"));
+		$data["meta_data"] = $this->model3->get_meta_data(array("id" => 1), "settings") ;
+		$this->load->view('template/body', array_merge($data, $this->load_view("home/privacy_policy")));
 	}
 	
 	public function subscription_email_address()

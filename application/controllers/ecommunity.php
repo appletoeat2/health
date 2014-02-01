@@ -9,32 +9,38 @@ class Ecommunity extends CI_Controller
 	
 	public function index()
 	{
-		$this->load->view('template/body', $this->load_data("ecommunity/innovite_your_life")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("ecommunity/innovite_your_life"))) ;
 	}
 	
 	public function innovite_your_life()
 	{
-		$this->load->view('template/body', $this->load_data("ecommunity/innovite_your_life")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("ecommunity/innovite_your_life"))) ;
 	}
 	
 	public function innovite_igniters()
 	{
-		$this->load->view('template/body', $this->load_data("ecommunity/innovite_igniters")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("ecommunity/innovite_igniters"))) ;
 	}
 	
 	public function ask_the_expert_blog()
 	{
-		$this->load->view('template/body', $this->load_data("ecommunity/ask_the_expert_blog")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("ecommunity/ask_the_expert_blog"))) ;
 	}
 	
 	public function forum()
 	{
-		$this->load->view('template/body', $this->load_data("ecommunity/forum")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("ecommunity/forum"))) ;
 	}
 	
 	public function upcoming_events()
 	{
-		$this->load->view('template/body', $this->load_data("ecommunity/upcoming_events")) ;
+		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$this->load->view('template/body', array_merge($data, $this->load_data("ecommunity/upcoming_events"))) ;
 	}
 	
 	private function load_data($view)

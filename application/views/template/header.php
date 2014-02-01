@@ -3,8 +3,19 @@
 <head>
 <!-- Basic Page Needs -->
 <meta charset="utf-8">
-<title><?php echo $title ; ?></title>
-<meta name="description" content="">
+
+<?php if($meta_data["seo_page_title"] == "") { ?>
+	<?php if($view == "products/product_details") { ?>
+		<title><?php echo "innoviteHEALTH: ".$product_detail->product_name ; ?></title>
+    <?php } else { ?>
+    	<title><?php echo "innoviteHEALTH" ; ?></title>
+    <?php } ?>
+<?php } else { ?>
+	<title><?php echo "innoviteHEALTH: ".$meta_data["seo_page_title"] ; ?></title>
+<?php } ?>
+
+<meta name="description" content="<?php echo $meta_data["seo_page_description"] ; ?>">
+
 <meta name="author" content="">
 
 <!-- Mobile Specific Metas -->

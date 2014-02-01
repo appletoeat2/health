@@ -11,7 +11,7 @@
                     	<li><a href="<?php echo base_url()."products" ; ?>">Show All Products</a></li>
                         <?php if($product_groups) { ?>
                         	<?php foreach($product_groups as $rec): ?>
-                        		<li><a class="special" href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
+                        		<li><a class="special" href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_title ; ?></a></li>    	
 							<?php endforeach ; ?>
 						<?php } ?>
                       	<!--<li class="submenu"><a href="<?php echo base_url()."products/index/7" ; ?>">Digestive Restoration</a>

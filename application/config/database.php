@@ -57,7 +57,7 @@ $db['default']['password'] = "6bWcwe48";
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root' ;
-$db['default']['password'] = '' ;
+$db['default']['password'] = 'root' ;
 $db['default']['database'] = 'innovite_ivhealth' ;
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

@@ -32,7 +32,7 @@ function is_equal($group1_id, $rec_id)
 						<div class="right">
 							<select id="group_id" name="group_id" class="jqselect big">
 								<?php if($product_groups) { foreach($product_groups as $rec): ?>
-                            		<option value="<?php echo $rec->id ; ?>" <?php echo set_select('group_id', $rec->id, is_equal($group_id, $rec->id)); ?>><?php echo stripslashes($rec->group_name) ; ?></option>
+                            		<option value="<?php echo $rec->id ; ?>" <?php echo set_select('group_id', $rec->id, is_equal($group_id, $rec->id)); ?>><?php echo stripslashes($rec->group_title) ; ?></option>
                             	<?php endforeach ; } ?>
 							</select>
 						</div>
@@ -128,6 +128,14 @@ function is_equal($group1_id, $rec_id)
 						<label>Health Claim</label>
 						<div class="right"><input type="text" id="health_claim" name="health_claim" value="<?php echo set_value("health_claim") ; ?>" /></div>
 					</div>
+                    <div class="row"> 
+						<label>SEO Page Title <a href="<?php echo LINK1 ; ?>" target="_blank">Tips</a></label>
+						<div class="right"><input type="text" id="seo_page_title" name="seo_page_title" value="<?php echo set_value("seo_page_title") ; ?>" /></div><br />
+					</div>
+					<div class="row">
+						<label>SEO Page Description <a href="<?php echo LINK2 ; ?>" target="_blank">Tips</a></label>
+						<div class="right"><input type="text" id="seo_page_description" name="seo_page_description" value="<?php echo set_value("seo_page_description") ; ?>" /></div><br />
+					</div>
 					<div class="row">
 						<label>Short Description</label>
 						<div class="right" style="z-index:-9999 !important;"><textarea id="short_description" name="short_description"><?php echo set_value("short_description") ; ?></textarea></div>
@@ -162,6 +170,14 @@ function is_equal($group1_id, $rec_id)
 					<div class="row">
 						<label>Health Claim</label>
 						<div class="right"><input type="text" id="health_claim_french" name="health_claim_french" value="<?php echo set_value("health_claim_french"); ?>" /></div>
+					</div>
+                    <div class="row"> 
+						<label>SEO Page Title (French)  <a href="<?php echo LINK1 ; ?>" target="_blank">Tips</a></label>
+						<div class="right"><input type="text" id="seo_page_title_french" name="seo_page_title_french" value="<?php echo set_value("seo_page_title_french") ; ?>" /></div><br />
+					</div>
+					<div class="row">
+						<label>SEO Page Description (French) <a href="<?php echo LINK2 ; ?>" target="_blank">Tips</a></label>
+						<div class="right"><input type="text" id="seo_page_description_french" name="seo_page_description_french" value="<?php echo set_value("seo_page_description_french") ; ?>" /></div><br />
 					</div>
 					<div class="row">
 						<label>Short Description</label>

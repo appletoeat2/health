@@ -21,7 +21,7 @@ class Settings extends CI_Controller
 	{
 		if($_POST)
 		{ 
-			$validation_parameters = array("products_query_email" => "Email for Product Detail&required|valid_email", "products_review_email" => "Email for Product Review&required|valid_email", "google_analytics" => "Google Analytics Code&required") ;
+			$validation_parameters = array("products_query_email" => "Email for Product Detail&required|valid_email", "products_review_email" => "Email for Product Review&required|valid_email", "seo_page_title" => "SEO Page Title&", "seo_page_description" => "SEO Page Description&max_length[180]", "seo_page_title_french" => "SEO Page Title (French)&", "seo_page_description_french" => "SEO Page Description (French)&max_length[180]") ; //, "google_analytics" => "Google Analytics Code&required"
 	
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -31,7 +31,8 @@ class Settings extends CI_Controller
 			}
 			else
 			{
-				$attributes = post_data(array("products_query_email" => "products_query_email", "products_review_email" => "products_review_email", "google_analytics" => "google_analytics")) ;
+				$attributes = post_data(array("products_query_email" => "products_query_email", "products_review_email" => "products_review_email", "seo_page_title" => "seo_page_title", "seo_page_title_french" => "seo_page_title_french", "seo_page_description" => "seo_page_description", "seo_page_description_french" => "seo_page_description_french")) ;
+				//, "google_analytics" => "google_analytics"
 				
 				$success = $this->model1->update_rec($attributes, array("id" => $this->input->post("setting_rec_id")), "settings") ;
 				

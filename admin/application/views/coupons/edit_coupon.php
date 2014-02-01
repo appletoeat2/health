@@ -121,7 +121,7 @@
                         	<select id="groups_coupon" name="groups_coupon[]" data-placeholder="Click Here to Add Product Groups" multiple="multiple" class="chosen-select" style="width:100%;">
                             <?php if($product_groups) { ?>
                             	<?php foreach($product_groups as $rec): ?>
-                                	<option value="<?php echo $rec->id ; ?>" <?php echo if_selected1($rec->id, $group_coupons_recs) ; ?>><?php echo $rec->group_name ; ?></option>
+                                	<option value="<?php echo $rec->id ; ?>" <?php echo if_selected1($rec->id, $group_coupons_recs) ; ?>><?php echo $rec->group_title ; ?></option>
 								<?php endforeach ; ?>
 							<?php } ?>
                             </select>

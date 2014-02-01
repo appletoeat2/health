@@ -20,7 +20,7 @@
         		<ul>
                 	<?php if($product_groups) { ?>
                     	<?php foreach($product_groups as $rec): ?>
-                        	<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_name ; ?></a></li>    	
+                        	<li><a href="<?php echo base_url()."products/group_product/".$rec->id ; ?>"><?php echo $rec->group_title ; ?></a></li>    	
 						<?php endforeach ; ?>
 					<?php } ?>
         		</ul>

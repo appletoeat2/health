@@ -25,14 +25,14 @@
 							if($loop == 1) {
 								echo '<div id="group_'.$rec->group_id.'" class="group_div">' ;
 								echo '<hr>' ;
-								echo '<h4>'.$rec->group_name.'</h4>' ;
+								echo '<h4>'.$rec->group_title.'</h4>' ;
 								//echo '<p>'.$rec->short_description.'</p>' ;
 								echo '<hr class="vertical-space3">' ;
 							} else {
 								echo '<hr class="vertical-space3"></div>' ;
 								echo '<div id="group_'.$rec->group_id.'" class="group_div">' ;
 								echo '<hr>' ;
-								echo '<h4>'.$rec->group_name.'</h4>' ;
+								echo '<h4>'.$rec->group_title.'</h4>' ;
 								//echo '<p>'.$rec->short_description.'</p>' ;
 								echo '<hr class="vertical-space3">' ;
 							}

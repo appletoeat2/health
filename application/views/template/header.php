@@ -71,8 +71,8 @@
     	<?php $this->load->view("template/top_navigation") ?> 
 	</div>
 	<div id="search-form2">
-    	<form action="<?php echo base_url("") ; ?>" method="POST">
-     		<input type="text" class="search-text-box2">
+    	<form action="<?php echo base_url("")."products/search_products" ; ?>" method="POST">
+     		<input type="text" id="search_box" name="search_box" class="search-text-box2"/>
     	</form>
 	</div>
     <input type="hidden" id="base_url" value="<?php echo base_url() ; ?>" />

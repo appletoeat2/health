@@ -5,7 +5,12 @@
             	<?php
 				if($product_group_recs) 
 				{
-			echo '<li><label><input type="checkbox" id="main_product_group" name="" class="" checked="checked" /><div id="label">View All</div></label></li>' ;
+			echo '<li>
+					<label>
+						<input type="checkbox" id="main_product_group" name="" class="" checked="checked" />
+						<div id="label">View All</div>
+					</label>
+				</li>' ;
 					foreach($product_group_recs as $rec):
 						echo '<li><label><input type="checkbox" id="'.$rec->id.'" name="" class="product_group" /><div id="label">'.$rec->group_title.'</div></label></li>' ;
 					endforeach ;

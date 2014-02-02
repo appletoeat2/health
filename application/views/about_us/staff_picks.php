@@ -49,7 +49,7 @@
         </div>
         <div class="testimonial-brand"> <img src="<?php echo base_url() ; ?>/images/staff_pics/dorthy.jpg" alt="">
           <h5>Dorothy<br>
-            <em>DAccount Manager, Western Sales</em></h5>
+            <em>Account Manager, Western Sales</em></h5>
         </div>
       </div>
       <p></p>

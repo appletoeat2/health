@@ -36,11 +36,11 @@
     <article class="eight columns">
     	<div class="pad-r10"> <a href="<?php echo base_url()."products" ; ?>"><img src="<?php echo base_url() ; ?>images/global-images/product-group.jpg" alt="" width="202" height="152" class="alignright"></a>
             <h6>Product Selector</h6>
-    		<p>Innovite Health is a best-in-class nutritional supplement brand. Based in the latest research and technical innovations, all products are certified for proven quality, purity and label claims. See what Innovite Health product fits your life. <a href="<?php echo base_url()."products" ; ?>" class="magicmore">Find products here</a>
+    		<p>Innovite Health is a best-in-class nutritional supplement brand. Based in the latest research and technical innovations, all products are certified for proven quality, purity and label claims. See what Innovite Health product fits your life. <br><a href="<?php echo base_url()."products" ; ?>">Find products here</a>
 </p>
     		<hr>
           <a href="<?php echo base_url()."/resources/coupons" ; ?>"><img src="<?php echo base_url() ; ?>/images/page_images/home_coupon.jpg"/></a>
-<p>For great savings on great products, check out our<a href="<?php echo base_url()."/resources/coupons" ; ?>" class="magicmore"> coupon section.</a>
+<p>For great savings on great products, check out our <a href="<?php echo base_url()."/resources/coupons" ; ?>">coupon section.</a>
 </p>
     		
 		</div>

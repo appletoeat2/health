@@ -122,6 +122,7 @@ class Products extends CI_Controller
 		{
 			$data["search_string"] = $this->input->post("search_box") ;
 			$data["product_recs"] = $this->model2->search_products($data["search_string"]) ;
+			$data["meta_data"] = $this->model3->get_meta_data(array("id" => 1), "settings") ;
 			$this->load->view("template/body", array_merge($data, $this->load_data("products/search_product", "wrap", 1, ""))) ;
 		}
 		else

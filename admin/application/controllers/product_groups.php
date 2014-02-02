@@ -34,7 +34,7 @@ class Product_groups extends CI_Controller
 			$response = $this->upload_product_file(get_random_string()) ;
 			
 			if($response["status"] == 1) {
-				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "seo_page_title" => "seo_page_title", "seo_page_title_french" => "seo_page_title_french", "seo_page_description" => "seo_page_description", "seo_page_description_french" => "seo_page_description_french")) ;
+				$attributes = post_data(array("group_title" => "group_title", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_title_french" => "group_title_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "seo_page_title" => "seo_page_title", "seo_page_description" => "seo_page_description", "seo_page_title_french" => "seo_page_title_french", "seo_page_description_french" => "seo_page_description_french")) ;
 				$attributes["banner_file"] = ($response["file_name"]) ;
 				$user_id = $this->model1->insert_rec($attributes, "product_groups") ;
 				redirect(base_url()."product_groups/index/1") ;
@@ -78,7 +78,7 @@ class Product_groups extends CI_Controller
 				
 				if($response["status"] == 1) {
 					$group_rec = $this->model1->get_one(post_data(array("id" => "group_id")), "product_groups") ;
-					$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
+					$attributes = post_data(array("group_title" => "group_title", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_title_french" => "group_title_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "seo_page_title" => "seo_page_title", "seo_page_description" => "seo_page_description", "seo_page_title_french" => "seo_page_title_french", "seo_page_description_french" => "seo_page_description_french")) ;
 					$attributes["banner_file"] = ($response["file_name"]) ;
 					$cond = post_data(array("id" => "group_id")) ;
 					$user_id = $this->model1->update_rec($attributes, $cond, "product_groups") ;
@@ -96,7 +96,7 @@ class Product_groups extends CI_Controller
 			}
 			else
 			{
-				$attributes = post_data(array("group_name" => "group_name", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_name_french" => "group_name_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "group_title" => "group_title", "group_title_french" => "group_title_french", "meta" => "meta")) ;
+				$attributes = post_data(array("group_title" => "group_title", "short_description" => "short_description", "landing_page_description" => "landing_page_description", "group_title_french" => "group_title_french", "short_description_french" => "short_description_french", "landing_page_description_french" => "landing_page_description_french", "sort_order" => "sort_order", "seo_page_title" => "seo_page_title", "seo_page_description" => "seo_page_description", "seo_page_title_french" => "seo_page_title_french", "seo_page_description_french" => "seo_page_description_french")) ;
 				$cond = post_data(array("id" => "group_id")) ;
 				$user_id = $this->model1->update_rec($attributes, $cond, "product_groups") ;
 				redirect(base_url()."product_groups/index/2") ;

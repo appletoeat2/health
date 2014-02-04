@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/health/admin/';
+$config['base_url']	= 'http://www.innovitehealth.com/admin/';
 
 /*
 |--------------------------------------------------------------------------

@@ -23,7 +23,7 @@
                         </li>-->
                         <li><a href="<?php echo base_url()."products/new_products/" ; ?>">New Products</a></li>
                         <li><a href="<?php echo base_url("")."about_us/staff_picks" ; ?>">Staff Picks</a></li>
-                        <li><a href="<?php echo base_url()."/resources/current_promotions" ; ?>">Latest Campaign</a></li>
+                        <li><a href="<?php echo base_url()."resources/current_promotions" ; ?>">Latest Campaign</a></li>
                         <li><a href="<?php echo base_url("")."resources/coupons" ; ?>">Coupons</a></li>
                     </ul>
         		</li>

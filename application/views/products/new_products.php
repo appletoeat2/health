@@ -8,11 +8,11 @@
 	<hr class="vertical-space2">
     	<section class="eleven columns">
 			<div id="msg_div" style="display:none;"><h6>No Products meet the filter criteria, deselect filter items to expand the scope</h6></div>
-            <h2><strong>Innovation to ignite your life</strong></h2>
+            <h2>Innovation to ignite your life</h2>
 <p>Innovite Health inspires wellness and  develops ways to nourish and repair our bodies. We believe that when the  body&rsquo;s core systems work in synergy, optimal health can be achieved.  That synergistic balance relies on a strong nutritional foundation and  our goal is to help heal the body from the inside out. By restoring  nutrients and repairing damage, you can reclaim your health.</p>
 <h4><strong>Gluten and soy free products</strong></h4>
 <p>For  over 30 years, we have been a nationally recognized leader in  science-based natural health products.  Our nutritional foundation is  built from the latest research and clinical evidence. Safe, natural and  effective, our range of formulas with clinically proven ingredients  allows you to choose the right product for your body&rsquo;s needs, at every  stage of life.  As an industry leader in quality, with an extensive raw  material and finished product testing program that includes analysis for  identity, potency, environmental contaminants, oxidation and more by  certified third party laboratories, all our products are gluten and soy  free. Our manufacturing partners are NSF-GMP registered in the U.S., GMP  certified in Canada and exceeds the standards of the United States  Pharmacopeia (USP) for supplement manufacturing.</p>
-<h4><strong>Try our new products</strong></h4>
+<h2>Try our new products</h2>
 <p>At  Innovite Health, we think it&rsquo;s what&rsquo;s inside that counts and that is  true for our products, our people and you. Come and try one of new  products below!</p>
 			<?php
 				$group_id = 0 ;

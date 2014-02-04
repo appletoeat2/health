@@ -14,7 +14,7 @@
                   FOR IMMEDIATE RELEASE  </p>
                 <h4>Innovite Health  re-launches  Yeast Buster® candida detox kit </h4>
                 <p><em>Now with Activated Charcoal for easier digestion</em></p>
-                <p>January 22, 2014 – Concord, ON – Innovite Health, a leading manufacturer and distributor of research-based nutritional supplements, is proud to introduce the new and improved Yeast Buster® candida detox kit. The formula now offers Activated Charcoal for easier digestion during the detox process.</p>
+                <img class="alignright" src="/admin/images/prod_images/medium/ad-27-06.jpg" max-width="50%"/><p>January 22, 2014 – Concord, ON – Innovite Health, a leading manufacturer and distributor of research-based nutritional supplements, is proud to introduce the new and improved Yeast Buster® candida detox kit. The formula now offers Activated Charcoal for easier digestion during the detox process.</p>
                 <p>Proven safe and effective for over 25 years, <strong>Yeast Buster® candida detox </strong>can help<strong>:</strong></p>
               <ul>
                   <li><strong>RESTORE </strong> good bacteria and reduce yeast overgrowth </li>

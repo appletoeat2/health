@@ -9,7 +9,8 @@
     <section class="sixteen columns">
 		<div class="shop-wrap">
         	<figure class="shop-item two_third">
-          		<h2>Current Coupons</h2>
+          		<h2>Save your dollars, save your health</h2>
+                <p>Try Innovite Health all-natural, gluten and soy-free supplements. Check back often to see our latest promotions. Scroll down to see all the savings on products to help restore lost nutrients, repair cellular damage and reclaim your health. Coupons are redeemable at any natural health retailer. </p>
                 <hr>
               <?php if($coupon_recs) { ?>
               	<?php foreach($coupon_recs as $rec): ?>

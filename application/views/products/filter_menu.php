@@ -1,17 +1,15 @@
 <aside class="four columns sidebar leftside">
         <h4 class="subtitle">Health Group</h4>
         <div class="listbox1">
-        	<table>
-            <?php
+        	<?php
 			if($product_group_recs) 
 			{
-				echo '<tr><td><input type="checkbox" id="main_product_group" name="" class="" checked="checked" /></td><td> &nbsp; View All</td></tr>' ;
+				echo '<label><table><tr><td><input type="checkbox" id="main_product_group" name="" class="" checked="checked" /></td><td>&nbsp;View All</td></tr></table></label>' ;
 				foreach($product_group_recs as $rec):
-					echo '<tr><td><input type="checkbox" id="'.$rec->id.'" name="" class="product_group" /></td><td> &nbsp;'.$rec->group_title.'</td></tr>' ;
+					echo '<label><table><tr><td valign="top" style="padding-right:5px;"><input type="checkbox" id="'.$rec->id.'" name="" class="product_group" /></td><td>'.$rec->group_title.'</td></tr></table></label>' ;
 				endforeach ;
 			}
 			?>
-            </table>
             <!--<ul>
             <?php
 			/*
@@ -31,20 +29,20 @@
             </ul>-->
 		</div><!-- end-listbox1 -->
         <br class="clear">
+        <br class="clear">
         
         <h4 class="subtitle">Categories</h4>
         <div class="listbox1">
-        	<table>
+        
             <?php
 			if($product_category_recs) 
 			{
-				echo '<tr><td><a class="view_all_product_categories" href="javascript:void(0);">View All</a></td><td></td></tr>' ;
+				echo '<label><table><tr><td valign="top"><a class="view_all_product_categories" href="javascript:void(0);">View All</a></td><td></td></tr></table></label>' ;
 				foreach($product_category_recs as $rec):
-					echo '<tr><td><input type="radio" id="'.$rec->id.'" name="categories_id" class="product_category" /></td><td>'.$rec->category_name.'</td></tr>' ;
+					echo '<label><table><tr><td valign="top" style="padding-right:5px;"><input type="radio" id="'.$rec->id.'" name="categories_id" class="product_category" /></td><td>'.$rec->category_name.'</td></tr></table></label>' ;
 				endforeach ;
 			}
 			?>
-            </table>
             <!--<ul>
             	<?php
 				/*
@@ -60,20 +58,19 @@
         	</ul>-->
       	</div><!-- end-listbox1 -->
       	<br class="clear">
-      	
+      	<br class="clear">
+                
         <h4 class="subtitle">FOOD SENSITIVITIES</h4>
       	<div class="listbox1">
-        	<table>
-            <?php
+        	<?php
 			if($food_sensitivity_recs) 
 			{
-				echo '<tr><td><a class="view_all_food_sensitivites" href="javascript:void(0);">View All</a></td><td></td></tr>' ;
+				echo '<label><table><tr><td><a class="view_all_food_sensitivites" href="javascript:void(0);">View All</a></td><td></td></tr></table></label>' ;
 				foreach($food_sensitivity_recs as $rec):
-				 echo '<tr><td><input type="radio" id="'.$rec->id.'" name="food_sensitivity_id" class="food_sensitivity" /></td><td>'.$rec->name.'</td></tr>' ;
+				 echo '<label><table><tr><td valign="top" style="padding-right:5px;"><input type="radio" id="'.$rec->id.'" name="food_sensitivity_id" class="food_sensitivity" /></td><td>'.$rec->name.'</td></tr></table></label>' ;
 				endforeach ;
 			}/**/
 			?>
-            </table>
             <!--<ul>
                 <?php /*
 				if($food_sensitivity_recs) 

@@ -25,7 +25,7 @@ class Products extends CI_Controller
 		$data["product_category_recs"] = $this->model1->get_all_orderby("product_categories", "sort_order", "ASC") ;
 		$data["food_sensitivity_recs"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
 		$data["meta_data"] = $this->model3->get_meta_data(array("id" => 1), "settings") ;
-		$this->load->view('template/body', array_merge($data, $this->load_data("products/new_products", "wrap", 0, "Innovite Health - New Products")));
+		$this->load->view('template/body', array_merge($data, $this->load_data("products/new_products", "wrap", 0, "Innovite Health - New Products | Gluten and soy-free all-natural supplements | Innovite Health")));
 	}
 	
 	public function group_product($group_id)

@@ -35,7 +35,7 @@
           			</ul>
           		</li>
            		
-                <li><a href="<?php echo base_url("")."resources/index" ; ?>">RESOURCES</a>
+                <li><a href="<?php echo base_url("")."resources/candida_questionnaire" ; ?>">RESOURCES</a>
           			<ul>
             			<!--<li><a href="<?php echo base_url("")."resources/heart_to_heart" ; ?>">Heart to heart</a></li>
             			<li><a href="<?php echo base_url("")."resources/brain_power" ; ?>">Brain power</a></li>
@@ -49,7 +49,7 @@
           			</ul>
         		</li>
         
-        		<li><a  href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">E-COMMUNITY</a>
+        		<li><a  href="<?php echo base_url("")."about_us/innovite_igniters" ; ?>">E-COMMUNITY</a>
         			<ul>
             			<!--<li><a href="<?php echo base_url("")."ecommunity/innovite_your_life" ; ?>">Innovite your Life</a></li>
 -->            			<li><a href="<?php echo base_url("")."about_us/innovite_igniters" ; ?>">Innovite Igniters</a></li>

@@ -21,7 +21,7 @@ class Resources extends CI_Controller
 	
 	public function current_promotions()
 	{
-		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$data["meta_data"] = array("seo_page_title" => "Latest Campaign | Cardiovascular Health | Most Devoted Body Part", "seo_page_description" => "This year, heart disease will affect more women in Canada than any other disease. Share with us how you take care of your  #MostDevotedBodyPart.", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("resources/current_promotions"))) ;
 	}
 	
@@ -51,7 +51,7 @@ class Resources extends CI_Controller
 	
 	public function candida_questionnaire()
 	{
-		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+		$data["meta_data"] = array("seo_page_title" => "Candida Questionnaire | Yeast Buster | natural candida detox ", "seo_page_description" => "Determine if Candida is impacting your health.  Fill out the simple questionnaire. A high score may indicate the need to take Yeast Buster  candida detox program.", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 		$data["error"] = 0 ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("resources/candida_questionnaire"))) ;
 	}

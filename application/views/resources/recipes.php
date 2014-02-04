@@ -9,7 +9,13 @@
     <section class="sixteen columns">
 		
         	<div class="two_third">
-       		  <h2>Health Diets &amp; Recipes</h2>
+       		  <h2>Healthy Recipes</h2>
+       		  <p>Try some of our staff favourites! Enjoy and share these  nutritious meals  with family and friends.  Get creative when restoring, replenishing and claiming victory over hunger.</p>
+               <span class='st_facebook_large' displayText='Facebook'></span>
+                <span class='st_twitter_large' displayText='Tweet'></span>
+                <span class='st_googleplus_large' displayText='Google +'></span>
+                <span class='st_pinterest_large' displayText='Pinterest'></span>
+                <span class='st_email_large' displayText='Email'></span>
               <hr>
               <table border="0" cellpadding="0" cellspacing="0">
                 <tbody><tr>

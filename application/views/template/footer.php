@@ -29,12 +29,12 @@
 		<div class="four columns">
 			<h4 class="subtitle">Stay Connected</h4>
 			<div class="socailfollow">
-            	<a href="<?php echo base_url("") ; ?>" class="facebook"><i class="icomoon-facebook"></i></a>
-                <a href="<?php echo base_url("") ; ?>" class="twitter"><i class="icomoon-twitter"></i></a>
-                <a href="<?php echo base_url("") ; ?>" class="youtube"><i class="icomoon-youtube"></i></a>
+            	<a href="http://facebook.com/InnoviteHealth" target="_blank" class="facebook"><i class="icomoon-facebook"></i></a>
+                <a href="http://twitter.com/InnoviteCanada" target="_blank" class="twitter"><i class="icomoon-twitter"></i></a>
+                <a href="http://www.youtube.com/user/innovitecanada" target="_blank" class="youtube"><i class="icomoon-youtube"></i></a>
                 <!--<a href="<?php echo base_url("") ; ?>" class="instagram"><i class="icomoon-instagram"></i></a>-->
                 <!--<a href="<?php echo base_url("") ; ?>" class="pinterest"><i class="icomoon-pinterest"></i></a>-->
-                <a href="<?php echo base_url("") ; ?>" class="google"><i class="icomoon-google"></i></a>
+                <a href="https://plus.google.com/101210095383195582761" target="_blank" class="google"><i class="icomoon-google"></i></a>
             </div><!-- flickr /end --> 
 	</section><!-- end-footer-in -->
 	<section class="footbot">

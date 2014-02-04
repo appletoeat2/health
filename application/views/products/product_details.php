@@ -18,6 +18,7 @@
                 <h3><?php if($product_detail->sub_heading != "") echo $product_detail->sub_heading ; ?></h3>
           		<h4><?php echo $product_detail->health_claim ; ?></h4>
           		<p>NPN# <?php echo $product_detail->npn ; ?></p>
+                <p> &nbsp;</p>
           		<p><?php $bodytag = str_replace(chr(13), "<br>", stripslashes($product_detail->short_description)) ; echo $bodytag ; ?></p>
   				<input type="hidden" id="product_id" name="product_id" value="<?php echo $product_detail->id ; ?>" />
                 <span class='st_facebook_large' displayText='Facebook'></span>
@@ -62,7 +63,7 @@
                 		<thead>
                   			<tr>
                     			<th>Size</th>
-                    			<th>Sku Code</th>
+                    			<th>SKU Code</th>
                     			<th>UPC Code</th>
                   			</tr>
                 		</thead>

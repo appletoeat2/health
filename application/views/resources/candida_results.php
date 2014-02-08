@@ -18,7 +18,7 @@
             <table class="table" width="100%" border="0" cellpadding="50">
               <tr>
                 <td width="33%" align="left" valign="top" bgcolor="#F2FFF0"><h4><strong>Your score is..</strong></h4></td>
-                <td width="67%" valign="top" bgcolor="#F2FFF0"><h4>If you scored <strong>MODERATE</strong> to <strong>SEVERE</strong>, you might be interesed in more information available on Candida by <a href="../health_focus/candida.php">clicking here</a></h4></td>
+                <td width="67%" valign="top" bgcolor="#F2FFF0"><h4>If you scored <strong>MODERATE</strong> to <strong>SEVERE</strong>, you might be interesed in more information available on Candida by <a href="<?php echo base_url()."products/product_details/0/5" ; ?>">clicking here</a></h4></td>
               </tr>
               <tr>
                 <td width="33%" align="center" valign="middle" bgcolor="#EFEFEF" ><?php 

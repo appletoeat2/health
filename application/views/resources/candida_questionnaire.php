@@ -11,7 +11,7 @@
         	<figure class="shop-item two_third">
           		
                 <div id="left">
-    <form action="<?php echo base_url() ; ?>resources/candida_results" method="post" name="form1" id="form2">
+    <form action="<?php echo base_url(); ?>resources/candida_results" method="post" name="form1" id="form2">
       <h2>The Candida Health Test</h2>
       <p>This questionnaire is designed to help determine the likelihood of your health problems being related to Candida. A positive score does not indicate a definite diagnosis, however the higher your score is, the stronger the likelihood that Candida is contributing to your health problems.</p>
       <div class="hoz-line"></div>

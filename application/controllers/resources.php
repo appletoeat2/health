@@ -60,7 +60,9 @@ class Resources extends CI_Controller
 	{
 		if($_POST)
 		{
-			$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
+			$data["meta_data"] = array("seo_page_title" => "Candida Questionnaire | Yeast Buster | natural candida detox ",
+									   "seo_page_description" => "Determine if Candida is impacting your health.  Fill out the simple questionnaire. A high score may indicate the need to take Yeast Buster  candida detox program.",
+									   "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 			$validation_parameters = $this->make_array() ;
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
@@ -69,13 +71,13 @@ class Resources extends CI_Controller
 			}
 			else
 			{
-				$attributes = array() ;
+				$data["attributes"] = array() ;
 				for($i = 1 ; $i < 55 ; $i++)
 				{
-					$attributes["q".$i] = $this->input->post("q".$i) ;
-					if($attributes["q".$i] == "") $flag = true ; 
+					$data["q".$i] = $this->input->post("q".$i) ;
+					if($data["q".$i] == "") $flag = true ; 
 				}
-				$this->load->view("template/body", array_merge($attributes, $this->load_data("resources/candida_results"))) ;
+				$this->load->view("template/body", array_merge($data, $this->load_data("resources/candida_results"))) ;
 			}
 		}
 		else

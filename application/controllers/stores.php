@@ -41,6 +41,9 @@ class Stores extends CI_Controller
 			if($_POST["logitude1"] < $_POST["logitude2"]) { $lng1 = $_POST["logitude1"] ; $lng2 = $_POST["logitude2"] ; }
 			else { $lng1 = $_POST["logitude2"] ; $lng2 = $_POST["logitude1"] ; }
 			
+			$lat3 = $_POST["latitude3"] ;
+			$lng3 = $_POST["logitude3"] ;
+			
 			$locations = $this->model2->get_places($lat1, $lat2, $lng1, $lng2) ; 
 			
 			$json = array() ; 
@@ -69,10 +72,14 @@ class Stores extends CI_Controller
 									"map_request_status" => $row->map_request_status,
 									"insertion_timestamp" => $row->insertion_timestamp,
 									"updation_timestamp" => $row->updation_timestamp,
+									"distance" => "",
+									"check_flag" => false,
 									"status" => $row->status) ;
 					$json[] = $marker ;
 				endforeach ; 
 			}
+			
+			//$json = $this->get_distance($json, $lat3, $lng3) ;
 	
 			$jsonstring = json_encode($json) ;
 			
@@ -85,5 +92,26 @@ class Stores extends CI_Controller
 			redirect(base_url()) ;
 		}
 		
+	}
+	
+	public function get_distance($marker_recs, $latitude, $longitutde)
+	{
+		if($marker_recs){
+			foreach($marker_recs as $rec):
+				$rec["distance"] = $this->get_KMs($latitude, $longitutde, $rec["latitude"], $rec["longitude"]) ; 
+			endforeach ;
+		}
+		return $marker_recs ;
+	}
+	
+	public function get_KMs($lat1, $lng1, $lat2, $lng2)
+	{
+		$ch = curl_init ('http://maps.googleapis.com/maps/api/distancematrix/json?origins='.$lat1.','.$lng1.'&destinations='.$lat2.','.$lng2.'&language=en&sensor=false') ;
+		curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true) ;
+		$data = curl_exec($ch) ;	
+
+		$response = json_decode($data);
+		return ($response->rows[0]->elements[0]->distance->value)/1000   ;
+	
 	}
 }

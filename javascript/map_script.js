@@ -5,8 +5,9 @@ var infowindowArray = [] ;
 var _Circle, flag1 = 0 ;
 var central_location, KMs = 0 ;
 var start_flag = 0 ;
-var bounds = new google.maps.LatLngBounds() ; 
-
+var bounds = new google.maps.LatLngBounds() ;
+var center_lat = 0 ;
+var center_lng = 0 ;
 
 function initialize()
 {
@@ -22,7 +23,7 @@ function initialize()
 			var NE = bounds.getNorthEast();
 			var SW = bounds.getSouthWest();
 			var response = "" ;
-    		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng()} ;
+    		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng(), latitude3: center_lat, logitude3: center_lng} ;
 			var map_markers = get_nearby_locations(location_data) ;
 		}
 	});
@@ -47,7 +48,7 @@ function get_nearby_locations(location_data)
 
 function place_merkers(response)
 {
-	$("#location_details_table tbody").html("") ;
+	$("#location_details_table").html("") ;
  	
 	var infowindow1 = new google.maps.InfoWindow ;
 	
@@ -66,7 +67,8 @@ function place_merkers(response)
 			infowindowArray[i] = infowindow1 ;
 			bindInfoW(marker, info_content_string, infowindow1);
 
-			$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus));
+			//$("#location_details_table tbody").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus, response[i].distance));
+			$("#location_details_table").append(build_tr(response[i].retailer_name, response[i].address1, response[i].city, response[i].province, response[i].postal_code, response[i].telephone, response[i].website, response[i].facebook, response[i].twitter, response[i].linkedin, response[i].googleplus, response[i].distance));
 		}
 	}
 }
@@ -89,13 +91,38 @@ function clearOverlays()
 }
 
 
-function build_tr(retailor_name, address1, city, provience, postal_code, telephone, website, facebook, twitter, linkedin, googleplus)
+function build_tr(retailor_name, address1, city, provience, postal_code, telephone, website, facebook, twitter, linkedin, googleplus, distance)
+{
+	var t_add = address1 + " <br / > " + city + " " + provience + " " + postal_code ;
+	var t_add1 = address1 + "+" + city + "+" + provience + "+" + postal_code ;
+	var rec = '' ;
+	var base_url = $("#base_url").val() ;
+	rec = rec + '<hr>' ;
+	rec = rec + '<div class="one_fifth"><strong>' + retailor_name + '</strong><br>' ;
+	//rec = rec + '(' + distance + ' km away)' ;
+	rec = rec + '</div>' ;
+	rec = rec + '<div class="one_fifth">' + telephone + '</div>' ;
+    rec = rec + '<div class="one_fifth">' + t_add + '</div>' ;
+    rec = rec + '<div class="one_fifth"> <a target="_blank" href="https://maps.google.ca/maps?saddr=&daddr=' + t_add1 + '">Directions</a>' ; 
+	if(website != "") rec = rec + ' | <a target="_blank" href="'+ website +'">Website</a>' ;
+	rec = rec + '</div>' ;
+    rec = rec + '<div class="one_fifth column-last">' ; 
+	if(facebook != "") rec = rec + '<a target="_blank" href="'+facebook+'"><img src="'+base_url+'images/social-icons/facebook.png" /></a>&nbsp' ; 
+	if(twitter != "") rec = rec + '<a target="_blank" href="'+twitter+'"><img src="'+base_url+'images/social-icons/twitter.png" /></a>&nbsp' ; 
+	if(linkedin != "") rec = rec + '<a target="_blank" href="'+linkedin+'"><img src="'+base_url+'images/social-icons/linkedin.png" /></a>&nbsp' ;
+	if(googleplus != "")rec = rec + '<a target="_blank" href="'+googleplus+'"><img src="'+base_url+'images/social-icons/googleplus.png" /></a>' ;
+	rec = rec + '</div>' ;
+	return rec ;
+}
+
+/*
+function build_tr(retailor_name, address1, city, provience, postal_code, telephone, website, facebook, twitter, linkedin, googleplus, distance)
 {
 	var t_add = address1 + " " + city + " " + provience + " " + postal_code ;
 	var rec = '' ;
 	var base_url = $("#base_url").val() ;
 	rec = rec + '<tr>' ;
-	rec = rec + '<td style="width:20%; text-align:top;"><h6>'+ retailor_name +'</h6></td>' ;
+	rec = rec + '<td style="width:20%; text-align:top;"><h6>'+ retailor_name + ' ' + distance +'</h6></td>' ;
 	rec = rec + '<td style="width:20%; text-align:top;">Ph: '+telephone+'</td>' ;
 	rec = rec + '<td class="text" style="width:25%;">'+ address1 +'<br /><br />'+ city +', '+ provience + ', ' + postal_code +'</td>' ;
 	rec = rec + '<td class="text" style="width:20%;"><a href="https://maps.google.ca/maps?saddr=&daddr=' + t_add+ '" target="_blank">Directions</a>' ;
@@ -113,7 +140,7 @@ function build_tr(retailor_name, address1, city, provience, postal_code, telepho
 	
 	return rec ;
 }
-
+/**/
 $(function(){
 	
 	$("#city_name_dropdown").on("change", function(){
@@ -130,7 +157,10 @@ $(function(){
     	geocoder.geocode({'address': address}, function(results, status){
      		if(status == google.maps.GeocoderStatus.OK) {
         		map.setCenter(results[0].geometry.location) ;
-				central_location = results[0].geometry.location ; KMs = radius * 1000 ;
+				central_location = results[0].geometry.location ; 
+				KMs = radius * 1000 ;
+				center_lat = results[0].geometry.location.lat();
+				center_lng = results[0].geometry.location.lng();  
 				
 	var different_marker = new google.maps.Marker({position: results[0].geometry.location, map: map, icon:'http://maps.google.com/mapfiles/marker_green.png',  animation: google.maps.Animation.BOUNCE}) ;
 	 

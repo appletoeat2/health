@@ -39,6 +39,17 @@
                     <h3> 55 to	80 MODERATE:</h3>
                 <h3>80 and over SEVERE: </h3></td>
               </tr>
+              <tr>
+                <td align="center" valign="middle" bgcolor="#FFFFFF" ><img src="/admin/images/prod_images/medium/ad-27-06.jpg" width="176" height="234" alt=""/></td>
+                <td valign="top" bgcolor="#FFFFFF" ><h6>&nbsp;</h6>
+                  <h6>&nbsp;</h6>
+                  <h6>NEW &amp; IMPROVED: Yeast Buster® candida detox program now with Activated Charcoal for easier digestion                  </h6>
+                  <h6>Restore: The healthy balance of intestinal flora<br>
+                  Repair: The overpopulation of Candida in your intestinal tract <br>
+                Reclaim: Your vitality and quality of life
+                  </h6>
+                <h6><a href="http://www.innovitehealth.com/products/product_details/2/5">Click here to learn more</a></h6></td>
+              </tr>
             </table>
 
   </div>

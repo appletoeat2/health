@@ -3,5 +3,7 @@
 <p>
 	Email Address: <b><?php echo $email_address ; ?></b>
 	<br />
-	Query: <b><?php echo $question ; ?></b> 
+	Query: <b><?php echo $question ; ?></b>
+	<br />
+	Query Asked from: <?php echo $current_page ; ?>	
 </p>

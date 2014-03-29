@@ -6,7 +6,7 @@
 				<div class="gallery">
 					<div class="thumb">
 						<div class="hover"><a href="#"></a></div>
-						<a href="#" class="pirobox" rel="single" title=""><img src="<?php echo base_url()."images/photo.jpg" ; ?>" alt="Photo" /></a>
+						<a href="<?php echo base_url()."images/ace-60.jpg" ; ?>" class="pirobox" rel="single" title="asdasdas"><img src="<?php echo base_url()."images/ace-60.jpg" ; ?>" alt="Photo" /></a>
 					</div>
 					<div class="thumb">
 						<div class="hover"><a href="#"></a></div>

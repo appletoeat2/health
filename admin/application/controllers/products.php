@@ -93,6 +93,7 @@ class Products extends CI_Controller
 				$data["sort_order"] = $this->model2->get_max_sort_number() ;
 				
 				$data["row_counter"] = $this->input->post("counter_rows") ;
+				$data["hidden_id"] = $this->input->post("hidden_id") ;
 				$data["sku_codes"] = $this->input->post("sku_code") ;
 				$data["sizes"] = $this->input->post("size") ;
 				$data["sizes_french"] = $this->input->post("size_french") ;
@@ -145,6 +146,7 @@ class Products extends CI_Controller
 					}
 						
 					$row_counter = $this->input->post("counter_rows") ;
+					$hidden_id = $this->input->post("hidden_id") ;
 					$sku_codes = $this->input->post("sku_code") ;
 					$sizes = $this->input->post("size") ;
 					$sizes_french = $this->input->post("size_french") ;
@@ -240,6 +242,7 @@ class Products extends CI_Controller
 				$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
 				
 				$data["row_counter"] = $this->input->post("counter_rows") ;
+				$data["hidden_id"] = $this->input->post("hidden_id") ;
 				$data["sku_codes"] = $this->input->post("sku_code") ;
 				$data["sizes"] = $this->input->post("size") ;
 				$data["sizes_french"] = $this->input->post("size_french") ;
@@ -297,9 +300,8 @@ class Products extends CI_Controller
 							endforeach ;
 						}
 				
-						$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
-				
 						$row_counter = $this->input->post("counter_rows") ;
+						$hidden_id = $this->input->post("hidden_id") ;
 						$sku_codes = $this->input->post("sku_code") ;
 						$sizes = $this->input->post("size") ;
 						$sizes_french = $this->input->post("size_french") ;
@@ -307,14 +309,47 @@ class Products extends CI_Controller
 						$wholesale_prices = $this->input->post("wholesale_price") ;
 						$weights = $this->input->post("weight") ;
 						$upc = $this->input->post("upc") ;
-				
+						
+						$attribute_array = array() ;
+						$attributes = array() ;
+						
 						if($row_counter > 0) {
 							for($x = 0 ; $x < $row_counter ; $x++) {
-								$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ;
-								$this->model1->insert_rec($attributes, "skus") ;
+								if($hidden_id[$x] == "-1") {
+									$attributes = array("sku_code" => addslashes($sku_codes[$x]),
+														"product_id" => $product_id,
+														"size" => addslashes($sizes[$x]),
+														"size_french" => addslashes($sizes_french[$x]),
+														"price" => $prices[$x],
+														"wholesale_price" => $wholesale_prices[$x],
+														"weight" => addslashes($weights[$x]),
+														"upc" => addslashes($upc[$x]),
+														"status" => 'Active') ;
+								} else {
+									$sku_rec = $this->model1->get_one(array("id" => $hidden_id[$x]) , "skus") ;
+									$attributes = array("sku_code" => addslashes($sku_codes[$x]),
+														"product_id" => $product_id,
+														"size" => addslashes($sizes[$x]),
+														"size_french" => addslashes($sizes_french[$x]),
+														"price" => $prices[$x],
+														"wholesale_price" => $wholesale_prices[$x],
+														"weight" => addslashes($weights[$x]),
+														"upc" => addslashes($upc[$x]),
+														"insertion_timestamp" => $sku_rec->insertion_timestamp,
+														"status" => 'Active') ;
+								}
+								$attribute_array[] = $attributes ;
 							}
-						}	
+						}
+						
+						$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
 				
+						if(count($attribute_array) > 0) {
+							foreach($attribute_array as $rec):
+								$this->model1->insert_rec($rec, "skus") ;
+							endforeach ;
+						}
+						
 						redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;
 					}
 					else
@@ -333,6 +368,7 @@ class Products extends CI_Controller
 						$data["food_sensitivities"] = $this->model1->get_all_orderby("food_sensitivities", "sort_order", "ASC") ;
 						
 						$data["row_counter"] = $this->input->post("counter_rows") ;
+						$data["hidden_id"] = $this->input->post("hidden_id") ;
 						$data["sku_codes"] = $this->input->post("sku_code") ;
 						$data["sizes"] = $this->input->post("size") ;
 						$data["sizes_french"] = $this->input->post("size_french") ;
@@ -376,25 +412,55 @@ class Products extends CI_Controller
 						endforeach ;
 					}
 					
-					$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
-					
 					$row_counter = $this->input->post("counter_rows") ;
-					$sku_codes = $this->input->post("sku_code") ;
-					$sizes = $this->input->post("size") ;
-					$sizes_french = $this->input->post("size_french") ;
-					$prices = $this->input->post("price") ;
-					$wholesale_prices = $this->input->post("wholesale_price") ;
-					$weights = $this->input->post("weight") ;
-					$upc = $this->input->post("upc") ;
-					
-					if($row_counter > 0)
-					{
-						for($x = 0 ; $x < $row_counter ; $x++)
-						{
-							$attributes = array("sku_code" => addslashes($sku_codes[$x]), "product_id" => $product_id, "size" => addslashes($sizes[$x]), "size_french" => addslashes($sizes_french[$x]), "price" => $prices[$x], "wholesale_price" => $wholesale_prices[$x], "weight" => addslashes($weights[$x]), "upc" => addslashes($upc[$x]), "status" => 'Active') ;
-							$this->model1->insert_rec($attributes, "skus") ;
+					$hidden_id = $this->input->post("hidden_id") ;
+						$sku_codes = $this->input->post("sku_code") ;
+						$sizes = $this->input->post("size") ;
+						$sizes_french = $this->input->post("size_french") ;
+						$prices = $this->input->post("price") ;
+						$wholesale_prices = $this->input->post("wholesale_price") ;
+						$weights = $this->input->post("weight") ;
+						$upc = $this->input->post("upc") ;
+						
+						$attribute_array = array() ;
+						$attributes = array() ;
+						
+						if($row_counter > 0) {
+							for($x = 0 ; $x < $row_counter ; $x++) {
+								if($hidden_id[$x] == "-1") {
+									$attributes = array("sku_code" => addslashes($sku_codes[$x]),
+														"product_id" => $product_id,
+														"size" => addslashes($sizes[$x]),
+														"size_french" => addslashes($sizes_french[$x]),
+														"price" => $prices[$x],
+														"wholesale_price" => $wholesale_prices[$x],
+														"weight" => addslashes($weights[$x]),
+														"upc" => addslashes($upc[$x]),
+														"status" => 'Active') ;
+								} else {
+									$sku_rec = $this->model1->get_one(array("id" => $hidden_id[$x]) , "skus") ;
+									$attributes = array("sku_code" => addslashes($sku_codes[$x]),
+														"product_id" => $product_id,
+														"size" => addslashes($sizes[$x]),
+														"size_french" => addslashes($sizes_french[$x]),
+														"price" => $prices[$x],
+														"wholesale_price" => $wholesale_prices[$x],
+														"weight" => addslashes($weights[$x]),
+														"upc" => addslashes($upc[$x]),
+														"insertion_timestamp" => $sku_rec->insertion_timestamp,
+														"status" => 'Active') ;
+								}
+								$attribute_array[] = $attributes ;
+							}
 						}
-					}	
+						
+						$this->model1->delete_rec(array("product_id" => $product_id), "skus") ;
+				
+						if(count($attribute_array) > 0) {
+							foreach($attribute_array as $rec):
+								$this->model1->insert_rec($rec, "skus") ;
+							endforeach ;
+						}	
 					
 					redirect(base_url()."products/index/".$this->input->post("group_id")."/2") ;		
 				}
@@ -493,3 +559,29 @@ class Products extends CI_Controller
 		$this->image_lib->clear() ;
 	}
 }	
+/*
+product_code
+group_id
+product_name
+sub_heading
+health_claim
+short_description
+description
+formula
+dosage
+seo_page_title
+seo_page_description
+product_name_french
+sub_heading_french
+health_claim_french
+short_description_french
+description_french
+formula_french 	dosage_french
+seo_page_title_french
+seo_page_description_french
+sort_order
+isnew
+filter
+npn
+status
+/**/

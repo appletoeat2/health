@@ -35,7 +35,7 @@
             <div class="content">
            		<div class="right">
                 	<button id="add_new_product" type="button"><span>Click Here to Add Store</span></button>
-            	</div>
+				</div>
             </div>
             
 		</div>

@@ -35,7 +35,7 @@ $("#submit_query").click(function(){
 	else
 	{
 		var base_url = $("#base_url").val() ;
-		var data1 = "email_address="+email+"&question="+question ;
+		var data1 = "email_address="+email+"&question="+question+"&current_page="+(window.location) ;
 		$.ajax({
 			type: "POST",
 			url:  base_url+"products/send_product_query", 
@@ -51,6 +51,6 @@ $("#submit_query").click(function(){
 				else alert("Failed to submit query.") ;
 			}
 		}) ;	
-	}
+	} /**/
 }) ;
 </script>

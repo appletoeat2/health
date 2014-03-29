@@ -15,3 +15,10 @@ $username_inno = "innovite_3";
 $password_inno = "6bWcwe48";
 
 myphpadmin: https://my-db.pair.com/phpMyAdmin/
+
+
+Staging database:
+$hostname_inno = "db150d.pair.com";
+$database_inno = "innovite_DEVELOP";
+$username_inno = "innovite_4";
+$password_inno = "skVwMfAH";

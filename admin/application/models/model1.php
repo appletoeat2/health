@@ -63,6 +63,14 @@ class Model1 extends CI_Model
 		return $query;
 	}
 	
+	public function truncate_table($tablename)
+	{
+		$q = "TRUNCATE `".$tablename."` ;" ;
+
+		$query = $this->db->query($q);
+		return $query;
+	}
+	
 	/****** Get One Rec *******/
 	public function get_one($cond,$tablename)
 	{

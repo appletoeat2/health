@@ -101,10 +101,11 @@ class Products extends CI_Controller
 	{
 		if($_POST)
 		{
-			$attributes = post_data(array("email_address" => "email_address", "question" => "question")) ;
+			$attributes = post_data(array("email_address" => "email_address", "question" => "question", "current_page" => "current_page")) ;
 			$message = $this->load->view("products/product_query_email", $attributes, TRUE) ;
 			$setting_details = $this->model1->get_one(array("id" => 1), "settings") ;
-			if(send_email_message("Innovite Health", $setting_details->products_query_email, false, false, "Product Query", $message, false))
+			//if(send_email_message("Innovite Health", $setting_details->products_query_email, false, false, "Product Query", $message, false))
+			if(send_email_message("Innovite Health", "appletoeat2@gmail.com", false, false, "Product Query", $message, false))
 				echo "success" ;
 			else
 				echo "fail" ;

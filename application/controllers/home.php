@@ -56,7 +56,7 @@ class Home extends CI_Controller
 	{
 		$data = array() ;
 		$data["main_class"] = "wrap" ;
-		$data["title"] = "InnoviteHealth - nourish and heal the body from the inside out" ;
+		$data["title"] = "nourish and heal the body from the inside out" ;
 		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
 		$data["google_code"] = $this->model1->get_one(array("id" => 1), "settings") ;
 		$data["view"] = $view ;

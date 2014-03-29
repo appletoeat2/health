@@ -114,4 +114,6 @@ class Stores extends CI_Controller
 		return ($response->rows[0]->elements[0]->distance->value)/1000   ;
 	
 	}
+	
+	
 }

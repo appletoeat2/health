@@ -268,7 +268,9 @@ function is_equal($group1_id, $rec_id)
 							for($x = 0 ; $x < $row_counter ; $x++) { 
 					?>
                     	<tr id="row_<?php echo $x + 1 ; ?>">
-							<td><input type="text" id="sku_code<?php echo $x + 1 ; ?>" name="sku_code[]" value="<?php echo stripslashes($sku_codes[$x]) ; ?>" class="intable" /></td>
+							<td>
+								<input type="hidden" id="hidden_id<?php echo $i ; ?>" name="hidden_id[]" value="<?php echo $hidden_id[$x] ; ?>" />
+								<input type="text" id="sku_code<?php echo $x + 1 ; ?>" name="sku_code[]" value="<?php echo stripslashes($sku_codes[$x]) ; ?>" class="intable" /></td>
                         	<td><input type="text" id="size<?php echo $x + 1 ; ?>" name="size[]" class="intable" value="<?php echo stripslashes($sizes[$x]); ?>" /></td>
                         	<td><input type="text" id="size_french<?php echo $x + 1 ; ?>" name="size_french[]" class="intable" value="<?php echo stripslashes($sizes_french[$x]) ; ?>" /></td>
                         	<td><input type="text" id="price<?php echo $x + 1 ; ?>" name="price[]" class="intable" value="<?php echo stripslashes($prices[$x]) ; ?>" /></td>
@@ -279,7 +281,10 @@ function is_equal($group1_id, $rec_id)
 					<?php  } } elseif($skus_recs) { ?>
 						<?php foreach($skus_recs as $rec): ?>
 						<tr id="row_<?php echo $i ; ?>">
-							<td><input type="text" id="sku_code<?php echo $i ; ?>" name="sku_code[]" value="<?php echo stripslashes($rec->sku_code) ; ?>" class="intable"/></td>
+							<td>
+								<input type="hidden" id="hidden_id<?php echo $i ; ?>" name="hidden_id[]" value="<?php echo $rec->id ; ?>" />
+								<input type="text" id="sku_code<?php echo $i ; ?>" name="sku_code[]" value="<?php echo stripslashes($rec->sku_code) ; ?>" class="intable"/>
+							</td>
                             <td><input type="text" id="size<?php echo $i ; ?>" name="size[]" value="<?php echo stripslashes($rec->size) ; ?>" class="intable"/></td>
                             <td><input type="text" id="size_french<?php echo $i ; ?>" name="size_french[]" value="<?php echo stripslashes($rec->size_french) ; ?>" class="intable" /></td>
                             <td><input type="text" id="price<?php echo $i ; ?>" name="price[]" value="<?php echo stripslashes($rec->price) ; ?>" class="intable" /></td>
@@ -355,7 +360,19 @@ $(function(){
 
 function create_string(number)
 {
-	var html = '<tr id="row_'+number+'"><td><input type="text" id="sku_code'+number+'" name="sku_code[]" value="" class="intable" /></td><td><input type="text" id="size'+number+'" name="size[]" value="" class="intable" /></td><td><input type="text" id="size_french'+number+'" name="size_french[]" value="" class="intable" /></td><td><input type="text" id="price'+number+'" name="price[]" value="" class="intable" /></td><td><input type="text" id="wholesale_price'+number+'" name="wholesale_price[]" value="" class="intable" /></td><td><input type="text" id="weight'+number+'" name="weight[]" value="" class="intable" /></td><td><input type="text" id="upc'+number+'" name="upc[]" value="" class="intable" /></td><td><a class="remove_link" href="javascript:void(0);" row_id="'+number+'">Remove</a></td></tr>' ;
+	var html = '<tr id="row_'+number+'">' +
+			   '<td>'+
+			   '<input type="hidden" id="hidden_id'+number+'" name="hidden_id[]" value="-1" />'+
+			   '<input type="text" id="sku_code'+number+'" name="sku_code[]" value="" class="intable" />'+
+			   '</td>'+
+			   '<td><input type="text" id="size'+number+'" name="size[]" value="" class="intable" /></td>'+
+			   '<td><input type="text" id="size_french'+number+'" name="size_french[]" value="" class="intable" /></td>'+
+			   '<td><input type="text" id="price'+number+'" name="price[]" value="" class="intable" /></td>'+
+			   '<td><input type="text" id="wholesale_price'+number+'" name="wholesale_price[]" value="" class="intable" /></td>'+
+			   '<td><input type="text" id="weight'+number+'" name="weight[]" value="" class="intable" /></td>'+
+			   '<td><input type="text" id="upc'+number+'" name="upc[]" value="" class="intable" /></td>'+
+			   '<td><a class="remove_link" href="javascript:void(0);" row_id="'+number+'">Remove</a></td>'+
+			   '</tr>' ;
 	
 	return html ;
 }

@@ -1,3 +1,5 @@
+http://www.innovitehealth.com/
+
 Current Website: www.inno-vite.com
 
 Staging Site: www.inno-vite.org
@@ -10,15 +12,28 @@ Directory: /innovitehealth/
 
 New Dbase:
 $hostname_inno = "db149d.pair.com";
-$database_inno = "innovite_IVHEALTH";
 $username_inno = "innovite_3";
 $password_inno = "6bWcwe48";
+$database_inno = "innovite_IVHEALTH";
+
+$db['default']['hostname'] = "db149d.pair.com";
+$db['default']['username'] = "innovite_3";
+$db['default']['password'] = "6bWcwe48" ;
+$db['default']['database'] = "innovite_IVHEALTH" ;
+
 
 myphpadmin: https://my-db.pair.com/phpMyAdmin/
 
 
 Staging database:
-$hostname_inno = "db150d.pair.com";
-$database_inno = "innovite_DEVELOP";
-$username_inno = "innovite_4";
-$password_inno = "skVwMfAH";
+$hostname_inno = db150d.pair.com
+$username_inno = innovite_4
+$password_inno = skVwMfAH
+$database_inno = innovite_DEVELOP
+
+
+Test Environment:
+$db['default']['hostname'] = 'db150d.pair.com';
+$db['default']['username'] = 'innovite_4' ;
+$db['default']['password'] = 'skVwMfAH' ;
+$db['default']['database'] = 'innovite_DEVELOP' ;

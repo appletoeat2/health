@@ -182,7 +182,12 @@ class Stores extends CI_Controller
 	{
 		$data["store_type"] = $store_type ;
 		$data["update_type"] = $update_type ;
-		$this->load->view("template/body", array_merge($data, $this->load_view("stores/stores_import", $message)));
+		if($data["store_type"] == "estores")
+			$this->load->view("template/body", array_merge($data, $this->load_view("stores/estores_import", $message)));
+		if($data["store_type"] == "stores") {
+			if($message != 0) $this->UpdateLongitudeLatitude() ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("stores/pstores_import", $message)));
+		}
 	}
 	
 	public function upload_import_file()
@@ -191,7 +196,7 @@ class Stores extends CI_Controller
 		{
 			$store_type = $this->input->post("store_type") ;
 			$update_type = $this->input->post("update_type") ;
-			$config["upload_path"] = "./export_import_datafiles/" ;
+			$config["upload_path"] = "./import_datafiles/" ;
 			$config["allowed_types"] = "xls" ;
 			$config["max_size"] = "0" ;
 			$config["file_name"] = "stores" ;
@@ -200,22 +205,29 @@ class Stores extends CI_Controller
 			
 			if($this->upload->do_upload("stores_records_file")) {
 				$data = array_merge(array("status" => 1), $this->upload->data()) ;
-				$this->load->view("template/body", array_merge($data, $this->load_view("stores/stores_import", 1))) ;
 				
 				if($store_type == "stores") {
-					$this->InsertStoresRecords($data["file_name"], $update_type) ;
+					$this->InsertStoresRecords($data["file_name"], $update_type, $data["full_path"]) ;
 					$this->UpdateLongitudeLatitude() ;
 					unlink($data["full_path"]) ;
 					redirect(base_url()."stores/import_stores/".$store_type."/".$update_type."/3") ;
 				} elseif($store_type == "estores") {
-					$this->InserteStoresRecords($data["file_name"], $update_type) ;
+					$this->InserteStoresRecords($data["file_name"], $update_type, $data["full_path"]) ;
 					unlink($data["full_path"]) ;
 					redirect(base_url()."stores/import_stores/".$store_type."/".$update_type."/1") ;
 				}
+				//
 			} else {
+				
 				$data = array("store_type" => $store_type, "update_type" => $update_type, "status" => 2, "errors" => $this->upload->display_errors('<li>', '</li>')) ;
-				$this->load->view("template/body", array_merge($data, $this->load_view("stores/stores_import", 2)));
+				
+				if($store_type == "stores")
+					$this->load->view("template/body", array_merge($data, $this->load_view("stores/pstores_import", 2)));
+				elseif($store_type == "estores")
+					$this->load->view("template/body", array_merge($data, $this->load_view("stores/estores_import", 2)));
 			}
+			
+			/**/
 		}
 		else
 		{
@@ -224,8 +236,10 @@ class Stores extends CI_Controller
 		/**/
 	}
 	
-	private function InsertStoresRecords($filename, $update_type)
+	private function InsertStoresRecords($filename, $update_type, $full_path)
 	{
+		redirect(base_url()."import_datafiles/import_pstore.php?filename=".$filename."&update_type=".$update_type."&store_type=pstores&full_path=".$full_path) ;
+		/*
 		$file = EXCEL_SHEET.$filename ;
 		$this->spreadsheet_excel_reader->read($file) ;
 		$content = array() ;
@@ -274,12 +288,14 @@ class Stores extends CI_Controller
 								
 				$this->model1->insert_rec($params, "stores") ;
 			}
-		}
+		}/**/
 		return true ;
 	}
 	
-	private function InserteStoresRecords($filename, $update_type)
+	private function InserteStoresRecords($filename, $update_type, $full_path)
 	{
+		redirect(base_url()."import_datafiles/import_estore.php?filename=".$filename."&update_type=".$update_type."&store_type=estores&full_path=".$full_path) ;
+		/*
 		$file = EXCEL_SHEET.$filename ;
 		$this->spreadsheet_excel_reader->read($file) ;
 		$content = array() ;
@@ -297,7 +313,6 @@ class Stores extends CI_Controller
 				$row[] = $cell ; 
 				$y++ ;
 			}
-			
 			$content[] = $row ;
 			$x++;
 		}
@@ -307,14 +322,11 @@ class Stores extends CI_Controller
 			if($update_type == "replace") $this->model1->truncate_table("estores") ;
 			for($i = 1 ; $i < sizeof($content) ; $i++)
 			{
-				$params = array("store_name_english" => $content[$i][0],
-								"store_name_french" => $content[$i][1],
-								"website_url" => $content[$i][2],
-								"status" => "Active") ;
-								
+				$params = array("store_name_english" => $content[$i][0], "store_name_french" => $content[$i][1], "website_url" => $content[$i][2], "status" => "Active") ;
 				$this->model1->insert_rec($params, "estores") ;
 			}
 		}
+		/**/
 		return true ;
 	}
 	
@@ -324,18 +336,20 @@ class Stores extends CI_Controller
 		if($store_recs)
 		{
 			foreach($store_recs as $rec):
-				$address = $rec->address1.", ".$rec->city.", ".$rec->province.", ".$rec->postal_code ;
-				$address = str_replace(" ", "+", $address) ;
-				$url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "&sensor=false&key=AIzaSyCyGAu05sQeK7UhFmsVqB7S_MEbH20T7ic" ;
-				$request = file_get_contents($url) ;
-				$json = json_decode($request, true) ;
-				if($json["status"] == "OK")
+				$address = $rec->address1."+".$rec->city."+".$rec->province."+".$rec->postal_code ;
+				$details_url = "http://maps.googleapis.com/maps/api/geocode/json?address=".$address."&sensor=false";
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, $details_url) ;
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1) ;
+				$json = json_decode(curl_exec($ch), true) ;
+				
+				if($json["status"] == "OK") {
 					$this->model1->update_rec(array("latitude" => $json["results"][0]["geometry"]["location"]["lat"],
 													"longitude" => $json["results"][0]["geometry"]["location"]["lng"],
 													"map_request_status" => $json["status"]), array("id" => $rec->id), "stores") ;
-				else
+				} else {
 					$this->model1->update_rec(array("map_request_status" => $json["status"]), array("id" => $rec->id), "stores") ;
-				
+				}
 			endforeach ;
 		}
 	}

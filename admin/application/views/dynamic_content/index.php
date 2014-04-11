@@ -19,8 +19,8 @@
                         	<td><?php echo stripslashes($rec->title_english) ; ?></td>
 							<td><?php echo stripslashes($rec->status) ; ?></td>
 							<td>
-								<a href="<?php echo base_url()."dynamic_content/edit_page/".$rec->id ; ?>">Edit</a> - 
-								<a href="<?php echo base_url()."dynamic_content/remove_page/".$rec->id ; ?>" onclick="return confirm('Are you sure to remove this record?');">Remove</a>
+								<a href="<?php echo base_url()."dynamic_content/edit_page/".$rec->id ; ?>">Edit</a> 
+								<!--<a href="<?php // echo base_url()."dynamic_content/remove_page/".$rec->id ; ?>" onclick="return confirm('Are you sure to remove this record?');">Remove</a>-->
 							</td>
 						</tr>
                     <?php endforeach ; ?>

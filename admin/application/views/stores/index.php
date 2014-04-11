@@ -34,7 +34,9 @@
             
             <div class="content">
            		<div class="right">
-                	<button id="add_new_product" type="button"><span>Click Here to Add Store</span></button>
+                	<button id="add_new_product" type="button"><span>Click Here to Add Store</span></button> &nbsp; 
+					<button id="import_records" type="button"><span>Import Records</span></button> &nbsp;
+					<button id="export_records" type="button"><span>Export Records</span></button>
 				</div>
             </div>
             
@@ -45,6 +47,14 @@
 $(function(){
 	$("#add_new_product").click(function(){
 		window.location.href = "<?php echo base_url()."stores/add_stores" ; ?>" ;
+	}) ;
+	
+	$("#import_records").click(function(){
+		window.location.href = "<?php echo base_url()."stores/import_stores/stores/add" ; ?>" ;
+	}) ;
+	
+	$("#export_records").click(function(){
+		window.location.href = "<?php echo base_url()."PHPExcelClasses/export_excel.php" ; ?>" ;
 	}) ;
 }) ;
 </script>

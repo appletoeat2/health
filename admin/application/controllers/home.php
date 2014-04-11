@@ -10,7 +10,7 @@ class Home extends CI_Controller
 	public function index($error = 0)
 	{
 		if($this->session->userdata('logged_in') == TRUE)
-			redirect(base_url()."products") ;
+			redirect(base_url()."slider") ;
 		$data["error"] = $error ;
 		$this->load->view("login/login", array_merge($data, $this->load_view("")));
 	}
@@ -29,7 +29,7 @@ class Home extends CI_Controller
 				{
 					$session_data = array('id' => $user->id, 'name' => $user->name, 'role' => $user->role, 'logged_in' => TRUE) ;
 					$this->session->set_userdata($session_data) ;
-					redirect(base_url()."products") ;
+					redirect(base_url()."slider") ;
 				}
 				else
 					redirect(base_url()."home/index/1") ;

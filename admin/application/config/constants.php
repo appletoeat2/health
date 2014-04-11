@@ -46,7 +46,7 @@ define("SLIDER_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/sliders/") ;
 define("IMAGE_LIB", $_SERVER['DOCUMENT_ROOT']."/health/admin/image_library/") ;
 define("BROCHURE_ENGLISH_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/product_brochures/english/") ;
 define("BROCHURE_FRENCH_DIR", $_SERVER['DOCUMENT_ROOT']."/health/admin/product_brochures/french/") ;
-define("EXCEL_SHEET", $_SERVER['DOCUMENT_ROOT']."/health/admin/export_import_datafiles/") ;
+define("EXCEL_SHEET", $_SERVER['DOCUMENT_ROOT']."/health/admin/import_datafiles/") ;
 
 define("LINK1", "http://searchenginewatch.com/article/2154469/How-to-Write-Title-Tags-For-Search-Engine-Optimization!") ;
 define("LINK2", "http://blog.kissmetrics.com/meta-description-magic/!") ;

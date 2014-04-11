@@ -139,6 +139,7 @@ class Products extends CI_Controller
 		$data["title"] = $title ;
 		$data["group_id"] = $group_id ;
 		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["sliders"] = $this->model1->get_all_orderby("sliders", "sort_order", "ASC") ;
 		$data["google_code"] = $this->model1->get_one(array("id" => 1), "settings") ;
 		$data["view"] = $view ;
 		

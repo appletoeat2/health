@@ -16,10 +16,6 @@
 							<label>Sort Order</label>
 							<div class="right"><input type="text" id="order" name="order" value="<?php echo set_value("order") ; ?>" /></div>
 						</div>
-						<div class="row"> 
-							<label>Link</label>
-							<div class="right"><input type="text" id="link" name="link" value="<?php echo set_value("link") ; ?>" /></div>
-						</div>
                    	</div>
               	</div>
            	</div>
@@ -27,13 +23,17 @@
 				<div class="box">
 					<div class="title">Slider Common Details<span class="hide"></span></div>
 					<div class="content">
-						<div class="row"> 
+						<!--<div class="row"> 
 							<label>Start Date</label>
-							<div class="right"><input type="text" id="start_date" name="start_date" class="datepicker" value="<?php echo set_value("start_date") ; ?>" /></div>
+							<div class="right"><input type="text" id="start_date" name="start_date" class="datepicker" value="<?php // echo set_value("start_date") ; ?>" /></div>
 						</div>
 						<div class="row"> 
 							<label>End Date</label>
-							<div class="right"><input type="text" id="end_date" name="end_date" class="datepicker" value="<?php echo set_value("end_date") ; ?>" /></div>
+							<div class="right"><input type="text" id="end_date" name="end_date" class="datepicker" value="<?php // echo set_value("end_date") ; ?>" /></div>
+						</div>-->
+						<div class="row"> 
+							<label>Link</label>
+							<div class="right"><input type="text" id="link" name="link" value="<?php echo set_value("link") ; ?>" /></div>
 						</div>
 						<div class="row">
 							<label>Status</label>

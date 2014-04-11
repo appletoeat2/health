@@ -100,7 +100,7 @@ define('SPREADSHEET_EXCEL_READER_DEF_NUM_FORMAT',    "%s");
 * @link       http://pear.php.net/package/PackageName
 * @see        OLE, Spreadsheet_Excel_Writer
 */
-class Spreadsheet_excel_reader
+class Spreadsheet_Excel_Reader
 {
     /**
      * Array of worksheets found
@@ -258,7 +258,7 @@ class Spreadsheet_excel_reader
      */ 
     function Spreadsheet_Excel_Reader()
     {
-        $this->_ole = new OLERead();
+        $this->_ole =& new OLERead();
         $this->setUTFEncoder('iconv');
     }
 

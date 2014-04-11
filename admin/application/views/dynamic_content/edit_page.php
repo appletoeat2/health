@@ -9,8 +9,10 @@ function is_equal($group1_id, $rec_id)
 ?>
 
 <div id="right">
-<form id="product_form" name="product_form" action="<?php echo base_url()."dynamic_content/add_product/" ; ?>" method="post" enctype="multipart/form-data">
-    <div class="section">
+<form id="product_form" name="product_form" action="<?php echo base_url()."dynamic_content/update_page" ; ?>" method="post" enctype="multipart/form-data">
+    <input type="hidden" id="page_id" name="page_id" value="<?php echo $page_rec->id ; ?>" />
+	<br />
+	<div class="section">
         <div class="box">
 			<div class="title">English Information<span class="hide"></span></div>
 			<div class="content">

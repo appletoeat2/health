@@ -236,7 +236,7 @@ function is_equal($group1_id, $rec_id)
 					<?php } } else { ?>
                    		<tr id="row_1">
                         	<td>
-								<input type="hidden" id="hidden_id<?php echo $x + 1 ; ?>" name="hidden_id[]" value="-1" />
+								<input type="hidden" id="hidden_id1" name="hidden_id[]" value="-1" />
 								<input type="text" id="sku_code1" name="sku_code[]" value="" class="intable" />
 							</td>
                             <td><input type="text" id="size1" name="size[]" value="" class="intable" /></td>

@@ -20,8 +20,8 @@ status
 						<tr>
                         	<th width="14%">Sort Order</th>
 							<th width="25%">Title</th>
-							<th width="12%">Start Date</th>
-							<th width="12%">End Date</th>
+							<!--<th width="12%">Start Date</th>
+							<th width="12%">End Date</th>-->
 							<th width="15%">Image</th>
 							<th width="12%">Status</th>
 							<th width="10%">Action</th>
@@ -31,10 +31,10 @@ status
                     <tbody>
                     <?php foreach($sliders as $rec): ?>
 						<tr>
-                        	<td><?php echo $rec->order ; ?></td>
+                        	<td><?php echo $rec->sort_order ; ?></td>
 							<td><?php echo stripslashes($rec->slider_title) ; ?></td>
-							<td><?php echo date("m/d/y", strtotime($rec->start_date)) ; ?></td>
-							<td><?php echo date("m/d/y", strtotime($rec->end_date)) ; ?></td>
+							<!--<td><?php // echo date("m/d/y", strtotime($rec->start_date)) ; ?></td>
+							<td><?php // echo date("m/d/y", strtotime($rec->end_date)) ; ?></td>-->
 							<td><?php echo '<a href="'.base_url()."sliders/".$rec->english_image.'" target="_blank">English</a>'.' '.
 										   '<a href="'.base_url()."sliders/".$rec->french_image.'" target="_blank">French</a>' ; ?></td>
 							<td><?php echo $rec->status ; ?></td>

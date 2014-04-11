@@ -8,6 +8,8 @@ var start_flag = 0 ;
 var bounds = new google.maps.LatLngBounds() ;
 var center_lat = 0 ;
 var center_lng = 0 ;
+var radius = 0 ;
+var different_marker = new google.maps.Marker() ;
 
 function initialize()
 {
@@ -23,7 +25,7 @@ function initialize()
 			var NE = bounds.getNorthEast();
 			var SW = bounds.getSouthWest();
 			var response = "" ;
-    		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng(), latitude3: center_lat, logitude3: center_lng} ;
+    		var location_data = {latitude1: NE.lat(), logitude1: NE.lng(), latitude2: SW.lat(), logitude2: SW.lng(), latitude3: center_lat, logitude3: center_lng, KMradius: radius} ;
 			var map_markers = get_nearby_locations(location_data) ;
 		}
 	});
@@ -54,6 +56,7 @@ function place_merkers(response)
 	
 	for (var i in response)
 	{
+		
 		var marker_position = new google.maps.LatLng(response[i].latitude, response[i].longitude) ;
 		var distance = google.maps.geometry.spherical.computeDistanceBetween(central_location, marker_position) ;
 		
@@ -99,7 +102,7 @@ function build_tr(retailor_name, address1, city, provience, postal_code, telepho
 	var base_url = $("#base_url").val() ;
 	rec = rec + '<hr>' ;
 	rec = rec + '<div class="one_fifth"><strong>' + retailor_name + '</strong><br>' ;
-	//rec = rec + '(' + distance + ' km away)' ;
+	rec = rec + '(' + distance + ' km away)' ;
 	rec = rec + '</div>' ;
 	rec = rec + '<div class="one_fifth">' + telephone + '</div>' ;
     rec = rec + '<div class="one_fifth">' + t_add + '</div>' ;
@@ -115,32 +118,6 @@ function build_tr(retailor_name, address1, city, provience, postal_code, telepho
 	return rec ;
 }
 
-/*
-function build_tr(retailor_name, address1, city, provience, postal_code, telephone, website, facebook, twitter, linkedin, googleplus, distance)
-{
-	var t_add = address1 + " " + city + " " + provience + " " + postal_code ;
-	var rec = '' ;
-	var base_url = $("#base_url").val() ;
-	rec = rec + '<tr>' ;
-	rec = rec + '<td style="width:20%; text-align:top;"><h6>'+ retailor_name + ' ' + distance +'</h6></td>' ;
-	rec = rec + '<td style="width:20%; text-align:top;">Ph: '+telephone+'</td>' ;
-	rec = rec + '<td class="text" style="width:25%;">'+ address1 +'<br /><br />'+ city +', '+ provience + ', ' + postal_code +'</td>' ;
-	rec = rec + '<td class="text" style="width:20%;"><a href="https://maps.google.ca/maps?saddr=&daddr=' + t_add+ '" target="_blank">Directions</a>' ;
-	if(website != "") rec = rec + ' | <a href="'+ website +'" target="_blank">Website</a></td>' ; 
-	rec = rec + '<td class="text" style="width:15%;">'
-	
-	if(facebook != "") rec = rec + '<a href="'+facebook+'" target="_blank"><img src="'+base_url+'images/social-icons/facebook.png" /></a> &nbsp; &nbsp;' ;
-	if(twitter != "") rec = rec + '<a href="'+twitter+'" target="_blank"><img src="'+base_url+'images/social-icons/twitter.png" /></a> &nbsp; &nbsp;' ;
-	if(linkedin != "") rec = rec + '<a href="'+linkedin+'" target="_blank"><img src="'+base_url+'images/social-icons/linkedin.png" /></a> &nbsp; &nbsp;' ;
-	if(googleplus != "")rec = rec + '<a href="'+googleplus+'" target="_blank"><img src="'+base_url+'images/social-icons/googleplus.png" /></a> &nbsp; &nbsp;' ;
-	
-	rec = rec + '</td>' ;
-	
-	rec = rec + '</tr>' ;	
-	
-	return rec ;
-}
-/**/
 $(function(){
 	
 	$("#city_name_dropdown").on("change", function(){
@@ -148,8 +125,10 @@ $(function(){
 	});
 	
 	$("#submit_button").click(function(){
+		
 		var address = $("#address").val() ;
-		var radius = $("#radius :selected").val() ;
+		radius = $("#radius :selected").val() ;
+		
 		if(address == "") { alert("You have not entered any address.") ; return false ; }
 		start_flag = 1 ;
 		var geocoder = new google.maps.Geocoder() ;
@@ -161,16 +140,17 @@ $(function(){
 				KMs = radius * 1000 ;
 				center_lat = results[0].geometry.location.lat();
 				center_lng = results[0].geometry.location.lng();  
-				
-	var different_marker = new google.maps.Marker({position: results[0].geometry.location, map: map, icon:'http://maps.google.com/mapfiles/marker_green.png',  animation: google.maps.Animation.BOUNCE}) ;
-	 
+				different_marker.setMap(null) ;
+				different_marker = new google.maps.Marker({position:results[0].geometry.location,
+															   map: map,
+															   icon:'http://maps.google.com/mapfiles/marker_green.png',
+															   animation: google.maps.Animation.BOUNCE}) ;
+				/**/
 				map.setZoom(4) ;	
 				var StoreLocations = {
 					strokeOpacity: 0.8,
 					strokeWeight: 2,
 					fillOpacity: 0.35,
-					//strokeColor: '#FF0000',
-					//fillColor: '#FF0000',
 					strokeColor: 'TRANSPARENT',
 					fillColor: 'TRANSPARENT',
 					map: map,

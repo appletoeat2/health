@@ -335,7 +335,6 @@ class Products extends CI_Controller
 														"wholesale_price" => $wholesale_prices[$x],
 														"weight" => addslashes($weights[$x]),
 														"upc" => addslashes($upc[$x]),
-														"insertion_timestamp" => $sku_rec->insertion_timestamp,
 														"status" => 'Active') ;
 								}
 								$attribute_array[] = $attributes ;
@@ -447,7 +446,6 @@ class Products extends CI_Controller
 														"wholesale_price" => $wholesale_prices[$x],
 														"weight" => addslashes($weights[$x]),
 														"upc" => addslashes($upc[$x]),
-														"insertion_timestamp" => $sku_rec->insertion_timestamp,
 														"status" => 'Active') ;
 								}
 								$attribute_array[] = $attributes ;

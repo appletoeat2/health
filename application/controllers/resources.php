@@ -39,6 +39,7 @@ class Resources extends CI_Controller
 	
 	public function estores()
 	{
+		$data["estores"] = $this->model1->get_all("estores") ;
 		$data["meta_data"] = array("seo_page_title" => "", "seo_page_description" => "", "seo_page_title_french" => "", "seo_page_description_french" => "") ;
 		$this->load->view('template/body', array_merge($data, $this->load_data("stores/estores"))) ;
 	}
@@ -115,6 +116,7 @@ class Resources extends CI_Controller
 	{
 		$data = array() ;
 		$data["product_groups"] = $this->model1->get_all_orderby("product_groups", "sort_order", "ASC") ;
+		$data["sliders"] = $this->model1->get_all_orderby("sliders", "sort_order", "ASC") ;
 		$data["main_class"] = "wrap" ;
 		$data["title"] = "Innovite Health Products - Resources" ;
 		$data["google_code"] = $this->model1->get_one(array("id" => 1), "settings") ;

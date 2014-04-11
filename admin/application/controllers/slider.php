@@ -58,14 +58,15 @@ class Slider extends CI_Controller
 			}
 			else
 			{
-				$attributes = post_data(array("slider_title" => "slider_title", "order" => "order", "start_date" => "start_date", "end_date" => "end_date", "link" => "link", "status" => "status")) ;
-				$attributes["start_date"] = date("Y-m-d", strtotime($attributes["start_date"])) ;
-				$attributes["end_date"] = date("Y-m-d", strtotime($attributes["end_date"])) ;				
+				$attributes = post_data(array("slider_title" => "slider_title", "sort_order" => "order", "link" => "link", "status" => "status")) ;
+				//$attributes = post_data(array("slider_title" => "slider_title", "order" => "order", "start_date" => "start_date", "end_date" => "end_date", "link" => "link", "status" => "status")) ;
+				//$attributes["start_date"] = date("Y-m-d", strtotime($attributes["start_date"])) ;
+				//$attributes["end_date"] = date("Y-m-d", strtotime($attributes["end_date"])) ;				
 				$slider_id = $this->model1->insert_rec($attributes, "sliders") ;
 				
-				$file1 = $this->upload_image_file("english_image", "./sliders/", "jpg", "english_image_".$slider_id, 850, 380) ;
-				$file2 = $this->upload_image_file("french_image", "./sliders/", "jpg", "french_image_".$slider_id, 850, 380) ;
-				
+				$file1 = $this->upload_image_file("english_image", "./sliders/", "jpg", "english_image_".$slider_id, 1097, 280) ;
+				$file2 = $this->upload_image_file("french_image", "./sliders/", "jpg", "french_image_".$slider_id, 1097, 280) ;
+			
 				$temp = $this->get_file_details($slider_id, $file1, $file2) ;
 				$params = $temp["file_names"] ;
 				$success = $this->model1->update_rec($params, array("slider_id" => $slider_id), "sliders") ;
@@ -116,16 +117,17 @@ class Slider extends CI_Controller
 			}
 			else
 			{
-				$attributes = post_data(array("start_date" => "start_date", "order" => "order", "end_date" => "end_date", "link" => "link", "status" => "status")) ;
-				$attributes["start_date"] = date("Y-m-d", strtotime($attributes["start_date"])) ;
-				$attributes["end_date"] = date("Y-m-d", strtotime($attributes["end_date"])) ;				
+				$attributes = post_data(array("slider_title" => "slider_title", "sort_order" => "order", "link" => "link", "status" => "status")) ;
+				//$attributes = post_data(array("start_date" => "start_date", "order" => "order", "end_date" => "end_date", "link" => "link", "status" => "status")) ;
+				//$attributes["start_date"] = date("Y-m-d", strtotime($attributes["start_date"])) ;
+				//$attributes["end_date"] = date("Y-m-d", strtotime($attributes["end_date"])) ;				
 				$success = $this->model1->update_rec($attributes, array("slider_id" => $slider_id), "sliders") ;
 				
 				$file1 ; $file2 ;
 				$file_errors = "" ;
 				if($this->input->post("slider_image_checkbox_english") == "Yes") {
 					if(file_exists(SLIDER_DIR."temp_english_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."temp_english_image_".$slider_id.".jpg") ;	
-					$file1 = $this->upload_image_file("english_image", "./sliders/", "jpg", "temp_english_image_".$slider_id, 850, 380) ;
+					$file1 = $this->upload_image_file("english_image", "./sliders/", "jpg", "temp_english_image_".$slider_id, 1097, 280) ;
 					
 					if($file1["status"] == 1) {
 						unlink(SLIDER_DIR."english_image_".$slider_id.".jpg") ;
@@ -137,7 +139,7 @@ class Slider extends CI_Controller
 				
 				if($this->input->post("slider_image_checkbox_french") == "Yes") {
 					if(file_exists(SLIDER_DIR."temp_french_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."temp_french_image_".$slider_id.".jpg") ;	
-					$file1 = $this->upload_image_file("french_image", "./sliders/", "jpg", "temp_french_image_".$slider_id, 850, 380) ;
+					$file1 = $this->upload_image_file("french_image", "./sliders/", "jpg", "temp_french_image_".$slider_id, 1097, 280) ;
 					
 					if($file1["status"] == 1) {
 						unlink(SLIDER_DIR."french_image_".$slider_id.".jpg") ;
@@ -191,6 +193,7 @@ class Slider extends CI_Controller
 			$data = array_merge(array("status" => 1), $this->upload->data()) ;
 			if($data["image_width"] == $max_width && $data["image_height"] == $max_height)
 			{
+				$this->make_image_copy($data["full_path"], $data["file_path"]."thumbnail", 200, 60) ;
 				return $data ;
 			}
 			else
@@ -207,6 +210,20 @@ class Slider extends CI_Controller
 		}
 	}
 	
+	private function make_image_copy($source_path, $destination_path, $width, $height)
+	{
+		$config["image_library"] = "gd2" ;
+		$config["source_image"] = $source_path ;
+		$config["new_image"] = $destination_path ;
+		$config["maintain_ratio"] = TRUE ;
+		$config["width"] = $width ;
+		$config["height"] = $height ;
+		
+		$this->image_lib->initialize($config) ;
+		$this->image_lib->resize() ;
+		$this->image_lib->clear() ;
+	}
+	
 	public function remove_slider($slider_id = 0)
 	{
 		if($slider_id)
@@ -215,6 +232,10 @@ class Slider extends CI_Controller
 			
 			if(file_exists(SLIDER_DIR."english_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."english_image_".$slider_id.".jpg") ;
 			if(file_exists(SLIDER_DIR."french_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."french_image_".$slider_id.".jpg") ;			
+			
+			if(file_exists(SLIDER_DIR."thumbnail/english_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."thumbnail/english_image_".$slider_id.".jpg") ;
+			if(file_exists(SLIDER_DIR."thumbnail/french_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."thumbnail/french_image_".$slider_id.".jpg") ;			
+			
 			
 			redirect(base_url()."slider/index/3") ;
 		}

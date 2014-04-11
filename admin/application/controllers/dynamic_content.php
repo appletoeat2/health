@@ -21,12 +21,12 @@ class Dynamic_content extends CI_Controller
 		if($store_id)
 		{
 			$data["errors"] = false ;
-			$data["page_rec"] = $this->model1->get_one(array("id" => $slider_id), "dynamic_content") ;
-			$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/slider_detail"))) ;
+			$data["page_rec"] = $this->model1->get_one(array("id" => $page_id), "dynamic_content") ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/page_detail"))) ;
 		}
 		else
 		{
-			redirect(base_url()."slider") ;
+			redirect(base_url()."dynamic_content") ;
 		}
 	}
 	
@@ -40,42 +40,100 @@ class Dynamic_content extends CI_Controller
 	{
 		if($_POST)
 		{
-			$session_data = array("error_array" => "") ;
-			$this->session->set_userdata($session_data) ;
-			
-			$validation_parameters = array("start_date" => "Start Date&", "end_date" => "End Date&", "link" => "Link&", "status" => "Status&required") ;
+			$validation_parameters = array("title_english" => "Title (English)&", "html_title_english" => "HTML Title (English)&", "content_english" => "Content (English)&",
+										   "title_french" => "Title (French)&", "html_title_french" => "HTML Title (French)&", "content_french" => "Content (French)&",
+											"status" => "Status&required") ;
 	
 			if(form_validation_function($validation_parameters) == FALSE)
 			{
 				$data["errors"] = validation_errors("<li>", "</li>") ;
-				$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/add_sldier"))) ;
+				$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/add_page"))) ;
 			}
 			else
 			{
-				$attributes = post_data(array("start_date" => "start_date", "end_date" => "end_date", "link" => "link", "status" => "status")) ;
-				$attributes["start_date"] = date("Y-m-d", strtotime($attributes["start_date"])) ;
-				$attributes["end_date"] = date("Y-m-d", strtotime($attributes["end_date"])) ;				
-				$slider_id = $this->model1->insert_rec($attributes, "sliders") ;
+				$attributes = post_data(array("title_english" => "title_english", "html_title_english" => "html_title_english", "content_english" => "content_english",
+											  "title_french" => "title_french", "html_title_french" => "html_title_french", "content_french" => "content_french", "status" => "status")) ;
+				$page_id = $this->model1->insert_rec($attributes, "dynamic_content") ;
 				
-				$file1 = $this->upload_image_file("english_image", "./dynamic_content/", "jpg", "english_image_".$slider_id, 850, 380) ;
-				$file2 = $this->upload_image_file("french_image", "./dynamic_content/", "jpg", "french_image_".$slider_id, 850, 380) ;
-				
-				$temp = $this->get_file_details($slider_id, $file1, $file2) ;
-				$params = $temp["file_names"] ;
-				$success = $this->model1->update_rec($params, array("slider_id" => $slider_id), "sliders") ;
-				
-				$session_data = array("error_array" => $temp["file_errors"]) ;
-				$this->session->set_userdata($session_data) ;
-				
-				redirect(base_url()."slider/edit_slider/".$slider_id) ;
+				redirect(base_url()."dynamic_content/edit_page/".$page_id) ;
 			}
 		}
 		else
 		{
-			redirect(base_url()."stores") ;
+			redirect(base_url()."dynamic_content") ;
 		}
 	}
 	
+	public function edit_page($page_id = 0)
+	{
+		if($page_id)
+		{
+			$data["errors"] = 0 ;
+			$data["page_rec"] = $this->model1->get_one(array("id" => $page_id), "dynamic_content") ;
+			$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/edit_page"))) ;
+		}
+		else
+		{
+			redirect(base_url()."dynamic_content") ;
+		}
+	}
+	
+	public function update_page()
+	{
+		if($_POST)
+		{
+			$validation_parameters = array("title_english" => "Title (English)&", "html_title_english" => "HTML Title (English)&", "content_english" => "Content (English)&",
+										   "title_french" => "Title (French)&", "html_title_french" => "HTML Title (French)&", "content_french" => "Content (French)&") ;
+	
+			$page_id = $this->input->post("page_id") ;
+			
+			if(form_validation_function($validation_parameters) == FALSE)
+			{
+				$data["errors"] = validation_errors("<li>", "</li>") ;
+				$data["page_rec"] = $this->model1->get_one(array("id" => $page_id), "dynamic_content") ;
+				$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/edit_page"))) ;
+			}
+			else
+			{
+				$attributes = post_data(array("title_english" => "title_english", "html_title_english" => "html_title_english", "content_english" => "content_english",
+											  "title_french" => "title_french", "html_title_french" => "html_title_french", "content_french" => "content_french")) ;
+				$success = $this->model1->update_rec($attributes, array("id" => $page_id), "dynamic_content") ;
+				redirect(base_url()."dynamic_content/edit_page/".$page_id) ;
+			}
+		}
+		else
+		{
+			redirect(base_url()."dynamic_content") ;
+		}
+	}
+	
+	public function remove_page($page_id = 0)
+	{
+		if($slider_id)
+		{
+			$this->model1->delete_rec(array("id" => $page_id), "dynamic_content") ;
+			redirect(base_url()."dynamic_content/index/3") ;
+		}
+		else
+		{
+			redirect(base_url()."dynamic_content") ;
+		}
+	}
+	
+	private function load_view($view, $message = 0)
+	{
+		$data = array() ;
+		
+		$data["title"] = "InnoviteHealth - Admin: Dynamic Contents" ;
+		$data["current_page"] = "dynamic_content" ;
+		$data["message"] = $message ;
+		$data["side_menu_type"] = "" ;
+		$data["side_menu"] = false ;
+		$data["view"] = $view ;
+		
+		return $data ;
+	}
+		
 	public function view_library($page_offset = 1, $message = 0)
 	{
 		$this->load->library('pagination');
@@ -139,6 +197,7 @@ class Dynamic_content extends CI_Controller
 			$data = $this->upload->display_errors('<li>', '</li>') ;
 			redirect(base_url()."dynamic_content/view_library/1/2") ;
 			
+			redirect(base_url()."dynamic_content") ;
 		}
 		/**/
 	}
@@ -157,186 +216,5 @@ class Dynamic_content extends CI_Controller
 		$this->image_lib->clear() ;
 	}
 	
-	public function edit_page($page_id = 0)
-	{
-		if($page_id)
-		{
-			$data["errors"] = 0 ;
-			$data["page_rec"] = $this->model1->get_one(array("id" => $page_id), "dynamic_content") ;
-			$this->load->view("template/body", array_merge($data, $this->load_view("dynamic_content/edit_page"))) ;
-		}
-		else
-		{
-			redirect(base_url()."dynamic_content") ;
-		}
-	}
-	
-	public function update_page()
-	{
-		if($_POST)
-		{
-			$session_data = array("error_array" => "") ;
-			$this->session->set_userdata($session_data) ;
-			
-			$slider_id = $this->input->post("slider_id") ;
-			$slider_rec = $this->model1->get_one(array("slider_id" => $slider_id), "sliders") ;
-			$validation_parameters = array("start_date" => "Start Date&", "end_date" => "End Date&", "link" => "Link&", "status" => "Status&required") ;
-			
-			if(form_validation_function($validation_parameters) == FALSE)
-			{
-				$data["errors"] = validation_errors("<li>", "</li>") ;
-				$data["slider_rec"] = $this->model1->get_one(array("slider_id" => $slider_id), "sliders") ;
-				
-				$this->load->view("template/body", array_merge($data, $this->load_view("slider/edit_slider"))) ;
-			}
-			else
-			{
-				$attributes = post_data(array("start_date" => "start_date", "end_date" => "end_date", "link" => "link", "status" => "status")) ;
-				$attributes["start_date"] = date("Y-m-d", strtotime($attributes["start_date"])) ;
-				$attributes["end_date"] = date("Y-m-d", strtotime($attributes["end_date"])) ;				
-				$success = $this->model1->update_rec($attributes, array("slider_id" => $slider_id), "sliders") ;
-				
-				$file1 ; $file2 ;
-				$file_errors = "" ;
-				if($this->input->post("slider_image_checkbox_english") == "Yes") {
-					if(file_exists(SLIDER_DIR."temp_english_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."temp_english_image_".$slider_id.".jpg") ;	
-					$file1 = $this->upload_image_file("english_image", "./dynamic_content/", "jpg", "temp_english_image_".$slider_id, 850, 380) ;
-					
-					if($file1["status"] == 1) {
-						unlink(SLIDER_DIR."english_image_".$slider_id.".jpg") ;
-						rename((SLIDER_DIR."temp_english_image_".$slider_id.".jpg"), (SLIDER_DIR."english_image_".$slider_id.".jpg")) ;
-					}
-					else if($file1["status"] == 2) $file_errors = $file_errors."<li>Slider Image (English)<ul>".$file1["errors"]."</ul></li>" ;
-					else if($file1["status"] == 3)  $file_errors = $file_errors.$this->messages(2) ;
-				}
-				
-				if($this->input->post("slider_image_checkbox_french") == "Yes") {
-					if(file_exists(SLIDER_DIR."temp_french_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."temp_french_image_".$slider_id.".jpg") ;	
-					$file1 = $this->upload_image_file("french_image", "./dynamic_content/", "jpg", "temp_french_image_".$slider_id, 850, 380) ;
-					
-					if($file1["status"] == 1) {
-						unlink(SLIDER_DIR."french_image_".$slider_id.".jpg") ;
-						rename((SLIDER_DIR."temp_french_image_".$slider_id.".jpg"), (SLIDER_DIR."french_image_".$slider_id.".jpg")) ;
-					}
-					else if($file1["status"] == 2) $file_errors = $file_errors."<li>Slider Image (French)<ul>".$file1["errors"]."</ul></li>" ;
-					else if($file1["status"] == 3)  $file_errors = $file_errors.$this->messages(4) ;
-				}
-				
-				$session_data = array("error_array" => $file_errors) ;
-				$this->session->set_userdata($session_data) ;
-				redirect(base_url()."slider/edit_slider/".$slider_id) ;
-			}
-		}
-		else
-		{
-			redirect(base_url()."sliders") ;
-		}
-	}
-	
-	private function upload_file($file_field_name, $path, $valid_types, $new_file_name)
-	{
-		$config["upload_path"] = $path ;
-		$config["allowed_types"] = $valid_types ;
-		$config["file_name"] = $new_file_name ;
-		
-		$this->upload->initialize($config) ;
-		
-		if($this->upload->do_upload($file_field_name))
-		{
-			$data = array_merge(array("status" => 1), $this->upload->data()) ;
-			return $data ;
-		}
-		else
-		{
-			$data = array("status" => 2, "errors" => $this->upload->display_errors('<li>', '</li>')) ;
-			return $data ;
-		}
-	}
-	
-	private function upload_image_file($file_field_name, $path, $valid_types, $new_file_name, $max_width, $max_height)
-	{
-		$config["upload_path"] = $path ;
-		$config["allowed_types"] = $valid_types ;
-		$config["file_name"] = $new_file_name ;
-		
-		$this->upload->initialize($config) ;
-		
-		if($this->upload->do_upload($file_field_name))
-		{
-			$data = array_merge(array("status" => 1), $this->upload->data()) ;
-			if($data["image_width"] == $max_width && $data["image_height"] == $max_height)
-			{
-				return $data ;
-			}
-			else
-			{
-				$data["status"] = 3 ;
-				unlink($data["full_path"]) ;
-				return $data ;
-			}
-		}
-		else
-		{
-			$data = array("status" => 2, "errors" => $this->upload->display_errors('<li>', '</li>')) ;
-			return $data ;
-		}
-	}
-	
-	public function remove_slider($slider_id = 0)
-	{
-		if($slider_id)
-		{
-			$this->model1->delete_rec(array("slider_id" => $slider_id), "sliders") ;
-			
-			if(file_exists(SLIDER_DIR."english_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."english_image_".$slider_id.".jpg") ;
-			if(file_exists(SLIDER_DIR."french_image_".$slider_id.".jpg")) unlink(SLIDER_DIR."french_image_".$slider_id.".jpg") ;			
-			
-			redirect(base_url()."slider/index/3") ;
-		}
-		else
-		{
-			redirect(base_url()."stores/index") ;
-		}
-	}
-	
-	private function load_view($view, $message = 0)
-	{
-		$data = array() ;
-		
-		$data["title"] = "InnoviteHealth - Admin: Dynamic Contents" ;
-		$data["current_page"] = "dynamic_content" ;
-		$data["message"] = $message ;
-		$data["side_menu_type"] = "" ;
-		$data["side_menu"] = false ;
-		$data["view"] = $view ;
-		
-		return $data ;
-	}
-	
-	private function messages($index)
-	{
-		$messages = array(1 => "<li>Slider Image (English) could not be uploaded.</li>",
-		                  2 => "<li>Slider Image (English) is not of right size. It should be 850px width x 380px height.</li>",
-						  3 => "<li>Slider Image (French) could not be uploaded.</li>",
-		                  4 => "<li>Slider Image (French) is not of right size. It should be 850px width x 380px height.</li>") ;
-		
-		return $messages[$index] ;
-	}	
-	
-	private function get_file_details($slider_id, $file1, $file2)
-	{
-		$file_names = array("english_image" => "", "french_image" => "") ;
-		$file_errors = "" ;
-		
-		if($file1["status"] == 1) $file_names["english_image"] = $file1["file_name"] ;
-		else if($file1["status"] == 2) $file_errors = $file_errors."<li>Slider Image (English)<ul>".$file1["errors"]."</ul></li>" ;
-		else if($file1["status"] == 3)  $file_errors = $file_errors.$this->messages(2) ;
-		
-		if($file2["status"] == 1) $file_names["french_image"] = $file2["file_name"] ;
-		else if($file2["status"] == 2)  $file_errors = $file_errors."<li>Slider Image (French)<ul>".$file2["errors"]."</ul></li>" ;
-		else if($file2["status"] == 3)  $file_errors = $file_errors.$this->messages(4) ;
-		
-		return array("file_names" => $file_names, "file_errors" => $file_errors) ;
-	}
 	/**/
 }

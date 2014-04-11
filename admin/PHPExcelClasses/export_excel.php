@@ -1,11 +1,6 @@
 <?php
 
-	$con=mysqli_connect("localhost", "root", "", "innovite_ivhealth");
-	if(mysqli_connect_errno())
-	{
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		exit ;
-	}
+	require_once("mysql_connection.php") ;
 	
 	$result = mysqli_query($con, "SELECT * FROM stores") ;
 	
@@ -88,7 +83,7 @@
 	$objPHPExcel->setActiveSheetIndex(0);
 
 	header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-	header('Content-Disposition: attachment;filename="Stores.xlsx"');
+	header('Content-Disposition: attachment;filename="Stores.xls"');
 	header('Cache-Control: max-age=0');
 	// If you're serving to IE 9, then the following may be needed
 	header('Cache-Control: max-age=1');

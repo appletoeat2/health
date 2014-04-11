@@ -29,7 +29,8 @@
 <div class="section">
 	<?php
 		if($this->session->userdata("error_array") != "")  echo '<br/><div class="message red"><br /><ul>'.$this->session->userdata("error_array").'</ul><br /></div><br />' ;
-		if($errors) echo '<div class="message red"><br /><ul>'.$errors.'</ul><br /></div><br />' ;
+		else if($errors) echo '<div class="message red"><br /><ul>'.$errors.'</ul><br /></div><br />' ;
+		else echo "<br />" ;
 	?>
 	<div id="right">
 		<input type="hidden" id="slider_id" name="slider_id" value="<?php echo $slider_rec->slider_id ; ?>" />
@@ -44,11 +45,7 @@
 						</div>
             			<div class="row"> 
 							<label>Sort Order</label>
-							<div class="right"><input type="text" id="order" name="order" value="<?php echo set_value("order", $slider_rec->order) ; ?>" /></div>
-						</div>
-						<div class="row"> 
-							<label>Link</label>
-							<div class="right"><input type="text" id="link" name="link" value="<?php echo set_value("link", $slider_rec->link) ; ?>" /></div>
+							<div class="right"><input type="text" id="order" name="order" value="<?php echo set_value("order", $slider_rec->sort_order) ; ?>" /></div>
 						</div>
                    	</div>
               	</div>
@@ -57,13 +54,17 @@
 				<div class="box">
 					<div class="title">Slider Common Details<span class="hide"></span></div>
 					<div class="content">
-						<div class="row"> 
+						<!--<div class="row"> 
 							<label>Start Date</label>
-							<div class="right"><input type="text" id="start_date" name="start_date" class="datepicker" value="<?php echo set_value("start_date", date("m/d/y", strtotime($slider_rec->start_date))) ; ?>" /></div>
+							<div class="right"><input type="text" id="start_date" name="start_date" class="datepicker" value="<?php // echo set_value("start_date", date("m/d/y", strtotime($slider_rec->start_date))) ; ?>" /></div>
 						</div>
 						<div class="row"> 
 							<label>End Date</label>
-							<div class="right"><input type="text" id="end_date" name="end_date" class="datepicker" value="<?php echo set_value("end_date", date("m/d/y", strtotime($slider_rec->end_date))) ; ?>" /></div>
+							<div class="right"><input type="text" id="end_date" name="end_date" class="datepicker" value="<?php // echo set_value("end_date", date("m/d/y", strtotime($slider_rec->end_date))) ; ?>" /></div>
+						</div>-->
+						<div class="row"> 
+							<label>Link</label>
+							<div class="right"><input type="text" id="link" name="link" value="<?php echo set_value("link", $slider_rec->link) ; ?>" /></div>
 						</div>
 						<div class="row">
 							<label>Status</label>
@@ -79,32 +80,51 @@
 			</div>
  		</div>
         
-        <div class="section">
-            <div class="half">
-				<div class="box">
-					<div class="title">Slider Image (English)<span class="hide"></span></div>
-					<div class="content">
-                        <div class="row">
-                        	<label>Slider Image</label>
-                            <div class="right">
-                            	<input type="file" id="english_image" name="english_image" /><br />
-								<?php
-									if($slider_rec->english_image == "") echo '<h6>No Image Uploaded</h6>' ;
-									else echo '<a href="'.base_url().'sliders/english_image_'.($slider_rec->slider_id).'.jpg" target="_blank">View Image</a>' ;
-								?>
-                                <input type="checkbox" id="slider_image_checkbox_english" name="slider_image_checkbox_english" value="Yes" />
-								<label for="slider_image_checkbox_english">Upload New Image</label>
-                            </div>
-                       	</div>
-                   	</div>
-              	</div>
-           	</div>
-            
-        	<div class="half">
-				<div class="box">
-					<div class="title">Slider Image (French)<span class="hide"></span></div>
-					<div class="content">
-                        <div class="row">
+    	<div class="section">
+			<div class="box">
+				<div class="title">Slider Image (English)<span class="hide"></span></div>
+				<div class="content">
+    				<?php if($slider_rec->english_image != "") { ?>
+						<div class="row">
+							<label></label>
+							<div class="right">
+								<div style="width:100%;">
+									<img src="<?php echo base_url()."sliders/thumbnail/english_image_".($slider_rec->slider_id).".jpg" ; ?>" alt="">
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					<div class="row">
+						<label>Slider Image</label>
+                        <div class="right">
+							<input type="file" id="english_image" name="english_image" /><br />
+							<?php
+								if($slider_rec->english_image == "") echo '<h6>No Image Uploaded</h6>' ;
+								else echo '<a href="'.base_url().'sliders/english_image_'.($slider_rec->slider_id).'.jpg" target="_blank">View Image</a>' ;
+							?>
+                            <input type="checkbox" id="slider_image_checkbox_english" name="slider_image_checkbox_english" value="Yes" />
+							<label for="slider_image_checkbox_english">Upload New Image</label>
+                        </div>
+                    </div>
+				</div>
+        	</div>
+        </div>
+        
+		<div class="section">
+			<div class="box">
+				<div class="title">Slider Image (French)<span class="hide"></span></div>
+				<div class="content">
+    				<?php if($slider_rec->english_image != "") { ?>
+						<div class="row">
+							<label></label>
+							<div class="right">
+								<div style="width:100%;">
+									<img src="<?php echo base_url()."sliders/thumbnail/french_image_".($slider_rec->slider_id).".jpg" ; ?>" alt="">
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					<div class="row">
                         	<label>Slider Image</label>
                             <div class="right">
                             	<input type="file" id="french_image" name="french_image" /><br />
@@ -116,14 +136,16 @@
 								<label for="slider_image_checkbox_french">Upload New Image</label>
                         	</div>
                        	</div>
-					</div>
 				</div>
-			</div>
- 		</div>
-    	<div class="section">
+        	</div>
+        </div>
+        
+		
+		<div class="section">
 			<div class="box">
 				<div class="content">
-    				<div class="row">
+    				
+					<div class="row">
 						<label></label>
                         <div class="right"><button type="submit" id="add_store"><span>Update</span></button><button type="button" id="cancel"><span>Cancel</span></button></div>
                 	</div>
@@ -131,6 +153,8 @@
         	</div>
         </div>
         
+		
+		
 	</div>    
 </div>
 </form>

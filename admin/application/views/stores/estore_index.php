@@ -27,9 +27,30 @@
 				<?php } ?>
                 </table>
 			</div>
+			
+			<div class="content">
+           		<div class="right">
+                	<button id="import_records" type="button"><span>Import Records</span></button> &nbsp;
+					<button id="export_records" type="button"><span>Export Records</span></button>
+				</div>
+            </div>
+
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+$(function(){
+	
+	$("#import_records").click(function(){
+		window.location.href = "<?php echo base_url()."stores/import_stores/estores/add" ; ?>" ;
+	}) ;
+	
+	$("#export_records").click(function(){
+		window.location.href = "<?php echo base_url()."PHPExcelClasses/export_excel_estores.php" ; ?>" ;
+	}) ;
+}) ;
+</script>
 
 	<form id="estore_form" name="estore_form" action="<?php echo base_url()."stores/insert_estore" ; ?>" method="post">
 		<div class="section">
@@ -67,6 +88,8 @@
 			</div>
 		</div>
 	</form>
+	
+
 <?php
 function show_message($message)
 {
